@@ -14,27 +14,37 @@ window.WEEK = {
     {
      "name": "Romaine hearts, 3 ct",
      "qty": 1,
-     "price": 3.63
+     "price": 3.63,
+     "url": "https://www.walmart.com/search?q=Romaine+hearts%2C+3+ct",
+     "urlType": "search"
     },
     {
      "name": "Iceberg lettuce",
      "qty": 1,
-     "price": 2.57
+     "price": 2.57,
+     "url": "https://www.walmart.com/search?q=Iceberg+lettuce",
+     "urlType": "search"
     },
     {
      "name": "Celery",
      "qty": 1,
-     "price": 2.04
+     "price": 2.04,
+     "url": "https://www.walmart.com/search?q=Celery",
+     "urlType": "search"
     },
     {
      "name": "Limes",
      "qty": 2,
-     "price": 0.23
+     "price": 0.23,
+     "url": "https://www.walmart.com/search?q=Limes",
+     "urlType": "search"
     },
     {
      "name": "Small Hass avocados, 5-6 ct bag",
      "qty": 1,
-     "price": 3.48
+     "price": 3.48,
+     "url": "https://www.walmart.com/search?q=Small+Hass+avocados%2C+5-6+ct+bag",
+     "urlType": "search"
     }
    ]
   },
@@ -44,22 +54,30 @@ window.WEEK = {
     {
      "name": "80/20 ground beef, 3 lb roll",
      "qty": 1,
-     "price": 16.43
+     "price": 16.43,
+     "url": "https://www.walmart.com/search?q=80%2F20+ground+beef%2C+3+lb+roll",
+     "urlType": "search"
     },
     {
      "name": "Smithfield pork picnic roast (by weight)",
      "qty": 1,
-     "price": 17.07
+     "price": 17.07,
+     "url": "https://www.walmart.com/search?q=Smithfield+pork+picnic+roast",
+     "urlType": "search"
     },
     {
      "name": "GV Polska kielbasa, 14 oz",
      "qty": 1,
-     "price": 3.23
+     "price": 3.23,
+     "url": "https://www.walmart.com/search?q=Great+Value+Polska+kielbasa%2C+14+oz",
+     "urlType": "search"
     },
     {
      "name": "Sanderson Farms chicken thighs, family pack (by weight)",
      "qty": 1,
-     "price": 8.92
+     "price": 8.92,
+     "url": "https://www.walmart.com/search?q=Sanderson+Farms+chicken+thighs%2C+family+pack",
+     "urlType": "search"
     }
    ]
   },
@@ -69,47 +87,65 @@ window.WEEK = {
     {
      "name": "GV large eggs, 18 ct",
      "qty": 2,
-     "price": 2.47
+     "price": 2.47,
+     "url": "https://www.walmart.com/search?q=Great+Value+large+eggs%2C+18+ct",
+     "urlType": "search"
     },
     {
      "name": "GV taco blend shredded cheese, 8 oz",
      "qty": 2,
-     "price": 1.97
+     "price": 1.97,
+     "url": "https://www.walmart.com/search?q=Great+Value+taco+blend+shredded+cheese%2C+8+oz",
+     "urlType": "search"
     },
     {
      "name": "GV sharp cheddar slices, 8 oz",
      "qty": 1,
-     "price": 1.67
+     "price": 1.67,
+     "url": "https://www.walmart.com/search?q=Great+Value+sharp+cheddar+slices%2C+8+oz",
+     "urlType": "search"
     },
     {
      "name": "GV mozzarella string cheese, 12 ct",
      "qty": 1,
-     "price": 3.28
+     "price": 3.28,
+     "url": "https://www.walmart.com/search?q=Great+Value+mozzarella+string+cheese%2C+12+ct",
+     "urlType": "search"
     },
     {
      "name": "GV sour cream, 16 oz",
      "qty": 1,
-     "price": 1.84
+     "price": 1.84,
+     "url": "https://www.walmart.com/search?q=Great+Value+sour+cream%2C+16+oz",
+     "urlType": "search"
     },
     {
      "name": "GV salted butter, 16 oz",
      "qty": 1,
-     "price": 3.06
+     "price": 3.06,
+     "url": "https://www.walmart.com/search?q=Great+Value+salted+butter%2C+16+oz",
+     "urlType": "search"
     },
     {
      "name": "Oikos Triple Zero, 6 ct",
      "qty": 1,
-     "price": 7.32
+     "price": 7.32,
+     "url": "https://www.walmart.com/search?q=Oikos+Triple+Zero%2C+6+ct",
+     "urlType": "search"
     },
     {
      "name": "Oikos Triple Zero Vanilla, 4 ct",
      "qty": 1,
-     "price": 4.97
+     "price": 4.97,
+     "url": "https://www.walmart.com/search?q=Oikos+Triple+Zero+Vanilla%2C+4+ct",
+     "urlType": "search"
     },
     {
      "name": "GV half & half, 64 oz",
      "qty": 1,
-     "price": 4.92
+     "price": 4.92,
+     "url": "https://www.walmart.com/search?q=Great+Value+half+%26+half%2C+64+oz",
+     "urlType": "search"
     }
    ]
   },
@@ -119,27 +155,37 @@ window.WEEK = {
     {
      "name": "GV raw peeled shrimp, 2 lb",
      "qty": 1,
-     "price": 15.96
+     "price": 15.96,
+     "url": "https://www.walmart.com/search?q=Great+Value+raw+peeled+shrimp%2C+2+lb",
+     "urlType": "search"
     },
     {
      "name": "GV broccoli florets, 32 oz",
      "qty": 1,
-     "price": 2.88
+     "price": 2.88,
+     "url": "https://www.walmart.com/search?q=Great+Value+broccoli+florets%2C+32+oz",
+     "urlType": "search"
     },
     {
      "name": "GV pepper & onion blend, 20 oz",
      "qty": 2,
-     "price": 2.84
+     "price": 2.84,
+     "url": "https://www.walmart.com/search?q=Great+Value+pepper+%26+onion+blend%2C+20+oz",
+     "urlType": "search"
     },
     {
      "name": "GV chopped spinach, 10 oz",
      "qty": 1,
-     "price": 1.24
+     "price": 1.24,
+     "url": "https://www.walmart.com/search?q=Great+Value+chopped+spinach%2C+10+oz",
+     "urlType": "search"
     },
     {
      "name": "GV riced cauliflower, 12 oz",
      "qty": 2,
-     "price": 2.24
+     "price": 2.24,
+     "url": "https://www.walmart.com/search?q=Great+Value+riced+cauliflower%2C+12+oz",
+     "urlType": "search"
     }
    ]
   },
@@ -149,37 +195,51 @@ window.WEEK = {
     {
      "name": "GV thick & chunky salsa, medium",
      "qty": 1,
-     "price": 1.97
+     "price": 1.97,
+     "url": "https://www.walmart.com/search?q=Great+Value+thick+%26+chunky+salsa%2C+medium",
+     "urlType": "search"
     },
     {
      "name": "GV hamburger dill chips, 32 oz",
      "qty": 1,
-     "price": 2.92
+     "price": 2.92,
+     "url": "https://www.walmart.com/search?q=Great+Value+hamburger+dill+chips%2C+32+oz",
+     "urlType": "search"
     },
     {
      "name": "GV ranch dressing, 16 oz",
      "qty": 1,
-     "price": 2.37
+     "price": 2.37,
+     "url": "https://www.walmart.com/search?q=Great+Value+ranch+dressing%2C+16+oz",
+     "urlType": "search"
     },
     {
      "name": "GV taco seasoning, 1 oz",
      "qty": 2,
-     "price": 0.5
+     "price": 0.5,
+     "url": "https://www.walmart.com/search?q=Great+Value+taco+seasoning%2C+1+oz",
+     "urlType": "search"
     },
     {
      "name": "GV fajita seasoning",
      "qty": 1,
-     "price": 0.77
+     "price": 0.77,
+     "url": "https://www.walmart.com/search?q=Great+Value+fajita+seasoning",
+     "urlType": "search"
     },
     {
      "name": "GV extra virgin olive oil, 17 oz",
      "qty": 1,
-     "price": 6.12
+     "price": 6.12,
+     "url": "https://www.walmart.com/search?q=Great+Value+extra+virgin+olive+oil%2C+17+oz",
+     "urlType": "search"
     },
     {
      "name": "Morton Lite Salt",
      "qty": 1,
-     "price": 3.17
+     "price": 3.17,
+     "url": "https://www.walmart.com/search?q=Morton+Lite+Salt",
+     "urlType": "search"
     }
    ]
   },
@@ -189,24 +249,32 @@ window.WEEK = {
     {
      "name": "Baken-Ets pork rinds (get Original, not Hot)",
      "qty": 1,
-     "price": 2.94
+     "price": 2.94,
+     "url": "https://www.walmart.com/search?q=Baken-Ets+pork+rinds",
+     "urlType": "search"
     },
     {
      "name": "GV whole almonds, 14 oz",
      "qty": 1,
-     "price": 6.14
+     "price": 6.14,
+     "url": "https://www.walmart.com/search?q=Great+Value+whole+almonds%2C+14+oz",
+     "urlType": "search"
     },
     {
      "name": "Pepsi Zero Sugar, 24 pk",
      "qty": 1,
      "price": 13.77,
-     "soda": true
+     "soda": true,
+     "url": "https://www.walmart.com/search?q=Pepsi+Zero+Sugar%2C+24+pk",
+     "urlType": "search"
     },
     {
      "name": "Sunkist Orange Zero, 12 pk",
      "qty": 1,
      "price": 5.48,
-     "soda": true
+     "soda": true,
+     "url": "https://www.walmart.com/search?q=Sunkist+Orange+Zero%2C+12+pk",
+     "urlType": "search"
     }
    ]
   },

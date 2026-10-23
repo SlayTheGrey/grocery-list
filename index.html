@@ -17,6 +17,7 @@ h2{font-size:21px;border-bottom:3px solid #000;margin:18px 0 4px;padding-bottom:
 .box{width:32px;height:32px;border:3px solid #000;border-radius:6px;flex:none;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:900}
 .done .box{background:#0a7d2c;border-color:#0a7d2c;color:#fff}.done .nm{text-decoration:line-through;color:#555}
 .nm{flex:1}.qp{font-size:16px;color:#222;text-align:right;white-space:nowrap}
+.lnk{flex:none;font-size:15px;font-weight:700;color:#0040a0;border:2px solid #0040a0;border-radius:999px;padding:8px 10px;margin-left:4px;text-decoration:none;white-space:nowrap}
 .rm{width:48px;height:48px;border:0;background:none;font-size:26px;color:#a00;flex:none}
 .empty{color:#555;font-style:italic;padding:6px 4px}
 .total{border:2px solid #000;border-radius:10px;padding:10px;margin:16px 0;font-size:17px}.total b{font-size:21px}
@@ -51,6 +52,7 @@ $("ttl").textContent=W.title;$("dates").textContent=W.dates||"";
 $("ac").innerHTML=CATS.map(c=>`<option>${c}</option>`).join("");
 function items(){const a=[];W.categories.forEach(c=>c.items.forEach((it,i)=>a.push({...it,cat:CATS.includes(c.name)?c.name:"Other",id:"g:"+c.name+":"+i})));
  S.added.forEach(it=>a.push(it));return a.filter(it=>!S.removed[it.id]);}
+const lnk=i=>{const u=i.url||("https://www.walmart.com/search?q="+encodeURIComponent(i.name)),real=i.url&&i.urlType!=="search"&&/walmart\.com\/ip\//.test(i.url);return `<a class="lnk" href="${esc(u)}" target="_blank" rel="noopener" aria-label="${real?"Walmart product page":"Search Walmart"} for ${esc(i.name)}">${real?"Walmart":"Search"} ↗</a>`};
 const money=n=>"$"+n.toFixed(2);
 function render(){const all=items(),done=all.filter(i=>S.checked[i.id]).length;
  $("prog").textContent=`${done} of ${all.length} in cart`;$("pb").style.width=(all.length?done/all.length*100:0)+"%";
@@ -60,7 +62,7 @@ function render(){const all=items(),done=all.filter(i=>S.checked[i.id]).length;
   const vis=S.hide?its.filter(i=>!S.checked[i.id]):its;
   h+=`<h2>${c}</h2>`;if(!its.length)h+=`<div class="empty">None this week</div>`;else if(!vis.length)h+=`<div class="empty">All in cart ✓</div>`;
   for(const i of vis){const d=S.checked[i.id],q=i.qty?"×"+esc(i.qty):"",p=i.price!=null?money(i.price*(+i.qty||1)):"";
-   h+=`<div class="item${d?" done":""}"><button class="chk" data-c="${esc(i.id)}" aria-pressed="${!!d}"><span class="box">${d?"✓":""}</span><span class="nm">${esc(i.name)}${i.aisle?` <small>(${esc(i.aisle)})</small>`:""}</span><span class="qp">${q}<br>${p}</span></button><button class="rm" data-r="${esc(i.id)}" aria-label="Remove ${esc(i.name)}">✕</button></div>`;}}
+   h+=`<div class="item${d?" done":""}"><button class="chk" data-c="${esc(i.id)}" aria-pressed="${!!d}"><span class="box">${d?"✓":""}</span><span class="nm">${esc(i.name)}${i.aisle?` <small>(${esc(i.aisle)})</small>`:""}</span><span class="qp">${q}<br>${p}</span></button>${lnk(i)}<button class="rm" data-r="${esc(i.id)}" aria-label="Remove ${esc(i.name)}">✕</button></div>`;}}
  $("cats").innerHTML=h;
  let food=0,soda=0,unk=0;all.forEach(i=>{if(i.price==null){unk++;return}const v=i.price*(+i.qty||1);i.soda?soda+=v:food+=v});
  const disc=Math.min(W.discount||0,food),sub=food+soda-disc,ft=Math.round((food-disc)*W.foodTaxRate*100)/100,st=Math.round(soda*W.sodaTaxRate*100)/100;

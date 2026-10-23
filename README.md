@@ -8,6 +8,9 @@ Static, no-build web app. Files: `index.html` (app), `data.js` (this week's data
 3. Categories must be one of: Fruits & Veggies, Meat & Seafood, Dairy, Frozen Foods, Sauces & Spices, Snacks & Beverages, Breads & Grains, Other. Item fields: `name`, `qty`, `price` (each), optional `soda: true` (soda tax), optional `aisle` (sorts within category).
 4. Commit and push to `main`; GitHub Pages redeploys in about a minute. The service worker is network-first, so the new data shows on next online load.
 
+## Walmart links
+Each item can have `url` and `urlType` in `data.js`. Use `urlType: "product"` with a real `https://www.walmart.com/ip/...` URL to show a **Walmart ↗** button; anything else shows **Search ↗** (a Walmart search link). Items without `url`, including ones you add in the app, get a search link built from their name. Links open in a new tab and do not toggle the checkbox. Never guess product IDs.
+
 ## Views
 - **Category** view: Fruits & Veggies, Meat & Seafood, Dairy, Frozen Foods, Sauces & Spices, Snacks & Beverages, Breads & Grains, Other.
 - **Store route** view (walking order): Other (toiletries, household, pet, non-food) first, then Fruits & Veggies, Breads & Grains, Meat & Seafood, Dairy, Sauces & Spices, Snacks & Beverages, Frozen Foods last. To change it, edit the `ROUTE` array in `index.html`.
