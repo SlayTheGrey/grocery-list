@@ -498,5 +498,10 @@ window.WEEK = {
    "desc": "Eat cold from the cooler as a protein snack (check label carbs; count it as part of the day).",
    "carbs": "~7 g (estimate) net"
   }
- ]
+ ],
+ "nextWeek": {
+  "dates": "Oct 28 – Nov 3, 2026",
+  "categories": []
+ },
+ "pending": []
 };

@@ -28,10 +28,21 @@ details{border:2px solid #000;border-radius:10px;margin:10px 0}summary{font-weig
 details>div{padding:0 14px 14px}details li{margin:6px 0}.meta{font-size:16px;color:#333}
 #toast{position:fixed;left:10px;right:10px;bottom:14px;background:#000;color:#fff;padding:12px 14px;border-radius:10px;display:none;align-items:center;justify-content:space-between;font-size:17px;z-index:9}
 #toast button{background:#fff;color:#000;border:0;font:inherit;font-weight:700;padding:8px 14px;border-radius:8px}
+.card{border:2px solid #000;border-radius:10px;padding:10px;margin:10px 0}.pick{border-color:#b36b00;background:#fff8ec}
+.opt{display:flex;gap:8px;align-items:center;border-top:1px solid #999;padding:8px 0}.opt div{flex:1}
+.ls{display:flex;gap:6px}.ls button{flex:1}textarea{font:inherit;padding:10px;border:2px solid #000;border-radius:8px;width:100%;min-height:90px}
+.msg{border:1px solid #999;border-radius:10px;padding:8px;margin:6px 0}.msg small{color:#333}.err{color:#a00}.ok{color:#0a7d2c}
+#thumb{max-width:120px;border-radius:8px;display:none}
 </style></head><body>
 <header><h1 id="ttl">Weekly Grocery List</h1><div class="sub" id="dates"></div>
-<div class="tabs"><button id="tL" class="on">List</button><button id="tR">Recipes</button></div></header>
+<div class="tabs"><button id="tL" class="on">List</button><button id="tR">Recipes</button><button id="tC">Chat</button></div></header>
 <main><section id="list">
+<div class="ls"><button class="btn" id="lThis">This week</button><button class="btn" id="lNext">Next week</button></div>
+<div id="picks"></div>
+<div class="card"><b>Ask assistant to add</b><input id="xt" placeholder="e.g. 2 bags shredded cheese">
+<div class="tools"><label class="btn" for="xf">📷 Photo</label><input id="xf" type="file" accept="image/*" capture="environment" hidden><img id="thumb" alt="photo preview">
+<select id="xl" style="flex:1;width:auto"><option value="this">This week</option><option value="next">Next week</option></select></div>
+<button class="btn" id="xs" style="width:100%">Send to assistant</button><div id="xst"></div></div>
 <div id="prog" style="font-weight:700"></div><div class="bar"><i id="pb"></i></div>
 <div class="tools"><button class="btn" id="mode">View: Category</button><button class="btn" id="hide">Hide checked</button><button class="btn" id="sink">Checked to bottom</button><button class="btn" id="clear">Clear checks</button></div>
 <div id="cats"></div><div class="total" id="tot"></div>
@@ -39,22 +50,28 @@ details>div{padding:0 14px 14px}details li{margin:6px 0}.meta{font-size:16px;col
 <div class="row"><input id="aq" placeholder="Qty" inputmode="numeric"><select id="ac"></select></div>
 <input id="ap" placeholder="Price each (optional, e.g. 2.99)" inputmode="decimal"><button class="btn">Add item</button></form>
 <button class="btn" id="reset" style="width:100%">Restore removed items</button>
-</section><section id="recipes" hidden></section></main>
+</section><section id="recipes" hidden></section>
+<section id="chat" hidden><div class="card"><b>Message the assistant</b><textarea id="ct" placeholder="Add, remove or change items or recipes"></textarea>
+<div class="ls"><select id="cl"><option value="this">This week</option><option value="next">Next week</option></select><button class="btn" id="cs">Send</button></div></div>
+<div id="msgs"></div>
+<details><summary>Settings</summary><div><p class="meta">Sender key (stored only on this phone).</p><input id="key" type="password" autocomplete="off" placeholder="Paste key"><div class="tools"><button class="btn" id="ksave">Save key</button><button class="btn" id="kclr">Forget key</button></div><div id="kst" class="meta"></div></div></details></section></main>
 <div id="toast"><span id="tm"></span><button id="undo">Undo</button></div>
 <script src="data.js"></script><script>
-const W=window.WEEK,CATS=["Fruits & Veggies","Meat & Seafood","Dairy","Frozen Foods","Sauces & Spices","Snacks & Beverages","Breads & Grains","Other"],
+let W=window.WEEK;const CATS=["Fruits & Veggies","Meat & Seafood","Dairy","Frozen Foods","Sauces & Spices","Snacks & Beverages","Breads & Grains","Other"],
 ROUTE=["Other","Fruits & Veggies","Breads & Grains","Meat & Seafood","Dairy","Sauces & Spices","Snacks & Beverages","Frozen Foods"],
-K="grocery:"+W.weekId,$=id=>document.getElementById(id),esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-let S=Object.assign({checked:{},added:[],removed:{},hide:false,sink:true,route:false},JSON.parse(localStorage.getItem(K)||"{}"));
+$=id=>document.getElementById(id),esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const K="grocery:"+W.weekId;let S=Object.assign({checked:{},added:[],removed:{},hide:false,sink:true,route:false,list:"this",chosen:{},msgs:[]},JSON.parse(localStorage.getItem(K)||"{}"));
 for(const k in localStorage)if(k.startsWith("grocery:")&&k!==K)localStorage.removeItem(k);
 const save=()=>localStorage.setItem(K,JSON.stringify(S));
-$("ttl").textContent=W.title;$("dates").textContent=W.dates||"";
+
 $("ac").innerHTML=CATS.map(c=>`<option>${c}</option>`).join("");
-function items(){const a=[];W.categories.forEach(c=>c.items.forEach((it,i)=>a.push({...it,cat:CATS.includes(c.name)?c.name:"Other",id:"g:"+c.name+":"+i})));
- S.added.forEach(it=>a.push(it));return a.filter(it=>!S.removed[it.id]);}
+const nx=()=>S.list==="next";const curCats=()=>nx()?((W.nextWeek&&W.nextWeek.categories)||[]):W.categories;
+function items(){const a=[],p=nx()?"n:":"g:";curCats().forEach(c=>(c.items||[]).forEach((it,i)=>a.push({...it,cat:CATS.includes(c.name)?c.name:"Other",id:p+c.name+":"+i})));
+ S.added.filter(it=>(it.list||"this")===S.list).forEach(it=>a.push(it));return a.filter(it=>!S.removed[it.id]);}
 const lnk=i=>{const u=i.url||("https://www.walmart.com/search?q="+encodeURIComponent(i.name)),real=i.url&&i.urlType!=="search"&&/walmart\.com\/ip\//.test(i.url);return `<a class="lnk" href="${esc(u)}" target="_blank" rel="noopener" aria-label="${real?"Walmart product page":"Search Walmart"} for ${esc(i.name)}">${real?"Walmart":"Search"} ↗</a>`};
 const money=n=>"$"+n.toFixed(2);
-function render(){const all=items(),done=all.filter(i=>S.checked[i.id]).length;
+function render(){$("ttl").textContent=W.title;$("dates").textContent=(nx()?(W.nextWeek&&W.nextWeek.dates)||"Next week":W.dates)||"";$("lThis").classList.toggle("on",!nx());$("lNext").classList.toggle("on",nx());renderPicks();
+ const all=items(),done=all.filter(i=>S.checked[i.id]).length;
  $("prog").textContent=`${done} of ${all.length} in cart`;$("pb").style.width=(all.length?done/all.length*100:0)+"%";
  $("hide").classList.toggle("on",S.hide);$("sink").classList.toggle("on",S.sink);$("mode").textContent="View: "+(S.route?"Store route":"Category");$("mode").classList.toggle("on",S.route);
  let h="";for(const c of (S.route?ROUTE:CATS)){let its=all.filter(i=>i.cat===c);
@@ -68,7 +85,7 @@ function render(){const all=items(),done=all.filter(i=>S.checked[i.id]).length;
  const disc=Math.min(W.discount||0,food),sub=food+soda-disc,ft=Math.round((food-disc)*W.foodTaxRate*100)/100,st=Math.round(soda*W.sodaTaxRate*100)/100;
  $("tot").innerHTML=`Subtotal ${money(sub)}${disc?` (after ${money(disc)} rollback)`:""}<br>Food tax ${(W.foodTaxRate*100).toFixed(2).replace(/\.?0+$/,"")}% ${money(ft)} · Soda tax ${(W.sodaTaxRate*100).toFixed(2).replace(/\.?0+$/,"")}% ${money(st)}<br><b>Estimated total: ${money(sub+ft+st)}</b><br><small>${esc(W.priceNote||"")}${unk?` ${unk} item(s) without a price not included.`:""}</small>`;
  $("reset").hidden=!Object.keys(S.removed).length;}
-let undoFn,tt;function toast(m,f){undoFn=f;$("tm").textContent=m;$("toast").style.display="flex";clearTimeout(tt);tt=setTimeout(()=>$("toast").style.display="none",6000);}
+let undoFn,tt;function toast(m,f){undoFn=f;$("undo").hidden=!f;$("tm").textContent=m;$("toast").style.display="flex";clearTimeout(tt);tt=setTimeout(()=>$("toast").style.display="none",6000);}
 $("undo").onclick=()=>{undoFn&&undoFn();$("toast").style.display="none";};
 $("cats").onclick=e=>{const c=e.target.closest("[data-c]"),r=e.target.closest("[data-r]");
  if(c){const id=c.dataset.c;S.checked[id]?delete S.checked[id]:S.checked[id]=1;save();render();}
@@ -79,13 +96,47 @@ $("hide").onclick=()=>{S.hide=!S.hide;save();render()};$("sink").onclick=()=>{S.
 $("clear").onclick=()=>{if(confirm("Clear all checks?")){const o=S.checked;S.checked={};save();render();toast("Checks cleared",()=>{S.checked=o;save();render();});}};
 $("reset").onclick=()=>{if(confirm("Restore all removed items?")){S.removed={};save();render();}};
 $("add").onsubmit=e=>{e.preventDefault();const p=parseFloat($("ap").value.replace("$",""));
- S.added.push({id:"u:"+Date.now(),name:$("an").value.trim(),qty:$("aq").value.trim()||1,cat:$("ac").value,price:isNaN(p)?null:p});save();render();$("an").value=$("aq").value=$("ap").value="";};
+ S.added.push({id:"u:"+Date.now(),name:$("an").value.trim(),qty:$("aq").value.trim()||1,cat:$("ac").value,list:S.list,price:isNaN(p)?null:p});save();render();$("an").value=$("aq").value=$("ap").value="";};
 function recipes(){const li=a=>a.map(x=>`<li>${esc(x)}</li>`).join("");let h="";
  W.recipes.forEach(r=>h+=`<details><summary>${esc(r.title)}</summary><div><p class="meta">${esc(r.meta||"")}</p><h3>Ingredients</h3><ul>${li(r.ingredients)}</ul><h3>Steps</h3><ol>${li(r.steps)}</ol>${r.notes?`<h3>Notes</h3><ul>${li(r.notes)}</ul>`:""}</div></details>`);
  if(W.snacks&&W.snacks.length)h+=`<details><summary>Lunches &amp; Snacks</summary><div><ul>${W.snacks.map(s=>`<li><b>${esc(s.name)}</b>: ${esc(s.desc)} <i>${esc(s.carbs)}</i></li>`).join("")}</ul></div></details>`;
  if(W.prep&&W.prep.length)h+=`<details><summary>Prep Checklist</summary><div><ul>${li(W.prep)}</ul></div></details>`;
  $("recipes").innerHTML=h;}
-const tab=r=>{$("list").hidden=r;$("recipes").hidden=!r;$("tL").classList.toggle("on",!r);$("tR").classList.toggle("on",r);scrollTo(0,0)};
-$("tL").onclick=()=>tab(false);$("tR").onclick=()=>tab(true);
+const tab=t=>{["list","recipes","chat"].forEach((x,i)=>{$(x).hidden=x!==t;$(["tL","tR","tC"][i]).classList.toggle("on",x===t)});scrollTo(0,0)};
+$("tL").onclick=()=>tab("list");$("tR").onclick=()=>tab("recipes");$("tC").onclick=()=>{tab("chat");renderMsgs()};
 render();recipes();if("serviceWorker"in navigator)navigator.serviceWorker.register("sw.js").catch(()=>{});
+
+var HOOK="https://api2.cursor.sh/automations/webhook/2810a3c5-ab74-5ef7-89ff-47969e3ea73d",KK="grocery-key",photo=null;
+function renderPicks(){var P=(W.pending||[]).filter(p=>(p.list||"this")===S.list);
+ $("picks").innerHTML=P.map(p=>{var c=S.chosen[p.id];return `<div class="card pick"><b>Pick one: ${esc(p.query)}</b>${c?`<div class="ok">Chosen: ${esc(c.name)}. Waiting for list update…</div>`:""}`+
+ (p.options||[]).map((o,i)=>`<div class="opt"><div>${esc(o.name)}${o.size?` <small>${esc(o.size)}</small>`:""}<br><small>${o.price!=null?money(+o.price):""}</small></div>${o.url?`<a class="lnk" href="${esc(o.url)}" target="_blank" rel="noopener">Walmart ↗</a>`:""}<button class="btn${c&&c.i===i?" on":""}" data-pk="${esc(p.id)}" data-i="${i}">Choose</button></div>`).join("")+`</div>`}).join("");}
+$("picks").onclick=e=>{var b=e.target.closest("[data-pk]");if(!b)return;var p=(W.pending||[]).find(x=>x.id===b.dataset.pk),i=+b.dataset.i,o=p.options[i];
+ S.chosen[p.id]={i:i,name:o.name};save();render();send({type:"choose",id:p.id,index:i,name:o.name,url:o.url||"",list:p.list||"this"},"Chose "+o.name+" for "+p.query);};
+function renderMsgs(){$("msgs").innerHTML=S.msgs.slice().reverse().map(m=>`<div class="msg">${esc(m.label)}<br><small class="${m.ok?"ok":m.ok===false?"err":""}">${new Date(m.ts).toLocaleString()} · ${esc(m.st)}</small>${m.ok===false?` <button class="btn" data-cp="${m.ts}">Copy / Share</button>`:""}</div>`).join("")||'<p class="empty">No messages yet</p>';}
+$("msgs").onclick=e=>{var b=e.target.closest("[data-cp]");if(!b)return;var m=S.msgs.find(x=>String(x.ts)===b.dataset.cp);share(m.label);};
+function share(t){if(navigator.share)navigator.share({text:"Grocery list: "+t}).catch(()=>{});else navigator.clipboard&&navigator.clipboard.writeText("Grocery list: "+t).then(()=>toast("Copied. Paste it to the assistant"));}
+async function send(body,label){var ts=Date.now(),m={ts:ts,label:label,st:"Sending…"};body.ts=ts;S.msgs.push(m);S.msgs=S.msgs.slice(-30);save();renderMsgs();
+ var key=localStorage.getItem(KK);
+ if(!key){m.ok=false;m.st="No key saved. Add it in Chat > Settings, or copy/share this to the assistant";}
+ else try{var r=await fetch(HOOK,{method:"POST",headers:{"Authorization":"Bearer "+key,"Content-Type":"application/json"},body:JSON.stringify(body)});
+  if(r.ok){m.ok=true;m.st="Sent. Updates arrive in a few minutes";}else{m.ok=false;m.st="Failed ("+r.status+(r.status==401?", check key":"")+")";}}
+ catch(err){m.ok=false;m.st="Couldn't reach the assistant from the app (blocked). Use Copy / Share";}
+ save();renderMsgs();toast(m.st);return m.ok;}
+$("cs").onclick=async()=>{var t=$("ct").value.trim();if(!t)return;if(await send({type:"chat",text:t,list:$("cl").value},t)!==false)$("ct").value="";};
+$("lThis").onclick=()=>{S.list="this";save();render()};$("lNext").onclick=()=>{S.list="next";save();render()};
+$("xf").onchange=e=>{var f=e.target.files[0];if(!f)return;var im=new Image();im.onload=()=>{var s=Math.min(1,800/Math.max(im.width,im.height)),c=document.createElement("canvas");c.width=Math.round(im.width*s);c.height=Math.round(im.height*s);c.getContext("2d").drawImage(im,0,0,c.width,c.height);
+ var q=.8,d;do{d=c.toDataURL("image/jpeg",q);q-=.1}while(d.length*.75>150000&&q>.2);photo=d;$("thumb").src=d;$("thumb").style.display="block";URL.revokeObjectURL(im.src)};im.src=URL.createObjectURL(f);};
+$("xs").onclick=async()=>{var t=$("xt").value.trim();if(!t&&!photo)return toast("Type an item or take a photo");$("xl").value=$("xl").value||S.list;
+ var b={type:"add",list:$("xl").value};if(t)b.text=t;if(photo)b.image=photo;
+ var ok=await send(b,"Add"+(photo?" (photo)":"")+": "+(t||"item in photo")+" → "+(b.list==="next"?"next week":"this week"));$("xst").textContent=ok?"Sent. Updates arrive in a few minutes":"Not sent. See Chat tab";
+ if(ok){$("xt").value="";photo=null;$("thumb").style.display="none";$("xf").value="";}};
+$("ksave").onclick=()=>{var v=$("key").value.trim();if(v){localStorage.setItem(KK,v);$("key").value="";}kst();};$("kclr").onclick=()=>{localStorage.removeItem(KK);kst()};
+function kst(){$("kst").textContent=localStorage.getItem(KK)?"Key saved on this phone.":"No key saved.";}kst();
+var lastData=JSON.stringify(W);
+async function checkData(){try{var t=await (await fetch("data.js?t="+Date.now(),{cache:"no-store"})).text(),o={};new Function("window",t)(o);
+ if(o.WEEK&&JSON.stringify(o.WEEK)!==lastData){if(o.WEEK.weekId!==W.weekId)return location.reload();W=o.WEEK;lastData=JSON.stringify(W);
+  (W.pending||[]).forEach(()=>0);for(var id in S.chosen)if(!(W.pending||[]).some(p=>p.id===id))delete S.chosen[id];save();render();recipes();toast("List updated");}}catch(e){}}
+setInterval(()=>{if(!document.hidden)checkData()},60000);document.addEventListener("visibilitychange",()=>{if(!document.hidden)checkData()});
+$("xl").value=$("cl").value=S.list;render();
+
 </script></body></html>
