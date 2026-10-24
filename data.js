@@ -284,7 +284,15 @@ window.WEEK = {
   },
   {
    "name": "Other",
-   "items": []
+   "items": [
+    {
+     "name": "Angel Soft 2-Ply Toilet Paper, 24 Mega Rolls",
+     "qty": 1,
+     "price": 14.72,
+     "url": "https://www.walmart.com/ip/Angel-Soft-2-Ply-Toilet-Paper-24-Mega-Rolls/596343371",
+     "urlType": "product"
+    }
+   ]
   }
  ],
  "recipes": [
@@ -503,38 +511,5 @@ window.WEEK = {
   "dates": "Oct 28 – Nov 3, 2026",
   "categories": []
  },
- "pending": [
-  {
-   "id": "tp-20261024",
-   "query": "Toilet paper",
-   "list": "this",
-   "added": "2026-10-24",
-   "options": [
-    {
-     "name": "Angel Soft 2-Ply Toilet Paper",
-     "size": "24 Mega Rolls",
-     "price": 14.72,
-     "url": "https://www.walmart.com/ip/Angel-Soft-2-Ply-Toilet-Paper-24-Mega-Rolls/596343371"
-    },
-    {
-     "name": "Great Value Soft & Strong Premium Toilet Paper",
-     "size": "12 Mega Rolls",
-     "price": 9.98,
-     "url": "https://www.walmart.com/ip/Great-Value-Soft-Strong-Premium-Toilet-Paper-12-Mega-Rolls/2311597689"
-    },
-    {
-     "name": "Great Value Ultra Soft Toilet Paper",
-     "size": "18 Mega Rolls",
-     "price": 15.47,
-     "url": "https://www.walmart.com/ip/Great-Value-Ultra-Soft-Toilet-Paper-18-Mega-Rolls/2245528490"
-    },
-    {
-     "name": "Charmin Ultra Soft Toilet Paper",
-     "size": "12 Mega Rolls",
-     "price": 14.97,
-     "url": "https://www.walmart.com/ip/Charmin-ULTRA-SOFT-Toilet-Tissue-Dry-2-Ply-Unscented/17077816413"
-    }
-   ]
-  }
- ]
+ "pending": []
 };
