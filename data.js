@@ -511,31 +511,5 @@ window.WEEK = {
   "dates": "Oct 28 – Nov 3, 2026",
   "categories": []
  },
- "pending": [
-  {
-   "id": "p1792866156949",
-   "query": "Nuts (photo didn't come through; resend it if you meant a specific one)",
-   "list": "this",
-   "options": [
-    {
-     "name": "GV whole almonds, 14 oz",
-     "size": "14 oz (your usual)",
-     "price": 6.14,
-     "url": "https://www.walmart.com/ip/seort/5295229969"
-    },
-    {
-     "name": "Great Value Deluxe Mixed Nuts, Lightly Salted, 15.25 oz",
-     "size": "15.25 oz",
-     "price": 9.82,
-     "url": "https://www.walmart.com/ip/0TQ4QEZADON0"
-    },
-    {
-     "name": "Great Value Deluxe Mixed Nuts snack packs, 8 ct",
-     "size": "8 × 1.5 oz",
-     "price": 9.94,
-     "url": "https://www.walmart.com/ip/Great-Value-Deluxe-Mixed-Nuts-1-5-oz-8-Count/5284690991"
-    }
-   ]
-  }
- ]
+ "pending": []
 };
