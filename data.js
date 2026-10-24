@@ -521,6 +521,18 @@ window.WEEK = {
       "urlType": "product"
      }
     ]
+   },
+   {
+    "name": "Frozen Foods",
+    "items": [
+     {
+      "name": "GV pepper & onion blend, 20 oz (frozen)",
+      "qty": 1,
+      "price": 2.84,
+      "url": "https://www.walmart.com/ip/Great-Value-Frozen-20-oz-Pepper-Onion-Blend-20-oz/539250805",
+      "urlType": "product"
+     }
+    ]
    }
   ]
  },
@@ -547,25 +559,6 @@ window.WEEK = {
      "size": "12.5 oz single can",
      "price": 4.78,
      "url": "https://www.walmart.com/ip/Swanson-White-Premium-Chunk-Canned-Chicken-Breast-in-Water-12-5-oz-Can/13281590"
-    }
-   ]
-  },
-  {
-   "id": "p1792866420370",
-   "query": "Frozen pepper onion blend",
-   "list": "next",
-   "options": [
-    {
-     "name": "GV pepper & onion blend, 20 oz (frozen)",
-     "size": "20 oz",
-     "price": 2.84,
-     "url": "https://www.walmart.com/ip/Great-Value-Frozen-20-oz-Pepper-Onion-Blend-20-oz/539250805"
-    },
-    {
-     "name": "Pictsweet Farms 3 Pepper & Onion Blend, 22 oz (frozen)",
-     "size": "22 oz (adds yellow peppers)",
-     "price": 3.86,
-     "url": "https://www.walmart.com/ip/17018127"
     }
    ]
   },
