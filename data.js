@@ -549,6 +549,25 @@ window.WEEK = {
      "url": "https://www.walmart.com/ip/Big-Tree-Farms-Organic-Coconut-Aminos-Soy-Sauce-Alternative-10-Fl-oz-Bottle/192231606"
     }
    ]
+  },
+  {
+   "id": "p1792866420370",
+   "query": "Frozen pepper onion blend",
+   "list": "next",
+   "options": [
+    {
+     "name": "GV pepper & onion blend, 20 oz (frozen)",
+     "size": "20 oz",
+     "price": 2.84,
+     "url": "https://www.walmart.com/ip/Great-Value-Frozen-20-oz-Pepper-Onion-Blend-20-oz/539250805"
+    },
+    {
+     "name": "Pictsweet Farms 3 Pepper & Onion Blend, 22 oz (frozen)",
+     "size": "22 oz (adds yellow peppers)",
+     "price": 3.86,
+     "url": "https://www.walmart.com/ip/17018127"
+    }
+   ]
   }
  ]
 };
