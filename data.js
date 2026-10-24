@@ -543,25 +543,19 @@ window.WEEK = {
       "price": 6.54,
       "url": "https://www.walmart.com/ip/Bragg-Organic-Coconut-Liquid-Aminos-Soy-Free-Seasoning-10-fl-oz/784580921",
       "urlType": "product"
+     },
+     {
+      "name": "G Hughes Zero Sugar Yum Yum Dipping Sauce, 16 oz",
+      "qty": 1,
+      "price": 5.12,
+      "url": "https://www.walmart.com/ip/G-Hughes-Sugar-Free-Yum-Yum-Dipping-Sauce-16-oz-Bottle/808075641",
+      "urlType": "product"
      }
     ]
    }
   ]
  },
  "pending": [
-  {
-   "id": "p1792866441793",
-   "query": "Sugar free yum yum sauce",
-   "list": "next",
-   "options": [
-    {
-     "name": "G Hughes Zero Sugar Yum Yum Dipping Sauce, 16 oz",
-     "size": "16 oz bottle (the sugar-free brand you have used, 1 g carbs per 2 tbsp)",
-     "price": 5.12,
-     "url": "https://www.walmart.com/ip/G-Hughes-Sugar-Free-Yum-Yum-Dipping-Sauce-16-oz-Bottle/808075641"
-    }
-   ]
-  },
   {
    "id": "p1792866397455",
    "query": "Frozen riced cauliflower",
