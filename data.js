@@ -290,7 +290,8 @@ window.WEEK = {
      "qty": 1,
      "price": 14.72,
      "url": "https://www.walmart.com/ip/Angel-Soft-2-Ply-Toilet-Paper-24-Mega-Rolls/596343371",
-     "urlType": "product"
+     "urlType": "product",
+     "addedBy": "user"
     }
    ]
   }
@@ -518,7 +519,8 @@ window.WEEK = {
       "qty": 1,
       "price": 9.97,
       "url": "https://www.walmart.com/ip/Great-Value-Chunk-Chicken-Breast-12-5-Ounce-Can-4-Pack/49914752",
-      "urlType": "product"
+      "urlType": "product",
+      "addedBy": "user"
      }
     ]
    },
@@ -530,13 +532,15 @@ window.WEEK = {
       "qty": 1,
       "price": 2.84,
       "url": "https://www.walmart.com/ip/Great-Value-Frozen-20-oz-Pepper-Onion-Blend-20-oz/539250805",
-      "urlType": "product"
+      "urlType": "product",
+      "addedBy": "user"
      },
      {
       "name": "Great Value Organic Steamable Riced Cauliflower, 10 oz (Frozen)",
       "qty": 1,
       "url": "https://www.walmart.com/ip/197864195",
-      "urlType": "product"
+      "urlType": "product",
+      "addedBy": "user"
      }
     ]
    },
@@ -548,18 +552,22 @@ window.WEEK = {
       "qty": 1,
       "price": 6.54,
       "url": "https://www.walmart.com/ip/Bragg-Organic-Coconut-Liquid-Aminos-Soy-Free-Seasoning-10-fl-oz/784580921",
-      "urlType": "product"
+      "urlType": "product",
+      "addedBy": "user"
      },
      {
       "name": "G Hughes Zero Sugar Yum Yum Dipping Sauce, 16 oz",
       "qty": 1,
       "price": 5.12,
       "url": "https://www.walmart.com/ip/G-Hughes-Sugar-Free-Yum-Yum-Dipping-Sauce-16-oz-Bottle/808075641",
-      "urlType": "product"
+      "urlType": "product",
+      "addedBy": "user"
      }
     ]
    }
   ]
  },
- "pending": []
+ "pending": [],
+ "budget": 200,
+ "pendingRecipes": []
 };

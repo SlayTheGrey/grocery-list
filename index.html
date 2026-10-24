@@ -33,6 +33,9 @@ details>div{padding:0 14px 14px}details li{margin:6px 0}.meta{font-size:16px;col
 .ls{display:flex;gap:6px}.ls button{flex:1}textarea{font:inherit;padding:10px;border:2px solid #000;border-radius:8px;width:100%;min-height:90px}
 .msg{border:1px solid #999;border-radius:10px;padding:8px;margin:6px 0}.msg small{color:#333}.err{color:#a00}.ok{color:#0a7d2c}
 #thumb{max-width:120px;border-radius:8px;display:none}
+#modal{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;align-items:flex-end;justify-content:center;z-index:20}#modal>div{background:#fff;width:100%;max-width:760px;border-radius:14px 14px 0 0;padding:14px;display:grid;gap:10px;max-height:90vh;overflow:auto}
+.rbar{display:flex;gap:6px;margin:6px 0}.rbar .btn{flex:1}.rpend{color:#b36b00;font-weight:700}details.gone summary{text-decoration:line-through;color:#555}
+.bud{font-size:18px}.over{color:#a00;font-weight:700}
 </style></head><body>
 <header><h1 id="ttl">Weekly Grocery List</h1><div class="sub" id="dates"></div>
 <div class="tabs"><button id="tL" class="on">List</button><button id="tR">Recipes</button><button id="tC">Chat</button></div></header>
@@ -50,12 +53,12 @@ details>div{padding:0 14px 14px}details li{margin:6px 0}.meta{font-size:16px;col
 <div class="row"><input id="aq" placeholder="Qty" inputmode="numeric"><select id="ac"></select></div>
 <input id="ap" placeholder="Price each (optional, e.g. 2.99)" inputmode="decimal"><button class="btn">Add item</button></form>
 <button class="btn" id="reset" style="width:100%">Restore removed items</button>
-</section><section id="recipes" hidden></section>
+</section><section id="recipes" hidden><div class="ls"><button class="btn" id="rThis">This week</button><button class="btn" id="rNext">Next week</button></div><div id="rpicks"></div><div id="rlist"></div></section>
 <section id="chat" hidden><div class="card"><b>Message the assistant</b><textarea id="ct" placeholder="Add, remove or change items or recipes"></textarea>
 <div class="ls"><select id="cl"><option value="this">This week</option><option value="next">Next week</option></select><button class="btn" id="cs">Send</button></div></div>
 <div id="msgs"></div>
 <details><summary>Settings</summary><div><p class="meta">Family PIN (stored only on this phone).</p><input id="key" type="password" autocomplete="off" placeholder="Family PIN" inputmode="numeric"><div class="tools"><button class="btn" id="ksave">Save PIN</button><button class="btn" id="kclr">Forget PIN</button></div><div id="kst" class="meta"></div></div></details></section></main>
-<div id="toast"><span id="tm"></span><button id="undo">Undo</button></div>
+<div id="modal" role="dialog" aria-modal="true"><div id="mbody"></div></div><div id="toast"><span id="tm"></span><button id="undo">Undo</button></div>
 <script src="data.js"></script><script>
 let W=window.WEEK;const CATS=["Fruits & Veggies","Meat & Seafood","Dairy","Frozen Foods","Sauces & Spices","Snacks & Beverages","Breads & Grains","Other"],
 ROUTE=["Other","Fruits & Veggies","Breads & Grains","Meat & Seafood","Dairy","Sauces & Spices","Snacks & Beverages","Frozen Foods"],
@@ -70,7 +73,7 @@ function items(){const a=[],p=nx()?"n:":"g:";curCats().forEach(c=>(c.items||[]).
  S.added.filter(it=>(it.list||"this")===S.list).forEach(it=>a.push(it));return a.filter(it=>!S.removed[it.id]);}
 const lnk=i=>{const u=i.url||("https://www.walmart.com/search?q="+encodeURIComponent(i.name)),real=i.url&&i.urlType!=="search"&&/walmart\.com\/ip\//.test(i.url);return `<a class="lnk" href="${esc(u)}" target="_blank" rel="noopener" aria-label="${real?"Walmart product page":"Search Walmart"} for ${esc(i.name)}">${real?"Walmart":"Search"} ↗</a>`};
 const money=n=>"$"+n.toFixed(2);
-function render(){$("ttl").textContent=W.title;$("dates").textContent=(nx()?(W.nextWeek&&W.nextWeek.dates)||"Next week":W.dates)||"";$("lThis").classList.toggle("on",!nx());$("lNext").classList.toggle("on",nx());renderPicks();
+function render(){$("ttl").textContent=W.title;$("dates").textContent=(nx()?(W.nextWeek&&W.nextWeek.dates)||"Next week":W.dates)||"";$("lThis").classList.toggle("on",!nx());$("rThis")&&($("rThis").classList.toggle("on",!nx()),$("rNext").classList.toggle("on",nx()));$("lNext").classList.toggle("on",nx());renderPicks();
  const all=items(),done=all.filter(i=>S.checked[i.id]).length;
  $("prog").textContent=`${done} of ${all.length} in cart`;$("pb").style.width=(all.length?done/all.length*100:0)+"%";
  $("hide").classList.toggle("on",S.hide);$("sink").classList.toggle("on",S.sink);$("mode").textContent="View: "+(S.route?"Store route":"Category");$("mode").classList.toggle("on",S.route);
@@ -81,10 +84,11 @@ function render(){$("ttl").textContent=W.title;$("dates").textContent=(nx()?(W.n
   for(const i of vis){const d=S.checked[i.id],q=i.qty?"×"+esc(i.qty):"",p=i.price!=null?money(i.price*(+i.qty||1)):"";
    h+=`<div class="item${d?" done":""}"><button class="chk" data-c="${esc(i.id)}" aria-pressed="${!!d}"><span class="box">${d?"✓":""}</span><span class="nm">${esc(i.name)}${i.aisle?` <small>(${esc(i.aisle)})</small>`:""}</span><span class="qp">${q}<br>${p}</span></button>${lnk(i)}<button class="rm" data-r="${esc(i.id)}" aria-label="Remove ${esc(i.name)}">✕</button></div>`;}}
  $("cats").innerHTML=h;
- let food=0,soda=0,unk=0;all.forEach(i=>{if(i.price==null){unk++;return}const v=i.price*(+i.qty||1);i.soda?soda+=v:food+=v});
+ let food=0,soda=0,unk=0,pl=0,ua=0;all.forEach(i=>{if(i.price==null){unk++;return}const v=i.price*(+i.qty||1);i.soda?soda+=v:food+=v;(i.addedBy==="user"||String(i.id).startsWith("u:"))?ua+=v:pl+=v});
  const disc=Math.min(W.discount||0,food),sub=food+soda-disc,ft=Math.round((food-disc)*W.foodTaxRate*100)/100,st=Math.round(soda*W.sodaTaxRate*100)/100;
- $("tot").innerHTML=`Subtotal ${money(sub)}${disc?` (after ${money(disc)} rollback)`:""}<br>Food tax ${(W.foodTaxRate*100).toFixed(2).replace(/\.?0+$/,"")}% ${money(ft)} · Soda tax ${(W.sodaTaxRate*100).toFixed(2).replace(/\.?0+$/,"")}% ${money(st)}<br><b>Estimated total: ${money(sub+ft+st)}</b><br><small>${esc(W.priceNote||"")}${unk?` ${unk} item(s) without a price not included.`:""}</small>`;
- $("reset").hidden=!Object.keys(S.removed).length;}
+ const B=(nx()?(W.nextWeek&&W.nextWeek.budget):null)||W.budget||200;
+ $("tot").innerHTML=`<div class="bud">Planned (budget ${money(B)}): <b class="${pl>B?"over":""}">${money(pl)}</b><br>Your additions: <b>${money(ua)}</b></div><small>Before tax.</small><hr>Subtotal ${money(sub)}${disc?` (after ${money(disc)} rollback)`:""}<br>Food tax ${(W.foodTaxRate*100).toFixed(2).replace(/\.?0+$/,"")}% ${money(ft)} · Soda tax ${(W.sodaTaxRate*100).toFixed(2).replace(/\.?0+$/,"")}% ${money(st)}<br><b>Estimated total: ${money(sub+ft+st)}</b><br><small>${esc(W.priceNote||"")}${unk?` ${unk} item(s) without a price not included.`:""}</small>`;
+ $("reset").hidden=!Object.keys(S.removed).length;if(typeof DEV!=="undefined")recipes();}
 let undoFn,tt;function toast(m,f){undoFn=f;$("undo").hidden=!f;$("tm").textContent=m;$("toast").style.display="flex";clearTimeout(tt);tt=setTimeout(()=>$("toast").style.display="none",6000);}
 $("undo").onclick=()=>{undoFn&&undoFn();$("toast").style.display="none";};
 
@@ -96,7 +100,7 @@ if(SY){SH=SY.sh;Q=SY.q}else{SH={};Q=[];var mt=1000;
  Q.forEach(applyOp);}
 function applyOp(p){var m=SH[p.k]||(SH[p.k]={}),c=m[p.id],v=p.v===undefined?null:p.v;if(!c||p.ts>c.ts||(p.ts===c.ts&&JSON.stringify(v)>JSON.stringify(c.v))){m[p.id]={v:v,ts:p.ts};return true}return false}
 function rebuild(){var f=k=>{var o={},m=SH[k]||{};for(var id in m)if(m[id].v)o[id]=m[id].v;return o};
- S.checked=f("checked");S.removed=f("removed");S.chosen=f("chosen");S.cancelled=f("cancelled");
+ S.recipe=f("recipe");S.checked=f("checked");S.removed=f("removed");S.chosen=f("chosen");S.cancelled=f("cancelled");
  var a=SH.added||{};S.added=Object.keys(a).filter(id=>a[id].v).sort((x,y)=>a[x].ts-a[y].ts).map(id=>Object.assign({},a[id].v,{id:id}));}
 var lastTs=0;function now(){var t=Date.now();lastTs=t>lastTs?t:lastTs+1;return lastTs}
 function persist(){localStorage.setItem(SK,JSON.stringify({sh:SH,q:Q}));save()}
@@ -107,8 +111,8 @@ async function flush(){if(syncing){syncAgain=true;return}var pin=localStorage.ge
   var r=await fetch(u,batch.length?{method:"POST",headers:{"X-App-Pin":pin,"Content-Type":"application/json"},body:JSON.stringify({ops:batch})}:{headers:{"X-App-Pin":pin},cache:"no-store"});
   if(r.ok){var d=await r.json();Q.splice(0,batch.length);var st=d.state||{},chg=false;
    for(var k in st)for(var id in st[k])if(applyOp({k:k,id:id,v:st[k][id].v,ts:st[k][id].ts}))chg=true;
-   Q.forEach(applyOp);var before=JSON.stringify([S.checked,S.removed,S.added,S.chosen,S.cancelled]);rebuild();persist();
-   if(before!==JSON.stringify([S.checked,S.removed,S.added,S.chosen,S.cancelled]))render();$("sync")&&($("sync").textContent="Synced "+new Date().toLocaleTimeString([], {hour:"numeric",minute:"2-digit"}));}
+   Q.forEach(applyOp);var before=JSON.stringify([S.checked,S.removed,S.added,S.chosen,S.cancelled,S.recipe]);rebuild();persist();
+   if(before!==JSON.stringify([S.checked,S.removed,S.added,S.chosen,S.cancelled,S.recipe]))render();$("sync")&&($("sync").textContent="Synced "+new Date().toLocaleTimeString([], {hour:"numeric",minute:"2-digit"}));}
   else if($("sync"))$("sync").textContent=r.status==401?"Sync: check PIN":"Sync paused ("+r.status+")";
  }catch(e){$("sync")&&($("sync").textContent="Offline. Changes saved, will sync");}
  syncing=false;if(syncAgain||Q.length&&Q.length>=300){syncAgain=false;setTimeout(flush,200)}}
@@ -125,15 +129,41 @@ $("clear").onclick=()=>{if(confirm("Clear all checks?")){const o=Object.keys(S.c
 $("reset").onclick=()=>{if(confirm("Restore all removed items?")){Object.keys(S.removed).forEach(id=>op("removed",id,null));render();}};
 $("add").onsubmit=e=>{e.preventDefault();const p=parseFloat($("ap").value.replace("$",""));
  op("added","u:"+Date.now()+Math.random().toString(36).slice(2,6),{name:$("an").value.trim(),qty:$("aq").value.trim()||1,cat:$("ac").value,list:S.list,price:isNaN(p)?null:p});render();$("an").value=$("aq").value=$("ap").value="";};
-function recipes(){const li=a=>a.map(x=>`<li>${esc(x)}</li>`).join("");let h="";
- W.recipes.forEach(r=>h+=`<details><summary>${esc(r.title)}</summary><div><p class="meta">${esc(r.meta||"")}</p><h3>Ingredients</h3><ul>${li(r.ingredients)}</ul><h3>Steps</h3><ol>${li(r.steps)}</ol>${r.notes?`<h3>Notes</h3><ul>${li(r.notes)}</ul>`:""}</div></details>`);
- if(W.snacks&&W.snacks.length)h+=`<details><summary>Lunches &amp; Snacks</summary><div><ul>${W.snacks.map(s=>`<li><b>${esc(s.name)}</b>: ${esc(s.desc)} <i>${esc(s.carbs)}</i></li>`).join("")}</ul></div></details>`;
- if(W.prep&&W.prep.length)h+=`<details><summary>Prep Checklist</summary><div><ul>${li(W.prep)}</ul></div></details>`;
- $("recipes").innerHTML=h;}
+function curRecipes(){return nx()?((W.nextWeek&&W.nextWeek.recipes)||[]):(W.recipes||[])}
+const rkey=r=>"rm:"+(r.id||r.title);
+function recipes(){if(typeof S.recipe==="undefined")S.recipe={};const li=a=>(a||[]).map(x=>`<li>${esc(x)}</li>`).join("");let h="";
+ const open=new Set([...document.querySelectorAll("#rlist details[open]")].map(d=>d.dataset.t));
+ curRecipes().forEach((r,ix)=>{const rm=S.recipe[rkey(r)];h+=`<details data-t="${esc(r.title)}"${open.has(r.title)?" open":""}${rm?' class="gone"':""}><summary>${esc(r.title)}${rm?' <span class="rpend">· Removal pending</span>':""}</summary><div>
+ <div class="rbar"><button class="btn" data-re="${ix}">✎ Edit</button>${rm?`<button class="btn" data-ru="${ix}">Undo removal</button>`:`<button class="btn" data-rr="${ix}">✕ Remove</button>`}</div>
+ ${rm?`<p class="rpend">Removal pending${rm.by&&rm.by!==DEV?" (other phone)":""}: ${rm.mode==="own"?"cooking our own":"asked for a suggestion"}${rm.text?": "+esc(rm.text):""}</p>`:""}
+ <p class="meta">${esc(r.meta||"")}</p><h3>Ingredients</h3><ul>${li(r.ingredients)}</ul><h3>Steps</h3><ol>${li(r.steps)}</ol>${r.notes?`<h3>Notes</h3><ul>${li(r.notes)}</ul>`:""}</div></details>`});
+ if(!nx()&&W.snacks&&W.snacks.length)h+=`<details data-t="_snacks"${open.has("_snacks")?" open":""}><summary>Lunches &amp; Snacks</summary><div><ul>${W.snacks.map(s=>`<li><b>${esc(s.name)}</b>: ${esc(s.desc)} <i>${esc(s.carbs)}</i></li>`).join("")}</ul></div></details>`;
+ if(!nx()&&W.prep&&W.prep.length)h+=`<details data-t="_prep"${open.has("_prep")?" open":""}><summary>Prep Checklist</summary><div><ul>${li(W.prep)}</ul></div></details>`;
+ if(!h)h='<p class="empty">No recipes for this list yet</p>';
+ $("rlist").innerHTML=h;renderRPicks();}
 const tab=t=>{["list","recipes","chat"].forEach((x,i)=>{$(x).hidden=x!==t;$(["tL","tR","tC"][i]).classList.toggle("on",x===t)});scrollTo(0,0)};
 $("tL").onclick=()=>tab("list");$("tR").onclick=()=>tab("recipes");$("tC").onclick=()=>{tab("chat");renderMsgs()};
 render();recipes();if("serviceWorker"in navigator)navigator.serviceWorker.register("sw.js").catch(()=>{});
 
+
+function modal(html){$("mbody").innerHTML=html;$("modal").style.display="flex";}function closeM(){$("modal").style.display="none";$("mbody").innerHTML="";}
+$("modal").onclick=e=>{if(e.target.id==="modal"||e.target.closest("[data-mx]"))closeM();};
+var mAct=null;
+$("mbody").addEventListener("click",async e=>{const b=e.target.closest("[data-go]");if(!b||b.disabled||!mAct)return;b.disabled=true;await mAct(b.dataset.go);});
+$("rlist").onclick=e=>{const E=e.target.closest("[data-re]"),R=e.target.closest("[data-rr]"),U=e.target.closest("[data-ru]");const L=S.list;
+ if(E){const r=curRecipes()[+E.dataset.re];modal(`<b>Edit: ${esc(r.title)}</b><label>What would you like changed?<textarea id="mt"></textarea></label><div class="ls"><button class="btn" data-mx>Close</button><button class="btn on" data-go="edit">Send</button></div>`);
+  mAct=async()=>{const t=$("mt").value.trim();if(!t){toast("Type what to change");$("mbody").querySelector("[data-go]").disabled=false;return}closeM();await send({type:"recipe-edit",recipeId:r.id||r.title,name:r.title,text:t,list:L},"Edit recipe "+r.title+": "+t,"recipe-edit:"+(r.id||r.title)+":"+Date.now());};}
+ if(R){const r=curRecipes()[+R.dataset.rr];if(!confirm("Remove "+r.title+"?"))return;
+  modal(`<b>Remove: ${esc(r.title)}</b><p>What instead?</p><label>Suggest something else. Any ideas or cravings? (optional)<textarea id="ms"></textarea></label><button class="btn on" data-go="suggest">Suggest something else</button><label>We'll cook our own. What do you plan to make? (optional)<textarea id="mo"></textarea></label><button class="btn" data-go="own">We'll cook our own</button><button class="btn" data-mx>Cancel</button>`);
+  mAct=async mode=>{const t=($(mode==="own"?"mo":"ms").value||"").trim();closeM();op("recipe",rkey(r),{mode:mode,text:t,by:DEV});render();
+   await send({type:"recipe-remove",recipe:r.id||r.title,name:r.title,mode:mode,text:t,list:L},"Remove recipe "+r.title+(mode==="own"?" (cooking our own)":" (suggest another)")+(t?": "+t:""),"recipe-remove:"+(r.id||r.title));};}
+ if(U){const r=curRecipes()[+U.dataset.ru];if(confirm("Keep "+r.title+"? (The assistant may already be working on a replacement.)")){op("recipe",rkey(r),null);render();send({type:"chat",text:"Please keep the recipe "+r.title+"; cancel its removal.",list:L},"Keep recipe "+r.title);}}};
+function renderRPicks(){var P=(W.pendingRecipes||[]).filter(p=>(p.list||"this")===S.list&&!S.cancelled[p.id]);
+ $("rpicks").innerHTML=P.map(p=>{var c=S.chosen[p.id];return `<div class="card pick"><div style="display:flex;align-items:center;gap:8px"><b style="flex:1">Pick a recipe${p.replaces?": replaces "+esc(p.replaces):""}</b><button class="btn" data-rcx="${esc(p.id)}">✕ Cancel</button></div>${c?`<div class="ok">Chosen${c.by&&c.by!==DEV?" by other phone":""}: ${esc(c.name)}. Waiting for update…</div>`:""}`+
+ (p.options||[]).map((o,i)=>{var tag=o.tag||(o.crockpot?"Crockpot":o.sheetpan?"Sheet pan":"");return `<div class="opt"><div><b>${esc(o.name)}</b>${tag?` <small>[${esc(tag)}]</small>`:""}<br><small>${esc(o.summary||"")}</small><br><small>${o.netCarbs!=null?"Net carbs "+esc(o.netCarbs):""}${o.protein!=null?" · Protein "+esc(o.protein):""}</small>${o.newItems&&o.newItems.length?`<br><small>New items: ${o.newItems.map(x=>esc(typeof x==="string"?x:x.name)).join(", ")}</small>`:""}</div><button class="btn${c&&c.i===i?" on":""}" data-rpk="${esc(p.id)}" data-i="${i}"${c?" disabled":""}>${c&&c.i===i?"Chosen":"Choose"}</button></div>`}).join("")+`</div>`}).join("");}
+$("rpicks").onclick=e=>{var x=e.target.closest("[data-rcx]");if(x){var q=(W.pendingRecipes||[]).find(z=>z.id===x.dataset.rcx);if(!q||S.cancelled[q.id]||!confirm("Cancel this recipe choice?"))return;op("cancelled",q.id,1);render();send({type:"recipe-cancel",id:q.id,replaces:q.replaces||"",list:q.list||"this"},"Cancelled recipe pick"+(q.replaces?" for "+q.replaces:""),"recipe-cancel:"+q.id);return;}
+ var b=e.target.closest("[data-rpk]");if(!b||b.disabled)return;var p=(W.pendingRecipes||[]).find(z=>z.id===b.dataset.rpk);if(!p||S.chosen[p.id])return;var i=+b.dataset.i,o=p.options[i];
+ op("chosen",p.id,{i:i,name:o.name,by:DEV});render();send({type:"recipe-choose",id:p.id,index:i,name:o.name,replaces:p.replaces||"",list:p.list||"this"},"Chose recipe "+o.name,"recipe-choose:"+p.id);};
 var HOOK="https://grocery-relay.pantry-relay-4821.workers.dev",KK="grocery-pin",photo=null;
 function renderPicks(){var P=(W.pending||[]).filter(p=>(p.list||"this")===S.list&&!S.cancelled[p.id]);
  $("picks").innerHTML=P.map(p=>{var c=S.chosen[p.id];return `<div class="card pick"><div style="display:flex;align-items:center;gap:8px"><b style="flex:1">Pick one: ${esc(p.query)}</b><button class="btn" data-cx="${esc(p.id)}" aria-label="Cancel this request">✕ Cancel</button></div>${c?`<div class="ok">Chosen${c.by&&c.by!==DEV?" by other phone":""}: ${esc(c.name)}. Waiting for list update…</div>`:""}`+
@@ -145,16 +175,16 @@ function renderMsgs(){$("msgs").innerHTML=S.msgs.slice().reverse().map(m=>`<div 
 $("msgs").onclick=e=>{var b=e.target.closest("[data-cp]");if(!b)return;var m=S.msgs.find(x=>String(x.ts)===b.dataset.cp);share(m.label);};
 function share(t){if(navigator.share)navigator.share({text:"Grocery list: "+t}).catch(()=>{});else navigator.clipboard&&navigator.clipboard.writeText("Grocery list: "+t).then(()=>toast("Copied. Paste it to the assistant"));}
 var inflight={};function rid(){return (crypto.randomUUID?crypto.randomUUID():Date.now().toString(36)+Math.random().toString(36).slice(2))}
-async function send(body,label,act){act=act||body.type+":"+rid();if(inflight[act])return false;inflight[act]=1;S.sent=S.sent||{};if(act.indexOf(":")>0&&/^(choose|cancel):/.test(act)&&S.sent[act]){delete inflight[act];return false}
+async function send(body,label,act){act=act||body.type+":"+rid();if(inflight[act])return false;inflight[act]=1;S.sent=S.sent||{};if(act.indexOf(":")>0&&/^(choose|cancel|recipe-choose|recipe-cancel):/.test(act)&&S.sent[act]){delete inflight[act];return false}
  var ts=Date.now(),m={ts:ts,label:label,st:"Sending…"};body.ts=ts;body.rid=rid();body.action=act;S.msgs.push(m);S.msgs=S.msgs.slice(-30);save();renderMsgs();
  var key=localStorage.getItem(KK);
  if(!key){m.ok=false;m.st="No PIN saved. Add it in Chat > Settings, or copy/share this to the assistant";}
  else try{var r=await fetch(HOOK,{method:"POST",headers:{"X-App-Pin":key,"Content-Type":"application/json"},body:JSON.stringify(body)});
   if(r.ok){m.ok=true;m.st="Sent. Updates arrive in a few minutes";}else{m.ok=false;m.st="Failed ("+r.status+(r.status==401?", check PIN":r.status==429?", too many, try later":"")+")";}}
  catch(err){m.ok=false;m.st="Couldn't reach the assistant from the app (blocked). Use Copy / Share";}
- if(m.ok&&/^(choose|cancel):/.test(act))S.sent[act]=1;delete inflight[act];save();renderMsgs();toast(m.st);return m.ok;}
+ if(m.ok&&/^(choose|cancel|recipe-choose|recipe-cancel):/.test(act))S.sent[act]=1;delete inflight[act];save();renderMsgs();toast(m.st);return m.ok;}
 $("cs").onclick=async()=>{var t=$("ct").value.trim();if(!t||$("cs").disabled)return;$("cs").disabled=true;var ok=await send({type:"chat",text:t,list:$("cl").value},t);$("cs").disabled=false;if(ok)$("ct").value="";};
-$("lThis").onclick=()=>{S.list="this";save();render()};$("lNext").onclick=()=>{S.list="next";save();render()};
+$("rThis").onclick=()=>{S.list="this";save();render()};$("rNext").onclick=()=>{S.list="next";save();render()};$("lThis").onclick=()=>{S.list="this";save();render()};$("lNext").onclick=()=>{S.list="next";save();render()};
 $("xf").onchange=e=>{var f=e.target.files[0];if(!f)return;var im=new Image();im.onload=()=>{var s=Math.min(1,800/Math.max(im.width,im.height)),c=document.createElement("canvas");c.width=Math.round(im.width*s);c.height=Math.round(im.height*s);c.getContext("2d").drawImage(im,0,0,c.width,c.height);
  var q=.8,d;do{d=c.toDataURL("image/jpeg",q);q-=.1}while(d.length*.75>150000&&q>.2);photo=d;$("thumb").src=d;$("thumb").style.display="block";URL.revokeObjectURL(im.src)};im.src=URL.createObjectURL(f);};
 $("xs").onclick=async()=>{var t=$("xt").value.trim();if($("xs").disabled)return;if(!t&&!photo)return toast("Type an item or take a photo");$("xs").disabled=true;$("xl").value=$("xl").value||S.list;
@@ -166,7 +196,7 @@ localStorage.removeItem("grocery-key");function kst(){$("kst").textContent=local
 var lastData=JSON.stringify(W);
 async function checkData(){try{var t=await (await fetch("data.js?t="+Date.now(),{cache:"no-store"})).text(),o={};new Function("window",t)(o);
  if(o.WEEK&&JSON.stringify(o.WEEK)!==lastData){if(o.WEEK.weekId!==W.weekId)return location.reload();W=o.WEEK;lastData=JSON.stringify(W);
-  (W.pending||[]).forEach(()=>0);var live=id=>(W.pending||[]).some(p=>p.id===id);for(var id in S.chosen)if(!live(id))delete S.chosen[id];for(var id in S.cancelled)if(!live(id))delete S.cancelled[id];save();render();recipes();toast("List updated");}}catch(e){}}
+  (W.pending||[]).forEach(()=>0);var live=id=>(W.pending||[]).concat(W.pendingRecipes||[]).some(p=>p.id===id);for(var id in S.chosen)if(!live(id))delete S.chosen[id];for(var id in S.cancelled)if(!live(id))delete S.cancelled[id];save();render();recipes();toast("List updated");}}catch(e){}}
 setInterval(()=>{if(!document.hidden)checkData()},60000);document.addEventListener("visibilitychange",()=>{if(!document.hidden)checkData()});
 $("xl").value=$("cl").value=S.list;render();flush();
 
