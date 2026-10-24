@@ -511,13 +511,13 @@ window.WEEK = {
   "dates": "Oct 28 – Nov 3, 2026",
   "categories": [
    {
-    "name": "Sauces & Spices",
+    "name": "Meat & Seafood",
     "items": [
      {
-      "name": "Bragg Organic Coconut Liquid Aminos, 10 fl oz",
+      "name": "Great Value Chunk Chicken Breast in Water, 12.5 oz cans, 4 pack",
       "qty": 1,
-      "price": 6.54,
-      "url": "https://www.walmart.com/ip/Bragg-Organic-Coconut-Liquid-Aminos-Soy-Free-Seasoning-10-fl-oz/784580921",
+      "price": 9.97,
+      "url": "https://www.walmart.com/ip/Great-Value-Chunk-Chicken-Breast-12-5-Ounce-Can-4-Pack/49914752",
       "urlType": "product"
      }
     ]
@@ -533,35 +533,22 @@ window.WEEK = {
       "urlType": "product"
      }
     ]
+   },
+   {
+    "name": "Sauces & Spices",
+    "items": [
+     {
+      "name": "Bragg Organic Coconut Liquid Aminos, 10 fl oz",
+      "qty": 1,
+      "price": 6.54,
+      "url": "https://www.walmart.com/ip/Bragg-Organic-Coconut-Liquid-Aminos-Soy-Free-Seasoning-10-fl-oz/784580921",
+      "urlType": "product"
+     }
+    ]
    }
   ]
  },
  "pending": [
-  {
-   "id": "p1792866429298",
-   "query": "Canned chicken breast",
-   "list": "next",
-   "options": [
-    {
-     "name": "Great Value Chunk Chicken Breast in Water, 12.5 oz cans, 4 pack",
-     "size": "4 × 12.5 oz (best value, 0 g carbs)",
-     "price": 9.97,
-     "url": "https://www.walmart.com/ip/Great-Value-Chunk-Chicken-Breast-12-5-Ounce-Can-4-Pack/49914752"
-    },
-    {
-     "name": "Great Value Premium Chunk Chicken Breast, No Antibiotics Ever, 12.5 oz can",
-     "size": "12.5 oz single can",
-     "price": 3.47,
-     "url": "https://www.walmart.com/ip/Great-Value-Premium-Chunk-Chicken-Breast-No-Antibiotics-Ever-12-5-Ounce-Can/731218927"
-    },
-    {
-     "name": "Swanson White Premium Chunk Chicken Breast in Water, 12.5 oz can",
-     "size": "12.5 oz single can",
-     "price": 4.78,
-     "url": "https://www.walmart.com/ip/Swanson-White-Premium-Chunk-Canned-Chicken-Breast-in-Water-12-5-oz-Can/13281590"
-    }
-   ]
-  },
   {
    "id": "p1792866441793",
    "query": "Sugar free yum yum sauce",
