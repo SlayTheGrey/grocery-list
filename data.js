@@ -509,7 +509,20 @@ window.WEEK = {
  ],
  "nextWeek": {
   "dates": "Oct 28 – Nov 3, 2026",
-  "categories": []
+  "categories": [
+   {
+    "name": "Sauces & Spices",
+    "items": [
+     {
+      "name": "Bragg Organic Coconut Liquid Aminos, 10 fl oz",
+      "qty": 1,
+      "price": 6.54,
+      "url": "https://www.walmart.com/ip/Bragg-Organic-Coconut-Liquid-Aminos-Soy-Free-Seasoning-10-fl-oz/784580921",
+      "urlType": "product"
+     }
+    ]
+   }
+  ]
  },
  "pending": [
   {
@@ -534,25 +547,6 @@ window.WEEK = {
      "size": "12.5 oz single can",
      "price": 4.78,
      "url": "https://www.walmart.com/ip/Swanson-White-Premium-Chunk-Canned-Chicken-Breast-in-Water-12-5-oz-Can/13281590"
-    }
-   ]
-  },
-  {
-   "id": "p1792866407043",
-   "query": "Coconut aminos",
-   "list": "next",
-   "options": [
-    {
-     "name": "Bragg Organic Coconut Liquid Aminos, 10 fl oz",
-     "size": "10 fl oz (sold by Walmart, about 2 g carbs per tsp)",
-     "price": 6.54,
-     "url": "https://www.walmart.com/ip/Bragg-Organic-Coconut-Liquid-Aminos-Soy-Free-Seasoning-10-fl-oz/784580921"
-    },
-    {
-     "name": "Big Tree Farms Organic Coconut Aminos, 10 fl oz",
-     "size": "10 fl oz bottle",
-     "price": 7.45,
-     "url": "https://www.walmart.com/ip/Big-Tree-Farms-Organic-Coconut-Aminos-Soy-Sauce-Alternative-10-Fl-oz-Bottle/192231606"
     }
    ]
   },
