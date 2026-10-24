@@ -530,6 +530,25 @@ window.WEEK = {
      "url": "https://www.walmart.com/ip/PLANTERS-Lightly-Salted-Mix-Nuts-Party-Snacks-Plant-Based-Protein-15-Oz-Canister-NG01/10338171825"
     }
    ]
+  },
+  {
+   "id": "p1792866407043",
+   "query": "Coconut aminos",
+   "list": "next",
+   "options": [
+    {
+     "name": "Bragg Organic Coconut Liquid Aminos, 10 fl oz",
+     "size": "10 fl oz (sold by Walmart, about 2 g carbs per tsp)",
+     "price": 6.54,
+     "url": "https://www.walmart.com/ip/Bragg-Organic-Coconut-Liquid-Aminos-Soy-Free-Seasoning-10-fl-oz/784580921"
+    },
+    {
+     "name": "Big Tree Farms Organic Coconut Aminos, 10 fl oz",
+     "size": "10 fl oz bottle",
+     "price": 7.45,
+     "url": "https://www.walmart.com/ip/Big-Tree-Farms-Organic-Coconut-Aminos-Soy-Sauce-Alternative-10-Fl-oz-Bottle/192231606"
+    }
+   ]
   }
  ]
 };
