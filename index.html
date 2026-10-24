@@ -54,7 +54,7 @@ details>div{padding:0 14px 14px}details li{margin:6px 0}.meta{font-size:16px;col
 <section id="chat" hidden><div class="card"><b>Message the assistant</b><textarea id="ct" placeholder="Add, remove or change items or recipes"></textarea>
 <div class="ls"><select id="cl"><option value="this">This week</option><option value="next">Next week</option></select><button class="btn" id="cs">Send</button></div></div>
 <div id="msgs"></div>
-<details><summary>Settings</summary><div><p class="meta">Sender key (stored only on this phone).</p><input id="key" type="password" autocomplete="off" placeholder="Paste key"><div class="tools"><button class="btn" id="ksave">Save key</button><button class="btn" id="kclr">Forget key</button></div><div id="kst" class="meta"></div></div></details></section></main>
+<details><summary>Settings</summary><div><p class="meta">Family PIN (stored only on this phone).</p><input id="key" type="password" autocomplete="off" placeholder="Family PIN" inputmode="numeric"><div class="tools"><button class="btn" id="ksave">Save PIN</button><button class="btn" id="kclr">Forget PIN</button></div><div id="kst" class="meta"></div></div></details></section></main>
 <div id="toast"><span id="tm"></span><button id="undo">Undo</button></div>
 <script src="data.js"></script><script>
 let W=window.WEEK;const CATS=["Fruits & Veggies","Meat & Seafood","Dairy","Frozen Foods","Sauces & Spices","Snacks & Beverages","Breads & Grains","Other"],
@@ -106,7 +106,7 @@ const tab=t=>{["list","recipes","chat"].forEach((x,i)=>{$(x).hidden=x!==t;$(["tL
 $("tL").onclick=()=>tab("list");$("tR").onclick=()=>tab("recipes");$("tC").onclick=()=>{tab("chat");renderMsgs()};
 render();recipes();if("serviceWorker"in navigator)navigator.serviceWorker.register("sw.js").catch(()=>{});
 
-var HOOK="https://api2.cursor.sh/automations/webhook/2810a3c5-ab74-5ef7-89ff-47969e3ea73d",KK="grocery-key",photo=null;
+var HOOK="https://grocery-relay.pantry-relay-4821.workers.dev",KK="grocery-pin",photo=null;
 function renderPicks(){var P=(W.pending||[]).filter(p=>(p.list||"this")===S.list);
  $("picks").innerHTML=P.map(p=>{var c=S.chosen[p.id];return `<div class="card pick"><b>Pick one: ${esc(p.query)}</b>${c?`<div class="ok">Chosen: ${esc(c.name)}. Waiting for list update…</div>`:""}`+
  (p.options||[]).map((o,i)=>`<div class="opt"><div>${esc(o.name)}${o.size?` <small>${esc(o.size)}</small>`:""}<br><small>${o.price!=null?money(+o.price):""}</small></div>${o.url?`<a class="lnk" href="${esc(o.url)}" target="_blank" rel="noopener">Walmart ↗</a>`:""}<button class="btn${c&&c.i===i?" on":""}" data-pk="${esc(p.id)}" data-i="${i}">Choose</button></div>`).join("")+`</div>`}).join("");}
@@ -117,9 +117,9 @@ $("msgs").onclick=e=>{var b=e.target.closest("[data-cp]");if(!b)return;var m=S.m
 function share(t){if(navigator.share)navigator.share({text:"Grocery list: "+t}).catch(()=>{});else navigator.clipboard&&navigator.clipboard.writeText("Grocery list: "+t).then(()=>toast("Copied. Paste it to the assistant"));}
 async function send(body,label){var ts=Date.now(),m={ts:ts,label:label,st:"Sending…"};body.ts=ts;S.msgs.push(m);S.msgs=S.msgs.slice(-30);save();renderMsgs();
  var key=localStorage.getItem(KK);
- if(!key){m.ok=false;m.st="No key saved. Add it in Chat > Settings, or copy/share this to the assistant";}
- else try{var r=await fetch(HOOK,{method:"POST",headers:{"Authorization":"Bearer "+key,"Content-Type":"application/json"},body:JSON.stringify(body)});
-  if(r.ok){m.ok=true;m.st="Sent. Updates arrive in a few minutes";}else{m.ok=false;m.st="Failed ("+r.status+(r.status==401?", check key":"")+")";}}
+ if(!key){m.ok=false;m.st="No PIN saved. Add it in Chat > Settings, or copy/share this to the assistant";}
+ else try{var r=await fetch(HOOK,{method:"POST",headers:{"X-App-Pin":key,"Content-Type":"application/json"},body:JSON.stringify(body)});
+  if(r.ok){m.ok=true;m.st="Sent. Updates arrive in a few minutes";}else{m.ok=false;m.st="Failed ("+r.status+(r.status==401?", check PIN":r.status==429?", too many, try later":"")+")";}}
  catch(err){m.ok=false;m.st="Couldn't reach the assistant from the app (blocked). Use Copy / Share";}
  save();renderMsgs();toast(m.st);return m.ok;}
 $("cs").onclick=async()=>{var t=$("ct").value.trim();if(!t)return;if(await send({type:"chat",text:t,list:$("cl").value},t)!==false)$("ct").value="";};
@@ -131,7 +131,7 @@ $("xs").onclick=async()=>{var t=$("xt").value.trim();if(!t&&!photo)return toast(
  var ok=await send(b,"Add"+(photo?" (photo)":"")+": "+(t||"item in photo")+" → "+(b.list==="next"?"next week":"this week"));$("xst").textContent=ok?"Sent. Updates arrive in a few minutes":"Not sent. See Chat tab";
  if(ok){$("xt").value="";photo=null;$("thumb").style.display="none";$("xf").value="";}};
 $("ksave").onclick=()=>{var v=$("key").value.trim();if(v){localStorage.setItem(KK,v);$("key").value="";}kst();};$("kclr").onclick=()=>{localStorage.removeItem(KK);kst()};
-function kst(){$("kst").textContent=localStorage.getItem(KK)?"Key saved on this phone.":"No key saved.";}kst();
+localStorage.removeItem("grocery-key");function kst(){$("kst").textContent=localStorage.getItem(KK)?"PIN saved on this phone.":"No PIN saved.";}kst();
 var lastData=JSON.stringify(W);
 async function checkData(){try{var t=await (await fetch("data.js?t="+Date.now(),{cache:"no-store"})).text(),o={};new Function("window",t)(o);
  if(o.WEEK&&JSON.stringify(o.WEEK)!==lastData){if(o.WEEK.weekId!==W.weekId)return location.reload();W=o.WEEK;lastData=JSON.stringify(W);
