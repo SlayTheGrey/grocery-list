@@ -96,6 +96,12 @@
    "url": "https://www.walmart.com/ip/Great-Value-Frozen-20-oz-Pepper-Onion-Blend-20-oz/539250805",
    "price": 2.84,
    "date": "2026-10-24"
+  },
+  "Canned chicken breast": {
+   "product": "Great Value Chunk Chicken Breast in Water, 12.5 oz cans, 4 pack",
+   "url": "https://www.walmart.com/ip/Great-Value-Chunk-Chicken-Breast-12-5-Ounce-Can-4-Pack/49914752",
+   "price": 9.97,
+   "date": "2026-10-24"
   }
  }
 }
