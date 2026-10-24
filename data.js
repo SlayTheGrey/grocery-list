@@ -538,25 +538,6 @@ window.WEEK = {
    ]
   },
   {
-   "id": "p1792866369697",
-   "query": "Mixed nuts (from your photo)",
-   "list": "this",
-   "options": [
-    {
-     "name": "Planters Salted Mixed Nuts, 56 oz canister",
-     "size": "3 lb 8 oz (the one in your photo)",
-     "price": 20.96,
-     "url": "https://www.walmart.com/ip/PLANTERS-Salted-Mixed-Nuts-Party-Snacks-Plant-Based-Protein-56oz-1-Canister/150315049"
-    },
-    {
-     "name": "Planters Lightly Salted Mixed Nuts, 15 oz can",
-     "size": "15 oz (smaller, less salt)",
-     "price": 13.49,
-     "url": "https://www.walmart.com/ip/PLANTERS-Lightly-Salted-Mix-Nuts-Party-Snacks-Plant-Based-Protein-15-Oz-Canister-NG01/10338171825"
-    }
-   ]
-  },
-  {
    "id": "p1792866407043",
    "query": "Coconut aminos",
    "list": "next",
