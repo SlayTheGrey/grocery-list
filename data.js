@@ -531,6 +531,12 @@ window.WEEK = {
       "price": 2.84,
       "url": "https://www.walmart.com/ip/Great-Value-Frozen-20-oz-Pepper-Onion-Blend-20-oz/539250805",
       "urlType": "product"
+     },
+     {
+      "name": "Great Value Organic Steamable Riced Cauliflower, 10 oz (Frozen)",
+      "qty": 1,
+      "url": "https://www.walmart.com/ip/197864195",
+      "urlType": "product"
      }
     ]
    },
@@ -555,29 +561,5 @@ window.WEEK = {
    }
   ]
  },
- "pending": [
-  {
-   "id": "p1792866397455",
-   "query": "Frozen riced cauliflower",
-   "list": "next",
-   "options": [
-    {
-     "name": "Great Value Riced Cauliflower, 12 oz (Frozen)",
-     "size": "12 oz (on this week's list)",
-     "price": 2.24,
-     "url": "https://www.walmart.com/ip/279573553"
-    },
-    {
-     "name": "Great Value Organic Steamable Riced Cauliflower, 10 oz (Frozen)",
-     "size": "10 oz, steamable bag",
-     "url": "https://www.walmart.com/ip/197864195"
-    },
-    {
-     "name": "Green Giant Riced Veggies Cauliflower, 10 oz (Frozen)",
-     "size": "10 oz",
-     "url": "https://www.walmart.com/ip/55051621"
-    }
-   ]
-  }
- ]
+ "pending": []
 };
