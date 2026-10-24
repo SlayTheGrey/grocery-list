@@ -606,6 +606,29 @@ window.WEEK = {
      "url": "https://www.walmart.com/ip/G-Hughes-Sugar-Free-Yum-Yum-Dipping-Sauce-16-oz-Bottle/808075641"
     }
    ]
+  },
+  {
+   "id": "p1792866397455",
+   "query": "Frozen riced cauliflower",
+   "list": "next",
+   "options": [
+    {
+     "name": "Great Value Riced Cauliflower, 12 oz (Frozen)",
+     "size": "12 oz (on this week's list)",
+     "price": 2.24,
+     "url": "https://www.walmart.com/ip/279573553"
+    },
+    {
+     "name": "Great Value Organic Steamable Riced Cauliflower, 10 oz (Frozen)",
+     "size": "10 oz, steamable bag",
+     "url": "https://www.walmart.com/ip/197864195"
+    },
+    {
+     "name": "Green Giant Riced Veggies Cauliflower, 10 oz (Frozen)",
+     "size": "10 oz",
+     "url": "https://www.walmart.com/ip/55051621"
+    }
+   ]
   }
  ]
 };
