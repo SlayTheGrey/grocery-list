@@ -511,5 +511,31 @@ window.WEEK = {
   "dates": "Oct 28 – Nov 3, 2026",
   "categories": []
  },
- "pending": []
+ "pending": [
+  {
+   "id": "p1792862455116",
+   "query": "Charmin toilet paper",
+   "list": "this",
+   "options": [
+    {
+     "name": "Charmin Ultra Soft Toilet Paper, 12 Mega Rolls",
+     "size": "12 Mega Rolls, 2-ply",
+     "price": 14.97,
+     "url": "https://www.walmart.com/ip/Charmin-ULTRA-SOFT-Toilet-Tissue-Dry-2-Ply-Unscented/17077816413"
+    },
+    {
+     "name": "Charmin Ultra Soft Toilet Paper, 6 Mega Rolls",
+     "size": "6 Mega Rolls, 2-ply",
+     "price": 8.76,
+     "url": "https://www.walmart.com/ip/Charmin-ULTRA-SOFT-Toilet-Tissue-Dry-2-Ply-Unscented/17103072593"
+    },
+    {
+     "name": "Charmin Ultra Strong Toilet Paper, 6 Mega Rolls",
+     "size": "6 Mega Rolls, 2-ply",
+     "price": 8.76,
+     "url": "https://www.walmart.com/ip/Charmin-Toilet-Paper-Ultra-Strong-6-Mega-Rolls/6340416223"
+    }
+   ]
+  }
+ ]
 };
