@@ -43,7 +43,7 @@ details>div{padding:0 14px 14px}details li{margin:6px 0}.meta{font-size:16px;col
 <div class="tools"><label class="btn" for="xf">📷 Photo</label><input id="xf" type="file" accept="image/*" capture="environment" hidden><img id="thumb" alt="photo preview">
 <select id="xl" style="flex:1;width:auto"><option value="this">This week</option><option value="next">Next week</option></select></div>
 <button class="btn" id="xs" style="width:100%">Send to assistant</button><div id="xst"></div></div>
-<div id="prog" style="font-weight:700"></div><div class="bar"><i id="pb"></i></div>
+<div id="prog" style="font-weight:700"></div><div id="sync" class="meta"></div><div class="bar"><i id="pb"></i></div>
 <div class="tools"><button class="btn" id="mode">View: Category</button><button class="btn" id="hide">Hide checked</button><button class="btn" id="sink">Checked to bottom</button><button class="btn" id="clear">Clear checks</button></div>
 <div id="cats"></div><div class="total" id="tot"></div>
 <form id="add"><b>Add an item</b><input id="an" placeholder="Item name" required>
@@ -87,16 +87,44 @@ function render(){$("ttl").textContent=W.title;$("dates").textContent=(nx()?(W.n
  $("reset").hidden=!Object.keys(S.removed).length;}
 let undoFn,tt;function toast(m,f){undoFn=f;$("undo").hidden=!f;$("tm").textContent=m;$("toast").style.display="flex";clearTimeout(tt);tt=setTimeout(()=>$("toast").style.display="none",6000);}
 $("undo").onclick=()=>{undoFn&&undoFn();$("toast").style.display="none";};
+
+var DEV=localStorage.getItem("grocery-dev")||(Math.random().toString(36).slice(2,10));localStorage.setItem("grocery-dev",DEV);
+var SK="grocery-sync:"+W.weekId,SY=JSON.parse(localStorage.getItem(SK)||"null"),SH,Q;
+if(SY){SH=SY.sh;Q=SY.q}else{SH={};Q=[];var mt=1000;
+ for(var id in S.checked)Q.push({k:"checked",id:id,v:1,ts:mt});for(var id in S.removed)Q.push({k:"removed",id:id,v:1,ts:mt});
+ (S.added||[]).forEach(it=>Q.push({k:"added",id:it.id,v:it,ts:mt}));for(var id in S.chosen)Q.push({k:"chosen",id:id,v:S.chosen[id],ts:mt});for(var id in S.cancelled)Q.push({k:"cancelled",id:id,v:1,ts:mt});
+ Q.forEach(applyOp);}
+function applyOp(p){var m=SH[p.k]||(SH[p.k]={}),c=m[p.id],v=p.v===undefined?null:p.v;if(!c||p.ts>c.ts||(p.ts===c.ts&&JSON.stringify(v)>JSON.stringify(c.v))){m[p.id]={v:v,ts:p.ts};return true}return false}
+function rebuild(){var f=k=>{var o={},m=SH[k]||{};for(var id in m)if(m[id].v)o[id]=m[id].v;return o};
+ S.checked=f("checked");S.removed=f("removed");S.chosen=f("chosen");S.cancelled=f("cancelled");
+ var a=SH.added||{};S.added=Object.keys(a).filter(id=>a[id].v).sort((x,y)=>a[x].ts-a[y].ts).map(id=>Object.assign({},a[id].v,{id:id}));}
+var lastTs=0;function now(){var t=Date.now();lastTs=t>lastTs?t:lastTs+1;return lastTs}
+function persist(){localStorage.setItem(SK,JSON.stringify({sh:SH,q:Q}));save()}
+function op(k,id,v){var p={k:k,id:id,v:v==null?null:v,ts:now()};applyOp(p);Q.push(p);rebuild();persist();flush()}
+var syncing=false,syncAgain=false;
+async function flush(){if(syncing){syncAgain=true;return}var pin=localStorage.getItem("grocery-pin");if(!pin)return;syncing=true;
+ try{var batch=Q.slice(0,300),u=HOOK+"/state"+(batch.length?"/ops":"")+"?week="+encodeURIComponent(W.weekId);
+  var r=await fetch(u,batch.length?{method:"POST",headers:{"X-App-Pin":pin,"Content-Type":"application/json"},body:JSON.stringify({ops:batch})}:{headers:{"X-App-Pin":pin},cache:"no-store"});
+  if(r.ok){var d=await r.json();Q.splice(0,batch.length);var st=d.state||{},chg=false;
+   for(var k in st)for(var id in st[k])if(applyOp({k:k,id:id,v:st[k][id].v,ts:st[k][id].ts}))chg=true;
+   Q.forEach(applyOp);var before=JSON.stringify([S.checked,S.removed,S.added,S.chosen,S.cancelled]);rebuild();persist();
+   if(before!==JSON.stringify([S.checked,S.removed,S.added,S.chosen,S.cancelled]))render();$("sync")&&($("sync").textContent="Synced "+new Date().toLocaleTimeString([], {hour:"numeric",minute:"2-digit"}));}
+  else if($("sync"))$("sync").textContent=r.status==401?"Sync: check PIN":"Sync paused ("+r.status+")";
+ }catch(e){$("sync")&&($("sync").textContent="Offline. Changes saved, will sync");}
+ syncing=false;if(syncAgain||Q.length&&Q.length>=300){syncAgain=false;setTimeout(flush,200)}}
+rebuild();persist();
+setInterval(()=>{if(!document.hidden)flush()},10000);addEventListener("focus",flush);addEventListener("online",flush);document.addEventListener("visibilitychange",()=>{if(!document.hidden)flush()});
+
 $("cats").onclick=e=>{const c=e.target.closest("[data-c]"),r=e.target.closest("[data-r]");
- if(c){const id=c.dataset.c;S.checked[id]?delete S.checked[id]:S.checked[id]=1;save();render();}
+ if(c){const id=c.dataset.c;op("checked",id,S.checked[id]?null:1);render();}
  if(r){const id=r.dataset.r,it=items().find(i=>i.id===id);
-  if(id.startsWith("u:")){const ix=S.added.findIndex(i=>i.id===id);S.added.splice(ix,1);save();render();toast("Removed "+it.name,()=>{S.added.splice(ix,0,it);save();render();});}
-  else{S.removed[id]=1;save();render();toast("Removed "+it.name,()=>{delete S.removed[id];save();render();});}}};
+  if(id.startsWith("u:")){const ov=SH.added&&SH.added[id]&&SH.added[id].v;op("added",id,null);render();toast("Removed "+it.name,()=>{op("added",id,ov||it);render();});}
+  else{op("removed",id,1);render();toast("Removed "+it.name,()=>{op("removed",id,null);render();});}}};
 $("hide").onclick=()=>{S.hide=!S.hide;save();render()};$("sink").onclick=()=>{S.sink=!S.sink;save();render()};$("mode").onclick=()=>{S.route=!S.route;save();render()};
-$("clear").onclick=()=>{if(confirm("Clear all checks?")){const o=S.checked;S.checked={};save();render();toast("Checks cleared",()=>{S.checked=o;save();render();});}};
-$("reset").onclick=()=>{if(confirm("Restore all removed items?")){S.removed={};save();render();}};
+$("clear").onclick=()=>{if(confirm("Clear all checks?")){const o=Object.keys(S.checked);o.forEach(id=>op("checked",id,null));render();toast("Checks cleared",()=>{o.forEach(id=>op("checked",id,1));render();});}};
+$("reset").onclick=()=>{if(confirm("Restore all removed items?")){Object.keys(S.removed).forEach(id=>op("removed",id,null));render();}};
 $("add").onsubmit=e=>{e.preventDefault();const p=parseFloat($("ap").value.replace("$",""));
- S.added.push({id:"u:"+Date.now(),name:$("an").value.trim(),qty:$("aq").value.trim()||1,cat:$("ac").value,list:S.list,price:isNaN(p)?null:p});save();render();$("an").value=$("aq").value=$("ap").value="";};
+ op("added","u:"+Date.now()+Math.random().toString(36).slice(2,6),{name:$("an").value.trim(),qty:$("aq").value.trim()||1,cat:$("ac").value,list:S.list,price:isNaN(p)?null:p});render();$("an").value=$("aq").value=$("ap").value="";};
 function recipes(){const li=a=>a.map(x=>`<li>${esc(x)}</li>`).join("");let h="";
  W.recipes.forEach(r=>h+=`<details><summary>${esc(r.title)}</summary><div><p class="meta">${esc(r.meta||"")}</p><h3>Ingredients</h3><ul>${li(r.ingredients)}</ul><h3>Steps</h3><ol>${li(r.steps)}</ol>${r.notes?`<h3>Notes</h3><ul>${li(r.notes)}</ul>`:""}</div></details>`);
  if(W.snacks&&W.snacks.length)h+=`<details><summary>Lunches &amp; Snacks</summary><div><ul>${W.snacks.map(s=>`<li><b>${esc(s.name)}</b>: ${esc(s.desc)} <i>${esc(s.carbs)}</i></li>`).join("")}</ul></div></details>`;
@@ -108,11 +136,11 @@ render();recipes();if("serviceWorker"in navigator)navigator.serviceWorker.regist
 
 var HOOK="https://grocery-relay.pantry-relay-4821.workers.dev",KK="grocery-pin",photo=null;
 function renderPicks(){var P=(W.pending||[]).filter(p=>(p.list||"this")===S.list&&!S.cancelled[p.id]);
- $("picks").innerHTML=P.map(p=>{var c=S.chosen[p.id];return `<div class="card pick"><div style="display:flex;align-items:center;gap:8px"><b style="flex:1">Pick one: ${esc(p.query)}</b><button class="btn" data-cx="${esc(p.id)}" aria-label="Cancel this request">✕ Cancel</button></div>${c?`<div class="ok">Chosen: ${esc(c.name)}. Waiting for list update…</div>`:""}`+
+ $("picks").innerHTML=P.map(p=>{var c=S.chosen[p.id];return `<div class="card pick"><div style="display:flex;align-items:center;gap:8px"><b style="flex:1">Pick one: ${esc(p.query)}</b><button class="btn" data-cx="${esc(p.id)}" aria-label="Cancel this request">✕ Cancel</button></div>${c?`<div class="ok">Chosen${c.by&&c.by!==DEV?" by other phone":""}: ${esc(c.name)}. Waiting for list update…</div>`:""}`+
  (p.options||[]).map((o,i)=>`<div class="opt"><div>${esc(o.name)}${o.size?` <small>${esc(o.size)}</small>`:""}<br><small>${o.price!=null?money(+o.price):""}</small></div>${o.url?`<a class="lnk" href="${esc(o.url)}" target="_blank" rel="noopener">Walmart ↗</a>`:""}<button class="btn${c&&c.i===i?" on":""}" data-pk="${esc(p.id)}" data-i="${i}"${c?" disabled":""}>${c&&c.i===i?"Chosen":"Choose"}</button></div>`).join("")+`</div>`}).join("");}
-$("picks").onclick=e=>{var x=e.target.closest("[data-cx]");if(x){var q=(W.pending||[]).find(z=>z.id===x.dataset.cx);if(!q||S.cancelled[q.id]||!confirm("Cancel this request: "+q.query+"?"))return;S.cancelled[q.id]=1;save();render();send({type:"cancel",id:q.id,list:q.list||"this"},"Cancelled: "+q.query,"cancel:"+q.id);return;}
+$("picks").onclick=e=>{var x=e.target.closest("[data-cx]");if(x){var q=(W.pending||[]).find(z=>z.id===x.dataset.cx);if(!q||S.cancelled[q.id]||!confirm("Cancel this request: "+q.query+"?"))return;op("cancelled",q.id,1);render();send({type:"cancel",id:q.id,list:q.list||"this"},"Cancelled: "+q.query,"cancel:"+q.id);return;}
  var b=e.target.closest("[data-pk]");if(!b||b.disabled)return;var p=(W.pending||[]).find(x=>x.id===b.dataset.pk);if(!p||S.chosen[p.id])return;var i=+b.dataset.i,o=p.options[i];
- S.chosen[p.id]={i:i,name:o.name};save();render();send({type:"choose",id:p.id,index:i,name:o.name,url:o.url||"",list:p.list||"this"},"Chose "+o.name+" for "+p.query,"choose:"+p.id);};
+ op("chosen",p.id,{i:i,name:o.name,by:DEV});render();send({type:"choose",id:p.id,index:i,name:o.name,url:o.url||"",list:p.list||"this"},"Chose "+o.name+" for "+p.query,"choose:"+p.id);};
 function renderMsgs(){$("msgs").innerHTML=S.msgs.slice().reverse().map(m=>`<div class="msg">${esc(m.label)}<br><small class="${m.ok?"ok":m.ok===false?"err":""}">${new Date(m.ts).toLocaleString()} · ${esc(m.st)}</small>${m.ok===false?` <button class="btn" data-cp="${m.ts}">Copy / Share</button>`:""}</div>`).join("")||'<p class="empty">No messages yet</p>';}
 $("msgs").onclick=e=>{var b=e.target.closest("[data-cp]");if(!b)return;var m=S.msgs.find(x=>String(x.ts)===b.dataset.cp);share(m.label);};
 function share(t){if(navigator.share)navigator.share({text:"Grocery list: "+t}).catch(()=>{});else navigator.clipboard&&navigator.clipboard.writeText("Grocery list: "+t).then(()=>toast("Copied. Paste it to the assistant"));}
@@ -133,13 +161,13 @@ $("xs").onclick=async()=>{var t=$("xt").value.trim();if($("xs").disabled)return;
  var b={type:"add",list:$("xl").value};if(t)b.text=t;if(photo)b.image=photo;
  var ok=await send(b,"Add"+(photo?" (photo)":"")+": "+(t||"item in photo")+" → "+(b.list==="next"?"next week":"this week"));$("xs").disabled=false;$("xst").textContent=ok?"Sent. Updates arrive in a few minutes":"Not sent. See Chat tab";
  if(ok){$("xt").value="";photo=null;$("thumb").style.display="none";$("xf").value="";}};
-$("ksave").onclick=()=>{var v=$("key").value.trim();if(v){localStorage.setItem(KK,v);$("key").value="";}kst();};$("kclr").onclick=()=>{localStorage.removeItem(KK);kst()};
+$("ksave").onclick=()=>{var v=$("key").value.trim();if(v){localStorage.setItem(KK,v);$("key").value="";flush();}kst();};$("kclr").onclick=()=>{localStorage.removeItem(KK);kst()};
 localStorage.removeItem("grocery-key");function kst(){$("kst").textContent=localStorage.getItem(KK)?"PIN saved on this phone.":"No PIN saved.";}kst();
 var lastData=JSON.stringify(W);
 async function checkData(){try{var t=await (await fetch("data.js?t="+Date.now(),{cache:"no-store"})).text(),o={};new Function("window",t)(o);
  if(o.WEEK&&JSON.stringify(o.WEEK)!==lastData){if(o.WEEK.weekId!==W.weekId)return location.reload();W=o.WEEK;lastData=JSON.stringify(W);
   (W.pending||[]).forEach(()=>0);var live=id=>(W.pending||[]).some(p=>p.id===id);for(var id in S.chosen)if(!live(id))delete S.chosen[id];for(var id in S.cancelled)if(!live(id))delete S.cancelled[id];save();render();recipes();toast("List updated");}}catch(e){}}
 setInterval(()=>{if(!document.hidden)checkData()},60000);document.addEventListener("visibilitychange",()=>{if(!document.hidden)checkData()});
-$("xl").value=$("cl").value=S.list;render();
+$("xl").value=$("cl").value=S.list;render();flush();
 
 </script></body></html>
