@@ -75,7 +75,7 @@ details>div{padding:0 14px 14px}details li{margin:6px 0}.meta{font-size:16px;col
 <details id="stp"><summary>⭐ Staples quick-add</summary><div id="stl"></div></details>
 </div></div>
 <div id="modal" role="dialog" aria-modal="true"><div id="mbody"></div></div><div id="toast"><span id="tm"></span><button id="undo">Undo</button></div>
-<script>document.documentElement.dataset.theme=localStorage.getItem("grocery-theme")||"auto"</script><script>window.APP_VER="v36";document.write('<script src="data.js?t='+Date.now()+'"><\/script>')</script><script>
+<script>document.documentElement.dataset.theme=localStorage.getItem("grocery-theme")||"auto"</script><script>window.APP_VER="v37";document.write('<script src="data.js?t='+Date.now()+'"><\/script>')</script><script>
 let W=window.WEEK;const CATS=["Fruits & Veggies","Meat & Seafood","Dairy","Frozen Foods","Sauces & Spices","Snacks & Beverages","Breads & Grains","Other"],
 ROUTE=["Other","Fruits & Veggies","Breads & Grains","Meat & Seafood","Dairy","Sauces & Spices","Snacks & Beverages","Frozen Foods"],
 $=id=>document.getElementById(id),esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
@@ -126,15 +126,15 @@ var lastTs=0;function now(){var t=Date.now();lastTs=t>lastTs?t:lastTs+1;return l
 function persist(){localStorage.setItem(SK,JSON.stringify({sh:SH,q:Q}));save()}
 function op(k,id,v){var p={k:k,id:id,v:v==null?null:v,ts:now()};applyOp(p);Q.push(p);rebuild();persist();flush()}
 var syncing=false,syncAgain=false;
-async function flush(){if(syncing){syncAgain=true;return}var pin=localStorage.getItem("grocery-pin");if(!pin)return;if(Date.now()-(window.lastWkChk||0)>60000&&await checkData()==="stale")return;syncing=true;
+async function flush(){if(syncing){syncAgain=true;return}var pin=localStorage.getItem("grocery-pin");if(!pin){if($("sync")){$("sync").textContent="NOT SYNCING: no family PIN on this phone ("+Q.length+" change(s) only here). Tap to add PIN";$("sync").classList.add("err")}return}if(Date.now()-(window.lastWkChk||0)>60000&&await checkData()==="stale")return;syncing=true;
  try{var batch=Q.slice(0,300),u=HOOK+"/state"+(batch.length?"/ops":"")+"?week="+encodeURIComponent(W.weekId);
   var r=await fetch(u,batch.length?{method:"POST",headers:{"X-App-Pin":pin,"Content-Type":"application/json"},body:JSON.stringify({ops:batch})}:{headers:{"X-App-Pin":pin},cache:"no-store"});
   if(r.ok){var d=await r.json();Q.splice(0,batch.length);var st=d.state||{},chg=false;
    for(var k in st)for(var id in st[k])if(applyOp({k:k,id:id,v:st[k][id].v,ts:st[k][id].ts}))chg=true;
    Q.forEach(applyOp);var before=JSON.stringify([S.checked,S.removed,S.added,S.chosen,S.cancelled,S.recipe,S.qty,S.note,S.cooked,S.done]);rebuild();persist();
-   if(before!==JSON.stringify([S.checked,S.removed,S.added,S.chosen,S.cancelled,S.recipe,S.qty,S.note,S.cooked,S.done]))render();$("sync")&&$("sync").classList.remove("err");$("sync")&&($("sync").textContent="Synced "+new Date().toLocaleTimeString([], {hour:"numeric",minute:"2-digit"}));}
+   if(before!==JSON.stringify([S.checked,S.removed,S.added,S.chosen,S.cancelled,S.recipe,S.qty,S.note,S.cooked,S.done]))render();$("sync")&&$("sync").classList.remove("err");$("sync")&&($("sync").textContent="Synced "+new Date().toLocaleTimeString([], {hour:"numeric",minute:"2-digit",second:"2-digit"})+" · "+(Q.length?Q.length+" pending":"all changes sent")+" · "+APP_VER);}
   else if($("sync")){$("sync").textContent=r.status==401?"Sync: check PIN (tap to open Settings)":"Sync paused ("+r.status+")";$("sync").classList.toggle("err",r.status==401);}
- }catch(e){$("sync")&&($("sync").textContent="Offline. Changes saved, will sync");}
+ }catch(e){$("sync")&&($("sync").textContent="Offline. "+Q.length+" change(s) waiting to sync");}
  syncing=false;if(syncAgain||Q.length&&Q.length>=300){syncAgain=false;setTimeout(flush,200)}}
 rebuild();persist();
 setInterval(()=>{if(!document.hidden)flush()},10000);addEventListener("focus",flush);addEventListener("online",flush);document.addEventListener("visibilitychange",()=>{if(!document.hidden)flush()});
