@@ -157,7 +157,7 @@ let AM={items:{},pathOrder:[]};fetch("aisle-map.json",{cache:"no-cache"}).then(r
 function akey(u){const m=String(u||"").match(/\/ip\/(?:[^/]+\/)?(\d+)/);return m?"ip:"+m[1]:null}
 function AIS(i){if(i.aisle)return String(i.aisle);const e=AM.items[akey(i.url)];return e&&e.aisle?e.aisle:""}
 function walk(){const wo=(AM.walkOrder||[]).slice().sort((x,y)=>x.order-y.order);return wo}
-function wAnchor(i){const wo=walk(),a=(AM.categoryAnchor||{})[i.cat];return wo.find(w=>w.aisle===a)}
+function wAnchor(i){const wo=walk(),r=(AM.itemAnchors||[]).find(r=>(!r.cat||r.cat===i.cat)&&new RegExp(r.match,"i").test(i.name)),a=r?r.aisle:(AM.categoryAnchor||{})[i.cat];return wo.find(w=>w.aisle===a)}
 // rank: known aisle = its walkOrder number; otherwise just after the category's anchor aisle; else old category order
 function aRank(i){const wo=walk(),a=String(AIS(i)).toUpperCase();const w=a&&wo.find(w=>w.aisle===a);if(w)return w.order;const an=wAnchor(i);if(an)return an.order+(a?4:5);return 1e4+ROUTE.indexOf(i.cat)*10}
 function aZone(i){const wo=walk(),a=String(AIS(i)).toUpperCase();const w=(a&&wo.find(w=>w.aisle===a))||wAnchor(i);return w?w.zone:i.cat}

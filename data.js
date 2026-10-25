@@ -66,7 +66,8 @@ window.WEEK = {
       "air-fry-mode-burgers-in-lettuce-wraps",
       "shrimp-fajita-bowls-on-cauliflower-rice",
       "taco-salad-with-ground-beef"
-     ]
+     ],
+     "aisle": "AP10"
     }
    ]
   },
@@ -114,7 +115,8 @@ window.WEEK = {
      "urlType": "product",
      "recipes": [
       "oven-air-fry-chicken-thighs-big-batch"
-     ]
+     ],
+     "aisle": "A36"
     }
    ]
   },
@@ -140,7 +142,8 @@ window.WEEK = {
       "shrimp-fajita-bowls-on-cauliflower-rice",
       "taco-salad-with-ground-beef",
       "garlic-butter-shrimp-with-spinach"
-     ]
+     ],
+     "aisle": "A35"
     },
     {
      "name": "GV sharp cheddar slices, 8 oz",
@@ -184,7 +187,8 @@ window.WEEK = {
       "oven-air-fry-chicken-thighs-big-batch",
       "garlic-butter-shrimp-with-spinach",
       "homemade-yum-yum-sauce"
-     ]
+     ],
+     "aisle": "A34"
     },
     {
      "name": "Oikos Triple Zero, 6 ct",
@@ -243,12 +247,13 @@ window.WEEK = {
      "name": "GV pepper & onion blend, 20 oz",
      "qty": 2,
      "price": 2.84,
-     "url": "https://www.walmart.com/search?q=Great+Value+pepper+%26+onion+blend%2C+20+oz",
-     "urlType": "search",
+     "url": "https://www.walmart.com/ip/Great-Value-Frozen-20-oz-Pepper-Onion-Blend-20-oz/539250805",
+     "urlType": "product",
      "recipes": [
       "sheet-pan-kielbasa-with-peppers-onions-b",
       "shrimp-fajita-bowls-on-cauliflower-rice"
-     ]
+     ],
+     "aisle": "A30"
     },
     {
      "name": "GV chopped spinach, 10 oz",
@@ -308,7 +313,8 @@ window.WEEK = {
      "recipes": [
       "air-fry-mode-burgers-in-lettuce-wraps",
       "taco-salad-with-ground-beef"
-     ]
+     ],
+     "aisle": "A3"
     },
     {
      "name": "GV taco seasoning, 1 oz",
@@ -373,7 +379,8 @@ window.WEEK = {
      "qty": 1,
      "price": 6.14,
      "url": "https://www.walmart.com/ip/seort/5295229969",
-     "urlType": "product"
+     "urlType": "product",
+     "aisle": "A16"
     },
     {
      "name": "Pepsi Zero Sugar, 24 pk",
@@ -666,7 +673,8 @@ window.WEEK = {
       "price": 2.84,
       "url": "https://www.walmart.com/ip/Great-Value-Frozen-20-oz-Pepper-Onion-Blend-20-oz/539250805",
       "urlType": "product",
-      "addedBy": "user"
+      "addedBy": "user",
+      "aisle": "A30"
      },
      {
       "name": "Great Value Organic Steamable Riced Cauliflower, 10 oz (Frozen)",

@@ -66,7 +66,11 @@
   "ip:193413277": {
    "url": "https://www.walmart.com/ip/seort/193413277",
    "name": "Sanderson Farms chicken thighs, family pack (by weight)",
-   "cat": "Meat & Seafood"
+   "cat": "Meat & Seafood",
+   "aisle": "A36",
+   "observed": "2026-10-25",
+   "confidence": "high",
+   "source": "walmart product page (store selected)"
   },
   "ip:172844767": {
    "url": "https://www.walmart.com/ip/seort/172844767",
@@ -80,7 +84,11 @@
   "ip:10452480": {
    "url": "https://www.walmart.com/ip/seort/10452480",
    "name": "GV taco blend shredded cheese, 8 oz",
-   "cat": "Dairy"
+   "cat": "Dairy",
+   "aisle": "A35",
+   "observed": "2026-10-25",
+   "confidence": "high",
+   "source": "walmart product page (store selected)"
   },
   "ip:15077514": {
    "url": "https://www.walmart.com/ip/seort/15077514",
@@ -100,7 +108,11 @@
   "ip:132893363": {
    "url": "https://www.walmart.com/ip/seort/132893363",
    "name": "GV salted butter, 16 oz",
-   "cat": "Dairy"
+   "cat": "Dairy",
+   "aisle": "A34",
+   "observed": "2026-10-25",
+   "confidence": "high",
+   "source": "walmart product page (store selected)"
   },
   "ip:49342252": {
    "url": "https://www.walmart.com/ip/seort/49342252",
@@ -134,7 +146,11 @@
   "ip:16618888": {
    "url": "https://www.walmart.com/ip/seort/16618888",
    "name": "GV ranch dressing, 16 oz",
-   "cat": "Sauces & Spices"
+   "cat": "Sauces & Spices",
+   "aisle": "A3",
+   "observed": "2026-10-25",
+   "confidence": "high",
+   "source": "walmart product page (store selected)"
   },
   "ip:379517847": {
    "url": "https://www.walmart.com/ip/seort/379517847",
@@ -167,7 +183,11 @@
   "ip:5295229969": {
    "url": "https://www.walmart.com/ip/seort/5295229969",
    "name": "GV whole almonds, 14 oz",
-   "cat": "Snacks & Beverages"
+   "cat": "Snacks & Beverages",
+   "aisle": "A16",
+   "observed": "2026-10-25",
+   "confidence": "high",
+   "source": "walmart product page (store selected)"
   },
   "ip:14664661": {
    "url": "https://www.walmart.com/ip/seort/14664661",
@@ -199,7 +219,11 @@
   "ip:539250805": {
    "url": "https://www.walmart.com/ip/Great-Value-Frozen-20-oz-Pepper-Onion-Blend-20-oz/539250805",
    "name": "GV pepper & onion blend, 20 oz (frozen)",
-   "cat": "Frozen Foods"
+   "cat": "Frozen Foods",
+   "aisle": "A30",
+   "observed": "2026-10-25",
+   "confidence": "high",
+   "source": "walmart product page (store selected)"
   },
   "ip:197864195": {
    "url": "https://www.walmart.com/ip/197864195",
@@ -239,7 +263,7 @@
   "Meat & Seafood": [
    {
     "aisle": "A36",
-    "items": 1
+    "items": 2
    },
    {
     "aisle": "A35",
@@ -253,6 +277,10 @@
   "Dairy": [
    {
     "aisle": "A34",
+    "items": 2
+   },
+   {
+    "aisle": "A35",
     "items": 1
    },
    {
@@ -262,19 +290,23 @@
   ],
   "Sauces & Spices": [
    {
+    "aisle": "A3",
+    "items": 2
+   },
+   {
     "aisle": "A6",
     "items": 1
    },
    {
     "aisle": "A9",
     "items": 1
-   },
-   {
-    "aisle": "A3",
-    "items": 1
    }
   ],
   "Snacks & Beverages": [
+   {
+    "aisle": "A16",
+    "items": 1
+   },
    {
     "aisle": "A20",
     "items": 1
@@ -289,7 +321,7 @@
   "Frozen Foods": [
    {
     "aisle": "A30",
-    "items": 1
+    "items": 2
    }
   ]
  },
@@ -310,7 +342,7 @@
    "order": 25,
    "aisle": "AP10",
    "zone": "Outer aisle",
-   "basis": "guess: not in walkOrder; slotted after category anchor A1"
+   "basis": "walkOrder (observed map)"
   },
   {
    "order": 30,
@@ -361,6 +393,12 @@
    "basis": "walkOrder (observed map)"
   },
   {
+   "order": 105,
+   "aisle": "A16",
+   "zone": "Center grocery aisles",
+   "basis": "walkOrder (observed map)"
+  },
+  {
    "order": 110,
    "aisle": "A20",
    "zone": "Center grocery aisles",
@@ -385,13 +423,14 @@
   "A6",
   "A7",
   "A9",
+  "A16",
   "A20",
   "A30"
  ],
  "updated": "2026-10-25",
  "coverage": {
   "items": 32,
-  "withAisle": 13
+  "withAisle": 19
  },
  "walkOrder": [
   {
@@ -405,6 +444,12 @@
    "aisle": "A1",
    "zone": "Outer aisle",
    "note": "produce, left wall bottom near bread/deli"
+  },
+  {
+   "order": 25,
+   "aisle": "AP10",
+   "zone": "Outer aisle",
+   "note": "produce aisle AP, bottom-left near bread/deli, right after A1"
   },
   {
    "order": 30,
@@ -455,6 +500,12 @@
    "note": "oils, mid"
   },
   {
+   "order": 105,
+   "aisle": "A16",
+   "zone": "Center grocery aisles",
+   "note": "back of center grocery, between A9 and A20, near Cleaning"
+  },
+  {
    "order": 110,
    "aisle": "A20",
    "zone": "Center grocery aisles",
@@ -477,5 +528,19 @@
   "Sauces & Spices": "A9",
   "Snacks & Beverages": "A20",
   "Frozen Foods": "A30"
- }
+ },
+ "itemAnchors": [
+  {
+   "cat": "Dairy",
+   "match": "cheese|cheddar|mozzarella|string|shredded|sliced|slices",
+   "aisle": "A35",
+   "note": "packaged cheese is on the left wall with kielbasa, not with eggs"
+  },
+  {
+   "cat": "Dairy",
+   "match": "butter|egg",
+   "aisle": "A34"
+  }
+ ],
+ "itemAnchorsNote": "Checked before categoryAnchor for items with no known aisle: first rule whose cat matches and whose match (case-insensitive regex) hits the item name wins."
 }
