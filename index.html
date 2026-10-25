@@ -63,7 +63,7 @@ details>div{padding:0 14px 14px}details li{margin:6px 0}.meta{font-size:16px;col
 <section id="chat" hidden><div class="card"><b>Message the assistant</b><textarea id="ct" placeholder="Add, remove or change items or recipes"></textarea>
 <div class="ls"><select id="cl"><option value="this">This week</option><option value="next">Next week</option></select><button class="btn" id="cs">Send</button></div></div>
 <div id="replies"></div><h3>Your messages</h3><div id="msgs"></div>
-<details id="settings"><summary>Settings</summary><div><p id="pinok" class="meta" style="font-weight:700"></p><button class="btn" id="pinchg">Change/Forget PIN</button><div id="pinbox"><p class="meta">Family PIN (stored only on this phone).</p><input id="key" type="password" autocomplete="off" placeholder="Family PIN" inputmode="numeric"><div class="tools"><button class="btn" id="ksave">Save PIN</button><button class="btn" id="kclr">Forget PIN</button></div><div id="kst" class="meta"></div></div><p class="meta">Appearance (this phone)</p><div class="ls" id="thm"><button class="btn" data-th="auto">Auto</button><button class="btn" data-th="light">Light</button><button class="btn" data-th="dark">Dark</button></div></div></details></section></main>
+<details id="settings"><summary>Settings</summary><div><p id="pinok" class="meta" style="font-weight:700"></p><button class="btn" id="pinchg">Change/Forget PIN</button><div id="pinbox"><p class="meta">Family PIN (stored only on this phone).</p><input id="key" type="password" autocomplete="off" placeholder="Family PIN" inputmode="numeric"><div class="tools"><button class="btn" id="ksave">Save PIN</button><button class="btn" id="kclr">Forget PIN</button></div><div id="kst" class="meta"></div></div><p class="meta">Appearance (this phone)</p><div class="ls" id="thm"><button class="btn" data-th="auto">Auto</button><button class="btn" data-th="light">Light</button><button class="btn" data-th="dark">Dark</button></div><p class="meta" id="ver"></p><button class="btn" id="vchk">Check for update</button></div></details></section></main>
 <div id="sheet" role="dialog" aria-modal="true" aria-labelledby="shh" hidden><div>
 <div class="ls"><b id="shh" style="font-size:20px;align-self:center">Add an item</b><button class="btn" id="shx" aria-label="Close">✕ Close</button></div>
 <input id="xt" placeholder="Item, e.g. 2 bags shredded cheese" autocomplete="off">
@@ -75,7 +75,7 @@ details>div{padding:0 14px 14px}details li{margin:6px 0}.meta{font-size:16px;col
 <details id="stp"><summary>⭐ Staples quick-add</summary><div id="stl"></div></details>
 </div></div>
 <div id="modal" role="dialog" aria-modal="true"><div id="mbody"></div></div><div id="toast"><span id="tm"></span><button id="undo">Undo</button></div>
-<script>document.documentElement.dataset.theme=localStorage.getItem("grocery-theme")||"auto"</script><script src="data.js"></script><script>
+<script>document.documentElement.dataset.theme=localStorage.getItem("grocery-theme")||"auto"</script><script>window.APP_VER="v35";document.write('<script src="data.js?t='+Date.now()+'"><\/script>')</script><script>
 let W=window.WEEK;const CATS=["Fruits & Veggies","Meat & Seafood","Dairy","Frozen Foods","Sauces & Spices","Snacks & Beverages","Breads & Grains","Other"],
 ROUTE=["Other","Fruits & Veggies","Breads & Grains","Meat & Seafood","Dairy","Sauces & Spices","Snacks & Beverages","Frozen Foods"],
 $=id=>document.getElementById(id),esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
@@ -126,7 +126,7 @@ var lastTs=0;function now(){var t=Date.now();lastTs=t>lastTs?t:lastTs+1;return l
 function persist(){localStorage.setItem(SK,JSON.stringify({sh:SH,q:Q}));save()}
 function op(k,id,v){var p={k:k,id:id,v:v==null?null:v,ts:now()};applyOp(p);Q.push(p);rebuild();persist();flush()}
 var syncing=false,syncAgain=false;
-async function flush(){if(syncing){syncAgain=true;return}var pin=localStorage.getItem("grocery-pin");if(!pin)return;syncing=true;
+async function flush(){if(syncing){syncAgain=true;return}var pin=localStorage.getItem("grocery-pin");if(!pin)return;if(Date.now()-(window.lastWkChk||0)>60000&&await checkData()==="stale")return;syncing=true;
  try{var batch=Q.slice(0,300),u=HOOK+"/state"+(batch.length?"/ops":"")+"?week="+encodeURIComponent(W.weekId);
   var r=await fetch(u,batch.length?{method:"POST",headers:{"X-App-Pin":pin,"Content-Type":"application/json"},body:JSON.stringify({ops:batch})}:{headers:{"X-App-Pin":pin},cache:"no-store"});
   if(r.ok){var d=await r.json();Q.splice(0,batch.length);var st=d.state||{},chg=false;
@@ -194,7 +194,11 @@ function recipes(){if(typeof S.recipe==="undefined")S.recipe={};const li=a=>(a||
  const tr=todayRecipe();$("tonight").innerHTML=`<div class="card${tr?" today":""}"><b>Tonight (${DFULL[DN[today.getDay()]]}):</b> ${tr?esc(tr.title):"No dinner planned for today on this week's list."}${tr?`<br><button class="btn on" data-tn="t" style="width:100%;margin-top:8px">🍽 Open Tonight view</button>`:""}</div>`;}
 const tab=t=>{["list","recipes","chat"].forEach((x,i)=>{$(x).hidden=x!==t;$(["tL","tR","tC"][i]).classList.toggle("on",x===t)});scrollTo(0,0)};
 $("tL").onclick=()=>tab("list");$("tR").onclick=()=>tab("recipes");$("tC").onclick=()=>{tab("chat");renderMsgs();markSeen()};
-render();recipes();if("serviceWorker"in navigator)navigator.serviceWorker.register("sw.js").catch(()=>{});
+render();recipes();
+if("serviceWorker"in navigator){var hadCtl=!!navigator.serviceWorker.controller;
+ navigator.serviceWorker.addEventListener("controllerchange",()=>{if(!hadCtl){hadCtl=true;return}if(sessionStorage.getItem("grocery-swreload"))return;sessionStorage.setItem("grocery-swreload","1");location.reload()});
+ navigator.serviceWorker.register("sw.js",{updateViaCache:"none"}).then(g=>{window.SWR=g;g.update().catch(()=>{})}).catch(()=>{});
+ setTimeout(()=>sessionStorage.removeItem("grocery-swreload"),10000);}
 
 
 function modal(html){$("mbody").innerHTML=html;$("modal").style.display="flex";}function closeM(){$("modal").style.display="none";$("mbody").innerHTML="";}
@@ -249,10 +253,11 @@ $("xs").onclick=async()=>{var t=$("xt").value.trim();if($("xs").disabled)return;
 $("ksave").onclick=()=>{var v=$("key").value.trim();if(v){localStorage.setItem(KK,v);$("key").value="";flush();}kst();};$("kclr").onclick=()=>{localStorage.removeItem(KK);kst()};
 localStorage.removeItem("grocery-key");function kst(){const has=!!localStorage.getItem(KK);$("pinok").textContent=has?"PIN saved on this phone ✓":"";$("pinchg").hidden=!has;$("pinbox").hidden=has;$("kst").textContent=has?"":"No PIN saved. Enter the family PIN to sync.";}kst();$("pinchg").onclick=()=>{$("pinbox").hidden=false;$("pinchg").hidden=true;$("key").focus()};function goPin(){$("tC").click();$("settings").open=true;if(!localStorage.getItem(KK))$("pinbox").hidden=false;$("settings").scrollIntoView();}document.addEventListener("click",e=>{if(e.target.closest("#sync.err"))goPin()});
 var lastData=JSON.stringify(W);
-async function checkData(){try{var t=await (await fetch("data.js?t="+Date.now(),{cache:"no-store"})).text(),o={};new Function("window",t)(o);
- if(o.WEEK&&JSON.stringify(o.WEEK)!==lastData){if(o.WEEK.weekId!==W.weekId)return location.reload();W=o.WEEK;lastData=JSON.stringify(W);
+async function checkData(){window.lastWkChk=Date.now();try{var t=await (await fetch("data.js?t="+Date.now(),{cache:"no-store"})).text(),o={};new Function("window",t)(o);
+ if(o.WEEK&&JSON.stringify(o.WEEK)!==lastData){if(o.WEEK.weekId!==W.weekId){if(o.WEEK.weekId>W.weekId){window.STALE=1;location.reload();return "stale"}return}W=o.WEEK;lastData=JSON.stringify(W);
   (W.pending||[]).forEach(()=>0);var live=id=>(W.pending||[]).concat(W.pendingRecipes||[]).some(p=>p.id===id);for(var id in S.chosen)if(!live(id))delete S.chosen[id];for(var id in S.cancelled)if(!live(id))delete S.cancelled[id];save();render();recipes();toast("List updated");}}catch(e){}}
-setInterval(()=>{if(!document.hidden)checkData()},60000);document.addEventListener("visibilitychange",()=>{if(!document.hidden)checkData()});
+function upd(){checkData();window.SWR&&SWR.update().catch(()=>{})}setInterval(()=>{if(!document.hidden)upd()},60000);document.addEventListener("visibilitychange",()=>{if(!document.hidden)upd()});window.addEventListener("pageshow",e=>{if(e.persisted)upd()});checkData();
+$("ver").textContent="App "+APP_VER+" · week "+W.weekId;$("vchk").onclick=async()=>{$("ver").textContent="Checking…";try{window.SWR&&await SWR.update()}catch(e){}if(await checkData()!=="stale")location.reload()};
 
 var QS="";$("q").oninput=()=>{QS=$("q").value.trim().toLowerCase();render()};
 function waiting(){const live=(arr)=>(arr||[]).filter(p=>!S.cancelled[p.id]&&!S.chosen[p.id]);const wk=l=>l==="next"?"next week":"this week";
