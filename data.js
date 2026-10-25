@@ -173,7 +173,8 @@ window.WEEK = {
      "recipes": [
       "buffalo-chicken-bake",
       "cheesecake-fluff"
-     ]
+     ],
+     "aisle": "A34"
     }
    ]
   },
@@ -304,7 +305,8 @@ window.WEEK = {
      "urlType": "product",
      "recipes": [
       "crock-pot-beanless-keto-chili"
-     ]
+     ],
+     "aisle": "A5"
     },
     {
      "name": "GV tomato sauce, 15 oz (canned)",
@@ -314,7 +316,8 @@ window.WEEK = {
      "urlType": "product",
      "recipes": [
       "crock-pot-beanless-keto-chili"
-     ]
+     ],
+     "aisle": "A5"
     },
     {
      "name": "Frank's RedHot Original hot sauce, 12 oz",
