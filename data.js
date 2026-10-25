@@ -643,7 +643,7 @@ window.WEEK = {
  "prep": [
   "Mon morning: brown beef and start the crock-pot chili (recipe p.1).",
   "Mon evening: sheet-pan the whole pack of chicken thighs (p.2); pull and portion meat for Tue Cobb salad and 4–5 lunches.",
-  "Hard-boil 12 eggs (you have eggs): boil, then 12 min covered off heat, ice bath. 4 for Tue Cobb, rest for lunches/deviled eggs.",
+  "Hard-boil 12 eggs (you have eggs): boil, then 12 min covered off heat, ice bath. 4 for Tue Cobb, rest for lunches and snacks.",
   "Wash, dry and chop romaine; store with a paper towel in a bag. Keep a few leaves whole for fajita wraps.",
   "Cut celery into sticks; store in a jar of water.",
   "Portion almonds (¼ cup) and string cheese into grab bags; pack small ranch cups.",
@@ -673,9 +673,9 @@ window.WEEK = {
    "carbs": "~5 g net"
   },
   {
-   "name": "Deviled Eggs",
-   "desc": "6 eggs: mash yolks with 2 tbsp sour cream (or Oikos Triple Zero), 1 tsp ranch, salt, pinch paprika; refill whites. Keep cold.",
-   "carbs": "~1 g / 2 halves net"
+   "name": "Ranch Chicken Salad Cups",
+   "desc": "The spare can of chunk chicken (drained) mixed with 2 tbsp sour cream, 1 tbsp ranch and chopped celery; scoop into romaine leaves. Pack leaves separate, keep cold. Nothing extra to buy.",
+   "carbs": "~2 g net"
   },
   {
    "name": "Hard-Boiled Eggs",
@@ -900,6 +900,12 @@ window.WEEK = {
   }
  ],
  "replies": [
+  {
+   "id": "r-1792972065349",
+   "ts": 1792972065349,
+   "text": "Removed Deviled Eggs from snacks and swapped in Ranch Chicken Salad Cups (spare can of chicken, sour cream, ranch, celery in romaine). Nothing new to buy.",
+   "ref": "chat:11b2f798-4784-4a4d-acb4-285fe0cc46fe"
+  },
   {
    "id": "week2-2026-10-26",
    "ts": 1792970594539,
