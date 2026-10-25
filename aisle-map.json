@@ -38,7 +38,11 @@
   "ip:44391008": {
    "url": "https://www.walmart.com/ip/seort/44391008",
    "name": "Limes",
-   "cat": "Fruits & Veggies"
+   "cat": "Fruits & Veggies",
+   "aisle": "AP6",
+   "observed": "2026-10-25",
+   "confidence": "high",
+   "source": "walmart product page (store selected)"
   },
   "ip:44390968": {
    "url": "https://www.walmart.com/ip/seort/44390968",
@@ -97,7 +101,11 @@
   "ip:15077514": {
    "url": "https://www.walmart.com/ip/seort/15077514",
    "name": "GV sharp cheddar slices, 8 oz",
-   "cat": "Dairy"
+   "cat": "Dairy",
+   "aisle": "A34",
+   "observed": "2026-10-25",
+   "confidence": "high",
+   "source": "walmart product page (store selected)"
   },
   "ip:364923224": {
    "url": "https://www.walmart.com/ip/seort/364923224",
@@ -148,7 +156,11 @@
   "ip:3562572626": {
    "url": "https://www.walmart.com/ip/seort/3562572626",
    "name": "GV thick & chunky salsa, medium",
-   "cat": "Sauces & Spices"
+   "cat": "Sauces & Spices",
+   "aisle": "A6",
+   "observed": "2026-10-25",
+   "confidence": "high",
+   "source": "walmart product page (store selected)"
   },
   "ip:378941019": {
    "url": "https://www.walmart.com/ip/seort/378941019",
@@ -267,6 +279,31 @@
    "observed": "2026-10-25",
    "confidence": "high",
    "source": "walmart product page (store selected)"
+  },
+  "ip:10452429": {
+   "url": "https://www.walmart.com/ip/Great-Value-Cream-Cheese-Brick-8-oz-Refrigerated/10452429",
+   "name": "GV cream cheese brick, 8 oz",
+   "cat": "Dairy"
+  },
+  "ip:10450990": {
+   "url": "https://www.walmart.com/ip/Great-Value-Diced-Tomatoes-in-Tomato-Juice-14-5-oz-Can/10450990",
+   "name": "GV diced tomatoes, 14.5 oz (canned)",
+   "cat": "Sauces & Spices"
+  },
+  "ip:10415500": {
+   "url": "https://www.walmart.com/ip/Great-Value-Tomato-Sauce-15-oz/10415500",
+   "name": "GV tomato sauce, 15 oz (canned)",
+   "cat": "Sauces & Spices"
+  },
+  "ip:14089344": {
+   "url": "https://www.walmart.com/ip/Frank-s-RedHot-Kosher-Original-Cayenne-Pepper-Hot-Sauce-12-oz-Bottle/14089344",
+   "name": "Frank's RedHot Original hot sauce, 12 oz",
+   "cat": "Sauces & Spices"
+  },
+  "ip:533272737": {
+   "url": "https://www.walmart.com/ip/Great-Value-Kosher-Ground-Cinnamon-2-5-oz/533272737",
+   "name": "GV ground cinnamon, 2.5 oz",
+   "cat": "Sauces & Spices"
   }
  },
  "categories": {
@@ -274,6 +311,10 @@
    {
     "aisle": "A1",
     "items": 2
+   },
+   {
+    "aisle": "AP6",
+    "items": 1
    },
    {
     "aisle": "AP10",
@@ -297,7 +338,7 @@
   "Dairy": [
    {
     "aisle": "A34",
-    "items": 3
+    "items": 4
    },
    {
     "aisle": "A33",
@@ -315,7 +356,7 @@
    },
    {
     "aisle": "A6",
-    "items": 1
+    "items": 2
    },
    {
     "aisle": "A9",
@@ -435,6 +476,12 @@
    "basis": "walkOrder (observed map)"
   },
   {
+   "order": 135,
+   "aisle": "AP6",
+   "zone": "Produce",
+   "basis": "walkOrder (observed map)"
+  },
+  {
    "order": 140,
    "aisle": "AP10",
    "zone": "Produce",
@@ -456,12 +503,13 @@
   "A6",
   "A3",
   "A1",
+  "AP6",
   "AP10"
  ],
  "updated": "2026-10-25",
  "coverage": {
-  "items": 32,
-  "withAisle": 24
+  "items": 37,
+  "withAisle": 27
  },
  "walkOrder": [
   {
@@ -547,6 +595,12 @@
    "aisle": "A1",
    "zone": "Produce",
    "note": "produce, left wall bottom near bread/deli"
+  },
+  {
+   "order": 135,
+   "aisle": "AP6",
+   "zone": "Produce",
+   "note": "produce aisle AP (limes); position vs AP10 not yet confirmed"
   },
   {
    "order": 140,
