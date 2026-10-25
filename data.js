@@ -16,35 +16,56 @@ window.WEEK = {
      "qty": 1,
      "price": 3.63,
      "url": "https://www.walmart.com/ip/seort/10532755",
-     "urlType": "product"
+     "urlType": "product",
+     "recipes": [
+      "taco-salad-with-ground-beef"
+     ]
     },
     {
      "name": "Iceberg lettuce",
      "qty": 1,
      "price": 2.57,
      "url": "https://www.walmart.com/ip/seort/10402650",
-     "urlType": "product"
+     "urlType": "product",
+     "recipes": [
+      "air-fry-mode-burgers-in-lettuce-wraps",
+      "taco-salad-with-ground-beef"
+     ]
     },
     {
      "name": "Celery",
      "qty": 1,
      "price": 2.04,
      "url": "https://www.walmart.com/ip/seort/51259411",
-     "urlType": "product"
+     "urlType": "product",
+     "recipes": [
+      "taco-salad-with-ground-beef"
+     ]
     },
     {
      "name": "Limes",
      "qty": 2,
      "price": 0.23,
      "url": "https://www.walmart.com/ip/seort/44391008",
-     "urlType": "product"
+     "urlType": "product",
+     "recipes": [
+      "slow-cooker-pork-carnitas-with-cauliflow",
+      "shrimp-fajita-bowls-on-cauliflower-rice",
+      "garlic-butter-shrimp-with-spinach"
+     ]
     },
     {
      "name": "Small Hass avocados, 5-6 ct bag",
      "qty": 1,
      "price": 3.48,
      "url": "https://www.walmart.com/ip/seort/44390968",
-     "urlType": "product"
+     "urlType": "product",
+     "recipes": [
+      "slow-cooker-pork-carnitas-with-cauliflow",
+      "air-fry-mode-burgers-in-lettuce-wraps",
+      "shrimp-fajita-bowls-on-cauliflower-rice",
+      "taco-salad-with-ground-beef"
+     ]
     }
    ]
   },
@@ -56,28 +77,41 @@ window.WEEK = {
      "qty": 1,
      "price": 16.43,
      "url": "https://www.walmart.com/ip/seort/15136794",
-     "urlType": "product"
+     "urlType": "product",
+     "recipes": [
+      "air-fry-mode-burgers-in-lettuce-wraps",
+      "taco-salad-with-ground-beef"
+     ]
     },
     {
      "name": "Smithfield pork picnic roast (by weight)",
      "qty": 1,
      "price": 17.07,
      "url": "https://www.walmart.com/search?q=Smithfield+pork+picnic+roast",
-     "urlType": "search"
+     "urlType": "search",
+     "recipes": [
+      "slow-cooker-pork-carnitas-with-cauliflow"
+     ]
     },
     {
      "name": "GV Polska kielbasa, 14 oz",
      "qty": 1,
      "price": 3.23,
      "url": "https://www.walmart.com/ip/seort/5265533849",
-     "urlType": "product"
+     "urlType": "product",
+     "recipes": [
+      "sheet-pan-kielbasa-with-peppers-onions-b"
+     ]
     },
     {
      "name": "Sanderson Farms chicken thighs, family pack (by weight)",
      "qty": 1,
      "price": 8.92,
      "url": "https://www.walmart.com/ip/seort/193413277",
-     "urlType": "product"
+     "urlType": "product",
+     "recipes": [
+      "oven-air-fry-chicken-thighs-big-batch"
+     ]
     }
    ]
   },
@@ -96,14 +130,23 @@ window.WEEK = {
      "qty": 2,
      "price": 1.97,
      "url": "https://www.walmart.com/ip/seort/10452480",
-     "urlType": "product"
+     "urlType": "product",
+     "recipes": [
+      "slow-cooker-pork-carnitas-with-cauliflow",
+      "shrimp-fajita-bowls-on-cauliflower-rice",
+      "taco-salad-with-ground-beef",
+      "garlic-butter-shrimp-with-spinach"
+     ]
     },
     {
      "name": "GV sharp cheddar slices, 8 oz",
      "qty": 1,
      "price": 1.67,
      "url": "https://www.walmart.com/ip/seort/15077514",
-     "urlType": "product"
+     "urlType": "product",
+     "recipes": [
+      "air-fry-mode-burgers-in-lettuce-wraps"
+     ]
     },
     {
      "name": "GV mozzarella string cheese, 12 ct",
@@ -117,14 +160,27 @@ window.WEEK = {
      "qty": 1,
      "price": 1.84,
      "url": "https://www.walmart.com/ip/seort/12335111",
-     "urlType": "product"
+     "urlType": "product",
+     "recipes": [
+      "slow-cooker-pork-carnitas-with-cauliflow",
+      "air-fry-mode-burgers-in-lettuce-wraps",
+      "shrimp-fajita-bowls-on-cauliflower-rice",
+      "taco-salad-with-ground-beef"
+     ]
     },
     {
      "name": "GV salted butter, 16 oz",
      "qty": 1,
      "price": 3.06,
      "url": "https://www.walmart.com/ip/seort/132893363",
-     "urlType": "product"
+     "urlType": "product",
+     "recipes": [
+      "slow-cooker-pork-carnitas-with-cauliflow",
+      "shrimp-fajita-bowls-on-cauliflower-rice",
+      "oven-air-fry-chicken-thighs-big-batch",
+      "garlic-butter-shrimp-with-spinach",
+      "homemade-yum-yum-sauce"
+     ]
     },
     {
      "name": "Oikos Triple Zero, 6 ct",
@@ -145,7 +201,10 @@ window.WEEK = {
      "qty": 1,
      "price": 4.92,
      "url": "https://www.walmart.com/ip/seort/14336391",
-     "urlType": "product"
+     "urlType": "product",
+     "recipes": [
+      "garlic-butter-shrimp-with-spinach"
+     ]
     }
    ]
   },
@@ -157,35 +216,56 @@ window.WEEK = {
      "qty": 1,
      "price": 15.96,
      "url": "https://www.walmart.com/search?q=Great+Value+raw+peeled+shrimp%2C+2+lb",
-     "urlType": "search"
+     "urlType": "search",
+     "recipes": [
+      "shrimp-fajita-bowls-on-cauliflower-rice",
+      "garlic-butter-shrimp-with-spinach"
+     ]
     },
     {
      "name": "GV broccoli florets, 32 oz",
      "qty": 1,
      "price": 2.88,
      "url": "https://www.walmart.com/search?q=Great+Value+broccoli+florets%2C+32+oz",
-     "urlType": "search"
+     "urlType": "search",
+     "recipes": [
+      "sheet-pan-kielbasa-with-peppers-onions-b",
+      "oven-air-fry-chicken-thighs-big-batch",
+      "garlic-butter-shrimp-with-spinach"
+     ]
     },
     {
      "name": "GV pepper & onion blend, 20 oz",
      "qty": 2,
      "price": 2.84,
      "url": "https://www.walmart.com/search?q=Great+Value+pepper+%26+onion+blend%2C+20+oz",
-     "urlType": "search"
+     "urlType": "search",
+     "recipes": [
+      "sheet-pan-kielbasa-with-peppers-onions-b",
+      "shrimp-fajita-bowls-on-cauliflower-rice"
+     ]
     },
     {
      "name": "GV chopped spinach, 10 oz",
      "qty": 1,
      "price": 1.24,
      "url": "https://www.walmart.com/search?q=Great+Value+chopped+spinach%2C+10+oz",
-     "urlType": "search"
+     "urlType": "search",
+     "recipes": [
+      "garlic-butter-shrimp-with-spinach"
+     ]
     },
     {
      "name": "GV riced cauliflower, 12 oz",
      "qty": 2,
      "price": 2.24,
      "url": "https://www.walmart.com/search?q=Great+Value+riced+cauliflower%2C+12+oz",
-     "urlType": "search"
+     "urlType": "search",
+     "recipes": [
+      "slow-cooker-pork-carnitas-with-cauliflow",
+      "shrimp-fajita-bowls-on-cauliflower-rice",
+      "garlic-butter-shrimp-with-spinach"
+     ]
     }
    ]
   },
@@ -197,42 +277,67 @@ window.WEEK = {
      "qty": 1,
      "price": 1.97,
      "url": "https://www.walmart.com/ip/seort/3562572626",
-     "urlType": "product"
+     "urlType": "product",
+     "recipes": [
+      "slow-cooker-pork-carnitas-with-cauliflow",
+      "shrimp-fajita-bowls-on-cauliflower-rice",
+      "taco-salad-with-ground-beef"
+     ]
     },
     {
      "name": "GV hamburger dill chips, 32 oz",
      "qty": 1,
      "price": 2.92,
      "url": "https://www.walmart.com/ip/seort/378941019",
-     "urlType": "product"
+     "urlType": "product",
+     "recipes": [
+      "air-fry-mode-burgers-in-lettuce-wraps"
+     ]
     },
     {
      "name": "GV ranch dressing, 16 oz",
      "qty": 1,
      "price": 2.37,
      "url": "https://www.walmart.com/ip/seort/16618888",
-     "urlType": "product"
+     "urlType": "product",
+     "recipes": [
+      "air-fry-mode-burgers-in-lettuce-wraps",
+      "taco-salad-with-ground-beef"
+     ]
     },
     {
      "name": "GV taco seasoning, 1 oz",
      "qty": 2,
      "price": 0.5,
      "url": "https://www.walmart.com/ip/seort/379517847",
-     "urlType": "product"
+     "urlType": "product",
+     "recipes": [
+      "taco-salad-with-ground-beef"
+     ]
     },
     {
      "name": "GV fajita seasoning",
      "qty": 1,
      "price": 0.77,
      "url": "https://www.walmart.com/ip/seort/149215159",
-     "urlType": "product"
+     "urlType": "product",
+     "recipes": [
+      "shrimp-fajita-bowls-on-cauliflower-rice"
+     ]
     },
     {
      "name": "GV extra virgin olive oil, 17 oz",
      "qty": 1,
      "price": 6.12,
      "url": "https://www.walmart.com/ip/seort/10315102",
-     "urlType": "product"
+     "urlType": "product",
+     "recipes": [
+      "slow-cooker-pork-carnitas-with-cauliflow",
+      "sheet-pan-kielbasa-with-peppers-onions-b",
+      "shrimp-fajita-bowls-on-cauliflower-rice",
+      "oven-air-fry-chicken-thighs-big-batch",
+      "garlic-butter-shrimp-with-spinach"
+     ]
     },
     {
      "name": "Morton Lite Salt",
@@ -251,7 +356,10 @@ window.WEEK = {
      "qty": 1,
      "price": 2.94,
      "url": "https://www.walmart.com/search?q=Baken-Ets+pork+rinds",
-     "urlType": "search"
+     "urlType": "search",
+     "recipes": [
+      "taco-salad-with-ground-beef"
+     ]
     },
     {
      "name": "GV whole almonds, 14 oz",
@@ -315,7 +423,9 @@ window.WEEK = {
     "Crisp: spread 1/3 of the pork on a sheet pan, drizzle 1 tbsp EVOO, broil 4–6 min until edges are browned and crispy. (Or oven Air Fry mode 400°F, 5 min.)",
     "Meanwhile, cook cauliflower rice in a dry skillet over medium-high 6–8 min, stirring, until steam is gone and it's tender-crisp, not mushy. Stir in butter, salt.",
     "Serve pork over cauliflower rice with avocado, sour cream, salsa and cheese. Refrigerate leftover pork with juices (up to 4 days); freeze extra."
-   ]
+   ],
+   "id": "slow-cooker-pork-carnitas-with-cauliflow",
+   "day": "Wed"
   },
   {
    "title": "Thu: Sheet-Pan Kielbasa with Peppers, Onions & Broccoli",
@@ -333,7 +443,9 @@ window.WEEK = {
     "Spread on the hot pan in one layer (use two pans if crowded). Roast 12 min.",
     "Add kielbasa, stir, roast 10–12 min more until sausage browns and broccoli edges char.",
     "Serve as is, or with a spoon of sour cream."
-   ]
+   ],
+   "id": "sheet-pan-kielbasa-with-peppers-onions-b",
+   "day": "Thu"
   },
   {
    "title": "Fri: Air-Fry-Mode Burgers in Lettuce Wraps",
@@ -351,7 +463,9 @@ window.WEEK = {
     "Use the Samsung oven's Air Fry mode at 375°F on the air fry tray (middle rack), 8–10 min total, flipping at 5 min, to 160°F inside. Work in batches; don't stack.",
     "Top 4 patties with cheddar for the last 1 min. Chill the 2 plain patties for lunches.",
     "Wrap each burger in 2–3 iceberg leaves with pickles, avocado and sauce."
-   ]
+   ],
+   "id": "air-fry-mode-burgers-in-lettuce-wraps",
+   "day": "Fri"
   },
   {
    "title": "Sat: Shrimp Fajita Bowls on Cauliflower Rice",
@@ -371,7 +485,9 @@ window.WEEK = {
     "Same pan: shrimp in one layer, 2 min per side until pink and opaque. Don't overcook (turns rubbery).",
     "Separate pan: cook cauliflower rice dry 6–8 min until steam is gone, add butter and salt.",
     "Build bowls: cauliflower rice, veggies, shrimp, avocado, cheese, sour cream, salsa, lime squeeze."
-   ]
+   ],
+   "id": "shrimp-fajita-bowls-on-cauliflower-rice",
+   "day": "Sat"
   },
   {
    "title": "Sun (prep): Oven Air-Fry Chicken Thighs (Big Batch)",
@@ -387,7 +503,9 @@ window.WEEK = {
     "Use the oven's Air Fry mode on the air fry tray in one layer (middle rack), skin side down first: boneless 380°F 18–20 min; bone-in 380°F 22–25 min, flipping halfway. Cook to 175°F inside so skin is crisp.",
     "Repeat batches. Last batch: Air Fry mode broccoli (frozen) with EVOO and salt at 400°F 10–12 min, shaking once, until edges crisp. Add a pat of butter.",
     "Eat 2–4 thighs for dinner. Cool the rest uncovered 20 min, then pull meat off bones and refrigerate in containers for lunches (good 4 days)."
-   ]
+   ],
+   "id": "oven-air-fry-chicken-thighs-big-batch",
+   "day": "Sun"
   },
   {
    "title": "Mon: Taco Salad with Ground Beef",
@@ -406,7 +524,9 @@ window.WEEK = {
     "Stir in taco seasoning and water; simmer 3–5 min until thick.",
     "Pile lettuce and celery in bowls. Top with warm beef, cheese, avocado, salsa, sour cream and a drizzle of ranch.",
     "Sprinkle crushed pork rinds right before eating. Save 1 cup beef for Tuesday's lunch."
-   ]
+   ],
+   "id": "taco-salad-with-ground-beef",
+   "day": "Mon"
   },
   {
    "title": "Tue: Garlic-Butter Shrimp with Spinach",
@@ -425,7 +545,9 @@ window.WEEK = {
     "Skillet, medium-high: EVOO + 1 tbsp butter. Shrimp in one layer, season with salt, pepper, paprika, ½ tsp garlic powder; 2 min per side. Remove.",
     "Lower to medium. 2 tbsp butter, remaining garlic powder, spinach; sauté 3 min until any moisture cooks off. Stir in half & half and cheese, 1 min.",
     "Return shrimp, toss 30 sec, finish with lime juice. Serve right away."
-   ]
+   ],
+   "id": "garlic-butter-shrimp-with-spinach",
+   "day": "Tue"
   },
   {
    "title": "Homemade Yum Yum Sauce",
@@ -453,7 +575,8 @@ window.WEEK = {
     "Carbs: roughly 0.5 g net per 2 tbsp (estimate).",
     "Great with: hibachi chicken and shrimp, steak, burger bowls, and roasted broccoli or cauliflower.",
     "Check the sweetener label. Many monk fruit blends are mostly erythritol, and pure allulose is the cleaner pick."
-   ]
+   ],
+   "id": "homemade-yum-yum-sauce"
   }
  ],
  "prep": [
@@ -569,5 +692,206 @@ window.WEEK = {
  },
  "pending": [],
  "budget": 200,
- "pendingRecipes": []
+ "pendingRecipes": [],
+ "staples": [
+  {
+   "name": "Pepsi Zero Sugar, 24 pk",
+   "url": "https://www.walmart.com/ip/seort/14664661",
+   "cat": "Snacks & Beverages",
+   "price": 13.77,
+   "soda": true
+  },
+  {
+   "name": "GV half & half, 64 oz",
+   "url": "https://www.walmart.com/ip/seort/14336391",
+   "cat": "Dairy",
+   "price": 4.92
+  },
+  {
+   "name": "Oikos Triple Zero Vanilla, 4 ct",
+   "url": "https://www.walmart.com/ip/seort/49028504",
+   "cat": "Dairy",
+   "price": 4.97
+  },
+  {
+   "name": "Oikos Triple Zero, 6 ct",
+   "url": "https://www.walmart.com/ip/seort/49342252",
+   "cat": "Dairy",
+   "price": 7.32
+  },
+  {
+   "name": "GV salted butter, 16 oz",
+   "url": "https://www.walmart.com/ip/seort/132893363",
+   "cat": "Dairy",
+   "price": 3.06
+  },
+  {
+   "name": "GV sour cream, 16 oz",
+   "url": "https://www.walmart.com/ip/seort/12335111",
+   "cat": "Dairy",
+   "price": 1.84
+  },
+  {
+   "name": "GV mozzarella string cheese, 12 ct",
+   "url": "https://www.walmart.com/ip/seort/364923224",
+   "cat": "Dairy",
+   "price": 3.28
+  },
+  {
+   "name": "GV sharp cheddar slices, 8 oz",
+   "url": "https://www.walmart.com/ip/seort/15077514",
+   "cat": "Dairy",
+   "price": 1.67
+  },
+  {
+   "name": "GV taco blend shredded cheese, 8 oz",
+   "url": "https://www.walmart.com/ip/seort/10452480",
+   "cat": "Dairy",
+   "price": 1.97
+  },
+  {
+   "name": "GV large eggs, 18 ct",
+   "url": "https://www.walmart.com/ip/seort/172844767",
+   "cat": "Dairy",
+   "price": 2.47
+  },
+  {
+   "name": "Small Hass avocados, 5-6 ct bag",
+   "url": "https://www.walmart.com/ip/seort/44390968",
+   "cat": "Fruits & Veggies",
+   "price": 3.48
+  },
+  {
+   "name": "Limes",
+   "url": "https://www.walmart.com/ip/seort/44391008",
+   "cat": "Fruits & Veggies",
+   "price": 0.23
+  },
+  {
+   "name": "Celery",
+   "url": "https://www.walmart.com/ip/seort/51259411",
+   "cat": "Fruits & Veggies",
+   "price": 2.04
+  },
+  {
+   "name": "Iceberg lettuce",
+   "url": "https://www.walmart.com/ip/seort/10402650",
+   "cat": "Fruits & Veggies",
+   "price": 2.57
+  },
+  {
+   "name": "Romaine hearts, 3 ct",
+   "url": "https://www.walmart.com/ip/seort/10532755",
+   "cat": "Fruits & Veggies",
+   "price": 3.63
+  },
+  {
+   "name": "Sanderson Farms chicken thighs, family pack (by weight)",
+   "url": "https://www.walmart.com/ip/seort/193413277",
+   "cat": "Meat & Seafood",
+   "price": 8.92
+  },
+  {
+   "name": "GV Polska kielbasa, 14 oz",
+   "url": "https://www.walmart.com/ip/seort/5265533849",
+   "cat": "Meat & Seafood",
+   "price": 3.23
+  },
+  {
+   "name": "80/20 ground beef, 3 lb roll",
+   "url": "https://www.walmart.com/ip/seort/15136794",
+   "cat": "Meat & Seafood",
+   "price": 16.43
+  },
+  {
+   "name": "Morton Lite Salt",
+   "url": "https://www.walmart.com/ip/seort/10318920",
+   "cat": "Sauces & Spices",
+   "price": 3.17
+  },
+  {
+   "name": "GV extra virgin olive oil, 17 oz",
+   "url": "https://www.walmart.com/ip/seort/10315102",
+   "cat": "Sauces & Spices",
+   "price": 6.12
+  },
+  {
+   "name": "GV fajita seasoning",
+   "url": "https://www.walmart.com/ip/seort/149215159",
+   "cat": "Sauces & Spices",
+   "price": 0.77
+  },
+  {
+   "name": "GV taco seasoning, 1 oz",
+   "url": "https://www.walmart.com/ip/seort/379517847",
+   "cat": "Sauces & Spices",
+   "price": 0.5
+  },
+  {
+   "name": "GV ranch dressing, 16 oz",
+   "url": "https://www.walmart.com/ip/seort/16618888",
+   "cat": "Sauces & Spices",
+   "price": 2.37
+  },
+  {
+   "name": "GV hamburger dill chips, 32 oz",
+   "url": "https://www.walmart.com/ip/seort/378941019",
+   "cat": "Sauces & Spices",
+   "price": 2.92
+  },
+  {
+   "name": "GV whole almonds, 14 oz",
+   "url": "https://www.walmart.com/ip/seort/5295229969",
+   "cat": "Snacks & Beverages",
+   "price": 6.14
+  },
+  {
+   "name": "GV thick & chunky salsa, medium",
+   "url": "https://www.walmart.com/ip/seort/3562572626",
+   "cat": "Sauces & Spices",
+   "price": 1.97
+  },
+  {
+   "name": "Toilet paper",
+   "url": "https://www.walmart.com/ip/Angel-Soft-2-Ply-Toilet-Paper-24-Mega-Rolls/596343371",
+   "cat": "Other",
+   "price": 14.72
+  },
+  {
+   "name": "Coconut aminos",
+   "url": "https://www.walmart.com/ip/Bragg-Organic-Coconut-Liquid-Aminos-Soy-Free-Seasoning-10-fl-oz/784580921",
+   "cat": "Sauces & Spices",
+   "price": 6.54
+  },
+  {
+   "name": "Frozen pepper & onion blend",
+   "url": "https://www.walmart.com/ip/Great-Value-Frozen-20-oz-Pepper-Onion-Blend-20-oz/539250805",
+   "cat": "Frozen Foods",
+   "price": 2.84
+  },
+  {
+   "name": "Canned chicken breast",
+   "url": "https://www.walmart.com/ip/Great-Value-Chunk-Chicken-Breast-12-5-Ounce-Can-4-Pack/49914752",
+   "cat": "Meat & Seafood",
+   "price": 9.97
+  },
+  {
+   "name": "Sugar-free yum yum sauce",
+   "url": "https://www.walmart.com/ip/G-Hughes-Sugar-Free-Yum-Yum-Dipping-Sauce-16-oz-Bottle/808075641",
+   "cat": "Sauces & Spices",
+   "price": 5.12
+  },
+  {
+   "name": "Frozen riced cauliflower",
+   "url": "https://www.walmart.com/ip/197864195",
+   "cat": "Frozen Foods"
+  }
+ ],
+ "replies": [
+  {
+   "id": "welcome-v26",
+   "ts": 1792936071564,
+   "text": "Hi! New in the app: search box, + and − for quantities, notes on items, Done shopping (moves unchecked items to next week), Staples quick-add, recipes by day with a Tonight view, Cooked / Ate leftovers buttons, dark mode (Chat > Settings), and my replies show up here."
+  }
+ ]
 };

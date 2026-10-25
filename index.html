@@ -1,65 +1,78 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8">
+<!doctype html><html lang="en" data-theme="auto"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Weekly Grocery List</title><meta name="theme-color" content="#ffffff">
 <link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.svg"><link rel="apple-touch-icon" href="icon.svg">
-<style>
-*{box-sizing:border-box}body{margin:0;font:19px/1.4 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#fff;color:#000}
-header{position:sticky;top:0;background:#fff;border-bottom:2px solid #000;padding:10px 12px;z-index:5}
-h1{font-size:22px;margin:0}.sub{font-size:15px;color:#333}
-.tabs{display:flex;gap:6px;margin-top:8px}.tabs button,.btn{font:inherit;font-weight:700;padding:10px 14px;border:2px solid #000;border-radius:10px;background:#fff;color:#000;min-height:48px}
-.tabs button{flex:1}.tabs button.on,.btn.on{background:#000;color:#fff}
+<style>:root{--bg:#fff;--fg:#000;--mut:#333;--line:#999;--bar:#ddd;--link:#0040a0;--ok:#0a7d2c;--err:#a00;--warn:#b36b00;--pickbg:#fff8ec;--hi:#fff3a0;color-scheme:light}
+html[data-theme=dark]{--bg:#000;--fg:#fff;--mut:#d6d6d6;--line:#777;--bar:#444;--link:#8cc4ff;--ok:#4cd96b;--err:#ff7b7b;--warn:#ffb84d;--pickbg:#231800;--hi:#3a3300;color-scheme:dark}
+@media (prefers-color-scheme:dark){html[data-theme=auto]{--bg:#000;--fg:#fff;--mut:#d6d6d6;--line:#777;--bar:#444;--link:#8cc4ff;--ok:#4cd96b;--err:#ff7b7b;--warn:#ffb84d;--pickbg:#231800;--hi:#3a3300;color-scheme:dark}}
+
+*{box-sizing:border-box}body{margin:0;font:19px/1.4 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--fg)}
+header{position:sticky;top:0;background:var(--bg);border-bottom:2px solid var(--fg);padding:10px 12px;z-index:5}
+h1{font-size:22px;margin:0}.sub{font-size:15px;color:var(--mut)}
+.tabs{display:flex;gap:6px;margin-top:8px}.tabs button,.btn{font:inherit;font-weight:700;padding:10px 14px;border:2px solid var(--fg);border-radius:10px;background:var(--bg);color:var(--fg);min-height:48px}
+.tabs button{flex:1}.tabs button.on,.btn.on{background:var(--fg);color:var(--bg)}
 main{padding:10px 12px 90px;max-width:760px;margin:auto}
-.bar{background:#ddd;height:12px;border-radius:6px;overflow:hidden;margin:6px 0}.bar i{display:block;height:100%;background:#0a7d2c}
+.bar{background:var(--bar);height:12px;border-radius:6px;overflow:hidden;margin:6px 0}.bar i{display:block;height:100%;background:var(--ok)}
 .tools{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
-h2{font-size:21px;border-bottom:3px solid #000;margin:18px 0 4px;padding-bottom:2px}
-.item{display:flex;align-items:center;border-bottom:1px solid #999;min-height:60px}
-.chk{flex:1;display:flex;align-items:center;gap:12px;background:none;border:0;font:inherit;color:#000;text-align:left;padding:10px 4px;min-height:60px;cursor:pointer}
-.box{width:32px;height:32px;border:3px solid #000;border-radius:6px;flex:none;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:900}
-.done .box{background:#0a7d2c;border-color:#0a7d2c;color:#fff}.done .nm{text-decoration:line-through;color:#555}
-.nm{flex:1}.qp{font-size:16px;color:#222;text-align:right;white-space:nowrap}
-.lnk{flex:none;font-size:15px;font-weight:700;color:#0040a0;border:2px solid #0040a0;border-radius:999px;padding:8px 10px;margin-left:4px;text-decoration:none;white-space:nowrap}
-.rm{width:48px;height:48px;border:0;background:none;font-size:26px;color:#a00;flex:none}
-.empty{color:#555;font-style:italic;padding:6px 4px}
-.total{border:2px solid #000;border-radius:10px;padding:10px;margin:16px 0;font-size:17px}.total b{font-size:21px}
-form{border:2px solid #000;border-radius:10px;padding:10px;margin:12px 0;display:grid;gap:8px}
-input,select{font:inherit;padding:10px;border:2px solid #000;border-radius:8px;min-height:48px;width:100%;background:#fff;color:#000}
+h2{font-size:21px;border-bottom:3px solid var(--fg);margin:18px 0 4px;padding-bottom:2px}
+.item{display:flex;align-items:center;border-bottom:1px solid var(--line);min-height:60px}
+.chk{flex:1;display:flex;align-items:center;gap:12px;background:none;border:0;font:inherit;color:var(--fg);text-align:left;padding:10px 4px;min-height:60px;cursor:pointer}
+.box{width:32px;height:32px;border:3px solid var(--fg);border-radius:6px;flex:none;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:900}
+.done .box{background:var(--ok);border-color:var(--ok);color:var(--bg)}.done .nm{text-decoration:line-through;color:var(--mut)}
+.nm{flex:1}.qp{font-size:16px;color:var(--mut);text-align:right;white-space:nowrap}
+.lnk{flex:none;font-size:15px;font-weight:700;color:var(--link);border:2px solid var(--link);border-radius:999px;padding:8px 10px;margin-left:4px;text-decoration:none;white-space:nowrap}
+.rm{width:48px;height:48px;border:0;background:none;font-size:26px;color:var(--err);flex:none}
+.empty{color:var(--mut);font-style:italic;padding:6px 4px}
+.total{border:2px solid var(--fg);border-radius:10px;padding:10px;margin:16px 0;font-size:17px}.total b{font-size:21px}
+form{border:2px solid var(--fg);border-radius:10px;padding:10px;margin:12px 0;display:grid;gap:8px}
+input,select{font:inherit;padding:10px;border:2px solid var(--fg);border-radius:8px;min-height:48px;width:100%;background:var(--bg);color:var(--fg)}
 .row{display:grid;grid-template-columns:1fr 2fr;gap:8px}
-details{border:2px solid #000;border-radius:10px;margin:10px 0}summary{font-weight:700;padding:14px;font-size:20px;cursor:pointer}
-details>div{padding:0 14px 14px}details li{margin:6px 0}.meta{font-size:16px;color:#333}
-#toast{position:fixed;left:10px;right:10px;bottom:14px;background:#000;color:#fff;padding:12px 14px;border-radius:10px;display:none;align-items:center;justify-content:space-between;font-size:17px;z-index:9}
-#toast button{background:#fff;color:#000;border:0;font:inherit;font-weight:700;padding:8px 14px;border-radius:8px}
-.card{border:2px solid #000;border-radius:10px;padding:10px;margin:10px 0}.pick{border-color:#b36b00;background:#fff8ec}
-.opt{display:flex;gap:8px;align-items:center;border-top:1px solid #999;padding:8px 0}.opt div{flex:1}
-.ls{display:flex;gap:6px}.ls button{flex:1}textarea{font:inherit;padding:10px;border:2px solid #000;border-radius:8px;width:100%;min-height:90px}
-.msg{border:1px solid #999;border-radius:10px;padding:8px;margin:6px 0}.msg small{color:#333}.err{color:#a00}.ok{color:#0a7d2c}
+details{border:2px solid var(--fg);border-radius:10px;margin:10px 0}summary{font-weight:700;padding:14px;font-size:20px;cursor:pointer}
+details>div{padding:0 14px 14px}details li{margin:6px 0}.meta{font-size:16px;color:var(--mut)}
+#toast{position:fixed;left:10px;right:10px;bottom:14px;background:var(--fg);color:var(--bg);padding:12px 14px;border-radius:10px;display:none;align-items:center;justify-content:space-between;font-size:17px;z-index:9}
+#toast button{background:var(--bg);color:var(--fg);border:0;font:inherit;font-weight:700;padding:8px 14px;border-radius:8px}
+.card{border:2px solid var(--fg);border-radius:10px;padding:10px;margin:10px 0}.pick{border-color:var(--warn);background:var(--pickbg)}
+.opt{display:flex;gap:8px;align-items:center;border-top:1px solid var(--line);padding:8px 0}.opt div{flex:1}
+.ls{display:flex;gap:6px}.ls button{flex:1}textarea{font:inherit;padding:10px;border:2px solid var(--fg);border-radius:8px;width:100%;min-height:90px}
+.msg{border:1px solid var(--line);border-radius:10px;padding:8px;margin:6px 0}.msg small{color:var(--mut)}.err{color:var(--err)}.ok{color:var(--ok)}
 #thumb{max-width:120px;border-radius:8px;display:none}
-#modal{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;align-items:flex-end;justify-content:center;z-index:20}#modal>div{background:#fff;width:100%;max-width:760px;border-radius:14px 14px 0 0;padding:14px;display:grid;gap:10px;max-height:90vh;overflow:auto}
-.rbar{display:flex;gap:6px;margin:6px 0}.rbar .btn{flex:1}.rpend{color:#b36b00;font-weight:700}details.gone summary{text-decoration:line-through;color:#555}
-.bud{font-size:18px}.over{color:#a00;font-weight:700}
+#modal{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;align-items:flex-end;justify-content:center;z-index:20}#modal>div{background:var(--bg);width:100%;max-width:760px;border-radius:14px 14px 0 0;padding:14px;display:grid;gap:10px;max-height:90vh;overflow:auto}
+.rbar{display:flex;gap:6px;margin:6px 0}.rbar .btn{flex:1}.rpend{color:var(--warn);font-weight:700}details.gone summary{text-decoration:line-through;color:var(--mut)}
+.bud{font-size:18px}.over{color:var(--err);font-weight:700}
+
+.ctl{display:flex;gap:6px;align-items:center;flex-basis:100%;padding:0 0 8px 48px}.ctl .btn{min-height:44px;min-width:44px;padding:6px 10px}.qn{min-width:2.2em;text-align:center;font-weight:700}
+.item{flex-wrap:wrap}.note{display:block;font-size:16px;color:var(--mut);font-style:italic}.tag{font-size:14px;font-weight:700;color:var(--warn)}
+.bdg{display:inline-block;min-width:22px;padding:0 6px;margin-left:4px;border-radius:999px;background:var(--err);color:#fff;font-size:15px;line-height:22px}
+.dot{display:inline-block;width:12px;height:12px;border-radius:50%;background:var(--err);margin-left:6px;vertical-align:middle}
+.dayh{margin-top:22px}.today{border-width:4px;border-color:var(--ok)}.todayh{color:var(--ok)}.cookd{color:var(--ok);font-weight:700}
+#q{margin:6px 0}.banner{border:2px solid var(--warn);border-radius:10px;padding:8px 10px;margin:8px 0;font-weight:700}
+.tn{font-size:24px;line-height:1.5}.tn h2{font-size:28px}.tn li{margin:12px 0}.reply{border-color:var(--ok);border-width:2px}
 </style></head><body>
 <header><h1 id="ttl">Weekly Grocery List</h1><div class="sub" id="dates"></div>
-<div class="tabs"><button id="tL" class="on">List</button><button id="tR">Recipes</button><button id="tC">Chat</button></div></header>
+<div class="tabs"><button id="tL" class="on">List<span id="bL"></span></button><button id="tR">Recipes<span id="bR"></span></button><button id="tC">Chat<span id="bC"></span></button></div></header>
 <main><section id="list">
 <div class="ls"><button class="btn" id="lThis">This week</button><button class="btn" id="lNext">Next week</button></div>
-<div id="picks"></div>
+<div id="pbanner"></div><div id="picks"></div>
 <div class="card"><b>Ask assistant to add</b><input id="xt" placeholder="e.g. 2 bags shredded cheese">
 <div class="tools"><label class="btn" for="xf">📷 Photo</label><input id="xf" type="file" accept="image/*" capture="environment" hidden><img id="thumb" alt="photo preview">
 <select id="xl" style="flex:1;width:auto"><option value="this">This week</option><option value="next">Next week</option></select></div>
 <button class="btn" id="xs" style="width:100%">Send to assistant</button><div id="xst"></div></div>
 <div id="prog" style="font-weight:700"></div><div id="sync" class="meta"></div><div class="bar"><i id="pb"></i></div>
-<div class="tools"><button class="btn" id="mode">View: Category</button><button class="btn" id="hide">Hide checked</button><button class="btn" id="sink">Checked to bottom</button><button class="btn" id="clear">Clear checks</button></div>
+<div class="tools"><button class="btn" id="mode">View: Category</button><button class="btn" id="hide">Hide checked</button><button class="btn" id="sink">Checked to bottom</button><button class="btn" id="clear">Clear checks</button><button class="btn" id="donesh">✓ Done shopping</button></div><div id="donest" class="meta"></div>
+<input id="q" type="search" placeholder="🔍 Search this list" aria-label="Search items" autocomplete="off">
 <div id="cats"></div><div class="total" id="tot"></div>
+<details id="stp"><summary>⭐ Staples quick-add</summary><div id="stl"></div></details>
 <form id="add"><b>Add an item</b><input id="an" placeholder="Item name" required>
 <div class="row"><input id="aq" placeholder="Qty" inputmode="numeric"><select id="ac"></select></div>
 <input id="ap" placeholder="Price each (optional, e.g. 2.99)" inputmode="decimal"><button class="btn">Add item</button></form>
 <button class="btn" id="reset" style="width:100%">Restore removed items</button>
-</section><section id="recipes" hidden><div class="ls"><button class="btn" id="rThis">This week</button><button class="btn" id="rNext">Next week</button></div><div id="rpicks"></div><div id="rlist"></div></section>
+</section><section id="recipes" hidden><div class="ls"><button class="btn" id="rThis">This week</button><button class="btn" id="rNext">Next week</button></div><div id="rpbanner"></div><div id="rpicks"></div><div id="tonight"></div><div id="rlist"></div></section>
 <section id="chat" hidden><div class="card"><b>Message the assistant</b><textarea id="ct" placeholder="Add, remove or change items or recipes"></textarea>
 <div class="ls"><select id="cl"><option value="this">This week</option><option value="next">Next week</option></select><button class="btn" id="cs">Send</button></div></div>
-<div id="msgs"></div>
-<details><summary>Settings</summary><div><p class="meta">Family PIN (stored only on this phone).</p><input id="key" type="password" autocomplete="off" placeholder="Family PIN" inputmode="numeric"><div class="tools"><button class="btn" id="ksave">Save PIN</button><button class="btn" id="kclr">Forget PIN</button></div><div id="kst" class="meta"></div></div></details></section></main>
+<div id="replies"></div><h3>Your messages</h3><div id="msgs"></div>
+<details><summary>Settings</summary><div><p class="meta">Family PIN (stored only on this phone).</p><input id="key" type="password" autocomplete="off" placeholder="Family PIN" inputmode="numeric"><div class="tools"><button class="btn" id="ksave">Save PIN</button><button class="btn" id="kclr">Forget PIN</button></div><div id="kst" class="meta"></div><p class="meta">Appearance (this phone)</p><div class="ls" id="thm"><button class="btn" data-th="auto">Auto</button><button class="btn" data-th="light">Light</button><button class="btn" data-th="dark">Dark</button></div></div></details></section></main>
 <div id="modal" role="dialog" aria-modal="true"><div id="mbody"></div></div><div id="toast"><span id="tm"></span><button id="undo">Undo</button></div>
-<script src="data.js"></script><script>
+<script>document.documentElement.dataset.theme=localStorage.getItem("grocery-theme")||"auto"</script><script src="data.js"></script><script>
 let W=window.WEEK;const CATS=["Fruits & Veggies","Meat & Seafood","Dairy","Frozen Foods","Sauces & Spices","Snacks & Beverages","Breads & Grains","Other"],
 ROUTE=["Other","Fruits & Veggies","Breads & Grains","Meat & Seafood","Dairy","Sauces & Spices","Snacks & Beverages","Frozen Foods"],
 $=id=>document.getElementById(id),esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
@@ -70,8 +83,12 @@ const save=()=>localStorage.setItem(K,JSON.stringify(S));
 $("ac").innerHTML=CATS.map(c=>`<option>${c}</option>`).join("");
 const nx=()=>S.list==="next";const curCats=()=>nx()?((W.nextWeek&&W.nextWeek.categories)||[]):W.categories;
 function items(){const a=[],p=nx()?"n:":"g:";curCats().forEach(c=>(c.items||[]).forEach((it,i)=>a.push({...it,cat:CATS.includes(c.name)?c.name:"Other",id:p+c.name+":"+i})));
- S.added.filter(it=>(it.list||"this")===S.list).forEach(it=>a.push(it));return a.filter(it=>!S.removed[it.id]);}
-const lnk=i=>{const u=i.url||("https://www.walmart.com/search?q="+encodeURIComponent(i.name)),real=i.url&&i.urlType!=="search"&&/walmart\.com\/ip\//.test(i.url);return `<a class="lnk" href="${esc(u)}" target="_blank" rel="noopener" aria-label="${real?"Walmart product page":"Search Walmart"} for ${esc(i.name)}">${real?"Walmart":"Search"} ↗</a>`};
+ S.added.filter(it=>(it.list||"this")===S.list).forEach(it=>a.push(it));
+ a.forEach(it=>{if(S.qty&&S.qty[it.id]!=null){it.baseQty=it.qty;it.qty=S.qty[it.id]}if(S.note&&S.note[it.id])it.note=S.note[it.id]});return a.filter(it=>!S.removed[it.id]);}
+const AND=/Android/i.test(navigator.userAgent);
+function wurl(u){if(AND&&/^https:\/\/www\.walmart\.com\//.test(u))return "intent://"+u.slice(8)+"#Intent;scheme=https;package=com.walmart.android;S.browser_fallback_url="+encodeURIComponent(u)+";end";return u}
+const wa=(u,label,txt)=>`<a class="lnk" href="${esc(wurl(u))}"${AND?"":' target="_blank"'} rel="noopener" aria-label="${esc(label)}">${txt}</a>`;
+const lnk=i=>{const u=i.url||("https://www.walmart.com/search?q="+encodeURIComponent(i.name)),real=i.url&&i.urlType!=="search"&&/walmart\.com\/ip\//.test(i.url);return wa(u,(real?"Walmart product page":"Search Walmart")+" for "+i.name,(real?"Walmart":"Search")+" ↗")};
 const money=n=>"$"+n.toFixed(2);
 function render(){$("ttl").textContent=W.title;$("dates").textContent=(nx()?(W.nextWeek&&W.nextWeek.dates)||"Next week":W.dates)||"";$("lThis").classList.toggle("on",!nx());$("rThis")&&($("rThis").classList.toggle("on",!nx()),$("rNext").classList.toggle("on",nx()));$("lNext").classList.toggle("on",nx());renderPicks();
  const all=items(),done=all.filter(i=>S.checked[i.id]).length;
@@ -79,16 +96,16 @@ function render(){$("ttl").textContent=W.title;$("dates").textContent=(nx()?(W.n
  $("hide").classList.toggle("on",S.hide);$("sink").classList.toggle("on",S.sink);$("mode").textContent="View: "+(S.route?"Store route":"Category");$("mode").classList.toggle("on",S.route);
  let h="";for(const c of (S.route?ROUTE:CATS)){let its=all.filter(i=>i.cat===c);
   its.sort((a,b)=>(a.aisle&&b.aisle?String(a.aisle).localeCompare(String(b.aisle),undefined,{numeric:true}):a.aisle?-1:b.aisle?1:0)||(S.sink?(!!S.checked[a.id])-(!!S.checked[b.id]):0));
-  const vis=S.hide?its.filter(i=>!S.checked[i.id]):its;
-  h+=`<h2>${c}</h2>`;if(!its.length)h+=`<div class="empty">None this week</div>`;else if(!vis.length)h+=`<div class="empty">All in cart ✓</div>`;
+  let vis=S.hide?its.filter(i=>!S.checked[i.id]):its;if(QS){vis=vis.filter(i=>(i.name+" "+(i.note||"")).toLowerCase().includes(QS));if(!vis.length)continue;}
+  h+=`<h2>${c}</h2>`;if(QS){}else if(!its.length)h+=`<div class="empty">None this week</div>`;else if(!vis.length)h+=`<div class="empty">All in cart ✓</div>`;
   for(const i of vis){const d=S.checked[i.id],q=i.qty?"×"+esc(i.qty):"",p=i.price!=null?money(i.price*(+i.qty||1)):"";
-   h+=`<div class="item${d?" done":""}"><button class="chk" data-c="${esc(i.id)}" aria-pressed="${!!d}"><span class="box">${d?"✓":""}</span><span class="nm">${esc(i.name)}${i.aisle?` <small>(${esc(i.aisle)})</small>`:""}</span><span class="qp">${q}<br>${p}</span></button>${lnk(i)}<button class="rm" data-r="${esc(i.id)}" aria-label="Remove ${esc(i.name)}">✕</button></div>`;}}
- $("cats").innerHTML=h;
- let food=0,soda=0,unk=0,pl=0,ua=0;all.forEach(i=>{if(i.price==null){unk++;return}const v=i.price*(+i.qty||1);i.soda?soda+=v:food+=v;(i.addedBy==="user"||String(i.id).startsWith("u:"))?ua+=v:pl+=v});
+   h+=`<div class="item${d?" done":""}"><button class="chk" data-c="${esc(i.id)}" aria-pressed="${!!d}"><span class="box">${d?"✓":""}</span><span class="nm">${esc(i.name)}${i.aisle?` <small>(${esc(i.aisle)})</small>`:""}${i.carried?' <span class="tag">carried over</span>':""}${i.note?`<span class="note">📝 ${esc(i.note)}</span>`:""}</span><span class="qp">${q}<br>${p}</span></button>${lnk(i)}<button class="rm" data-r="${esc(i.id)}" aria-label="Remove ${esc(i.name)}">✕</button><div class="ctl"><button class="btn" data-qm="${esc(i.id)}" aria-label="Less ${esc(i.name)}">−</button><span class="qn">${esc(i.qty||1)}</span><button class="btn" data-qp="${esc(i.id)}" aria-label="More ${esc(i.name)}">+</button><button class="btn" data-nt="${esc(i.id)}">✎ ${i.note?"Note":"Add note"}</button></div></div>`;}}
+ if(QS&&!h)h=`<p class="empty">No items match “${esc(QS)}”</p>`;$("cats").innerHTML=h;
+ let food=0,soda=0,unk=0,pl=0,ua=0;all.forEach(i=>{if(i.price==null){unk++;return}const v=i.price*(+i.qty||1);i.soda?soda+=v:food+=v;(i.addedBy==="user"||i.carried||String(i.id).startsWith("u:"))?ua+=v:pl+=v});
  const disc=Math.min(W.discount||0,food),sub=food+soda-disc,ft=Math.round((food-disc)*W.foodTaxRate*100)/100,st=Math.round(soda*W.sodaTaxRate*100)/100;
  const B=(nx()?(W.nextWeek&&W.nextWeek.budget):null)||W.budget||200;
  $("tot").innerHTML=`<div class="bud">Planned (budget ${money(B)}): <b class="${pl>B?"over":""}">${money(pl)}</b><br>Your additions: <b>${money(ua)}</b></div><small>Before tax.</small><hr>Subtotal ${money(sub)}${disc?` (after ${money(disc)} rollback)`:""}<br>Food tax ${(W.foodTaxRate*100).toFixed(2).replace(/\.?0+$/,"")}% ${money(ft)} · Soda tax ${(W.sodaTaxRate*100).toFixed(2).replace(/\.?0+$/,"")}% ${money(st)}<br><b>Estimated total: ${money(sub+ft+st)}</b><br><small>${esc(W.priceNote||"")}${unk?` ${unk} item(s) without a price not included.`:""}</small>`;
- $("reset").hidden=!Object.keys(S.removed).length;if(typeof DEV!=="undefined")recipes();}
+ $("reset").hidden=!Object.keys(S.removed).length;if(typeof DEV!=="undefined"){recipes();extras();}}
 let undoFn,tt;function toast(m,f){undoFn=f;$("undo").hidden=!f;$("tm").textContent=m;$("toast").style.display="flex";clearTimeout(tt);tt=setTimeout(()=>$("toast").style.display="none",6000);}
 $("undo").onclick=()=>{undoFn&&undoFn();$("toast").style.display="none";};
 
@@ -100,7 +117,7 @@ if(SY){SH=SY.sh;Q=SY.q}else{SH={};Q=[];var mt=1000;
  Q.forEach(applyOp);}
 function applyOp(p){var m=SH[p.k]||(SH[p.k]={}),c=m[p.id],v=p.v===undefined?null:p.v;if(!c||p.ts>c.ts||(p.ts===c.ts&&JSON.stringify(v)>JSON.stringify(c.v))){m[p.id]={v:v,ts:p.ts};return true}return false}
 function rebuild(){var f=k=>{var o={},m=SH[k]||{};for(var id in m)if(m[id].v)o[id]=m[id].v;return o};
- S.recipe=f("recipe");S.checked=f("checked");S.removed=f("removed");S.chosen=f("chosen");S.cancelled=f("cancelled");
+ S.recipe=f("recipe");S.qty=f("qty");S.note=f("note");S.cooked=f("cooked");S.done=f("done");S.checked=f("checked");S.removed=f("removed");S.chosen=f("chosen");S.cancelled=f("cancelled");
  var a=SH.added||{};S.added=Object.keys(a).filter(id=>a[id].v).sort((x,y)=>a[x].ts-a[y].ts).map(id=>Object.assign({},a[id].v,{id:id}));}
 var lastTs=0;function now(){var t=Date.now();lastTs=t>lastTs?t:lastTs+1;return lastTs}
 function persist(){localStorage.setItem(SK,JSON.stringify({sh:SH,q:Q}));save()}
@@ -111,15 +128,20 @@ async function flush(){if(syncing){syncAgain=true;return}var pin=localStorage.ge
   var r=await fetch(u,batch.length?{method:"POST",headers:{"X-App-Pin":pin,"Content-Type":"application/json"},body:JSON.stringify({ops:batch})}:{headers:{"X-App-Pin":pin},cache:"no-store"});
   if(r.ok){var d=await r.json();Q.splice(0,batch.length);var st=d.state||{},chg=false;
    for(var k in st)for(var id in st[k])if(applyOp({k:k,id:id,v:st[k][id].v,ts:st[k][id].ts}))chg=true;
-   Q.forEach(applyOp);var before=JSON.stringify([S.checked,S.removed,S.added,S.chosen,S.cancelled,S.recipe]);rebuild();persist();
-   if(before!==JSON.stringify([S.checked,S.removed,S.added,S.chosen,S.cancelled,S.recipe]))render();$("sync")&&($("sync").textContent="Synced "+new Date().toLocaleTimeString([], {hour:"numeric",minute:"2-digit"}));}
+   Q.forEach(applyOp);var before=JSON.stringify([S.checked,S.removed,S.added,S.chosen,S.cancelled,S.recipe,S.qty,S.note,S.cooked,S.done]);rebuild();persist();
+   if(before!==JSON.stringify([S.checked,S.removed,S.added,S.chosen,S.cancelled,S.recipe,S.qty,S.note,S.cooked,S.done]))render();$("sync")&&($("sync").textContent="Synced "+new Date().toLocaleTimeString([], {hour:"numeric",minute:"2-digit"}));}
   else if($("sync"))$("sync").textContent=r.status==401?"Sync: check PIN":"Sync paused ("+r.status+")";
  }catch(e){$("sync")&&($("sync").textContent="Offline. Changes saved, will sync");}
  syncing=false;if(syncAgain||Q.length&&Q.length>=300){syncAgain=false;setTimeout(flush,200)}}
 rebuild();persist();
 setInterval(()=>{if(!document.hidden)flush()},10000);addEventListener("focus",flush);addEventListener("online",flush);document.addEventListener("visibilitychange",()=>{if(!document.hidden)flush()});
 
-$("cats").onclick=e=>{const c=e.target.closest("[data-c]"),r=e.target.closest("[data-r]");
+$("cats").onclick=e=>{const qm=e.target.closest("[data-qm]"),qp=e.target.closest("[data-qp]"),nt=e.target.closest("[data-nt]");
+ if(qm||qp){const id=(qm||qp).dataset[qm?"qm":"qp"],it=items().find(i=>i.id===id);if(!it)return;let n=Math.round(+it.qty||1)+(qp?1:-1);
+  if(n<1){toast("Use ✕ to remove "+it.name);return}const base=it.baseQty!=null?it.baseQty:it.qty;op("qty",id,(String(n)===String(base)&&!id.startsWith("u:"))?null:n);render();return;}
+ if(nt){const id=nt.dataset.nt,it=items().find(i=>i.id===id);if(!it)return;modal(`<b>Note: ${esc(it.name)}</b><textarea id="ntx" maxlength="300" placeholder="e.g. the 24-pack, not 12">${esc(it.note||"")}</textarea><div class="ls"><button class="btn" data-mx>Close</button><button class="btn" data-go="clr">Clear</button><button class="btn on" data-go="save">Save</button></div>`);
+  mAct=async g=>{const v=g==="clr"?"":$("ntx").value.trim();closeM();op("note",id,v||null);render();};return;}
+ const c=e.target.closest("[data-c]"),r=e.target.closest("[data-r]");
  if(c){const id=c.dataset.c;op("checked",id,S.checked[id]?null:1);render();}
  if(r){const id=r.dataset.r,it=items().find(i=>i.id===id);
   if(id.startsWith("u:")){const ov=SH.added&&SH.added[id]&&SH.added[id].v;op("added",id,null);render();toast("Removed "+it.name,()=>{op("added",id,ov||it);render();});}
@@ -131,18 +153,35 @@ $("add").onsubmit=e=>{e.preventDefault();const p=parseFloat($("ap").value.replac
  op("added","u:"+Date.now()+Math.random().toString(36).slice(2,6),{name:$("an").value.trim(),qty:$("aq").value.trim()||1,cat:$("ac").value,list:S.list,price:isNaN(p)?null:p});render();$("an").value=$("aq").value=$("ap").value="";};
 function curRecipes(){return nx()?((W.nextWeek&&W.nextWeek.recipes)||[]):(W.recipes||[])}
 const rkey=r=>"rm:"+(r.id||r.title);
+const DN=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],DFULL={Sun:"Sunday",Mon:"Monday",Tue:"Tuesday",Wed:"Wednesday",Thu:"Thursday",Fri:"Friday",Sat:"Saturday"};
+const rid_=r=>r.id||r.title,rDay=r=>r.day||((r.title.match(/^(Mon|Tue|Wed|Thu|Fri|Sat|Sun)/)||[])[1]||"");
+function weekStart(next){const w=(next&&W.nextWeek&&W.nextWeek.weekId)||W.weekId,d=new Date(String(w).slice(0,10)+"T12:00:00");if(next&&!(W.nextWeek&&W.nextWeek.weekId))d.setDate(d.getDate()+7);return d}
+function dayDate(day,next){const d=weekStart(next);for(let k=0;k<7;k++){const x=new Date(d);x.setDate(d.getDate()+k);if(DN[x.getDay()]===day)return x}return null}
+const sameDay=(a,b)=>a&&b&&a.toDateString()===b.toDateString();
+function rmState(r){return S.recipe["rm:"+rid_(r)]||S.recipe["rm:"+r.title]}
+function rItems(r,all){return all.filter(i=>(i.recipes||[]).some(x=>x===r.id||x===r.title))}
+function todayRecipe(){const t=new Date();return (W.recipes||[]).find(r=>{const d=rDay(r);return d&&sameDay(dayDate(d,false),t)&&!rmState(r)})}
 function recipes(){if(typeof S.recipe==="undefined")S.recipe={};const li=a=>(a||[]).map(x=>`<li>${esc(x)}</li>`).join("");let h="";
- const open=new Set([...document.querySelectorAll("#rlist details[open]")].map(d=>d.dataset.t));
- curRecipes().forEach((r,ix)=>{const rm=S.recipe[rkey(r)];h+=`<details data-t="${esc(r.title)}"${open.has(r.title)?" open":""}${rm?' class="gone"':""}><summary>${esc(r.title)}${rm?' <span class="rpend">· Removal pending</span>':""}</summary><div>
+ const open=new Set([...document.querySelectorAll("#rlist details[open]")].map(d=>d.dataset.t)),all=items(),today=new Date();
+ let R=curRecipes().map((r,ix)=>({r,ix,d:rDay(r)})),order=r=>{if(!r.d)return 99;const x=dayDate(r.d,nx());return x?x-weekStart(nx()):98};R.sort((a,b)=>order(a)-order(b)||a.ix-b.ix);
+ let lastDay=null;
+ R.forEach(({r,ix,d})=>{const rm=rmState(r),dd=d?dayDate(d,nx()):null,isT=!nx()&&sameDay(dd,today),ck=S.cooked&&S.cooked[rid_(r)];
+  const g=d?`${DFULL[d]}${dd?" "+dd.toLocaleDateString([], {month:"short",day:"numeric"}):""}`:"Extras";
+  if(g!==lastDay){h+=`<h2 class="dayh${isT?" todayh":""}">${esc(g)}${isT?" · Today":""}</h2>`;lastDay=g}
+  const its=rItems(r,all),only=rm?its.filter(i=>(i.recipes||[]).every(x=>{const o=curRecipes().find(z=>z.id===x||z.title===x);return !o||o===r||rmState(o)})):[];
+  h+=`<details data-t="${esc(r.title)}"${open.has(r.title)||isT?" open":""} class="${rm?"gone ":""}${isT?"today":""}"><summary>${esc(r.title)}${ck?` <span class="cookd">· ${ck.v==="leftovers"?"Ate leftovers":"Cooked"} ✓</span>`:""}${rm?' <span class="rpend">· Removal pending</span>':""}</summary><div>
  <div class="rbar"><button class="btn" data-re="${ix}">✎ Edit</button>${rm?`<button class="btn" data-ru="${ix}">Undo removal</button>`:`<button class="btn" data-rr="${ix}">✕ Remove</button>`}</div>
- ${rm?`<p class="rpend">Removal pending${rm.by&&rm.by!==DEV?" (other phone)":""}: ${rm.mode==="own"?"cooking our own":"asked for a suggestion"}${rm.text?": "+esc(rm.text):""}</p>`:""}
- <p class="meta">${esc(r.meta||"")}</p><h3>Ingredients</h3><ul>${li(r.ingredients)}</ul><h3>Steps</h3><ol>${li(r.steps)}</ol>${r.notes?`<h3>Notes</h3><ul>${li(r.notes)}</ul>`:""}</div></details>`});
+ <div class="rbar"><button class="btn${ck&&ck.v==="cooked"?" on":""}" data-ck="${ix}" data-v="cooked">🍳 Cooked</button><button class="btn${ck&&ck.v==="leftovers"?" on":""}" data-ck="${ix}" data-v="leftovers">♻ Ate leftovers</button></div>
+ ${isT?`<button class="btn on" data-tn="${ix}" style="width:100%">🍽 Open Tonight view</button>`:""}
+ ${rm?`<p class="rpend">Removal pending${rm.by&&rm.by!==DEV?" (other phone)":""}: ${rm.mode==="own"?"cooking our own":"asked for a suggestion"}${rm.text?": "+esc(rm.text):""}</p>${only.length?`<p class="rpend">These items would drop off: ${only.map(i=>esc(i.name)).join(", ")}</p>`:""}`:""}
+ <p class="meta">${esc(r.meta||"")}</p>${its.length?`<p class="meta"><b>Items on the list for this recipe:</b> ${its.map(i=>esc(i.name)).join(", ")}</p>`:""}<h3>Ingredients</h3><ul>${li(r.ingredients)}</ul><h3>Steps</h3><ol>${li(r.steps)}</ol>${r.notes?`<h3>Notes</h3><ul>${li(r.notes)}</ul>`:""}</div></details>`});
  if(!nx()&&W.snacks&&W.snacks.length)h+=`<details data-t="_snacks"${open.has("_snacks")?" open":""}><summary>Lunches &amp; Snacks</summary><div><ul>${W.snacks.map(s=>`<li><b>${esc(s.name)}</b>: ${esc(s.desc)} <i>${esc(s.carbs)}</i></li>`).join("")}</ul></div></details>`;
  if(!nx()&&W.prep&&W.prep.length)h+=`<details data-t="_prep"${open.has("_prep")?" open":""}><summary>Prep Checklist</summary><div><ul>${li(W.prep)}</ul></div></details>`;
  if(!h)h='<p class="empty">No recipes for this list yet</p>';
- $("rlist").innerHTML=h;renderRPicks();}
+ $("rlist").innerHTML=h;renderRPicks();
+ const tr=todayRecipe();$("tonight").innerHTML=`<div class="card${tr?" today":""}"><b>Tonight (${DFULL[DN[today.getDay()]]}):</b> ${tr?esc(tr.title):"No dinner planned for today on this week's list."}${tr?`<br><button class="btn on" data-tn="t" style="width:100%;margin-top:8px">🍽 Open Tonight view</button>`:""}</div>`;}
 const tab=t=>{["list","recipes","chat"].forEach((x,i)=>{$(x).hidden=x!==t;$(["tL","tR","tC"][i]).classList.toggle("on",x===t)});scrollTo(0,0)};
-$("tL").onclick=()=>tab("list");$("tR").onclick=()=>tab("recipes");$("tC").onclick=()=>{tab("chat");renderMsgs()};
+$("tL").onclick=()=>tab("list");$("tR").onclick=()=>tab("recipes");$("tC").onclick=()=>{tab("chat");renderMsgs();markSeen()};
 render();recipes();if("serviceWorker"in navigator)navigator.serviceWorker.register("sw.js").catch(()=>{});
 
 
@@ -150,14 +189,18 @@ function modal(html){$("mbody").innerHTML=html;$("modal").style.display="flex";}
 $("modal").onclick=e=>{if(e.target.id==="modal"||e.target.closest("[data-mx]"))closeM();};
 var mAct=null;
 $("mbody").addEventListener("click",async e=>{const b=e.target.closest("[data-go]");if(!b||b.disabled||!mAct)return;b.disabled=true;await mAct(b.dataset.go);});
-$("rlist").onclick=e=>{const E=e.target.closest("[data-re]"),R=e.target.closest("[data-rr]"),U=e.target.closest("[data-ru]");const L=S.list;
+$("tonight").onclick=e=>{if(e.target.closest("[data-tn]"))tonightView(todayRecipe())};
+$("rlist").onclick=e=>{const CK=e.target.closest("[data-ck]"),TN=e.target.closest("[data-tn]");
+ if(TN){tonightView(curRecipes()[+TN.dataset.tn]);return}
+ if(CK){const r=curRecipes()[+CK.dataset.ck],v=CK.dataset.v,cur=S.cooked[rid_(r)];op("cooked",rid_(r),cur&&cur.v===v?null:{v:v,title:r.title,list:S.list,at:new Date().toISOString().slice(0,10),by:DEV});render();return}
+ const E=e.target.closest("[data-re]"),R=e.target.closest("[data-rr]"),U=e.target.closest("[data-ru]");const L=S.list;
  if(E){const r=curRecipes()[+E.dataset.re];modal(`<b>Edit: ${esc(r.title)}</b><label>What would you like changed?<textarea id="mt"></textarea></label><div class="ls"><button class="btn" data-mx>Close</button><button class="btn on" data-go="edit">Send</button></div>`);
   mAct=async()=>{const t=$("mt").value.trim();if(!t){toast("Type what to change");$("mbody").querySelector("[data-go]").disabled=false;return}closeM();await send({type:"recipe-edit",recipeId:r.id||r.title,name:r.title,text:t,list:L},"Edit recipe "+r.title+": "+t,"recipe-edit:"+(r.id||r.title)+":"+Date.now());};}
  if(R){const r=curRecipes()[+R.dataset.rr];if(!confirm("Remove "+r.title+"?"))return;
   modal(`<b>Remove: ${esc(r.title)}</b><p>What instead?</p><label>Suggest something else. Any ideas or cravings? (optional)<textarea id="ms"></textarea></label><button class="btn on" data-go="suggest">Suggest something else</button><label>We'll cook our own. What do you plan to make? (optional)<textarea id="mo"></textarea></label><button class="btn" data-go="own">We'll cook our own</button><button class="btn" data-mx>Cancel</button>`);
   mAct=async mode=>{const t=($(mode==="own"?"mo":"ms").value||"").trim();closeM();op("recipe",rkey(r),{mode:mode,text:t,by:DEV});render();
    await send({type:"recipe-remove",recipe:r.id||r.title,name:r.title,mode:mode,text:t,list:L},"Remove recipe "+r.title+(mode==="own"?" (cooking our own)":" (suggest another)")+(t?": "+t:""),"recipe-remove:"+(r.id||r.title));};}
- if(U){const r=curRecipes()[+U.dataset.ru];if(confirm("Keep "+r.title+"? (The assistant may already be working on a replacement.)")){op("recipe",rkey(r),null);render();send({type:"chat",text:"Please keep the recipe "+r.title+"; cancel its removal.",list:L},"Keep recipe "+r.title);}}};
+ if(U){const r=curRecipes()[+U.dataset.ru];if(confirm("Keep "+r.title+"? (The assistant may already be working on a replacement.)")){op("recipe",rkey(r),null);if(S.recipe["rm:"+r.title])op("recipe","rm:"+r.title,null);render();send({type:"chat",text:"Please keep the recipe "+r.title+"; cancel its removal.",list:L},"Keep recipe "+r.title);}}};
 function renderRPicks(){var P=(W.pendingRecipes||[]).filter(p=>(p.list||"this")===S.list&&!S.cancelled[p.id]);
  $("rpicks").innerHTML=P.map(p=>{var c=S.chosen[p.id];return `<div class="card pick"><div style="display:flex;align-items:center;gap:8px"><b style="flex:1">Pick a recipe${p.replaces?": replaces "+esc(p.replaces):""}</b><button class="btn" data-rcx="${esc(p.id)}">✕ Cancel</button></div>${c?`<div class="ok">Chosen${c.by&&c.by!==DEV?" by other phone":""}: ${esc(c.name)}. Waiting for update…</div>`:""}`+
  (p.options||[]).map((o,i)=>{var tag=o.tag||(o.crockpot?"Crockpot":o.sheetpan?"Sheet pan":"");return `<div class="opt"><div><b>${esc(o.name)}</b>${tag?` <small>[${esc(tag)}]</small>`:""}<br><small>${esc(o.summary||"")}</small><br><small>${o.netCarbs!=null?"Net carbs "+esc(o.netCarbs):""}${o.protein!=null?" · Protein "+esc(o.protein):""}</small>${o.newItems&&o.newItems.length?`<br><small>New items: ${o.newItems.map(x=>esc(typeof x==="string"?x:x.name)).join(", ")}</small>`:""}</div><button class="btn${c&&c.i===i?" on":""}" data-rpk="${esc(p.id)}" data-i="${i}"${c?" disabled":""}>${c&&c.i===i?"Chosen":"Choose"}</button></div>`}).join("")+`</div>`}).join("");}
@@ -167,7 +210,7 @@ $("rpicks").onclick=e=>{var x=e.target.closest("[data-rcx]");if(x){var q=(W.pend
 var HOOK="https://grocery-relay.pantry-relay-4821.workers.dev",KK="grocery-pin",photo=null;
 function renderPicks(){var P=(W.pending||[]).filter(p=>(p.list||"this")===S.list&&!S.cancelled[p.id]);
  $("picks").innerHTML=P.map(p=>{var c=S.chosen[p.id];return `<div class="card pick"><div style="display:flex;align-items:center;gap:8px"><b style="flex:1">Pick one: ${esc(p.query)}</b><button class="btn" data-cx="${esc(p.id)}" aria-label="Cancel this request">✕ Cancel</button></div>${c?`<div class="ok">Chosen${c.by&&c.by!==DEV?" by other phone":""}: ${esc(c.name)}. Waiting for list update…</div>`:""}`+
- (p.options||[]).map((o,i)=>`<div class="opt"><div>${esc(o.name)}${o.size?` <small>${esc(o.size)}</small>`:""}<br><small>${o.price!=null?money(+o.price):""}</small></div>${o.url?`<a class="lnk" href="${esc(o.url)}" target="_blank" rel="noopener">Walmart ↗</a>`:""}<button class="btn${c&&c.i===i?" on":""}" data-pk="${esc(p.id)}" data-i="${i}"${c?" disabled":""}>${c&&c.i===i?"Chosen":"Choose"}</button></div>`).join("")+`</div>`}).join("");}
+ (p.options||[]).map((o,i)=>`<div class="opt"><div>${esc(o.name)}${o.size?` <small>${esc(o.size)}</small>`:""}<br><small>${o.price!=null?money(+o.price):""}</small></div>${o.url?wa(o.url,"Walmart page for "+o.name,"Walmart ↗"):""}<button class="btn${c&&c.i===i?" on":""}" data-pk="${esc(p.id)}" data-i="${i}"${c?" disabled":""}>${c&&c.i===i?"Chosen":"Choose"}</button></div>`).join("")+`</div>`}).join("");}
 $("picks").onclick=e=>{var x=e.target.closest("[data-cx]");if(x){var q=(W.pending||[]).find(z=>z.id===x.dataset.cx);if(!q||S.cancelled[q.id]||!confirm("Cancel this request: "+q.query+"?"))return;op("cancelled",q.id,1);render();send({type:"cancel",id:q.id,list:q.list||"this"},"Cancelled: "+q.query,"cancel:"+q.id);return;}
  var b=e.target.closest("[data-pk]");if(!b||b.disabled)return;var p=(W.pending||[]).find(x=>x.id===b.dataset.pk);if(!p||S.chosen[p.id])return;var i=+b.dataset.i,o=p.options[i];
  op("chosen",p.id,{i:i,name:o.name,by:DEV});render();send({type:"choose",id:p.id,index:i,name:o.name,url:o.url||"",list:p.list||"this"},"Chose "+o.name+" for "+p.query,"choose:"+p.id);};
@@ -198,6 +241,47 @@ async function checkData(){try{var t=await (await fetch("data.js?t="+Date.now(),
  if(o.WEEK&&JSON.stringify(o.WEEK)!==lastData){if(o.WEEK.weekId!==W.weekId)return location.reload();W=o.WEEK;lastData=JSON.stringify(W);
   (W.pending||[]).forEach(()=>0);var live=id=>(W.pending||[]).concat(W.pendingRecipes||[]).some(p=>p.id===id);for(var id in S.chosen)if(!live(id))delete S.chosen[id];for(var id in S.cancelled)if(!live(id))delete S.cancelled[id];save();render();recipes();toast("List updated");}}catch(e){}}
 setInterval(()=>{if(!document.hidden)checkData()},60000);document.addEventListener("visibilitychange",()=>{if(!document.hidden)checkData()});
+
+var QS="";$("q").oninput=()=>{QS=$("q").value.trim().toLowerCase();render()};
+function waiting(){const live=(arr)=>(arr||[]).filter(p=>!S.cancelled[p.id]&&!S.chosen[p.id]);const wk=l=>l==="next"?"next week":"this week";
+ const a=live(W.pending),b=live(W.pendingRecipes);return {a,b,wk}}
+function extras(){const {a,b,wk}=waiting();
+ $("bL").innerHTML=a.length?`<span class="bdg" title="Pick-one waiting">${a.length}</span>`:"";$("bR").innerHTML=b.length?`<span class="bdg" title="Recipe pick waiting">${b.length}</span>`:"";
+ const other=x=>x.filter(p=>(p.list||"this")!==S.list);
+ const oa=other(a),ob=other(b);
+ $("pbanner").innerHTML=oa.length?`<div class="banner">${oa.length} Pick-one waiting on ${wk(oa[0].list)} <button class="btn" data-sw="${oa[0].list||"this"}">Show</button></div>`:"";
+ $("rpbanner").innerHTML=ob.length?`<div class="banner">${ob.length} recipe pick waiting on ${wk(ob[0].list)} <button class="btn" data-sw="${ob[0].list||"this"}">Show</button></div>`:"";
+ const seen=+localStorage.getItem("grocery-replies-seen")||0;$("bC").innerHTML=(W.replies||[]).some(r=>(+r.ts||0)>seen)&&$("chat").hidden?'<span class="dot" title="New reply"></span>':"";
+ renderReplies();renderStaples();
+ const dn=S.done&&S.done[S.list];$("donesh").hidden=nx();$("donest").textContent=dn&&!nx()?"Shopping marked done"+(dn.by&&dn.by!==DEV?" on other phone":"")+(dn.n!=null?` · ${dn.n} item(s) carried to next week`:""):"";}
+document.addEventListener("click",e=>{const s=e.target.closest("[data-sw]");if(s){S.list=s.dataset.sw;save();render()}});
+function markSeen(){const m=Math.max(0,...(W.replies||[]).map(r=>+r.ts||0));localStorage.setItem("grocery-replies-seen",m);extras()}
+function renderReplies(){const R=(W.replies||[]).slice().sort((x,y)=>(+y.ts||0)-(+x.ts||0));
+ $("replies").innerHTML=R.length?"<h3>Assistant</h3>"+R.map(r=>`<div class="msg reply"><b>Assistant</b>${r.ref?` <small>re: ${esc(r.ref)}</small>`:""}<br>${esc(r.text)}<br><small>${r.ts?new Date(+r.ts).toLocaleString():""}</small></div>`).join(""):"";}
+const slug=s=>String(s).toLowerCase().replace(/[^a-z0-9]+/g,"-").slice(0,40);
+function onList(st,all){return all.some(i=>(st.url&&i.url===st.url)||i.name.toLowerCase()===st.name.toLowerCase())}
+function renderStaples(){const all=items(),L=(W.staples||[]);
+ $("stl").innerHTML=L.length?`<p class="meta">Adds to ${nx()?"next":"this"} week as your addition.</p>`+L.map((s,k)=>`<div class="opt"><div>${esc(s.name)}<br><small>${s.price!=null?money(+s.price):""}</small></div>${s.url?wa(s.url,"Walmart page for "+s.name,"Walmart ↗"):""}${onList(s,all)?'<span class="ok"><b>On list ✓</b></span>':`<button class="btn" data-st="${k}">+ Add</button>`}</div>`).join(""):'<p class="empty">No staples yet</p>';}
+$("stl").onclick=e=>{const b=e.target.closest("[data-st]");if(!b)return;const s=W.staples[+b.dataset.st];if(onList(s,items()))return;
+ const id="u:st:"+slug(s.name)+":"+S.list;op("added",id,{name:s.name,qty:1,cat:CATS.includes(s.cat)?s.cat:"Other",list:S.list,price:s.price!=null?+s.price:null,url:s.url||"",urlType:s.url?"product":"search",soda:!!s.soda,addedBy:"user",staple:true});render();toast("Added "+s.name,()=>{op("added",id,null);render()});};
+$("donesh").onclick=()=>{if(nx())return;const all=items(),un=all.filter(i=>!S.checked[i.id]),chk=Object.keys(S.checked).filter(id=>all.some(i=>i.id===id));if(!chk.length&&S.done&&S.done.this){toast("Already marked done shopping (on "+(S.done.this.by===DEV?"this":"another")+" phone). Nothing to carry.");return}
+ S.list="next";const nextAll=items();S.list="this";
+ const moves=un.filter(i=>!onList(i,nextAll));
+ if(!confirm(`Done shopping?\n\nThis clears ${chk.length} checkmark(s) and carries ${moves.length} unchecked item(s) to next week's list.`))return;
+ const ids=[];moves.forEach(i=>{const id="u:carry:"+i.id;if(SH.added&&SH.added[id]&&SH.added[id].v)return;ids.push(id);
+  op("added",id,{name:i.name,qty:i.qty||1,cat:i.cat,list:"next",price:i.price!=null?i.price:null,url:i.url||"",urlType:i.urlType||"",aisle:i.aisle||"",soda:!!i.soda,note:i.note||"",recipes:[],addedBy:"user",carried:true,from:i.id})});
+ chk.forEach(id=>op("checked",id,null));op("done","this",{at:Date.now(),by:DEV,n:moves.length});render();
+ toast(`Done. ${moves.length} item(s) moved to next week`,()=>{ids.forEach(id=>op("added",id,null));chk.forEach(id=>op("checked",id,1));op("done","this",null);render()});};
+let wl=null;async function wake(on){try{if(on&&"wakeLock"in navigator){wl=await navigator.wakeLock.request("screen");return true}if(!on&&wl){await wl.release();wl=null}}catch(e){}return false}
+document.addEventListener("visibilitychange",()=>{if(!document.hidden&&$("tnv")&&wl===null&&$("tnv").dataset.lock==="1")wake(true)});
+async function tonightView(r){if(!r)return toast("No dinner planned for today");const li=a=>(a||[]).map(x=>`<li>${esc(x)}</li>`).join("");
+ modal(`<div class="tn" id="tnv"><h2>${esc(r.title)}</h2><p id="wls" class="meta"></p><h3>Ingredients</h3><ul>${li(r.ingredients)}</ul><h3>Steps</h3><ol>${li(r.steps)}</ol>${r.notes?`<h3>Notes</h3><ul>${li(r.notes)}</ul>`:""}<button class="btn" data-mx style="width:100%">Close</button></div>`);
+ $("modal").firstElementChild.style.maxHeight="100vh";$("modal").firstElementChild.style.borderRadius="0";
+ const ok=await wake(true);$("tnv").dataset.lock=ok?"1":"0";$("wls").textContent=ok?"Screen will stay on while this is open.":"Keep-screen-on isn't supported here; your screen may dim.";}
+const _closeM=closeM;closeM=function(){wake(false);const f=$("modal").firstElementChild;f.style.maxHeight="";f.style.borderRadius="";_closeM()};
+function setTheme(t){localStorage.setItem("grocery-theme",t);document.documentElement.dataset.theme=t;document.querySelectorAll("[data-th]").forEach(b=>b.classList.toggle("on",b.dataset.th===t));
+ const dark=t==="dark"||(t==="auto"&&matchMedia("(prefers-color-scheme: dark)").matches);document.querySelector('meta[name=theme-color]').content=dark?"#000000":"#ffffff";}
+$("thm").onclick=e=>{const b=e.target.closest("[data-th]");if(b)setTheme(b.dataset.th)};setTheme(localStorage.getItem("grocery-theme")||"auto");
 $("xl").value=$("cl").value=S.list;render();flush();
 
 </script></body></html>
