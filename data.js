@@ -124,7 +124,8 @@ window.WEEK = {
      "qty": 1,
      "price": 3.28,
      "url": "https://www.walmart.com/ip/seort/364923224",
-     "urlType": "product"
+     "urlType": "product",
+     "aisle": "A35"
     },
     {
      "name": "GV sour cream, 16 oz",
@@ -185,7 +186,7 @@ window.WEEK = {
      "name": "GV broccoli florets, 32 oz (frozen)",
      "qty": 1,
      "price": 2.88,
-     "url": "https://www.walmart.com/search?q=Great+Value+broccoli+florets%2C+32+oz",
+     "url": "https://www.walmart.com/ip/Great-Value-Broccoli-Florets-32-oz-Bag-Frozen/745725724",
      "urlType": "search",
      "recipes": [
       "sheet-pan-chicken-thighs-broccoli",
@@ -196,7 +197,7 @@ window.WEEK = {
      "name": "GV chopped spinach, 10 oz (frozen)",
      "qty": 2,
      "price": 1.24,
-     "url": "https://www.walmart.com/search?q=Great+Value+chopped+spinach%2C+10+oz",
+     "url": "https://www.walmart.com/ip/Great-Value-Chopped-Spinach-10-oz-Frozen/118594560",
      "urlType": "search",
      "recipes": [
       "garlic-butter-shrimp-spinach-w2",
@@ -218,7 +219,7 @@ window.WEEK = {
      "name": "GV riced cauliflower, 12 oz (frozen)",
      "qty": 1,
      "price": 2.24,
-     "url": "https://www.walmart.com/search?q=Great+Value+riced+cauliflower%2C+12+oz",
+     "url": "https://www.walmart.com/ip/Great-Value-Frozen-Riced-Cauliflower-12-oz-Frozen/279573553",
      "urlType": "search",
      "recipes": [
       "chili-cheese-bowls-cauliflower-rice"
@@ -271,7 +272,8 @@ window.WEEK = {
      "urlType": "product",
      "recipes": [
       "sheet-pan-shrimp-fajitas"
-     ]
+     ],
+     "aisle": "A3"
     },
     {
      "name": "GV ranch dressing, 16 oz",
@@ -327,13 +329,14 @@ window.WEEK = {
      "urlType": "product",
      "recipes": [
       "buffalo-chicken-bake"
-     ]
+     ],
+     "aisle": "A3"
     },
     {
      "name": "Swerve confectioners sweetener (erythritol), 12 oz",
      "qty": 1,
      "price": 6.98,
-     "url": "https://www.walmart.com/search?q=Swerve+confectioners+sweetener+12+oz",
+     "url": "https://www.walmart.com/ip/Pack-of-6-Swerve-Sugar-replacment-Confectioners-12-oz/964679560",
      "urlType": "search",
      "recipes": [
       "cheesecake-fluff",
@@ -348,7 +351,8 @@ window.WEEK = {
      "urlType": "product",
      "recipes": [
       "cinnamon-churro-pork-rinds"
-     ]
+     ],
+     "aisle": "A8"
     },
     {
      "name": "Bragg Organic Coconut Liquid Aminos, 10 fl oz",
@@ -359,7 +363,8 @@ window.WEEK = {
      "addedBy": "user",
      "recipes": [
       "garlic-butter-shrimp-spinach-w2"
-     ]
+     ],
+     "aisle": "A7"
     },
     {
      "name": "G Hughes Zero Sugar Yum Yum Dipping Sauce, 16 oz",
@@ -382,7 +387,7 @@ window.WEEK = {
      "name": "Baken-Ets pork rinds (get Original, not Hot)",
      "qty": 2,
      "price": 2.94,
-     "url": "https://www.walmart.com/search?q=Baken-Ets+pork+rinds",
+     "url": "https://www.walmart.com/ip/Baken-Ets-Traditional-Flavor-Chicharrones-Fried-Pork-Skins-Snacks-1-2-oz-serving-size-4-Ounce-Bag-Single-Pack/10900098",
      "urlType": "search",
      "recipes": [
       "cinnamon-churro-pork-rinds"
@@ -409,7 +414,7 @@ window.WEEK = {
      "name": "Sunkist Orange Zero, 12 pk",
      "qty": 1,
      "price": 5.48,
-     "url": "https://www.walmart.com/search?q=Sunkist+Orange+Zero%2C+12+pk",
+     "url": "https://www.walmart.com/ip/Diet-Sunkist-Orange-Soda-12-fl-oz-12-pack/16777403",
      "urlType": "search",
      "soda": true
     }
