@@ -97,8 +97,8 @@ function render(){$("ttl").textContent=W.title;$("dates").textContent=(nx()?(W.n
  const all=items(),done=all.filter(i=>S.checked[i.id]).length;
  $("prog").textContent=`${done} of ${all.length} in cart`;$("pb").style.width=(all.length?done/all.length*100:0)+"%";
  $("mode").textContent="View: "+(S.route?"Store route":"Category");$("mode").classList.toggle("on",S.route);
- let h="";for(const c of (S.route?ROUTE:CATS)){let its=all.filter(i=>i.cat===c);
-  if(S.route)its.sort((a,b)=>aRank(a)-aRank(b)||String(AIS(a)).localeCompare(String(AIS(b)),undefined,{numeric:true})||((!!S.checked[a.id])-(!!S.checked[b.id])));else its.sort((a,b)=>(a.aisle&&b.aisle?String(a.aisle).localeCompare(String(b.aisle),undefined,{numeric:true}):a.aisle?-1:b.aisle?1:0)||((!!S.checked[a.id])-(!!S.checked[b.id])));
+ const RZ=S.route?routeZones(all):null;let h="";for(const c of (S.route?RZ.zones:CATS)){let its=S.route?all.filter(i=>RZ.zone.get(i)===c):all.filter(i=>i.cat===c);
+  if(S.route)its.sort((a,b)=>aRank(a)-aRank(b)||String(AIS(a)).localeCompare(String(AIS(b)),undefined,{numeric:true})||String(a.name).localeCompare(String(b.name)));else its.sort((a,b)=>(a.aisle&&b.aisle?String(a.aisle).localeCompare(String(b.aisle),undefined,{numeric:true}):a.aisle?-1:b.aisle?1:0)||((!!S.checked[a.id])-(!!S.checked[b.id])));
   its.sort((a,b)=>(!!S.checked[a.id])-(!!S.checked[b.id]));  let vis=its;if(QS){vis=vis.filter(i=>(i.name+" "+(i.note||"")).toLowerCase().includes(QS));if(!vis.length)continue;}
   h+=`<h2>${c}</h2>`;if(QS){}else if(!its.length)h+=`<div class="empty">None this week</div>`;else if(!vis.length)h+=`<div class="empty">All in cart ✓</div>`;
   for(const i of vis){const d=S.checked[i.id],q=i.qty?"×"+esc(i.qty):"",p=i.price!=null?money(i.price*(+i.qty||1)):"";
@@ -156,7 +156,13 @@ $("add").onsubmit=e=>{e.preventDefault();const p=parseFloat($("ap").value.replac
 let AM={items:{},pathOrder:[]};fetch("aisle-map.json",{cache:"no-cache"}).then(r=>r.ok?r.json():null).then(j=>{if(j&&j.items){AM=j;render()}}).catch(()=>{});
 function akey(u){const m=String(u||"").match(/\/ip\/(?:[^/]+\/)?(\d+)/);return m?"ip:"+m[1]:null}
 function AIS(i){if(i.aisle)return String(i.aisle);const e=AM.items[akey(i.url)];return e&&e.aisle?e.aisle:""}
-function aRank(i){const a=AIS(i);if(!a)return 1e6;const k=(AM.pathOrder||[]).indexOf(String(a).toUpperCase());return k<0?5e5:k}
+function walk(){const wo=(AM.walkOrder||[]).slice().sort((x,y)=>x.order-y.order);return wo}
+function wAnchor(i){const wo=walk(),a=(AM.categoryAnchor||{})[i.cat];return wo.find(w=>w.aisle===a)}
+// rank: known aisle = its walkOrder number; otherwise just after the category's anchor aisle; else old category order
+function aRank(i){const wo=walk(),a=String(AIS(i)).toUpperCase();const w=a&&wo.find(w=>w.aisle===a);if(w)return w.order;const an=wAnchor(i);if(an)return an.order+(a?4:5);return 1e4+ROUTE.indexOf(i.cat)*10}
+function aZone(i){const wo=walk(),a=String(AIS(i)).toUpperCase();const w=(a&&wo.find(w=>w.aisle===a))||wAnchor(i);return w?w.zone:i.cat}
+function routeZones(all){const zone=new Map(),zs=[];all.slice().sort((a,b)=>aRank(a)-aRank(b)).forEach(i=>{const z=aZone(i);zone.set(i,z);if(!zs.includes(z))zs.push(z)});
+ if(!walk().length)return {zones:ROUTE,zone:new Map(all.map(i=>[i,i.cat]))};return {zones:zs,zone}}
 function curRecipes(){return nx()?((W.nextWeek&&W.nextWeek.recipes)||[]):(W.recipes||[])}
 const rkey=r=>"rm:"+(r.id||r.title);
 const DN=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],DFULL={Sun:"Sunday",Mon:"Monday",Tue:"Tuesday",Wed:"Wednesday",Thu:"Thursday",Fri:"Friday",Sat:"Saturday"};

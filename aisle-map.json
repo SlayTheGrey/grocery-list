@@ -15,7 +15,11 @@
   "ip:10532755": {
    "url": "https://www.walmart.com/ip/seort/10532755",
    "name": "Romaine hearts, 3 ct",
-   "cat": "Fruits & Veggies"
+   "cat": "Fruits & Veggies",
+   "aisle": "A1",
+   "observed": "2026-10-25",
+   "confidence": "high",
+   "source": "walmart product page (store selected)"
   },
   "ip:10402650": {
    "url": "https://www.walmart.com/ip/seort/10402650",
@@ -35,17 +39,29 @@
   "ip:44390968": {
    "url": "https://www.walmart.com/ip/seort/44390968",
    "name": "Small Hass avocados, 5-6 ct bag",
-   "cat": "Fruits & Veggies"
+   "cat": "Fruits & Veggies",
+   "aisle": "AP10",
+   "observed": "2026-10-25",
+   "confidence": "high",
+   "source": "walmart product page (store selected)"
   },
   "ip:15136794": {
    "url": "https://www.walmart.com/ip/seort/15136794",
    "name": "80/20 ground beef, 3 lb roll",
-   "cat": "Meat & Seafood"
+   "cat": "Meat & Seafood",
+   "aisle": "A36",
+   "observed": "2026-10-25",
+   "confidence": "high",
+   "source": "walmart product page (store selected)"
   },
   "ip:5265533849": {
    "url": "https://www.walmart.com/ip/seort/5265533849",
    "name": "GV Polska kielbasa, 14 oz",
-   "cat": "Meat & Seafood"
+   "cat": "Meat & Seafood",
+   "aisle": "A35",
+   "observed": "2026-10-25",
+   "confidence": "high",
+   "source": "walmart product page (store selected)"
   },
   "ip:193413277": {
    "url": "https://www.walmart.com/ip/seort/193413277",
@@ -55,7 +71,11 @@
   "ip:172844767": {
    "url": "https://www.walmart.com/ip/seort/172844767",
    "name": "GV large eggs, 18 ct",
-   "cat": "Dairy"
+   "cat": "Dairy",
+   "aisle": "A34",
+   "observed": "2026-10-25",
+   "confidence": "high",
+   "source": "walmart product page (store selected)"
   },
   "ip:10452480": {
    "url": "https://www.walmart.com/ip/seort/10452480",
@@ -85,7 +105,11 @@
   "ip:49342252": {
    "url": "https://www.walmart.com/ip/seort/49342252",
    "name": "Oikos Triple Zero, 6 ct",
-   "cat": "Dairy"
+   "cat": "Dairy",
+   "aisle": "A33",
+   "observed": "2026-10-25",
+   "confidence": "high",
+   "source": "walmart product page (store selected)"
   },
   "ip:49028504": {
    "url": "https://www.walmart.com/ip/seort/49028504",
@@ -115,7 +139,11 @@
   "ip:379517847": {
    "url": "https://www.walmart.com/ip/seort/379517847",
    "name": "GV taco seasoning, 1 oz",
-   "cat": "Sauces & Spices"
+   "cat": "Sauces & Spices",
+   "aisle": "A6",
+   "observed": "2026-10-25",
+   "confidence": "high",
+   "source": "walmart product page (store selected)"
   },
   "ip:149215159": {
    "url": "https://www.walmart.com/ip/seort/149215159",
@@ -125,7 +153,11 @@
   "ip:10315102": {
    "url": "https://www.walmart.com/ip/seort/10315102",
    "name": "GV extra virgin olive oil, 17 oz",
-   "cat": "Sauces & Spices"
+   "cat": "Sauces & Spices",
+   "aisle": "A9",
+   "observed": "2026-10-25",
+   "confidence": "high",
+   "source": "walmart product page (store selected)"
   },
   "ip:10318920": {
    "url": "https://www.walmart.com/ip/seort/10318920",
@@ -140,17 +172,29 @@
   "ip:14664661": {
    "url": "https://www.walmart.com/ip/seort/14664661",
    "name": "Pepsi Zero Sugar, 24 pk",
-   "cat": "Snacks & Beverages"
+   "cat": "Snacks & Beverages",
+   "aisle": "A20",
+   "observed": "2026-10-25",
+   "confidence": "high",
+   "source": "walmart product page (store selected)"
   },
   "ip:596343371": {
    "url": "https://www.walmart.com/ip/Angel-Soft-2-Ply-Toilet-Paper-24-Mega-Rolls/596343371",
    "name": "Angel Soft 2-Ply Toilet Paper, 24 Mega Rolls",
-   "cat": "Other"
+   "cat": "Other",
+   "aisle": "A24",
+   "observed": "2026-10-25",
+   "confidence": "high",
+   "source": "walmart product page (store selected)"
   },
   "ip:49914752": {
    "url": "https://www.walmart.com/ip/Great-Value-Chunk-Chicken-Breast-12-5-Ounce-Can-4-Pack/49914752",
    "name": "Great Value Chunk Chicken Breast in Water, 12.5 oz cans, 4 pack",
-   "cat": "Meat & Seafood"
+   "cat": "Meat & Seafood",
+   "aisle": "A7",
+   "observed": "2026-10-25",
+   "confidence": "high",
+   "source": "walmart product page (store selected)"
   },
   "ip:539250805": {
    "url": "https://www.walmart.com/ip/Great-Value-Frozen-20-oz-Pepper-Onion-Blend-20-oz/539250805",
@@ -160,7 +204,11 @@
   "ip:197864195": {
    "url": "https://www.walmart.com/ip/197864195",
    "name": "Great Value Organic Steamable Riced Cauliflower, 10 oz (Frozen)",
-   "cat": "Frozen Foods"
+   "cat": "Frozen Foods",
+   "aisle": "A30",
+   "observed": "2026-10-25",
+   "confidence": "high",
+   "source": "walmart product page (store selected)"
   },
   "ip:784580921": {
    "url": "https://www.walmart.com/ip/Bragg-Organic-Coconut-Liquid-Aminos-Soy-Free-Seasoning-10-fl-oz/784580921",
@@ -170,15 +218,264 @@
   "ip:808075641": {
    "url": "https://www.walmart.com/ip/G-Hughes-Sugar-Free-Yum-Yum-Dipping-Sauce-16-oz-Bottle/808075641",
    "name": "G Hughes Zero Sugar Yum Yum Dipping Sauce, 16 oz",
-   "cat": "Sauces & Spices"
+   "cat": "Sauces & Spices",
+   "aisle": "A3",
+   "observed": "2026-10-25",
+   "confidence": "high",
+   "source": "walmart product page (store selected)"
   }
  },
- "categories": {},
- "path": [],
- "pathOrder": [],
+ "categories": {
+  "Fruits & Veggies": [
+   {
+    "aisle": "A1",
+    "items": 1
+   },
+   {
+    "aisle": "AP10",
+    "items": 1
+   }
+  ],
+  "Meat & Seafood": [
+   {
+    "aisle": "A36",
+    "items": 1
+   },
+   {
+    "aisle": "A35",
+    "items": 1
+   },
+   {
+    "aisle": "A7",
+    "items": 1
+   }
+  ],
+  "Dairy": [
+   {
+    "aisle": "A34",
+    "items": 1
+   },
+   {
+    "aisle": "A33",
+    "items": 1
+   }
+  ],
+  "Sauces & Spices": [
+   {
+    "aisle": "A6",
+    "items": 1
+   },
+   {
+    "aisle": "A9",
+    "items": 1
+   },
+   {
+    "aisle": "A3",
+    "items": 1
+   }
+  ],
+  "Snacks & Beverages": [
+   {
+    "aisle": "A20",
+    "items": 1
+   }
+  ],
+  "Other": [
+   {
+    "aisle": "A24",
+    "items": 1
+   }
+  ],
+  "Frozen Foods": [
+   {
+    "aisle": "A30",
+    "items": 1
+   }
+  ]
+ },
+ "path": [
+  {
+   "order": 10,
+   "aisle": "A24",
+   "zone": "Toiletries & household",
+   "basis": "walkOrder (observed map)"
+  },
+  {
+   "order": 20,
+   "aisle": "A1",
+   "zone": "Outer aisle",
+   "basis": "walkOrder (observed map)"
+  },
+  {
+   "order": 25,
+   "aisle": "AP10",
+   "zone": "Outer aisle",
+   "basis": "guess: not in walkOrder; slotted after category anchor A1"
+  },
+  {
+   "order": 30,
+   "aisle": "A36",
+   "zone": "Outer aisle",
+   "basis": "walkOrder (observed map)"
+  },
+  {
+   "order": 40,
+   "aisle": "A35",
+   "zone": "Outer aisle",
+   "basis": "walkOrder (observed map)"
+  },
+  {
+   "order": 50,
+   "aisle": "A34",
+   "zone": "Outer aisle",
+   "basis": "walkOrder (observed map)"
+  },
+  {
+   "order": 60,
+   "aisle": "A33",
+   "zone": "Outer aisle",
+   "basis": "walkOrder (observed map)"
+  },
+  {
+   "order": 70,
+   "aisle": "A3",
+   "zone": "Center grocery aisles",
+   "basis": "walkOrder (observed map)"
+  },
+  {
+   "order": 80,
+   "aisle": "A6",
+   "zone": "Center grocery aisles",
+   "basis": "walkOrder (observed map)"
+  },
+  {
+   "order": 90,
+   "aisle": "A7",
+   "zone": "Center grocery aisles",
+   "basis": "walkOrder (observed map)"
+  },
+  {
+   "order": 100,
+   "aisle": "A9",
+   "zone": "Center grocery aisles",
+   "basis": "walkOrder (observed map)"
+  },
+  {
+   "order": 110,
+   "aisle": "A20",
+   "zone": "Center grocery aisles",
+   "basis": "walkOrder (observed map)"
+  },
+  {
+   "order": 120,
+   "aisle": "A30",
+   "zone": "Frozen",
+   "basis": "walkOrder (observed map)"
+  }
+ ],
+ "pathOrder": [
+  "A24",
+  "A1",
+  "AP10",
+  "A36",
+  "A35",
+  "A34",
+  "A33",
+  "A3",
+  "A6",
+  "A7",
+  "A9",
+  "A20",
+  "A30"
+ ],
  "updated": "2026-10-25",
  "coverage": {
   "items": 32,
-  "withAisle": 0
+  "withAisle": 13
+ },
+ "walkOrder": [
+  {
+   "order": 10,
+   "aisle": "A24",
+   "zone": "Toiletries & household",
+   "note": "Cleaning/toiletries, top-left above Grocery"
+  },
+  {
+   "order": 20,
+   "aisle": "A1",
+   "zone": "Outer aisle",
+   "note": "produce, left wall bottom near bread/deli"
+  },
+  {
+   "order": 30,
+   "aisle": "A36",
+   "zone": "Outer aisle",
+   "note": "meat, left wall middle"
+  },
+  {
+   "order": 40,
+   "aisle": "A35",
+   "zone": "Outer aisle",
+   "note": "meat/kielbasa, left wall near top"
+  },
+  {
+   "order": 50,
+   "aisle": "A34",
+   "zone": "Outer aisle",
+   "note": "eggs, back-left corner"
+  },
+  {
+   "order": 60,
+   "aisle": "A33",
+   "zone": "Outer aisle",
+   "note": "dairy/yogurt, back wall right of A34"
+  },
+  {
+   "order": 70,
+   "aisle": "A3",
+   "zone": "Center grocery aisles",
+   "note": "front/lower"
+  },
+  {
+   "order": 80,
+   "aisle": "A6",
+   "zone": "Center grocery aisles",
+   "note": "spices"
+  },
+  {
+   "order": 90,
+   "aisle": "A7",
+   "zone": "Center grocery aisles",
+   "note": "canned meat"
+  },
+  {
+   "order": 100,
+   "aisle": "A9",
+   "zone": "Center grocery aisles",
+   "note": "oils, mid"
+  },
+  {
+   "order": 110,
+   "aisle": "A20",
+   "zone": "Center grocery aisles",
+   "note": "soda, top/back beside Cleaning"
+  },
+  {
+   "order": 120,
+   "aisle": "A30",
+   "zone": "Frozen",
+   "note": "top-left back corner, last"
+  }
+ ],
+ "walkOrderNote": "Explicit walking order (observed store map + usual path). Edit order numbers to tweak; gaps of 10 leave room for new aisles. Unlisted aisles and items with no aisle slot in right after their category anchor.",
+ "categoryAnchor": {
+  "Other": "A24",
+  "Fruits & Veggies": "A1",
+  "Breads & Grains": "A1",
+  "Meat & Seafood": "A36",
+  "Dairy": "A33",
+  "Sauces & Spices": "A9",
+  "Snacks & Beverages": "A20",
+  "Frozen Foods": "A30"
  }
 }

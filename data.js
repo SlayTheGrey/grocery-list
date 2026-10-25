@@ -19,7 +19,8 @@ window.WEEK = {
      "urlType": "product",
      "recipes": [
       "taco-salad-with-ground-beef"
-     ]
+     ],
+     "aisle": "A1"
     },
     {
      "name": "Iceberg lettuce",
@@ -81,7 +82,8 @@ window.WEEK = {
      "recipes": [
       "air-fry-mode-burgers-in-lettuce-wraps",
       "taco-salad-with-ground-beef"
-     ]
+     ],
+     "aisle": "A36"
     },
     {
      "name": "Smithfield pork picnic roast (by weight)",
@@ -101,7 +103,8 @@ window.WEEK = {
      "urlType": "product",
      "recipes": [
       "sheet-pan-kielbasa-with-peppers-onions-b"
-     ]
+     ],
+     "aisle": "A35"
     },
     {
      "name": "Sanderson Farms chicken thighs, family pack (by weight)",
@@ -123,7 +126,8 @@ window.WEEK = {
      "qty": 2,
      "price": 2.47,
      "url": "https://www.walmart.com/ip/seort/172844767",
-     "urlType": "product"
+     "urlType": "product",
+     "aisle": "A34"
     },
     {
      "name": "GV taco blend shredded cheese, 8 oz",
@@ -187,7 +191,8 @@ window.WEEK = {
      "qty": 1,
      "price": 7.32,
      "url": "https://www.walmart.com/ip/seort/49342252",
-     "urlType": "product"
+     "urlType": "product",
+     "aisle": "A33"
     },
     {
      "name": "Oikos Triple Zero Vanilla, 4 ct",
@@ -313,7 +318,8 @@ window.WEEK = {
      "urlType": "product",
      "recipes": [
       "taco-salad-with-ground-beef"
-     ]
+     ],
+     "aisle": "A6"
     },
     {
      "name": "GV fajita seasoning",
@@ -337,7 +343,8 @@ window.WEEK = {
       "shrimp-fajita-bowls-on-cauliflower-rice",
       "oven-air-fry-chicken-thighs-big-batch",
       "garlic-butter-shrimp-with-spinach"
-     ]
+     ],
+     "aisle": "A9"
     },
     {
      "name": "Morton Lite Salt",
@@ -374,7 +381,8 @@ window.WEEK = {
      "price": 13.77,
      "soda": true,
      "url": "https://www.walmart.com/ip/seort/14664661",
-     "urlType": "product"
+     "urlType": "product",
+     "aisle": "A20"
     },
     {
      "name": "Sunkist Orange Zero, 12 pk",
@@ -399,7 +407,8 @@ window.WEEK = {
      "price": 14.72,
      "url": "https://www.walmart.com/ip/Angel-Soft-2-Ply-Toilet-Paper-24-Mega-Rolls/596343371",
      "urlType": "product",
-     "addedBy": "user"
+     "addedBy": "user",
+     "aisle": "A24"
     }
    ]
   }
@@ -643,7 +652,8 @@ window.WEEK = {
       "price": 9.97,
       "url": "https://www.walmart.com/ip/Great-Value-Chunk-Chicken-Breast-12-5-Ounce-Can-4-Pack/49914752",
       "urlType": "product",
-      "addedBy": "user"
+      "addedBy": "user",
+      "aisle": "A7"
      }
     ]
    },
@@ -663,7 +673,8 @@ window.WEEK = {
       "qty": 1,
       "url": "https://www.walmart.com/ip/197864195",
       "urlType": "product",
-      "addedBy": "user"
+      "addedBy": "user",
+      "aisle": "A30"
      }
     ]
    },
@@ -684,7 +695,8 @@ window.WEEK = {
       "price": 5.12,
       "url": "https://www.walmart.com/ip/G-Hughes-Sugar-Free-Yum-Yum-Dipping-Sauce-16-oz-Bottle/808075641",
       "urlType": "product",
-      "addedBy": "user"
+      "addedBy": "user",
+      "aisle": "A3"
      }
     ]
    }

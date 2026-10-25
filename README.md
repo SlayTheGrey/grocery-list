@@ -15,7 +15,7 @@ Each item can have `url` and `urlType` in `data.js`. Use `urlType: "product"` wi
 
 ## Views
 - **Category** view: Fruits & Veggies, Meat & Seafood, Dairy, Frozen Foods, Sauces & Spices, Snacks & Beverages, Breads & Grains, Other.
-- **Store route** view (walking order): Other (toiletries, household, pet, non-food) first, then Fruits & Veggies, Breads & Grains, Meat & Seafood, Dairy, Sauces & Spices, Snacks & Beverages, Frozen Foods last. To change it, edit the `ROUTE` array in `index.html`.
+- **Store route** view (v29): sections are store zones (Toiletries & household → Outer aisle → Center grocery aisles → Frozen), ordered by the `walkOrder` table in `aisle-map.json` (see below). If the map has no `walkOrder`, it falls back to the category `ROUTE` array in `index.html`.
 
 Do not put personal info (names, health data, addresses, store or account numbers) in any file.
 ## Photos (add by photo)
@@ -55,7 +55,8 @@ The webhook cuts request bodies at about 4KB, so the Cloudflare relay keeps each
 - Totals show Planned, Your additions and Estimated total. Subtotal, rollback and tax lines are under **Details**, and the math is unchanged.
 - After the PIN is saved, Chat > Settings shows "PIN saved on this phone ✓" with Change/Forget PIN. A "Sync: check PIN" message opens Settings when tapped.
 
-## Store route and aisle map (v28)
+## Store route and aisle map (v29)
+- v29: `aisle-map.json` has an explicit `walkOrder` list: `{order, aisle, zone, note}` (orders step by 10 so new aisles fit between). Current walk: A24 → A1 → A36 → A35 → A34 → A33 → A3 → A6 → A7 → A9 → A20 → A30. To tweak, edit the `order` numbers; to add a newly observed aisle, add a row. `categoryAnchor` maps each category to an aisle: items with no known aisle (and aisles not in `walkOrder`) are placed right after their category's anchor (e.g. an unknown Meat item goes after A36). `path`/`pathOrder` are now generated from `walkOrder`. Checked items still go to the bottom of each section.
 - `aisle-map.json` is served with the site (and cached by the service worker). It holds store aisle labels seen on walmart.com product pages for our store, plus product names and urls. It has no address or personal info.
   - `items`: keyed by `ip:<walmart product id>`, each `{url, name, cat, aisle, observed (date), confidence, source}`. `aisle` is null until it's seen.
   - `categories`: category → `[{aisle, items}]`, the aisles each item type has been seen on.

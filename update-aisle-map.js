@@ -8,7 +8,7 @@
 //   node update-aisle-map.js --fetch [N]           try up to N (default 5) todo URLs with curl, 5 s apart; stops at the first bot block
 //   node update-aisle-map.js --apply data.js       fill missing item.aisle in data.js from the map (never overwrites)
 //   node update-aisle-map.js --todo                print URLs that still need an aisle
-// Every run recomputes the category table and the walking-path order.
+// Every run recomputes the category table and the walking-path order (path/pathOrder come from the explicit "walkOrder" table when present).
 // Privacy: the map holds product names/urls and store aisle labels only. No store address, no people.
 const fs=require("fs"),path=require("path"),cp=require("child_process");
 const MAP=process.env.AISLE_MAP||path.join(__dirname,"aisle-map.json");
@@ -32,6 +32,11 @@ function recompute(){const cats={},ais={};
  M.path=Object.entries(ais).map(([a,A])=>{const top=Object.entries(A.cats).sort((x,y)=>y[1]-x[1])[0][0];const r=ROUTE.indexOf(top);return {aisle:a,section:top,rank:r<0?0:r,items:A.n}})
   .sort((x,y)=>x.rank-y.rank||zone(x.aisle)[0].localeCompare(zone(y.aisle)[0])||zone(x.aisle)[1]-zone(y.aisle)[1])
   .map((p,i)=>({order:i+1,aisle:p.aisle,section:p.section,items:p.items,basis:"guess: section from item categories + usual path; within section by aisle letter/number"}));
+ // explicit walkOrder (if present) wins; observed aisles not in it are slotted after their category anchor
+ if(Array.isArray(M.walkOrder)&&M.walkOrder.length){const wo=M.walkOrder.slice().sort((x,y)=>x.order-y.order),known=new Set(wo.map(w=>w.aisle)),anc=M.categoryAnchor||{};
+  const extra=M.path.filter(p=>!known.has(p.aisle)).map(p=>{const w=wo.find(w=>w.aisle===anc[p.section]);return {order:(w?w.order:999)+5,aisle:p.aisle,zone:w?w.zone:"Unplaced",basis:"guess: not in walkOrder; slotted after category anchor "+(anc[p.section]||"?")}});
+  M.path=wo.map(w=>({order:w.order,aisle:w.aisle,zone:w.zone,basis:"walkOrder (observed map)"})).concat(extra).sort((x,y)=>x.order-y.order);
+  if(extra.length)console.log("aisles not in walkOrder (add them):",extra.map(e=>e.aisle).join(", "))}
  M.pathOrder=M.path.map(p=>p.aisle);M.updated=today;
  const todo=Object.values(M.items).filter(e=>!e.aisle);M.coverage={items:Object.keys(M.items).length,withAisle:Object.keys(M.items).length-todo.length};
  fs.writeFileSync(MAP,JSON.stringify(M,null,1)+"\n");console.log(`map: ${M.coverage.withAisle}/${M.coverage.items} items with aisle, ${M.path.length} aisles on path → ${MAP}`)}
