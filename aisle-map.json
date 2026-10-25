@@ -29,7 +29,11 @@
   "ip:51259411": {
    "url": "https://www.walmart.com/ip/seort/51259411",
    "name": "Celery",
-   "cat": "Fruits & Veggies"
+   "cat": "Fruits & Veggies",
+   "aisle": "A1",
+   "observed": "2026-10-25",
+   "confidence": "high",
+   "source": "walmart product page (store selected)"
   },
   "ip:44391008": {
    "url": "https://www.walmart.com/ip/seort/44391008",
@@ -103,7 +107,11 @@
   "ip:12335111": {
    "url": "https://www.walmart.com/ip/seort/12335111",
    "name": "GV sour cream, 16 oz",
-   "cat": "Dairy"
+   "cat": "Dairy",
+   "aisle": "A34",
+   "observed": "2026-10-25",
+   "confidence": "high",
+   "source": "walmart product page (store selected)"
   },
   "ip:132893363": {
    "url": "https://www.walmart.com/ip/seort/132893363",
@@ -131,7 +139,11 @@
   "ip:14336391": {
    "url": "https://www.walmart.com/ip/seort/14336391",
    "name": "GV half & half, 64 oz",
-   "cat": "Dairy"
+   "cat": "Dairy",
+   "aisle": "A33",
+   "observed": "2026-10-25",
+   "confidence": "high",
+   "source": "walmart product page (store selected)"
   },
   "ip:3562572626": {
    "url": "https://www.walmart.com/ip/seort/3562572626",
@@ -141,7 +153,11 @@
   "ip:378941019": {
    "url": "https://www.walmart.com/ip/seort/378941019",
    "name": "GV hamburger dill chips, 32 oz",
-   "cat": "Sauces & Spices"
+   "cat": "Sauces & Spices",
+   "aisle": "A3",
+   "observed": "2026-10-25",
+   "confidence": "high",
+   "source": "walmart product page (store selected)"
   },
   "ip:16618888": {
    "url": "https://www.walmart.com/ip/seort/16618888",
@@ -178,7 +194,11 @@
   "ip:10318920": {
    "url": "https://www.walmart.com/ip/seort/10318920",
    "name": "Morton Lite Salt",
-   "cat": "Sauces & Spices"
+   "cat": "Sauces & Spices",
+   "aisle": "A8",
+   "observed": "2026-10-25",
+   "confidence": "high",
+   "source": "walmart product page (store selected)"
   },
   "ip:5295229969": {
    "url": "https://www.walmart.com/ip/seort/5295229969",
@@ -253,7 +273,7 @@
   "Fruits & Veggies": [
    {
     "aisle": "A1",
-    "items": 1
+    "items": 2
    },
    {
     "aisle": "AP10",
@@ -277,21 +297,21 @@
   "Dairy": [
    {
     "aisle": "A34",
+    "items": 3
+   },
+   {
+    "aisle": "A33",
     "items": 2
    },
    {
     "aisle": "A35",
-    "items": 1
-   },
-   {
-    "aisle": "A33",
     "items": 1
    }
   ],
   "Sauces & Spices": [
    {
     "aisle": "A3",
-    "items": 2
+    "items": 3
    },
    {
     "aisle": "A6",
@@ -299,6 +319,10 @@
    },
    {
     "aisle": "A9",
+    "items": 1
+   },
+   {
+    "aisle": "A8",
     "items": 1
    }
   ],
@@ -381,6 +405,12 @@
    "basis": "walkOrder (observed map)"
   },
   {
+   "order": 95,
+   "aisle": "A8",
+   "zone": "Center aisles",
+   "basis": "walkOrder (observed map)"
+  },
+  {
    "order": 100,
    "aisle": "A7",
    "zone": "Center aisles",
@@ -421,6 +451,7 @@
   "A20",
   "A16",
   "A9",
+  "A8",
   "A7",
   "A6",
   "A3",
@@ -430,7 +461,7 @@
  "updated": "2026-10-25",
  "coverage": {
   "items": 32,
-  "withAisle": 19
+  "withAisle": 24
  },
  "walkOrder": [
   {
@@ -488,6 +519,12 @@
    "note": "oils, mid"
   },
   {
+   "order": 95,
+   "aisle": "A8",
+   "zone": "Center aisles",
+   "note": "center grocery, next to A9 (back-to-front: A9, A8, A7)"
+  },
+  {
    "order": 100,
    "aisle": "A7",
    "zone": "Center aisles",
@@ -538,7 +575,7 @@
   },
   {
    "cat": "Dairy",
-   "match": "butter|egg",
+   "match": "butter|egg|sour cream",
    "aisle": "A34"
   }
  ],

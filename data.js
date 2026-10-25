@@ -41,7 +41,8 @@ window.WEEK = {
      "urlType": "product",
      "recipes": [
       "taco-salad-with-ground-beef"
-     ]
+     ],
+     "aisle": "A1"
     },
     {
      "name": "Limes",
@@ -173,7 +174,8 @@ window.WEEK = {
       "air-fry-mode-burgers-in-lettuce-wraps",
       "shrimp-fajita-bowls-on-cauliflower-rice",
       "taco-salad-with-ground-beef"
-     ]
+     ],
+     "aisle": "A34"
     },
     {
      "name": "GV salted butter, 16 oz",
@@ -213,7 +215,8 @@ window.WEEK = {
      "urlType": "product",
      "recipes": [
       "garlic-butter-shrimp-with-spinach"
-     ]
+     ],
+     "aisle": "A33"
     }
    ]
   },
@@ -302,7 +305,8 @@ window.WEEK = {
      "urlType": "product",
      "recipes": [
       "air-fry-mode-burgers-in-lettuce-wraps"
-     ]
+     ],
+     "aisle": "A3"
     },
     {
      "name": "GV ranch dressing, 16 oz",
@@ -357,7 +361,8 @@ window.WEEK = {
      "qty": 1,
      "price": 3.17,
      "url": "https://www.walmart.com/ip/seort/10318920",
-     "urlType": "product"
+     "urlType": "product",
+     "aisle": "A8"
     }
    ]
   },
