@@ -15,7 +15,7 @@ Each item can have `url` and `urlType` in `data.js`. Use `urlType: "product"` wi
 
 ## Views
 - **Category** view: Fruits & Veggies, Meat & Seafood, Dairy, Frozen Foods, Sauces & Spices, Snacks & Beverages, Breads & Grains, Other.
-- **Store route** view (v29): sections are store zones (Toiletries & household → Outer aisle → Center grocery aisles → Frozen), ordered by the `walkOrder` table in `aisle-map.json` (see below). If the map has no `walkOrder`, it falls back to the category `ROUTE` array in `index.html`.
+- **Store route** view (v29): sections are store zones (Toiletries & household → Back wall & frozen → Left wall → Center aisles → Produce), ordered by the `walkOrder` table in `aisle-map.json` (see below). If the map has no `walkOrder`, it falls back to the category `ROUTE` array in `index.html`.
 
 Do not put personal info (names, health data, addresses, store or account numbers) in any file.
 ## Photos (add by photo)
@@ -55,7 +55,8 @@ The webhook cuts request bodies at about 4KB, so the Cloudflare relay keeps each
 - Totals show Planned, Your additions and Estimated total. Subtotal, rollback and tax lines are under **Details**, and the math is unchanged.
 - After the PIN is saved, Chat > Settings shows "PIN saved on this phone ✓" with Change/Forget PIN. A "Sync: check PIN" message opens Settings when tapped.
 
-## Store route and aisle map (v30)
+## Store route and aisle map (v31)
+- v31: `walkOrder` now follows the real path: A24 (toiletries) → back wall & frozen (A30, A33, A34) → left wall (A35, A36) → center aisles back to front (A20, A16, A9, A7, A6, A3) → produce (A1, AP10), then checkout. Zone headings: Toiletries & household, Back wall & frozen, Left wall (meat & cheese), Center aisles, Produce. Category anchors: Other A24, Frozen A30, Dairy A33 (rules: cheese A35, butter/eggs A34), Meat A36, Snacks/Drinks A20, Sauces/Spices A9, Produce and Bread A1.
 - v30: walk adds AP10 (produce, after A1) and A16 (between A9 and A20). New `itemAnchors` rules (cat + name regex → aisle) are checked before `categoryAnchor` for items with no aisle; e.g. Dairy cheese → A35 (left wall), butter/eggs → A34.
 - v29: `aisle-map.json` has an explicit `walkOrder` list: `{order, aisle, zone, note}` (orders step by 10 so new aisles fit between). Current walk: A24 → A1 → A36 → A35 → A34 → A33 → A3 → A6 → A7 → A9 → A20 → A30. To tweak, edit the `order` numbers; to add a newly observed aisle, add a row. `categoryAnchor` maps each category to an aisle: items with no known aisle (and aisles not in `walkOrder`) are placed right after their category's anchor (e.g. an unknown Meat item goes after A36). `path`/`pathOrder` are now generated from `walkOrder`. Checked items still go to the bottom of each section.
 - `aisle-map.json` is served with the site (and cached by the service worker). It holds store aisle labels seen on walmart.com product pages for our store, plus product names and urls. It has no address or personal info.

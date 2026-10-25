@@ -1,4 +1,4 @@
-const C="grocery-v30",F=["./","index.html","data.js","manifest.webmanifest","icon.svg","aisle-map.json"];
+const C="grocery-v31",F=["./","index.html","data.js","manifest.webmanifest","icon.svg","aisle-map.json"];
 self.addEventListener("install",e=>{self.skipWaiting();e.waitUntil(caches.open(C).then(c=>c.addAll(F)))});
 self.addEventListener("activate",e=>e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==C).map(x=>caches.delete(x))))));
 // network first so weekly data updates show up; cache fallback when offline

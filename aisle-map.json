@@ -334,98 +334,98 @@
   },
   {
    "order": 20,
-   "aisle": "A1",
-   "zone": "Outer aisle",
-   "basis": "walkOrder (observed map)"
-  },
-  {
-   "order": 25,
-   "aisle": "AP10",
-   "zone": "Outer aisle",
+   "aisle": "A30",
+   "zone": "Back wall & frozen",
    "basis": "walkOrder (observed map)"
   },
   {
    "order": 30,
-   "aisle": "A36",
-   "zone": "Outer aisle",
+   "aisle": "A33",
+   "zone": "Back wall & frozen",
    "basis": "walkOrder (observed map)"
   },
   {
    "order": 40,
-   "aisle": "A35",
-   "zone": "Outer aisle",
+   "aisle": "A34",
+   "zone": "Back wall & frozen",
    "basis": "walkOrder (observed map)"
   },
   {
    "order": 50,
-   "aisle": "A34",
-   "zone": "Outer aisle",
+   "aisle": "A35",
+   "zone": "Left wall (meat & cheese)",
    "basis": "walkOrder (observed map)"
   },
   {
    "order": 60,
-   "aisle": "A33",
-   "zone": "Outer aisle",
+   "aisle": "A36",
+   "zone": "Left wall (meat & cheese)",
    "basis": "walkOrder (observed map)"
   },
   {
    "order": 70,
-   "aisle": "A3",
-   "zone": "Center grocery aisles",
+   "aisle": "A20",
+   "zone": "Center aisles",
    "basis": "walkOrder (observed map)"
   },
   {
    "order": 80,
-   "aisle": "A6",
-   "zone": "Center grocery aisles",
+   "aisle": "A16",
+   "zone": "Center aisles",
    "basis": "walkOrder (observed map)"
   },
   {
    "order": 90,
-   "aisle": "A7",
-   "zone": "Center grocery aisles",
+   "aisle": "A9",
+   "zone": "Center aisles",
    "basis": "walkOrder (observed map)"
   },
   {
    "order": 100,
-   "aisle": "A9",
-   "zone": "Center grocery aisles",
-   "basis": "walkOrder (observed map)"
-  },
-  {
-   "order": 105,
-   "aisle": "A16",
-   "zone": "Center grocery aisles",
+   "aisle": "A7",
+   "zone": "Center aisles",
    "basis": "walkOrder (observed map)"
   },
   {
    "order": 110,
-   "aisle": "A20",
-   "zone": "Center grocery aisles",
+   "aisle": "A6",
+   "zone": "Center aisles",
    "basis": "walkOrder (observed map)"
   },
   {
    "order": 120,
-   "aisle": "A30",
-   "zone": "Frozen",
+   "aisle": "A3",
+   "zone": "Center aisles",
+   "basis": "walkOrder (observed map)"
+  },
+  {
+   "order": 130,
+   "aisle": "A1",
+   "zone": "Produce",
+   "basis": "walkOrder (observed map)"
+  },
+  {
+   "order": 140,
+   "aisle": "AP10",
+   "zone": "Produce",
    "basis": "walkOrder (observed map)"
   }
  ],
  "pathOrder": [
   "A24",
-  "A1",
-  "AP10",
-  "A36",
-  "A35",
-  "A34",
+  "A30",
   "A33",
-  "A3",
-  "A6",
-  "A7",
-  "A9",
-  "A16",
+  "A34",
+  "A35",
+  "A36",
   "A20",
-  "A30"
+  "A16",
+  "A9",
+  "A7",
+  "A6",
+  "A3",
+  "A1",
+  "AP10"
  ],
  "updated": "2026-10-25",
  "coverage": {
@@ -441,93 +441,93 @@
   },
   {
    "order": 20,
-   "aisle": "A1",
-   "zone": "Outer aisle",
-   "note": "produce, left wall bottom near bread/deli"
-  },
-  {
-   "order": 25,
-   "aisle": "AP10",
-   "zone": "Outer aisle",
-   "note": "produce aisle AP, bottom-left near bread/deli, right after A1"
+   "aisle": "A30",
+   "zone": "Back wall & frozen",
+   "note": "top-left back corner, last"
   },
   {
    "order": 30,
-   "aisle": "A36",
-   "zone": "Outer aisle",
-   "note": "meat, left wall middle"
-  },
-  {
-   "order": 40,
-   "aisle": "A35",
-   "zone": "Outer aisle",
-   "note": "meat/kielbasa, left wall near top"
-  },
-  {
-   "order": 50,
-   "aisle": "A34",
-   "zone": "Outer aisle",
-   "note": "eggs, back-left corner"
-  },
-  {
-   "order": 60,
    "aisle": "A33",
-   "zone": "Outer aisle",
+   "zone": "Back wall & frozen",
    "note": "dairy/yogurt, back wall right of A34"
   },
   {
+   "order": 40,
+   "aisle": "A34",
+   "zone": "Back wall & frozen",
+   "note": "eggs, back-left corner"
+  },
+  {
+   "order": 50,
+   "aisle": "A35",
+   "zone": "Left wall (meat & cheese)",
+   "note": "meat/kielbasa, left wall near top"
+  },
+  {
+   "order": 60,
+   "aisle": "A36",
+   "zone": "Left wall (meat & cheese)",
+   "note": "meat, left wall middle"
+  },
+  {
    "order": 70,
-   "aisle": "A3",
-   "zone": "Center grocery aisles",
-   "note": "front/lower"
-  },
-  {
-   "order": 80,
-   "aisle": "A6",
-   "zone": "Center grocery aisles",
-   "note": "spices"
-  },
-  {
-   "order": 90,
-   "aisle": "A7",
-   "zone": "Center grocery aisles",
-   "note": "canned meat"
-  },
-  {
-   "order": 100,
-   "aisle": "A9",
-   "zone": "Center grocery aisles",
-   "note": "oils, mid"
-  },
-  {
-   "order": 105,
-   "aisle": "A16",
-   "zone": "Center grocery aisles",
-   "note": "back of center grocery, between A9 and A20, near Cleaning"
-  },
-  {
-   "order": 110,
    "aisle": "A20",
-   "zone": "Center grocery aisles",
+   "zone": "Center aisles",
    "note": "soda, top/back beside Cleaning"
   },
   {
+   "order": 80,
+   "aisle": "A16",
+   "zone": "Center aisles",
+   "note": "back of center grocery, between A9 and A20, near Cleaning"
+  },
+  {
+   "order": 90,
+   "aisle": "A9",
+   "zone": "Center aisles",
+   "note": "oils, mid"
+  },
+  {
+   "order": 100,
+   "aisle": "A7",
+   "zone": "Center aisles",
+   "note": "canned meat"
+  },
+  {
+   "order": 110,
+   "aisle": "A6",
+   "zone": "Center aisles",
+   "note": "spices"
+  },
+  {
    "order": 120,
-   "aisle": "A30",
-   "zone": "Frozen",
-   "note": "top-left back corner, last"
+   "aisle": "A3",
+   "zone": "Center aisles",
+   "note": "front/lower"
+  },
+  {
+   "order": 130,
+   "aisle": "A1",
+   "zone": "Produce",
+   "note": "produce, left wall bottom near bread/deli"
+  },
+  {
+   "order": 140,
+   "aisle": "AP10",
+   "zone": "Produce",
+   "note": "produce aisle AP, bottom-left near bread/deli, right after A1"
   }
  ],
- "walkOrderNote": "Explicit walking order (observed store map + usual path). Edit order numbers to tweak; gaps of 10 leave room for new aisles. Unlisted aisles and items with no aisle slot in right after their category anchor.",
+ "walkOrderNote": "Real path (Caleb, 2026-10-25): in at the front, past checkout to the right side, up and around the top/back of the store to the back-left corner, down the left wall, center aisles back to front, finish at produce (bottom-left), then checkout. Edit order numbers to tweak; gaps of 10 leave room. Unlisted aisles/items slot right after their anchor (itemAnchors first, then categoryAnchor).",
  "categoryAnchor": {
   "Other": "A24",
-  "Fruits & Veggies": "A1",
-  "Breads & Grains": "A1",
-  "Meat & Seafood": "A36",
+  "Frozen Foods": "A30",
   "Dairy": "A33",
-  "Sauces & Spices": "A9",
+  "Meat & Seafood": "A36",
   "Snacks & Beverages": "A20",
-  "Frozen Foods": "A30"
+  "Sauces & Spices": "A9",
+  "Fruits & Veggies": "A1",
+  "Breads & Grains": "A1"
  },
  "itemAnchors": [
   {
