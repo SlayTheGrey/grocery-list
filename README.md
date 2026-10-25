@@ -50,7 +50,21 @@ The webhook cuts request bodies at about 4KB, so the Cloudflare relay keeps each
   - **Send to assistant** uses the relay, and photos are supported.
   - **I'll add it myself** (qty, category, price) → **Add directly** writes an `added` state op with `addedBy:"user"`, as before.
   - Staples quick-add is in the sheet, and also under **⋯ More**.
-- **Checked:** Bottom / Hidden / Stay in place is one cycle button, saved per phone. Clear checks was removed because Done shopping clears checks.
+- Checked items always move to the bottom of their section, crossed out (v28 removed the Checked: Bottom/Hidden/Stay control and its per-phone setting). There is no Clear checks button; Done shopping clears checks.
 - **⋯ More** holds Restore removed items (with a count badge), Staples, and PIN & appearance settings.
 - Totals show Planned, Your additions and Estimated total. Subtotal, rollback and tax lines are under **Details**, and the math is unchanged.
 - After the PIN is saved, Chat > Settings shows "PIN saved on this phone ✓" with Change/Forget PIN. A "Sync: check PIN" message opens Settings when tapped.
+
+## Store route and aisle map (v28)
+- `aisle-map.json` is served with the site (and cached by the service worker). It holds store aisle labels seen on walmart.com product pages for our store, plus product names and urls. It has no address or personal info.
+  - `items`: keyed by `ip:<walmart product id>`, each `{url, name, cat, aisle, observed (date), confidence, source}`. `aisle` is null until it's seen.
+  - `categories`: category → `[{aisle, items}]`, the aisles each item type has been seen on.
+  - `path` / `pathOrder`: the inferred walking order of aisle labels. Sections follow the usual route (Other/household first … Frozen Foods last). Within a section, aisles are ordered by letter then number. **The order is a guess**, marked in `basis`.
+- **Store route** view sorts each section by `pathOrder`. Items with no known aisle go last in their section, and checked items go to the very bottom. An item's aisle is its data.js `aisle` if set, otherwise the map entry for its product url. It shows as "Aisle X12". Category view is unchanged.
+- Update with `node update-aisle-map.js` (the full usage is in the script header):
+  - `--init data.js preferred-products.json` adds new items.
+  - `--observe <url> <aisle>` / `--from obs.json` / `--html saved-page.html <url>` records aisles.
+  - `--fetch N` makes a polite curl attempt and stops at Walmart's bot check.
+  - `--todo` lists the urls that still need an aisle.
+  - `--apply data.js` fills in missing item `aisle` fields.
+  - Commit `aisle-map.json` afterwards.

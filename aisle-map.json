@@ -1,0 +1,184 @@
+{
+ "version": 1,
+ "note": "Store aisle labels observed on walmart.com product pages for our store. Product info only.",
+ "route": [
+  "Other",
+  "Fruits & Veggies",
+  "Breads & Grains",
+  "Meat & Seafood",
+  "Dairy",
+  "Sauces & Spices",
+  "Snacks & Beverages",
+  "Frozen Foods"
+ ],
+ "items": {
+  "ip:10532755": {
+   "url": "https://www.walmart.com/ip/seort/10532755",
+   "name": "Romaine hearts, 3 ct",
+   "cat": "Fruits & Veggies"
+  },
+  "ip:10402650": {
+   "url": "https://www.walmart.com/ip/seort/10402650",
+   "name": "Iceberg lettuce",
+   "cat": "Fruits & Veggies"
+  },
+  "ip:51259411": {
+   "url": "https://www.walmart.com/ip/seort/51259411",
+   "name": "Celery",
+   "cat": "Fruits & Veggies"
+  },
+  "ip:44391008": {
+   "url": "https://www.walmart.com/ip/seort/44391008",
+   "name": "Limes",
+   "cat": "Fruits & Veggies"
+  },
+  "ip:44390968": {
+   "url": "https://www.walmart.com/ip/seort/44390968",
+   "name": "Small Hass avocados, 5-6 ct bag",
+   "cat": "Fruits & Veggies"
+  },
+  "ip:15136794": {
+   "url": "https://www.walmart.com/ip/seort/15136794",
+   "name": "80/20 ground beef, 3 lb roll",
+   "cat": "Meat & Seafood"
+  },
+  "ip:5265533849": {
+   "url": "https://www.walmart.com/ip/seort/5265533849",
+   "name": "GV Polska kielbasa, 14 oz",
+   "cat": "Meat & Seafood"
+  },
+  "ip:193413277": {
+   "url": "https://www.walmart.com/ip/seort/193413277",
+   "name": "Sanderson Farms chicken thighs, family pack (by weight)",
+   "cat": "Meat & Seafood"
+  },
+  "ip:172844767": {
+   "url": "https://www.walmart.com/ip/seort/172844767",
+   "name": "GV large eggs, 18 ct",
+   "cat": "Dairy"
+  },
+  "ip:10452480": {
+   "url": "https://www.walmart.com/ip/seort/10452480",
+   "name": "GV taco blend shredded cheese, 8 oz",
+   "cat": "Dairy"
+  },
+  "ip:15077514": {
+   "url": "https://www.walmart.com/ip/seort/15077514",
+   "name": "GV sharp cheddar slices, 8 oz",
+   "cat": "Dairy"
+  },
+  "ip:364923224": {
+   "url": "https://www.walmart.com/ip/seort/364923224",
+   "name": "GV mozzarella string cheese, 12 ct",
+   "cat": "Dairy"
+  },
+  "ip:12335111": {
+   "url": "https://www.walmart.com/ip/seort/12335111",
+   "name": "GV sour cream, 16 oz",
+   "cat": "Dairy"
+  },
+  "ip:132893363": {
+   "url": "https://www.walmart.com/ip/seort/132893363",
+   "name": "GV salted butter, 16 oz",
+   "cat": "Dairy"
+  },
+  "ip:49342252": {
+   "url": "https://www.walmart.com/ip/seort/49342252",
+   "name": "Oikos Triple Zero, 6 ct",
+   "cat": "Dairy"
+  },
+  "ip:49028504": {
+   "url": "https://www.walmart.com/ip/seort/49028504",
+   "name": "Oikos Triple Zero Vanilla, 4 ct",
+   "cat": "Dairy"
+  },
+  "ip:14336391": {
+   "url": "https://www.walmart.com/ip/seort/14336391",
+   "name": "GV half & half, 64 oz",
+   "cat": "Dairy"
+  },
+  "ip:3562572626": {
+   "url": "https://www.walmart.com/ip/seort/3562572626",
+   "name": "GV thick & chunky salsa, medium",
+   "cat": "Sauces & Spices"
+  },
+  "ip:378941019": {
+   "url": "https://www.walmart.com/ip/seort/378941019",
+   "name": "GV hamburger dill chips, 32 oz",
+   "cat": "Sauces & Spices"
+  },
+  "ip:16618888": {
+   "url": "https://www.walmart.com/ip/seort/16618888",
+   "name": "GV ranch dressing, 16 oz",
+   "cat": "Sauces & Spices"
+  },
+  "ip:379517847": {
+   "url": "https://www.walmart.com/ip/seort/379517847",
+   "name": "GV taco seasoning, 1 oz",
+   "cat": "Sauces & Spices"
+  },
+  "ip:149215159": {
+   "url": "https://www.walmart.com/ip/seort/149215159",
+   "name": "GV fajita seasoning",
+   "cat": "Sauces & Spices"
+  },
+  "ip:10315102": {
+   "url": "https://www.walmart.com/ip/seort/10315102",
+   "name": "GV extra virgin olive oil, 17 oz",
+   "cat": "Sauces & Spices"
+  },
+  "ip:10318920": {
+   "url": "https://www.walmart.com/ip/seort/10318920",
+   "name": "Morton Lite Salt",
+   "cat": "Sauces & Spices"
+  },
+  "ip:5295229969": {
+   "url": "https://www.walmart.com/ip/seort/5295229969",
+   "name": "GV whole almonds, 14 oz",
+   "cat": "Snacks & Beverages"
+  },
+  "ip:14664661": {
+   "url": "https://www.walmart.com/ip/seort/14664661",
+   "name": "Pepsi Zero Sugar, 24 pk",
+   "cat": "Snacks & Beverages"
+  },
+  "ip:596343371": {
+   "url": "https://www.walmart.com/ip/Angel-Soft-2-Ply-Toilet-Paper-24-Mega-Rolls/596343371",
+   "name": "Angel Soft 2-Ply Toilet Paper, 24 Mega Rolls",
+   "cat": "Other"
+  },
+  "ip:49914752": {
+   "url": "https://www.walmart.com/ip/Great-Value-Chunk-Chicken-Breast-12-5-Ounce-Can-4-Pack/49914752",
+   "name": "Great Value Chunk Chicken Breast in Water, 12.5 oz cans, 4 pack",
+   "cat": "Meat & Seafood"
+  },
+  "ip:539250805": {
+   "url": "https://www.walmart.com/ip/Great-Value-Frozen-20-oz-Pepper-Onion-Blend-20-oz/539250805",
+   "name": "GV pepper & onion blend, 20 oz (frozen)",
+   "cat": "Frozen Foods"
+  },
+  "ip:197864195": {
+   "url": "https://www.walmart.com/ip/197864195",
+   "name": "Great Value Organic Steamable Riced Cauliflower, 10 oz (Frozen)",
+   "cat": "Frozen Foods"
+  },
+  "ip:784580921": {
+   "url": "https://www.walmart.com/ip/Bragg-Organic-Coconut-Liquid-Aminos-Soy-Free-Seasoning-10-fl-oz/784580921",
+   "name": "Bragg Organic Coconut Liquid Aminos, 10 fl oz",
+   "cat": "Sauces & Spices"
+  },
+  "ip:808075641": {
+   "url": "https://www.walmart.com/ip/G-Hughes-Sugar-Free-Yum-Yum-Dipping-Sauce-16-oz-Bottle/808075641",
+   "name": "G Hughes Zero Sugar Yum Yum Dipping Sauce, 16 oz",
+   "cat": "Sauces & Spices"
+  }
+ },
+ "categories": {},
+ "path": [],
+ "pathOrder": [],
+ "updated": "2026-10-25",
+ "coverage": {
+  "items": 32,
+  "withAisle": 0
+ }
+}
