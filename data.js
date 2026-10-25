@@ -224,7 +224,7 @@ window.WEEK = {
    "name": "Frozen Foods",
    "items": [
     {
-     "name": "GV raw peeled shrimp, 2 lb",
+     "name": "GV raw peeled shrimp, 2 lb (frozen)",
      "qty": 1,
      "price": 15.96,
      "url": "https://www.walmart.com/search?q=Great+Value+raw+peeled+shrimp%2C+2+lb",
@@ -235,7 +235,7 @@ window.WEEK = {
      ]
     },
     {
-     "name": "GV broccoli florets, 32 oz",
+     "name": "GV broccoli florets, 32 oz (frozen)",
      "qty": 1,
      "price": 2.88,
      "url": "https://www.walmart.com/search?q=Great+Value+broccoli+florets%2C+32+oz",
@@ -247,7 +247,7 @@ window.WEEK = {
      ]
     },
     {
-     "name": "GV pepper & onion blend, 20 oz",
+     "name": "GV pepper & onion blend, 20 oz (frozen)",
      "qty": 2,
      "price": 2.84,
      "url": "https://www.walmart.com/ip/Great-Value-Frozen-20-oz-Pepper-Onion-Blend-20-oz/539250805",
@@ -259,7 +259,7 @@ window.WEEK = {
      "aisle": "A30"
     },
     {
-     "name": "GV chopped spinach, 10 oz",
+     "name": "GV chopped spinach, 10 oz (frozen)",
      "qty": 1,
      "price": 1.24,
      "url": "https://www.walmart.com/search?q=Great+Value+chopped+spinach%2C+10+oz",
@@ -269,7 +269,7 @@ window.WEEK = {
      ]
     },
     {
-     "name": "GV riced cauliflower, 12 oz",
+     "name": "GV riced cauliflower, 12 oz (frozen)",
      "qty": 2,
      "price": 2.24,
      "url": "https://www.walmart.com/search?q=Great+Value+riced+cauliflower%2C+12+oz",
@@ -682,7 +682,7 @@ window.WEEK = {
       "aisle": "A30"
      },
      {
-      "name": "Great Value Organic Steamable Riced Cauliflower, 10 oz (Frozen)",
+      "name": "Great Value Organic Steamable Riced Cauliflower, 10 oz (frozen)",
       "qty": 1,
       "url": "https://www.walmart.com/ip/197864195",
       "urlType": "product",
