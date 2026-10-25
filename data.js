@@ -312,7 +312,7 @@ window.WEEK = {
    "steps": [
     "Morning: rub pork with salt, pepper, cumin, oregano, garlic powder and chili powder. Put in slow cooker with lime juice and water. Cook on LOW 8–10 hr until it shreds easily.",
     "Shred pork with two forks; discard bone and soft fat. Toss with ½ cup of the juices.",
-    "Crisp: spread 1/3 of the pork on a sheet pan, drizzle 1 tbsp EVOO, broil 4–6 min until edges are browned and crispy. (Or air fry 400°F 5 min.)",
+    "Crisp: spread 1/3 of the pork on a sheet pan, drizzle 1 tbsp EVOO, broil 4–6 min until edges are browned and crispy. (Or oven Air Fry mode 400°F, 5 min.)",
     "Meanwhile, cook cauliflower rice in a dry skillet over medium-high 6–8 min, stirring, until steam is gone and it's tender-crisp, not mushy. Stir in butter, salt.",
     "Serve pork over cauliflower rice with avocado, sour cream, salsa and cheese. Refrigerate leftover pork with juices (up to 4 days); freeze extra."
    ]
@@ -336,7 +336,7 @@ window.WEEK = {
    ]
   },
   {
-   "title": "Fri: Air-Fryer Burgers in Lettuce Wraps",
+   "title": "Fri: Air-Fry-Mode Burgers in Lettuce Wraps",
    "meta": "Serves: 2 (4 patties; 2 extra for Sat/Mon lunch bowls) · Active: 15 min · Total: 25 min · Net carbs/serving: ~4 g (estimate)",
    "ingredients": [
     "1½ lb 80/20 ground beef, shaped into 6 patties ¾-inch thick",
@@ -348,7 +348,7 @@ window.WEEK = {
    ],
    "steps": [
     "Press a thumb dent in the center of each patty; season both sides.",
-    "Air fry at 375°F, 8–10 min total, flipping at 5 min, to 160°F inside. Work in batches; don't stack.",
+    "Use the Samsung oven's Air Fry mode at 375°F on the air fry tray (middle rack), 8–10 min total, flipping at 5 min, to 160°F inside. Work in batches; don't stack.",
     "Top 4 patties with cheddar for the last 1 min. Chill the 2 plain patties for lunches.",
     "Wrap each burger in 2–3 iceberg leaves with pickles, avocado and sauce."
    ]
@@ -374,7 +374,7 @@ window.WEEK = {
    ]
   },
   {
-   "title": "Sun (prep): Air-Fryer Chicken Thighs (Big Batch)",
+   "title": "Sun (prep): Oven Air-Fry Chicken Thighs (Big Batch)",
    "meta": "Serves: 2 dinner + 6–8 lunch portions · Active: 20 min · Total: ~60 min (batches) · Net carbs/serving: ~3 g (with broccoli) (estimate)",
    "ingredients": [
     "~5 lb chicken thighs (bone-in skin-on or boneless)",
@@ -384,8 +384,8 @@ window.WEEK = {
    ],
    "steps": [
     "Pat thighs very dry. Toss with EVOO and spices.",
-    "Air fry in one layer, skin side down first: boneless 380°F 18–20 min; bone-in 380°F 22–25 min, flipping halfway. Cook to 175°F inside so skin is crisp.",
-    "Repeat batches. Last batch: air fry broccoli (frozen) with EVOO and salt at 400°F 10–12 min, shaking once, until edges crisp. Add a pat of butter.",
+    "Use the oven's Air Fry mode on the air fry tray in one layer (middle rack), skin side down first: boneless 380°F 18–20 min; bone-in 380°F 22–25 min, flipping halfway. Cook to 175°F inside so skin is crisp.",
+    "Repeat batches. Last batch: Air Fry mode broccoli (frozen) with EVOO and salt at 400°F 10–12 min, shaking once, until edges crisp. Add a pat of butter.",
     "Eat 2–4 thighs for dinner. Cool the rest uncovered 20 min, then pull meat off bones and refrigerate in containers for lunches (good 4 days)."
    ]
   },
@@ -418,7 +418,7 @@ window.WEEK = {
     "1½ tsp garlic powder, ½ tsp paprika, salt, pepper",
     "2 tbsp half & half",
     "½ lime; ¼ cup taco blend cheese (optional)",
-    "Side: 1 bag riced cauliflower or air-fried broccoli (optional)"
+    "Side: 1 bag riced cauliflower or oven air-fried broccoli (optional)"
    ],
    "steps": [
     "Squeeze spinach in a towel until no more water comes out (key to avoid a soggy texture).",
@@ -457,7 +457,7 @@ window.WEEK = {
   }
  ],
  "prep": [
-  "Air fry ~5 lb chicken thighs (recipe p.4); pull and portion lunch meat into 4–5 containers.",
+  "Oven air-fry ~5 lb chicken thighs (recipe p.4); pull and portion lunch meat into 4–5 containers.",
   "Hard-boil 12 eggs: boil, then 12 min covered off heat, ice bath; peel 6, make deviled eggs from 6 (see lunches).",
   "Wash, dry and chop romaine and iceberg; store with a paper towel in a bag. Keep some iceberg leaves whole for wraps.",
   "Cut celery into sticks; store in a jar of water.",
