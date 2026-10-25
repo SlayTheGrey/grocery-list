@@ -36,6 +36,7 @@ details>div{padding:0 14px 14px}details li{margin:6px 0}.meta{font-size:16px;col
 .ls{display:flex;gap:6px}.ls button{flex:1}textarea{font:inherit;padding:10px;border:2px solid var(--fg);border-radius:8px;width:100%;min-height:90px}
 .msg{border:1px solid var(--line);border-radius:10px;padding:8px;margin:6px 0}.msg small{color:var(--mut)}.err{color:var(--err)}.ok{color:var(--ok)}
 #thumb{max-width:120px;border-radius:8px;display:none}
+.big{width:100%;font-size:20px;min-height:56px;margin:8px 0}#sheet{position:fixed;inset:0;background:rgba(0,0,0,.5);display:flex;align-items:flex-end;justify-content:center;z-index:19}#sheet[hidden]{display:none}#sheet>div{background:var(--bg);color:var(--fg);width:100%;max-width:760px;border-radius:14px 14px 0 0;padding:14px;display:grid;gap:10px;max-height:92vh;overflow:auto;border-top:3px solid var(--fg)}#sheet summary,#tot summary{font-weight:700;min-height:44px;display:flex;align-items:center;cursor:pointer}#moremenu{display:grid;gap:8px}#moremenu[hidden]{display:none}#pinbox[hidden]{display:none}#sync.err{color:var(--err);text-decoration:underline;font-weight:700;cursor:pointer;min-height:44px}
 #modal{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;align-items:flex-end;justify-content:center;z-index:20}#modal>div{background:var(--bg);width:100%;max-width:760px;border-radius:14px 14px 0 0;padding:14px;display:grid;gap:10px;max-height:90vh;overflow:auto}
 .rbar{display:flex;gap:6px;margin:6px 0}.rbar .btn{flex:1}.rpend{color:var(--warn);font-weight:700}details.gone summary{text-decoration:line-through;color:var(--mut)}
 .bud{font-size:18px}.over{color:var(--err);font-weight:700}
@@ -53,24 +54,26 @@ details>div{padding:0 14px 14px}details li{margin:6px 0}.meta{font-size:16px;col
 <main><section id="list">
 <div class="ls"><button class="btn" id="lThis">This week</button><button class="btn" id="lNext">Next week</button></div>
 <div id="pbanner"></div><div id="picks"></div>
-<div class="card"><b>Ask assistant to add</b><input id="xt" placeholder="e.g. 2 bags shredded cheese">
-<div class="tools"><label class="btn" for="xf">📷 Photo</label><input id="xf" type="file" accept="image/*" capture="environment" hidden><img id="thumb" alt="photo preview">
-<select id="xl" style="flex:1;width:auto"><option value="this">This week</option><option value="next">Next week</option></select></div>
-<button class="btn" id="xs" style="width:100%">Send to assistant</button><div id="xst"></div></div>
+<button class="btn big" id="addb">＋ Add</button>
 <div id="prog" style="font-weight:700"></div><div id="sync" class="meta"></div><div class="bar"><i id="pb"></i></div>
-<div class="tools"><button class="btn" id="mode">View: Category</button><button class="btn" id="hide">Hide checked</button><button class="btn" id="sink">Checked to bottom</button><button class="btn" id="clear">Clear checks</button><button class="btn" id="donesh">✓ Done shopping</button></div><div id="donest" class="meta"></div>
+<div class="tools"><button class="btn" id="mode">View: Category</button><button class="btn" id="chkm">Checked: Bottom</button><button class="btn" id="more" aria-haspopup="true" aria-expanded="false">⋯ More<span id="bM"></span></button><button class="btn" id="donesh">✓ Done shopping</button></div><div id="moremenu" class="card" hidden><button class="btn" id="reset" style="width:100%">Restore removed items</button><button class="btn" id="mstp" style="width:100%">⭐ Staples quick-add</button><button class="btn" id="mpin" style="width:100%">⚙ PIN &amp; appearance settings</button></div><div id="donest" class="meta"></div>
 <input id="q" type="search" placeholder="🔍 Search this list" aria-label="Search items" autocomplete="off">
 <div id="cats"></div><div class="total" id="tot"></div>
-<details id="stp"><summary>⭐ Staples quick-add</summary><div id="stl"></div></details>
-<form id="add"><b>Add an item</b><input id="an" placeholder="Item name" required>
-<div class="row"><input id="aq" placeholder="Qty" inputmode="numeric"><select id="ac"></select></div>
-<input id="ap" placeholder="Price each (optional, e.g. 2.99)" inputmode="decimal"><button class="btn">Add item</button></form>
-<button class="btn" id="reset" style="width:100%">Restore removed items</button>
 </section><section id="recipes" hidden><div class="ls"><button class="btn" id="rThis">This week</button><button class="btn" id="rNext">Next week</button></div><div id="rpbanner"></div><div id="rpicks"></div><div id="tonight"></div><div id="rlist"></div></section>
 <section id="chat" hidden><div class="card"><b>Message the assistant</b><textarea id="ct" placeholder="Add, remove or change items or recipes"></textarea>
 <div class="ls"><select id="cl"><option value="this">This week</option><option value="next">Next week</option></select><button class="btn" id="cs">Send</button></div></div>
 <div id="replies"></div><h3>Your messages</h3><div id="msgs"></div>
-<details><summary>Settings</summary><div><p class="meta">Family PIN (stored only on this phone).</p><input id="key" type="password" autocomplete="off" placeholder="Family PIN" inputmode="numeric"><div class="tools"><button class="btn" id="ksave">Save PIN</button><button class="btn" id="kclr">Forget PIN</button></div><div id="kst" class="meta"></div><p class="meta">Appearance (this phone)</p><div class="ls" id="thm"><button class="btn" data-th="auto">Auto</button><button class="btn" data-th="light">Light</button><button class="btn" data-th="dark">Dark</button></div></div></details></section></main>
+<details id="settings"><summary>Settings</summary><div><p id="pinok" class="meta" style="font-weight:700"></p><button class="btn" id="pinchg">Change/Forget PIN</button><div id="pinbox"><p class="meta">Family PIN (stored only on this phone).</p><input id="key" type="password" autocomplete="off" placeholder="Family PIN" inputmode="numeric"><div class="tools"><button class="btn" id="ksave">Save PIN</button><button class="btn" id="kclr">Forget PIN</button></div><div id="kst" class="meta"></div></div><p class="meta">Appearance (this phone)</p><div class="ls" id="thm"><button class="btn" data-th="auto">Auto</button><button class="btn" data-th="light">Light</button><button class="btn" data-th="dark">Dark</button></div></div></details></section></main>
+<div id="sheet" role="dialog" aria-modal="true" aria-labelledby="shh" hidden><div>
+<div class="ls"><b id="shh" style="font-size:20px;align-self:center">Add an item</b><button class="btn" id="shx" aria-label="Close">✕ Close</button></div>
+<input id="xt" placeholder="Item, e.g. 2 bags shredded cheese" autocomplete="off">
+<div class="tools"><label class="btn" for="xf">📷 Photo</label><input id="xf" type="file" accept="image/*" capture="environment" hidden><img id="thumb" alt="photo preview">
+<select id="xl" style="flex:1;width:auto" aria-label="Which list"><option value="this">This week</option><option value="next">Next week</option></select></div>
+<button class="btn on" id="xs" style="width:100%">Send to assistant</button><div id="xst" class="meta"></div>
+<details id="self"><summary>I'll add it myself</summary><form id="add"><div class="row"><input id="aq" placeholder="Qty" inputmode="numeric" aria-label="Quantity"><select id="ac" aria-label="Category"></select></div>
+<input id="ap" placeholder="Price each (optional, e.g. 2.99)" inputmode="decimal" aria-label="Price"><button class="btn" style="width:100%">Add directly</button></form></details>
+<details id="stp"><summary>⭐ Staples quick-add</summary><div id="stl"></div></details>
+</div></div>
 <div id="modal" role="dialog" aria-modal="true"><div id="mbody"></div></div><div id="toast"><span id="tm"></span><button id="undo">Undo</button></div>
 <script>document.documentElement.dataset.theme=localStorage.getItem("grocery-theme")||"auto"</script><script src="data.js"></script><script>
 let W=window.WEEK;const CATS=["Fruits & Veggies","Meat & Seafood","Dairy","Frozen Foods","Sauces & Spices","Snacks & Beverages","Breads & Grains","Other"],
@@ -93,7 +96,7 @@ const money=n=>"$"+n.toFixed(2);
 function render(){$("ttl").textContent=W.title;$("dates").textContent=(nx()?(W.nextWeek&&W.nextWeek.dates)||"Next week":W.dates)||"";$("lThis").classList.toggle("on",!nx());$("rThis")&&($("rThis").classList.toggle("on",!nx()),$("rNext").classList.toggle("on",nx()));$("lNext").classList.toggle("on",nx());renderPicks();
  const all=items(),done=all.filter(i=>S.checked[i.id]).length;
  $("prog").textContent=`${done} of ${all.length} in cart`;$("pb").style.width=(all.length?done/all.length*100:0)+"%";
- $("hide").classList.toggle("on",S.hide);$("sink").classList.toggle("on",S.sink);$("mode").textContent="View: "+(S.route?"Store route":"Category");$("mode").classList.toggle("on",S.route);
+ $("chkm").textContent="Checked: "+(S.hide?"Hidden":S.sink?"Bottom":"Stay in place");$("mode").textContent="View: "+(S.route?"Store route":"Category");$("mode").classList.toggle("on",S.route);
  let h="";for(const c of (S.route?ROUTE:CATS)){let its=all.filter(i=>i.cat===c);
   its.sort((a,b)=>(a.aisle&&b.aisle?String(a.aisle).localeCompare(String(b.aisle),undefined,{numeric:true}):a.aisle?-1:b.aisle?1:0)||(S.sink?(!!S.checked[a.id])-(!!S.checked[b.id]):0));
   let vis=S.hide?its.filter(i=>!S.checked[i.id]):its;if(QS){vis=vis.filter(i=>(i.name+" "+(i.note||"")).toLowerCase().includes(QS));if(!vis.length)continue;}
@@ -104,8 +107,8 @@ function render(){$("ttl").textContent=W.title;$("dates").textContent=(nx()?(W.n
  let food=0,soda=0,unk=0,pl=0,ua=0;all.forEach(i=>{if(i.price==null){unk++;return}const v=i.price*(+i.qty||1);i.soda?soda+=v:food+=v;(i.addedBy==="user"||i.carried||String(i.id).startsWith("u:"))?ua+=v:pl+=v});
  const disc=Math.min(W.discount||0,food),sub=food+soda-disc,ft=Math.round((food-disc)*W.foodTaxRate*100)/100,st=Math.round(soda*W.sodaTaxRate*100)/100;
  const B=(nx()?(W.nextWeek&&W.nextWeek.budget):null)||W.budget||200;
- $("tot").innerHTML=`<div class="bud">Planned (budget ${money(B)}): <b class="${pl>B?"over":""}">${money(pl)}</b><br>Your additions: <b>${money(ua)}</b></div><small>Before tax.</small><hr>Subtotal ${money(sub)}${disc?` (after ${money(disc)} rollback)`:""}<br>Food tax ${(W.foodTaxRate*100).toFixed(2).replace(/\.?0+$/,"")}% ${money(ft)} · Soda tax ${(W.sodaTaxRate*100).toFixed(2).replace(/\.?0+$/,"")}% ${money(st)}<br><b>Estimated total: ${money(sub+ft+st)}</b><br><small>${esc(W.priceNote||"")}${unk?` ${unk} item(s) without a price not included.`:""}</small>`;
- $("reset").hidden=!Object.keys(S.removed).length;if(typeof DEV!=="undefined"){recipes();extras();}}
+ const dOpen=!!($("tot").querySelector("details")||{}).open; $("tot").innerHTML=`<div class="bud">Planned (budget ${money(B)}): <b class="${pl>B?"over":""}">${money(pl)}</b><br>Your additions: <b>${money(ua)}</b></div><small>Before tax.</small><hr><b>Estimated total: ${money(sub+ft+st)}</b><details${dOpen?" open":""}><summary>Details</summary>Subtotal ${money(sub)}${disc?` (after ${money(disc)} rollback)`:""}<br>Food tax ${(W.foodTaxRate*100).toFixed(2).replace(/\.?0+$/,"")}% ${money(ft)} · Soda tax ${(W.sodaTaxRate*100).toFixed(2).replace(/\.?0+$/,"")}% ${money(st)}<br><small>${esc(W.priceNote||"")}${unk?` ${unk} item(s) without a price not included.`:""}</small></details>`;
+ {const nr=Object.keys(S.removed).filter(k=>S.removed[k]).length;$("reset").hidden=!nr;$("reset").textContent="Restore removed items ("+nr+")";$("bM").innerHTML=nr?'<b class="bdg">'+nr+"</b>":"";}if(typeof DEV!=="undefined"){recipes();extras();}}
 let undoFn,tt;function toast(m,f){undoFn=f;$("undo").hidden=!f;$("tm").textContent=m;$("toast").style.display="flex";clearTimeout(tt);tt=setTimeout(()=>$("toast").style.display="none",6000);}
 $("undo").onclick=()=>{undoFn&&undoFn();$("toast").style.display="none";};
 
@@ -129,8 +132,8 @@ async function flush(){if(syncing){syncAgain=true;return}var pin=localStorage.ge
   if(r.ok){var d=await r.json();Q.splice(0,batch.length);var st=d.state||{},chg=false;
    for(var k in st)for(var id in st[k])if(applyOp({k:k,id:id,v:st[k][id].v,ts:st[k][id].ts}))chg=true;
    Q.forEach(applyOp);var before=JSON.stringify([S.checked,S.removed,S.added,S.chosen,S.cancelled,S.recipe,S.qty,S.note,S.cooked,S.done]);rebuild();persist();
-   if(before!==JSON.stringify([S.checked,S.removed,S.added,S.chosen,S.cancelled,S.recipe,S.qty,S.note,S.cooked,S.done]))render();$("sync")&&($("sync").textContent="Synced "+new Date().toLocaleTimeString([], {hour:"numeric",minute:"2-digit"}));}
-  else if($("sync"))$("sync").textContent=r.status==401?"Sync: check PIN":"Sync paused ("+r.status+")";
+   if(before!==JSON.stringify([S.checked,S.removed,S.added,S.chosen,S.cancelled,S.recipe,S.qty,S.note,S.cooked,S.done]))render();$("sync")&&$("sync").classList.remove("err");$("sync")&&($("sync").textContent="Synced "+new Date().toLocaleTimeString([], {hour:"numeric",minute:"2-digit"}));}
+  else if($("sync")){$("sync").textContent=r.status==401?"Sync: check PIN (tap to open Settings)":"Sync paused ("+r.status+")";$("sync").classList.toggle("err",r.status==401);}
  }catch(e){$("sync")&&($("sync").textContent="Offline. Changes saved, will sync");}
  syncing=false;if(syncAgain||Q.length&&Q.length>=300){syncAgain=false;setTimeout(flush,200)}}
 rebuild();persist();
@@ -146,11 +149,10 @@ $("cats").onclick=e=>{const qm=e.target.closest("[data-qm]"),qp=e.target.closest
  if(r){const id=r.dataset.r,it=items().find(i=>i.id===id);
   if(id.startsWith("u:")){const ov=SH.added&&SH.added[id]&&SH.added[id].v;op("added",id,null);render();toast("Removed "+it.name,()=>{op("added",id,ov||it);render();});}
   else{op("removed",id,1);render();toast("Removed "+it.name,()=>{op("removed",id,null);render();});}}};
-$("hide").onclick=()=>{S.hide=!S.hide;save();render()};$("sink").onclick=()=>{S.sink=!S.sink;save();render()};$("mode").onclick=()=>{S.route=!S.route;save();render()};
-$("clear").onclick=()=>{if(confirm("Clear all checks?")){const o=Object.keys(S.checked);o.forEach(id=>op("checked",id,null));render();toast("Checks cleared",()=>{o.forEach(id=>op("checked",id,1));render();});}};
+$("chkm").onclick=()=>{if(S.hide){S.hide=false;S.sink=false}else if(S.sink){S.sink=false;S.hide=true}else{S.sink=true}save();render()};$("more").onclick=()=>{const m=$("moremenu");m.hidden=!m.hidden;$("more").setAttribute("aria-expanded",!m.hidden)};function openSheet(st){$("xl").value=S.list;$("sheet").hidden=false;$("xst").textContent="";if(st){$("stp").open=true;$("stp").scrollIntoView()}else setTimeout(()=>$("xt").focus(),50)}$("addb").onclick=()=>openSheet();$("xl").onchange=()=>{S.list=$("xl").value;save();render()};$("mstp").onclick=()=>{$("moremenu").hidden=true;openSheet(1)};$("shx").onclick=()=>{$("sheet").hidden=true};$("sheet").onclick=e=>{if(e.target.id==="sheet")$("sheet").hidden=true};$("mpin").onclick=()=>{$("moremenu").hidden=true;goPin()};$("mode").onclick=()=>{S.route=!S.route;save();render()};
 $("reset").onclick=()=>{if(confirm("Restore all removed items?")){Object.keys(S.removed).forEach(id=>op("removed",id,null));render();}};
 $("add").onsubmit=e=>{e.preventDefault();const p=parseFloat($("ap").value.replace("$",""));
- op("added","u:"+Date.now()+Math.random().toString(36).slice(2,6),{name:$("an").value.trim(),qty:$("aq").value.trim()||1,cat:$("ac").value,list:S.list,price:isNaN(p)?null:p});render();$("an").value=$("aq").value=$("ap").value="";};
+ const nm=$("xt").value.trim();if(!nm){toast("Type the item name first");$("xt").focus();return}const L=$("xl").value||S.list;op("added","u:"+Date.now()+Math.random().toString(36).slice(2,6),{name:nm,qty:$("aq").value.trim()||1,cat:$("ac").value,list:L,price:isNaN(p)?null:p,addedBy:"user"});render();$("xt").value=$("aq").value=$("ap").value="";$("xst").textContent="Added to "+(L==="next"?"next week":"this week")+" ✓";toast("Added "+nm);};
 function curRecipes(){return nx()?((W.nextWeek&&W.nextWeek.recipes)||[]):(W.recipes||[])}
 const rkey=r=>"rm:"+(r.id||r.title);
 const DN=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],DFULL={Sun:"Sunday",Mon:"Monday",Tue:"Tuesday",Wed:"Wednesday",Thu:"Thursday",Fri:"Friday",Sat:"Saturday"};
@@ -235,7 +237,7 @@ $("xs").onclick=async()=>{var t=$("xt").value.trim();if($("xs").disabled)return;
  var ok=await send(b,"Add"+(photo?" (photo)":"")+": "+(t||"item in photo")+" → "+(b.list==="next"?"next week":"this week"));$("xs").disabled=false;$("xst").textContent=ok?"Sent. Updates arrive in a few minutes":"Not sent. See Chat tab";
  if(ok){$("xt").value="";photo=null;$("thumb").style.display="none";$("xf").value="";}};
 $("ksave").onclick=()=>{var v=$("key").value.trim();if(v){localStorage.setItem(KK,v);$("key").value="";flush();}kst();};$("kclr").onclick=()=>{localStorage.removeItem(KK);kst()};
-localStorage.removeItem("grocery-key");function kst(){$("kst").textContent=localStorage.getItem(KK)?"PIN saved on this phone.":"No PIN saved.";}kst();
+localStorage.removeItem("grocery-key");function kst(){const has=!!localStorage.getItem(KK);$("pinok").textContent=has?"PIN saved on this phone ✓":"";$("pinchg").hidden=!has;$("pinbox").hidden=has;$("kst").textContent=has?"":"No PIN saved. Enter the family PIN to sync.";}kst();$("pinchg").onclick=()=>{$("pinbox").hidden=false;$("pinchg").hidden=true;$("key").focus()};function goPin(){$("tC").click();$("settings").open=true;if(!localStorage.getItem(KK))$("pinbox").hidden=false;$("settings").scrollIntoView();}document.addEventListener("click",e=>{if(e.target.closest("#sync.err"))goPin()});
 var lastData=JSON.stringify(W);
 async function checkData(){try{var t=await (await fetch("data.js?t="+Date.now(),{cache:"no-store"})).text(),o={};new Function("window",t)(o);
  if(o.WEEK&&JSON.stringify(o.WEEK)!==lastData){if(o.WEEK.weekId!==W.weekId)return location.reload();W=o.WEEK;lastData=JSON.stringify(W);

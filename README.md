@@ -44,3 +44,13 @@ The webhook cuts request bodies at about 4KB, so the Cloudflare relay keeps each
 
 ## Backups
 `/workspace/grocery-app-backup.sh` (on the assistant's box) saves state for this and next week plus data.js to `/workspace/backups/grocery-<date>.json`. It commits a copy to `backups/` only when there are no notes or other free-text fields.
+
+## List tab layout (v27)
+- **＋ Add** opens one sheet with the item text, a 📷 photo with preview, and a This/Next week picker.
+  - **Send to assistant** uses the relay, and photos are supported.
+  - **I'll add it myself** (qty, category, price) → **Add directly** writes an `added` state op with `addedBy:"user"`, as before.
+  - Staples quick-add is in the sheet, and also under **⋯ More**.
+- **Checked:** Bottom / Hidden / Stay in place is one cycle button, saved per phone. Clear checks was removed because Done shopping clears checks.
+- **⋯ More** holds Restore removed items (with a count badge), Staples, and PIN & appearance settings.
+- Totals show Planned, Your additions and Estimated total. Subtotal, rollback and tax lines are under **Details**, and the math is unchanged.
+- After the PIN is saved, Chat > Settings shows "PIN saved on this phone ✓" with Change/Forget PIN. A "Sync: check PIN" message opens Settings when tapped.
