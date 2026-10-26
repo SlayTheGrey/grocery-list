@@ -434,6 +434,16 @@ window.WEEK = {
      "urlType": "search",
      "soda": true,
      "aisle": "A20"
+    },
+    {
+     "name": "Minute Maid Zero Sugar Orange Pineapple, 52 fl oz (refrigerated)",
+     "qty": 2,
+     "price": 2.84,
+     "url": "https://www.walmart.com/ip/17939723414",
+     "urlType": "product",
+     "soda": true,
+     "recipes": [],
+     "note": "Weekly staple: 2 bottles"
     }
    ]
   },
@@ -939,9 +949,24 @@ window.WEEK = {
    "url": "https://www.walmart.com/ip/Purina-Cat-Chow-Complete-Dry-Cat-Food-Chicken-15-lb-Bag/287183350",
    "cat": "Other",
    "price": 18.58
+  },
+  {
+   "name": "Minute Maid Zero Sugar Orange Pineapple, 52 fl oz (refrigerated)",
+   "url": "https://www.walmart.com/ip/17939723414",
+   "cat": "Snacks & Beverages",
+   "price": 2.84,
+   "soda": true,
+   "weekly": true,
+   "qty": 2
   }
  ],
  "replies": [
+  {
+   "id": "r-1793023236288",
+   "ts": 1793023236288,
+   "text": "Added 2 Minute Maid Zero Sugar Orange Pineapple (52 fl oz, refrigerated, $2.84 each) to this week's plan under Snacks & Beverages. It's now a weekly staple, so it'll be on every week's list.",
+   "ref": "staple:minute-maid-op"
+  },
   {
    "id": "r-1793022713458",
    "ts": 1793022713458,
