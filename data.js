@@ -768,6 +768,7 @@ window.WEEK = {
   "categories": []
  },
  "pending": [
+  {"id": "p1793050541034", "query": "Planters mixed nuts, large tin", "list": "next", "rid": "bc28ea42-f0ba-470a-b78d-125bde1365db", "options": [{"name": "PLANTERS Salted Mixed Nuts, 56 oz canister", "size": "56 oz (the big tin, best price per oz)", "price": 19.96, "url": "https://www.walmart.com/ip/150315049"}, {"name": "PLANTERS Salted Mixed Nuts, 27 oz canister", "size": "27 oz (regular tin)", "price": 12.64, "url": "https://www.walmart.com/ip/Planters-Less-than-50-Peanuts-Mixed-Nuts-1-69-Lb/22004565"}]},
   {
    "id": "p1793050612156",
    "query": "Ranch dressing, 2 bottles (from your photo)",
@@ -1003,6 +1004,7 @@ window.WEEK = {
   }
  ],
  "replies": [
+  {"id": "r1793050700001", "ts": 1793050643211, "text": "Found Planters mixed nuts for next week: the big 56 oz tin ($19.96) or the 27 oz tin ($12.64). Pick one. About 3 g net carbs per ounce.", "ref": "bc28ea42-f0ba-470a-b78d-125bde1365db"},
   {
    "id": "r-1793023614059",
    "ts": 1793023614059,
