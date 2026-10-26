@@ -176,6 +176,17 @@ window.WEEK = {
       "cheesecake-fluff"
      ],
      "aisle": "A34"
+    },
+    {
+     "name": "Oikos Triple Zero Vanilla, 4 ct",
+     "qty": 1,
+     "price": 4.97,
+     "url": "https://www.walmart.com/ip/Oikos-Triple-Zero-15g-Protein-0g-Added-Sugar-Fat-Free-Vanilla-Greek-Yogurt-Cups-5-3-oz-4-Count/49028504",
+     "urlType": "product",
+     "recipes": [
+      "cheesecake-fluff"
+     ],
+     "aisle": "A33"
     }
    ]
   },
@@ -613,7 +624,7 @@ window.WEEK = {
    "meta": "Makes 4 servings · 10 min · Net carbs/serving: ~4 g (estimate)",
    "ingredients": [
     "1 brick (8 oz) cream cheese, softened",
-    "2 cups Oikos Triple Zero Vanilla (from what you have)",
+    "2 cups Oikos Triple Zero Vanilla (from the 4-pack on the list)",
     "2–3 tbsp Swerve confectioners (erythritol), to taste",
     "Pinch of cinnamon"
    ],
