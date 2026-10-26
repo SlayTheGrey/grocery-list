@@ -251,6 +251,7 @@ window.WEEK = {
     {
      "name": "Great Value Organic Steamable Riced Cauliflower, 10 oz (frozen)",
      "qty": 1,
+     "price": 2.23,
      "url": "https://www.walmart.com/ip/197864195",
      "urlType": "product",
      "addedBy": "user",
@@ -912,7 +913,8 @@ window.WEEK = {
   {
    "name": "Frozen riced cauliflower",
    "url": "https://www.walmart.com/ip/197864195",
-   "cat": "Frozen Foods"
+   "cat": "Frozen Foods",
+   "price": 2.23
   }
  ],
  "replies": [

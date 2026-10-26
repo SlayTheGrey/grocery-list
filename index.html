@@ -19,7 +19,7 @@ h2{font-size:21px;border-bottom:3px solid var(--fg);margin:18px 0 4px;padding-bo
 .chk{flex:1;display:flex;align-items:center;gap:12px;background:none;border:0;font:inherit;color:var(--fg);text-align:left;padding:10px 4px;min-height:60px;cursor:pointer}
 .box{width:32px;height:32px;border:3px solid var(--fg);border-radius:6px;flex:none;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:900}
 .done .box{background:var(--ok);border-color:var(--ok);color:var(--bg)}.done .nm{text-decoration:line-through;color:var(--mut)}
-.nm{flex:1}.qp{font-size:16px;color:var(--mut);text-align:right;white-space:nowrap}
+.nm{flex:1}.pq{color:#b45309;font-weight:600}.qp{font-size:16px;color:var(--mut);text-align:right;white-space:nowrap}
 .lnk{flex:none;font-size:15px;font-weight:700;color:var(--link);border:2px solid var(--link);border-radius:999px;padding:8px 10px;margin-left:4px;text-decoration:none;white-space:nowrap}
 .rm{width:48px;height:48px;border:0;background:none;font-size:26px;color:var(--err);flex:none}
 .empty{color:var(--mut);font-style:italic;padding:6px 4px}
@@ -75,7 +75,7 @@ details>div{padding:0 14px 14px}details li{margin:6px 0}.meta{font-size:16px;col
 <details id="stp"><summary>⭐ Staples quick-add</summary><div id="stl"></div></details>
 </div></div>
 <div id="modal" role="dialog" aria-modal="true"><div id="mbody"></div></div><div id="toast"><span id="tm"></span><button id="undo">Undo</button></div>
-<script>document.documentElement.dataset.theme=localStorage.getItem("grocery-theme")||"auto"</script><script>window.APP_VER="v41";document.write('<script src="data.js?t='+Date.now()+'"><\/script>')</script><script>
+<script>document.documentElement.dataset.theme=localStorage.getItem("grocery-theme")||"auto"</script><script>window.APP_VER="v42";document.write('<script src="data.js?t='+Date.now()+'"><\/script>')</script><script>
 let W=window.WEEK;const CATS=["Fruits & Veggies","Meat & Seafood","Dairy","Frozen Foods","Sauces & Spices","Snacks & Beverages","Breads & Grains","Other"],
 ROUTE=["Other","Fruits & Veggies","Breads & Grains","Meat & Seafood","Dairy","Sauces & Spices","Snacks & Beverages","Frozen Foods"],
 $=id=>document.getElementById(id),esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
@@ -85,9 +85,14 @@ const save=()=>localStorage.setItem(K,JSON.stringify(S));
 
 $("ac").innerHTML=CATS.map(c=>`<option>${c}</option>`).join("");
 const nx=()=>S.list==="next";const curCats=()=>nx()?((W.nextWeek&&W.nextWeek.categories)||[]):W.categories;
+const NQ=i=>{const n=parseFloat(i.qty);return n>0?n:1};const nrm=s=>String(s||"").toLowerCase().replace(/\(.*?\)/g,"").replace(/[^a-z0-9]+/g," ").trim();
+function lookupPrice(nm){const k=nrm(nm);if(!k)return null;const src=[].concat(W.staples||[],...(W.categories||[]).map(c=>c.items||[]));let PP={};try{PP=(window.PREF&&PREF.products)||{}}catch(e){}
+ for(const s of src)if(s&&s.price!=null&&nrm(s.name)===k)return +s.price;
+ for(const key in PP){const pr=PP[key]&&PP[key].product;if(pr&&nrm(pr)===k){const s=src.find(x=>x&&x.price!=null&&nrm(x.name)===nrm(key));if(s)return +s.price}}
+ for(const s of src)if(s&&s.price!=null&&k.length>5&&(nrm(s.name).includes(k)||k.includes(nrm(s.name))&&nrm(s.name).length>8))return +s.price;return null}
 function items(){const a=[],p=nx()?"n:":"g:";curCats().forEach(c=>(c.items||[]).forEach((it,i)=>a.push({...it,cat:CATS.includes(c.name)?c.name:"Other",id:p+c.name+":"+i})));
  S.added.filter(it=>(it.list||"this")===S.list).forEach(it=>a.push(it));
- a.forEach(it=>{if(S.qty&&S.qty[it.id]!=null){it.baseQty=it.qty;it.qty=S.qty[it.id]}if(S.note&&S.note[it.id])it.note=S.note[it.id]});return a.filter(it=>!S.removed[it.id]);}
+ a.forEach(it=>{if(S.qty&&S.qty[it.id]!=null){it.baseQty=it.qty;it.qty=S.qty[it.id]}if(S.note&&S.note[it.id])it.note=S.note[it.id];if(it.price==null||it.price===""){const mp=S.note&&S.note["price:"+it.id];if(mp!=null&&mp!==""&&!isNaN(+mp)){it.price=+mp;it.manualPrice=1}else{const lp=lookupPrice(it.name);if(lp!=null){it.price=lp;it.lookedUp=1}else it.price=null}}else it.price=+it.price});return a.filter(it=>!S.removed[it.id]);}
 const AND=/Android/i.test(navigator.userAgent);
 function wurl(u){if(AND&&/^https:\/\/www\.walmart\.com\//.test(u))return "intent://"+u.slice(8)+"#Intent;scheme=https;package=com.walmart.android;S.browser_fallback_url="+encodeURIComponent(u)+";end";return u}
 const wa=(u,label,txt)=>`<a class="lnk" href="${esc(wurl(u))}"${AND?"":' target="_blank"'} rel="noopener" aria-label="${esc(label)}">${txt}</a>`;
@@ -101,10 +106,10 @@ function render(){$("ttl").textContent=W.title;$("dates").textContent=(nx()?(W.n
   if(S.route)its.sort((a,b)=>aRank(a)-aRank(b)||String(AIS(a)).localeCompare(String(AIS(b)),undefined,{numeric:true})||String(a.name).localeCompare(String(b.name)));else its.sort((a,b)=>(a.aisle&&b.aisle?String(a.aisle).localeCompare(String(b.aisle),undefined,{numeric:true}):a.aisle?-1:b.aisle?1:0)||((!!S.checked[a.id])-(!!S.checked[b.id])));
   its.sort((a,b)=>(!!S.checked[a.id])-(!!S.checked[b.id]));  let vis=its;if(QS){vis=vis.filter(i=>(i.name+" "+(i.note||"")).toLowerCase().includes(QS));if(!vis.length)continue;}
   h+=`<h2>${c}</h2>`;if(QS){}else if(!its.length)h+=`<div class="empty">None this week</div>`;else if(!vis.length)h+=`<div class="empty">All in cart ✓</div>`;
-  for(const i of vis){const d=S.checked[i.id],q=i.qty?"×"+esc(i.qty):"",p=i.price!=null?money(i.price*(+i.qty||1)):"";
-   h+=`<div class="item${d?" done":""}"><button class="chk" data-c="${esc(i.id)}" aria-pressed="${!!d}"><span class="box">${d?"✓":""}</span><span class="nm">${esc(i.name)}${AIS(i)?` <small class="ais">Aisle ${esc(AIS(i))}</small>`:""}${i.carried?' <span class="tag">carried over</span>':""}${i.note?`<span class="note">📝 ${esc(i.note)}</span>`:""}</span><span class="qp">${q}<br>${p}</span></button>${lnk(i)}<button class="rm" data-r="${esc(i.id)}" aria-label="Remove ${esc(i.name)}">✕</button><div class="ctl"><button class="btn" data-qm="${esc(i.id)}" aria-label="Less ${esc(i.name)}">−</button><span class="qn">${esc(i.qty||1)}</span><button class="btn" data-qp="${esc(i.id)}" aria-label="More ${esc(i.name)}">+</button><button class="btn" data-nt="${esc(i.id)}">✎ ${i.note?"Note":"Add note"}</button></div></div>`;}}
+  for(const i of vis){const d=S.checked[i.id],q=i.qty?"×"+esc(i.qty):"",p=i.price!=null?money(i.price*NQ(i))+(i.manualPrice?" ✎":i.lookedUp?" ~":""):'<span class="pq">price?</span>';
+   h+=`<div class="item${d?" done":""}"><button class="chk" data-c="${esc(i.id)}" aria-pressed="${!!d}"><span class="box">${d?"✓":""}</span><span class="nm">${esc(i.name)}${AIS(i)?` <small class="ais">Aisle ${esc(AIS(i))}</small>`:""}${i.carried?' <span class="tag">carried over</span>':""}${i.note?`<span class="note">📝 ${esc(i.note)}</span>`:""}</span><span class="qp">${q}<br>${p}</span></button>${lnk(i)}<button class="rm" data-r="${esc(i.id)}" aria-label="Remove ${esc(i.name)}">✕</button><div class="ctl"><button class="btn" data-qm="${esc(i.id)}" aria-label="Less ${esc(i.name)}">−</button><span class="qn">${esc(i.qty||1)}</span><button class="btn" data-qp="${esc(i.id)}" aria-label="More ${esc(i.name)}">+</button>${i.price==null||i.manualPrice?`<button class="btn" data-pr="${esc(i.id)}">$ ${i.price==null?"Add price":"Edit price"}</button>`:""}<button class="btn" data-nt="${esc(i.id)}">✎ ${i.note?"Note":"Add note"}</button></div></div>`;}}
  if(QS&&!h)h=`<p class="empty">No items match “${esc(QS)}”</p>`;$("cats").innerHTML=h;
- let food=0,soda=0,unk=0,pl=0,ua=0;all.forEach(i=>{if(i.price==null){unk++;return}const v=i.price*(+i.qty||1);i.soda?soda+=v:food+=v;(i.addedBy==="user"||i.carried||String(i.id).startsWith("u:"))?ua+=v:pl+=v});
+ let food=0,soda=0,unk=0,pl=0,ua=0;all.forEach(i=>{if(i.price==null){unk++;return}const v=i.price*NQ(i);i.soda?soda+=v:food+=v;(i.addedBy==="user"||i.carried||String(i.id).startsWith("u:"))?ua+=v:pl+=v});
  const disc=Math.min(W.discount||0,food),sub=food+soda-disc,ft=Math.round((food-disc)*W.foodTaxRate*100)/100,st=Math.round(soda*W.sodaTaxRate*100)/100;
  const B=(nx()?(W.nextWeek&&W.nextWeek.budget):null)||W.budget||200;
  const dOpen=!!($("tot").querySelector("details")||{}).open; $("tot").innerHTML=`<div class="bud">Planned (budget ${money(B)}): <b class="${pl>B?"over":""}">${money(pl)}</b><br>Your additions: <b>${money(ua)}</b></div><small>Before tax.</small><hr><b>Estimated total: ${money(sub+ft+st)}</b><details${dOpen?" open":""}><summary>Details</summary>Subtotal ${money(sub)}${disc?` (after ${money(disc)} rollback)`:""}<br>Food tax ${(W.foodTaxRate*100).toFixed(2).replace(/\.?0+$/,"")}% ${money(ft)} · Soda tax ${(W.sodaTaxRate*100).toFixed(2).replace(/\.?0+$/,"")}% ${money(st)}<br><small>${esc(W.priceNote||"")}${unk?` ${unk} item(s) without a price not included.`:""}</small></details>`;
@@ -140,7 +145,7 @@ rebuild();persist();
 setInterval(()=>{if(!document.hidden)flush()},10000);addEventListener("focus",flush);addEventListener("online",flush);document.addEventListener("visibilitychange",()=>{if(!document.hidden)flush()});
 
 $("cats").onclick=e=>{const qm=e.target.closest("[data-qm]"),qp=e.target.closest("[data-qp]"),nt=e.target.closest("[data-nt]");
- if(qm||qp){const id=(qm||qp).dataset[qm?"qm":"qp"],it=items().find(i=>i.id===id);if(!it)return;let n=Math.round(+it.qty||1)+(qp?1:-1);
+ {const pr=e.target.closest("[data-pr]");if(pr){const id=pr.dataset.pr,it=items().find(i=>i.id===id);if(!it)return;const v=prompt("Price for one "+it.name+" ($), blank to clear",it.manualPrice?it.price:"");if(v===null)return;const n=parseFloat(String(v).replace(/[$\s]/g,""));if(String(v).trim()===""){op("note","price:"+id,null)}else if(isNaN(n)||n<0){toast("Enter a number like 2.23");return}else op("note","price:"+id,String(Math.round(n*100)/100));render();return}}if(qm||qp){const id=(qm||qp).dataset[qm?"qm":"qp"],it=items().find(i=>i.id===id);if(!it)return;let n=Math.round(NQ(it))+(qp?1:-1);
   if(n<1){toast("Use ✕ to remove "+it.name);return}const base=it.baseQty!=null?it.baseQty:it.qty;op("qty",id,(String(n)===String(base)&&!id.startsWith("u:"))?null:n);render();return;}
  if(nt){const id=nt.dataset.nt,it=items().find(i=>i.id===id);if(!it)return;modal(`<b>Note: ${esc(it.name)}</b><textarea id="ntx" maxlength="300" placeholder="e.g. the 24-pack, not 12">${esc(it.note||"")}</textarea><div class="ls"><button class="btn" data-mx>Close</button><button class="btn" data-go="clr">Clear</button><button class="btn on" data-go="save">Save</button></div>`);
   mAct=async g=>{const v=g==="clr"?"":$("ntx").value.trim();closeM();op("note",id,v||null);render();};return;}
@@ -153,7 +158,7 @@ $("more").onclick=()=>{const m=$("moremenu");m.hidden=!m.hidden;$("more").setAtt
 $("reset").onclick=()=>{if(confirm("Restore all removed items?")){Object.keys(S.removed).forEach(id=>op("removed",id,null));render();}};
 $("add").onsubmit=e=>{e.preventDefault();const p=parseFloat($("ap").value.replace("$",""));
  const nm=$("xt").value.trim();if(!nm){toast("Type the item name first");$("xt").focus();return}const L=$("xl").value||S.list;op("added","u:"+Date.now()+Math.random().toString(36).slice(2,6),{name:nm,qty:$("aq").value.trim()||1,cat:$("ac").value,list:L,price:isNaN(p)?null:p,addedBy:"user"});render();$("xt").value=$("aq").value=$("ap").value="";$("xst").textContent="Added to "+(L==="next"?"next week":"this week")+" ✓";toast("Added "+nm);};
-let AM={items:{},pathOrder:[]};fetch("aisle-map.json",{cache:"no-cache"}).then(r=>r.ok?r.json():null).then(j=>{if(j&&j.items){AM=j;render()}}).catch(()=>{});
+let AM={items:{},pathOrder:[]};fetch("preferred-products.json",{cache:"no-cache"}).then(r=>r.ok?r.json():null).then(j=>{if(j){window.PREF=j;render()}}).catch(()=>{});fetch("aisle-map.json",{cache:"no-cache"}).then(r=>r.ok?r.json():null).then(j=>{if(j&&j.items){AM=j;render()}}).catch(()=>{});
 function akey(u){const m=String(u||"").match(/\/ip\/(?:[^/]+\/)?(\d+)/);return m?"ip:"+m[1]:null}
 function AIS(i){if(i.aisle)return String(i.aisle);const e=AM.items[akey(i.url)];return e&&e.aisle?e.aisle:""}
 function walk(){const wo=(AM.walkOrder||[]).slice().sort((x,y)=>x.order-y.order);return wo}
