@@ -202,7 +202,8 @@ window.WEEK = {
      "recipes": [
       "sheet-pan-chicken-thighs-broccoli",
       "buffalo-chicken-bake"
-     ]
+     ],
+     "aisle": "A30"
     },
     {
      "name": "GV chopped spinach, 10 oz (frozen)",
@@ -213,7 +214,8 @@ window.WEEK = {
      "recipes": [
       "garlic-butter-shrimp-spinach-w2",
       "bacon-spinach-crustless-quiche"
-     ]
+     ],
+     "aisle": "A30"
     },
     {
      "name": "GV pepper & onion blend, 20 oz (frozen)",
@@ -234,7 +236,8 @@ window.WEEK = {
      "urlType": "search",
      "recipes": [
       "chili-cheese-bowls-cauliflower-rice"
-     ]
+     ],
+     "aisle": "A30"
     },
     {
      "name": "GV pepper & onion blend, 20 oz (frozen)",
@@ -347,7 +350,8 @@ window.WEEK = {
     {
      "name": "Swerve confectioners sweetener (erythritol), 12 oz",
      "qty": 1,
-     "price": 6.98,
+     "price": 7.12,
+     "note": "Choose Single (12 oz) on the page, not the 6-pack",
      "url": "https://www.walmart.com/ip/Pack-of-6-Swerve-Sugar-replacment-Confectioners-12-oz/964679560",
      "urlType": "search",
      "recipes": [
@@ -398,7 +402,7 @@ window.WEEK = {
     {
      "name": "Baken-Ets pork rinds (get Original, not Hot)",
      "qty": 2,
-     "price": 2.94,
+     "price": 3.28,
      "url": "https://www.walmart.com/ip/Baken-Ets-Traditional-Flavor-Chicharrones-Fried-Pork-Skins-Snacks-1-2-oz-serving-size-4-Ounce-Bag-Single-Pack/10900098",
      "urlType": "search",
      "recipes": [
@@ -428,7 +432,8 @@ window.WEEK = {
      "price": 5.48,
      "url": "https://www.walmart.com/ip/Diet-Sunkist-Orange-Soda-12-fl-oz-12-pack/16777403",
      "urlType": "search",
-     "soda": true
+     "soda": true,
+     "aisle": "A20"
     }
    ]
   }

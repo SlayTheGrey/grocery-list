@@ -335,17 +335,29 @@
   "ip:745725724": {
    "url": "https://www.walmart.com/ip/Great-Value-Broccoli-Florets-32-oz-Bag-Frozen/745725724",
    "name": "GV broccoli florets, 32 oz (frozen)",
-   "cat": "Frozen Foods"
+   "cat": "Frozen Foods",
+   "aisle": "A30",
+   "observed": "2026-10-26",
+   "confidence": "high",
+   "source": "walmart product page (store selected)"
   },
   "ip:118594560": {
    "url": "https://www.walmart.com/ip/Great-Value-Chopped-Spinach-10-oz-Frozen/118594560",
    "name": "GV chopped spinach, 10 oz (frozen)",
-   "cat": "Frozen Foods"
+   "cat": "Frozen Foods",
+   "aisle": "A30",
+   "observed": "2026-10-26",
+   "confidence": "high",
+   "source": "walmart product page (store selected)"
   },
   "ip:279573553": {
    "url": "https://www.walmart.com/ip/Great-Value-Frozen-Riced-Cauliflower-12-oz-Frozen/279573553",
    "name": "GV riced cauliflower, 12 oz (frozen)",
-   "cat": "Frozen Foods"
+   "cat": "Frozen Foods",
+   "aisle": "A30",
+   "observed": "2026-10-26",
+   "confidence": "high",
+   "source": "walmart product page (store selected)"
   },
   "ip:964679560": {
    "url": "https://www.walmart.com/ip/Pack-of-6-Swerve-Sugar-replacment-Confectioners-12-oz/964679560",
@@ -360,7 +372,11 @@
   "ip:16777403": {
    "url": "https://www.walmart.com/ip/Diet-Sunkist-Orange-Soda-12-fl-oz-12-pack/16777403",
    "name": "Sunkist Orange Zero, 12 pk",
-   "cat": "Snacks & Beverages"
+   "cat": "Snacks & Beverages",
+   "aisle": "A20",
+   "observed": "2026-10-26",
+   "confidence": "high",
+   "source": "walmart product page (store selected)"
   },
   "ip:1759663820": {
    "url": "https://www.walmart.com/ip/Oikos-Pro-20g-Protein-Nonfat-Mixed-Berry-Yogurt-Cultured-Dairy-Product-5-3-oz-4-Count/1759663820",
@@ -444,11 +460,11 @@
   ],
   "Snacks & Beverages": [
    {
-    "aisle": "A16",
-    "items": 1
+    "aisle": "A20",
+    "items": 2
    },
    {
-    "aisle": "A20",
+    "aisle": "A16",
     "items": 1
    }
   ],
@@ -461,7 +477,7 @@
   "Frozen Foods": [
    {
     "aisle": "A30",
-    "items": 2
+    "items": 5
    }
   ]
  },
@@ -591,7 +607,7 @@
  "updated": "2026-10-26",
  "coverage": {
   "items": 43,
-  "withAisle": 36
+  "withAisle": 40
  },
  "walkOrder": [
   {
