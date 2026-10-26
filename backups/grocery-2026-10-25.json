@@ -1,23 +1,91 @@
 {
- "takenAt": "2026-10-25T09:49:11.062270-04:00",
- "weekId": "2026-10-21",
- "nextWeekId": "2026-10-28",
+ "takenAt": "2026-10-25T20:03:13.153449-04:00",
+ "weekId": "2026-10-26",
+ "nextWeekId": "2026-11-02",
  "state": {
-  "2026-10-21": {
+  "2026-10-26": {
    "removed": {
+    "g:Snacks & Beverages:3": {
+     "v": 1,
+     "ts": 1792971051701
+    },
+    "g:Snacks & Beverages:1": {
+     "v": 1,
+     "ts": 1792971056529
+    },
+    "g:Sauces & Spices:8": {
+     "v": 1,
+     "ts": 1792971059720
+    },
+    "g:Dairy:3": {
+     "v": 1,
+     "ts": 1792971193442
+    },
+    "g:Dairy:0": {
+     "v": 1,
+     "ts": 1792971194947
+    },
+    "g:Frozen Foods:4": {
+     "v": 1,
+     "ts": 1792971212396
+    },
+    "g:Frozen Foods:3": {
+     "v": 1,
+     "ts": 1792971234834
+    },
+    "g:Frozen Foods:1": {
+     "v": 1,
+     "ts": 1792971237104
+    },
+    "g:Sauces & Spices:2": {
+     "v": 1,
+     "ts": 1792971241420
+    },
+    "g:Sauces & Spices:0": {
+     "v": 1,
+     "ts": 1792971243931
+    },
+    "g:Sauces & Spices:3": {
+     "v": 1,
+     "ts": 1792971248658
+    },
+    "g:Sauces & Spices:1": {
+     "v": 1,
+     "ts": 1792971250625
+    },
+    "g:Sauces & Spices:4": {
+     "v": 1,
+     "ts": 1792971268621
+    }
+   },
+   "checked": {
     "g:Fruits & Veggies:0": {
      "v": null,
-     "ts": 1792873268678
+     "ts": 1792971153630
+    },
+    "g:Fruits & Veggies:2": {
+     "v": null,
+     "ts": 1792971157835
+    }
+   },
+   "qty": {
+    "g:Frozen Foods:2": {
+     "v": 2,
+     "ts": 1792971211693
+    },
+    "g:Frozen Foods:5": {
+     "v": 4,
+     "ts": 1792971217545
     }
    }
   },
-  "2026-10-28": {}
+  "2026-11-02": {}
  },
  "dataJs": {
-  "weekId": "2026-10-21",
+  "weekId": "2026-10-26",
   "title": "Weekly Grocery List",
-  "dates": "Oct 21\u201327, 2026",
-  "priceNote": "Prices as of Oct 21, 2026 (includes $2.64 in rollbacks). Items sold by weight may vary.",
+  "dates": "Oct 26 \u2013 Nov 1, 2026",
+  "priceNote": "Prices as of Oct 25, 2026 (walmart.com; new items' prices are online prices). Items sold by weight may vary. Uses last week's leftover beef, shrimp and chicken thighs.",
   "foodTaxRate": 0.02,
   "sodaTaxRate": 0.0725,
   "discount": 0,
@@ -32,19 +100,10 @@
       "url": "https://www.walmart.com/ip/seort/10532755",
       "urlType": "product",
       "recipes": [
-       "taco-salad-with-ground-beef"
-      ]
-     },
-     {
-      "name": "Iceberg lettuce",
-      "qty": 1,
-      "price": 2.57,
-      "url": "https://www.walmart.com/ip/seort/10402650",
-      "urlType": "product",
-      "recipes": [
-       "air-fry-mode-burgers-in-lettuce-wraps",
-       "taco-salad-with-ground-beef"
-      ]
+       "chicken-thigh-cobb-salad",
+       "sheet-pan-shrimp-fajitas"
+      ],
+      "aisle": "A1"
      },
      {
       "name": "Celery",
@@ -53,8 +112,10 @@
       "url": "https://www.walmart.com/ip/seort/51259411",
       "urlType": "product",
       "recipes": [
-       "taco-salad-with-ground-beef"
-      ]
+       "crock-pot-beanless-keto-chili",
+       "buffalo-chicken-bake"
+      ],
+      "aisle": "A1"
      },
      {
       "name": "Limes",
@@ -63,10 +124,10 @@
       "url": "https://www.walmart.com/ip/seort/44391008",
       "urlType": "product",
       "recipes": [
-       "slow-cooker-pork-carnitas-with-cauliflow",
-       "shrimp-fajita-bowls-on-cauliflower-rice",
-       "garlic-butter-shrimp-with-spinach"
-      ]
+       "sheet-pan-shrimp-fajitas",
+       "garlic-butter-shrimp-spinach-w2"
+      ],
+      "aisle": "AP6"
      },
      {
       "name": "Small Hass avocados, 5-6 ct bag",
@@ -75,11 +136,11 @@
       "url": "https://www.walmart.com/ip/seort/44390968",
       "urlType": "product",
       "recipes": [
-       "slow-cooker-pork-carnitas-with-cauliflow",
-       "air-fry-mode-burgers-in-lettuce-wraps",
-       "shrimp-fajita-bowls-on-cauliflower-rice",
-       "taco-salad-with-ground-beef"
-      ]
+       "chicken-thigh-cobb-salad",
+       "chili-cheese-bowls-cauliflower-rice",
+       "sheet-pan-shrimp-fajitas"
+      ],
+      "aisle": "AP10"
      }
     ]
    },
@@ -87,45 +148,37 @@
     "name": "Meat & Seafood",
     "items": [
      {
-      "name": "80/20 ground beef, 3 lb roll",
-      "qty": 1,
-      "price": 16.43,
-      "url": "https://www.walmart.com/ip/seort/15136794",
-      "urlType": "product",
-      "recipes": [
-       "air-fry-mode-burgers-in-lettuce-wraps",
-       "taco-salad-with-ground-beef"
-      ]
-     },
-     {
-      "name": "Smithfield pork picnic roast (by weight)",
-      "qty": 1,
-      "price": 17.07,
-      "url": "https://www.walmart.com/search?q=Smithfield+pork+picnic+roast",
+      "name": "80/20 ground beef, 1 lb roll (fresh)",
+      "qty": 2,
+      "price": 5.93,
+      "url": "https://www.walmart.com/search?q=80/20+ground+beef+1+lb+roll",
       "urlType": "search",
       "recipes": [
-       "slow-cooker-pork-carnitas-with-cauliflow"
+       "crock-pot-beanless-keto-chili"
       ]
      },
      {
-      "name": "GV Polska kielbasa, 14 oz",
+      "name": "GV hickory smoked bacon, 12 oz",
       "qty": 1,
-      "price": 3.23,
-      "url": "https://www.walmart.com/ip/seort/5265533849",
-      "urlType": "product",
+      "price": 4.28,
+      "url": "https://www.walmart.com/search?q=Great+Value+hickory+smoked+bacon+12+oz",
+      "urlType": "search",
       "recipes": [
-       "sheet-pan-kielbasa-with-peppers-onions-b"
+       "chicken-thigh-cobb-salad",
+       "bacon-spinach-crustless-quiche"
       ]
      },
      {
-      "name": "Sanderson Farms chicken thighs, family pack (by weight)",
+      "name": "Great Value Chunk Chicken Breast in Water, 12.5 oz cans, 4 pack",
       "qty": 1,
-      "price": 8.92,
-      "url": "https://www.walmart.com/ip/seort/193413277",
+      "price": 9.97,
+      "url": "https://www.walmart.com/ip/Great-Value-Chunk-Chicken-Breast-12-5-Ounce-Can-4-Pack/49914752",
       "urlType": "product",
+      "addedBy": "user",
       "recipes": [
-       "oven-air-fry-chicken-thighs-big-batch"
-      ]
+       "buffalo-chicken-bake"
+      ],
+      "aisle": "A7"
      }
     ]
    },
@@ -133,41 +186,28 @@
     "name": "Dairy",
     "items": [
      {
-      "name": "GV large eggs, 18 ct",
-      "qty": 2,
-      "price": 2.47,
-      "url": "https://www.walmart.com/ip/seort/172844767",
-      "urlType": "product"
-     },
-     {
       "name": "GV taco blend shredded cheese, 8 oz",
-      "qty": 2,
+      "qty": 3,
       "price": 1.97,
       "url": "https://www.walmart.com/ip/seort/10452480",
       "urlType": "product",
       "recipes": [
-       "slow-cooker-pork-carnitas-with-cauliflow",
-       "shrimp-fajita-bowls-on-cauliflower-rice",
-       "taco-salad-with-ground-beef",
-       "garlic-butter-shrimp-with-spinach"
-      ]
-     },
-     {
-      "name": "GV sharp cheddar slices, 8 oz",
-      "qty": 1,
-      "price": 1.67,
-      "url": "https://www.walmart.com/ip/seort/15077514",
-      "urlType": "product",
-      "recipes": [
-       "air-fry-mode-burgers-in-lettuce-wraps"
-      ]
+       "crock-pot-beanless-keto-chili",
+       "chili-cheese-bowls-cauliflower-rice",
+       "sheet-pan-shrimp-fajitas",
+       "buffalo-chicken-bake",
+       "bacon-spinach-crustless-quiche",
+       "chicken-thigh-cobb-salad"
+      ],
+      "aisle": "A35"
      },
      {
       "name": "GV mozzarella string cheese, 12 ct",
       "qty": 1,
       "price": 3.28,
       "url": "https://www.walmart.com/ip/seort/364923224",
-      "urlType": "product"
+      "urlType": "product",
+      "aisle": "A35"
      },
      {
       "name": "GV sour cream, 16 oz",
@@ -176,11 +216,11 @@
       "url": "https://www.walmart.com/ip/seort/12335111",
       "urlType": "product",
       "recipes": [
-       "slow-cooker-pork-carnitas-with-cauliflow",
-       "air-fry-mode-burgers-in-lettuce-wraps",
-       "shrimp-fajita-bowls-on-cauliflower-rice",
-       "taco-salad-with-ground-beef"
-      ]
+       "crock-pot-beanless-keto-chili",
+       "chili-cheese-bowls-cauliflower-rice",
+       "sheet-pan-shrimp-fajitas"
+      ],
+      "aisle": "A34"
      },
      {
       "name": "GV salted butter, 16 oz",
@@ -189,26 +229,11 @@
       "url": "https://www.walmart.com/ip/seort/132893363",
       "urlType": "product",
       "recipes": [
-       "slow-cooker-pork-carnitas-with-cauliflow",
-       "shrimp-fajita-bowls-on-cauliflower-rice",
-       "oven-air-fry-chicken-thighs-big-batch",
-       "garlic-butter-shrimp-with-spinach",
-       "homemade-yum-yum-sauce"
-      ]
-     },
-     {
-      "name": "Oikos Triple Zero, 6 ct",
-      "qty": 1,
-      "price": 7.32,
-      "url": "https://www.walmart.com/ip/seort/49342252",
-      "urlType": "product"
-     },
-     {
-      "name": "Oikos Triple Zero Vanilla, 4 ct",
-      "qty": 1,
-      "price": 4.97,
-      "url": "https://www.walmart.com/ip/seort/49028504",
-      "urlType": "product"
+       "sheet-pan-chicken-thighs-broccoli",
+       "garlic-butter-shrimp-spinach-w2",
+       "chili-cheese-bowls-cauliflower-rice"
+      ],
+      "aisle": "A34"
      },
      {
       "name": "GV half & half, 64 oz",
@@ -217,8 +242,22 @@
       "url": "https://www.walmart.com/ip/seort/14336391",
       "urlType": "product",
       "recipes": [
-       "garlic-butter-shrimp-with-spinach"
-      ]
+       "garlic-butter-shrimp-spinach-w2",
+       "bacon-spinach-crustless-quiche"
+      ],
+      "aisle": "A33"
+     },
+     {
+      "name": "GV cream cheese brick, 8 oz",
+      "qty": 2,
+      "price": 1.56,
+      "url": "https://www.walmart.com/ip/Great-Value-Cream-Cheese-Brick-8-oz-Refrigerated/10452429",
+      "urlType": "product",
+      "recipes": [
+       "buffalo-chicken-bake",
+       "cheesecake-fluff"
+      ],
+      "aisle": "A34"
      }
     ]
    },
@@ -226,60 +265,70 @@
     "name": "Frozen Foods",
     "items": [
      {
-      "name": "GV raw peeled shrimp, 2 lb",
-      "qty": 1,
-      "price": 15.96,
-      "url": "https://www.walmart.com/search?q=Great+Value+raw+peeled+shrimp%2C+2+lb",
-      "urlType": "search",
-      "recipes": [
-       "shrimp-fajita-bowls-on-cauliflower-rice",
-       "garlic-butter-shrimp-with-spinach"
-      ]
-     },
-     {
-      "name": "GV broccoli florets, 32 oz",
+      "name": "GV broccoli florets, 32 oz (frozen)",
       "qty": 1,
       "price": 2.88,
-      "url": "https://www.walmart.com/search?q=Great+Value+broccoli+florets%2C+32+oz",
+      "url": "https://www.walmart.com/ip/Great-Value-Broccoli-Florets-32-oz-Bag-Frozen/745725724",
       "urlType": "search",
       "recipes": [
-       "sheet-pan-kielbasa-with-peppers-onions-b",
-       "oven-air-fry-chicken-thighs-big-batch",
-       "garlic-butter-shrimp-with-spinach"
+       "sheet-pan-chicken-thighs-broccoli",
+       "buffalo-chicken-bake"
       ]
      },
      {
-      "name": "GV pepper & onion blend, 20 oz",
+      "name": "GV chopped spinach, 10 oz (frozen)",
       "qty": 2,
-      "price": 2.84,
-      "url": "https://www.walmart.com/search?q=Great+Value+pepper+%26+onion+blend%2C+20+oz",
-      "urlType": "search",
-      "recipes": [
-       "sheet-pan-kielbasa-with-peppers-onions-b",
-       "shrimp-fajita-bowls-on-cauliflower-rice"
-      ]
-     },
-     {
-      "name": "GV chopped spinach, 10 oz",
-      "qty": 1,
       "price": 1.24,
-      "url": "https://www.walmart.com/search?q=Great+Value+chopped+spinach%2C+10+oz",
+      "url": "https://www.walmart.com/ip/Great-Value-Chopped-Spinach-10-oz-Frozen/118594560",
       "urlType": "search",
       "recipes": [
-       "garlic-butter-shrimp-with-spinach"
+       "garlic-butter-shrimp-spinach-w2",
+       "bacon-spinach-crustless-quiche"
       ]
      },
      {
-      "name": "GV riced cauliflower, 12 oz",
-      "qty": 2,
+      "name": "GV pepper & onion blend, 20 oz (frozen)",
+      "qty": 1,
+      "price": 2.84,
+      "url": "https://www.walmart.com/ip/Great-Value-Frozen-20-oz-Pepper-Onion-Blend-20-oz/539250805",
+      "urlType": "product",
+      "recipes": [
+       "crock-pot-beanless-keto-chili"
+      ],
+      "aisle": "A30"
+     },
+     {
+      "name": "GV riced cauliflower, 12 oz (frozen)",
+      "qty": 1,
       "price": 2.24,
-      "url": "https://www.walmart.com/search?q=Great+Value+riced+cauliflower%2C+12+oz",
+      "url": "https://www.walmart.com/ip/Great-Value-Frozen-Riced-Cauliflower-12-oz-Frozen/279573553",
       "urlType": "search",
       "recipes": [
-       "slow-cooker-pork-carnitas-with-cauliflow",
-       "shrimp-fajita-bowls-on-cauliflower-rice",
-       "garlic-butter-shrimp-with-spinach"
+       "chili-cheese-bowls-cauliflower-rice"
       ]
+     },
+     {
+      "name": "GV pepper & onion blend, 20 oz (frozen)",
+      "qty": 1,
+      "price": 2.84,
+      "url": "https://www.walmart.com/ip/Great-Value-Frozen-20-oz-Pepper-Onion-Blend-20-oz/539250805",
+      "urlType": "product",
+      "addedBy": "user",
+      "recipes": [
+       "sheet-pan-shrimp-fajitas"
+      ],
+      "aisle": "A30"
+     },
+     {
+      "name": "Great Value Organic Steamable Riced Cauliflower, 10 oz (frozen)",
+      "qty": 1,
+      "url": "https://www.walmart.com/ip/197864195",
+      "urlType": "product",
+      "addedBy": "user",
+      "recipes": [
+       "sheet-pan-shrimp-fajitas"
+      ],
+      "aisle": "A30"
      }
     ]
    },
@@ -287,47 +336,15 @@
     "name": "Sauces & Spices",
     "items": [
      {
-      "name": "GV thick & chunky salsa, medium",
-      "qty": 1,
-      "price": 1.97,
-      "url": "https://www.walmart.com/ip/seort/3562572626",
-      "urlType": "product",
-      "recipes": [
-       "slow-cooker-pork-carnitas-with-cauliflow",
-       "shrimp-fajita-bowls-on-cauliflower-rice",
-       "taco-salad-with-ground-beef"
-      ]
-     },
-     {
-      "name": "GV hamburger dill chips, 32 oz",
-      "qty": 1,
-      "price": 2.92,
-      "url": "https://www.walmart.com/ip/seort/378941019",
-      "urlType": "product",
-      "recipes": [
-       "air-fry-mode-burgers-in-lettuce-wraps"
-      ]
-     },
-     {
-      "name": "GV ranch dressing, 16 oz",
-      "qty": 1,
-      "price": 2.37,
-      "url": "https://www.walmart.com/ip/seort/16618888",
-      "urlType": "product",
-      "recipes": [
-       "air-fry-mode-burgers-in-lettuce-wraps",
-       "taco-salad-with-ground-beef"
-      ]
-     },
-     {
       "name": "GV taco seasoning, 1 oz",
       "qty": 2,
       "price": 0.5,
       "url": "https://www.walmart.com/ip/seort/379517847",
       "urlType": "product",
       "recipes": [
-       "taco-salad-with-ground-beef"
-      ]
+       "crock-pot-beanless-keto-chili"
+      ],
+      "aisle": "A6"
      },
      {
       "name": "GV fajita seasoning",
@@ -336,29 +353,112 @@
       "url": "https://www.walmart.com/ip/seort/149215159",
       "urlType": "product",
       "recipes": [
-       "shrimp-fajita-bowls-on-cauliflower-rice"
-      ]
+       "sheet-pan-shrimp-fajitas"
+      ],
+      "aisle": "A3"
      },
      {
-      "name": "GV extra virgin olive oil, 17 oz",
+      "name": "GV ranch dressing, 16 oz",
       "qty": 1,
-      "price": 6.12,
-      "url": "https://www.walmart.com/ip/seort/10315102",
+      "price": 2.37,
+      "url": "https://www.walmart.com/ip/seort/16618888",
       "urlType": "product",
       "recipes": [
-       "slow-cooker-pork-carnitas-with-cauliflow",
-       "sheet-pan-kielbasa-with-peppers-onions-b",
-       "shrimp-fajita-bowls-on-cauliflower-rice",
-       "oven-air-fry-chicken-thighs-big-batch",
-       "garlic-butter-shrimp-with-spinach"
+       "buffalo-chicken-bake",
+       "chicken-thigh-cobb-salad"
+      ],
+      "aisle": "A3"
+     },
+     {
+      "name": "GV thick & chunky salsa, medium",
+      "qty": 1,
+      "price": 1.97,
+      "url": "https://www.walmart.com/ip/seort/3562572626",
+      "urlType": "product",
+      "recipes": [
+       "chili-cheese-bowls-cauliflower-rice",
+       "sheet-pan-shrimp-fajitas"
+      ],
+      "aisle": "A6"
+     },
+     {
+      "name": "GV diced tomatoes, 14.5 oz (canned)",
+      "qty": 1,
+      "price": 0.96,
+      "url": "https://www.walmart.com/ip/Great-Value-Diced-Tomatoes-in-Tomato-Juice-14-5-oz-Can/10450990",
+      "urlType": "product",
+      "recipes": [
+       "crock-pot-beanless-keto-chili"
+      ],
+      "aisle": "A5"
+     },
+     {
+      "name": "GV tomato sauce, 15 oz (canned)",
+      "qty": 1,
+      "price": 0.96,
+      "url": "https://www.walmart.com/ip/Great-Value-Tomato-Sauce-15-oz/10415500",
+      "urlType": "product",
+      "recipes": [
+       "crock-pot-beanless-keto-chili"
+      ],
+      "aisle": "A5"
+     },
+     {
+      "name": "Frank's RedHot Original hot sauce, 12 oz",
+      "qty": 1,
+      "price": 3.72,
+      "url": "https://www.walmart.com/ip/Frank-s-RedHot-Kosher-Original-Cayenne-Pepper-Hot-Sauce-12-oz-Bottle/14089344",
+      "urlType": "product",
+      "recipes": [
+       "buffalo-chicken-bake"
+      ],
+      "aisle": "A3"
+     },
+     {
+      "name": "Swerve confectioners sweetener (erythritol), 12 oz",
+      "qty": 1,
+      "price": 6.98,
+      "url": "https://www.walmart.com/ip/Pack-of-6-Swerve-Sugar-replacment-Confectioners-12-oz/964679560",
+      "urlType": "search",
+      "recipes": [
+       "cheesecake-fluff",
+       "cinnamon-churro-pork-rinds"
       ]
      },
      {
-      "name": "Morton Lite Salt",
+      "name": "GV ground cinnamon, 2.5 oz",
       "qty": 1,
-      "price": 3.17,
-      "url": "https://www.walmart.com/ip/seort/10318920",
-      "urlType": "product"
+      "price": 1.27,
+      "url": "https://www.walmart.com/ip/Great-Value-Kosher-Ground-Cinnamon-2-5-oz/533272737",
+      "urlType": "product",
+      "recipes": [
+       "cinnamon-churro-pork-rinds"
+      ],
+      "aisle": "A8"
+     },
+     {
+      "name": "Bragg Organic Coconut Liquid Aminos, 10 fl oz",
+      "qty": 1,
+      "price": 6.54,
+      "url": "https://www.walmart.com/ip/Bragg-Organic-Coconut-Liquid-Aminos-Soy-Free-Seasoning-10-fl-oz/784580921",
+      "urlType": "product",
+      "addedBy": "user",
+      "recipes": [
+       "garlic-butter-shrimp-spinach-w2"
+      ],
+      "aisle": "A7"
+     },
+     {
+      "name": "G Hughes Zero Sugar Yum Yum Dipping Sauce, 16 oz",
+      "qty": 1,
+      "price": 5.12,
+      "url": "https://www.walmart.com/ip/G-Hughes-Sugar-Free-Yum-Yum-Dipping-Sauce-16-oz-Bottle/808075641",
+      "urlType": "product",
+      "addedBy": "user",
+      "recipes": [
+       "sheet-pan-chicken-thighs-broccoli"
+      ],
+      "aisle": "A3"
      }
     ]
    },
@@ -367,12 +467,12 @@
     "items": [
      {
       "name": "Baken-Ets pork rinds (get Original, not Hot)",
-      "qty": 1,
+      "qty": 2,
       "price": 2.94,
-      "url": "https://www.walmart.com/search?q=Baken-Ets+pork+rinds",
+      "url": "https://www.walmart.com/ip/Baken-Ets-Traditional-Flavor-Chicharrones-Fried-Pork-Skins-Snacks-1-2-oz-serving-size-4-Ounce-Bag-Single-Pack/10900098",
       "urlType": "search",
       "recipes": [
-       "taco-salad-with-ground-beef"
+       "cinnamon-churro-pork-rinds"
       ]
      },
      {
@@ -380,249 +480,289 @@
       "qty": 1,
       "price": 6.14,
       "url": "https://www.walmart.com/ip/seort/5295229969",
-      "urlType": "product"
+      "urlType": "product",
+      "aisle": "A16"
      },
      {
       "name": "Pepsi Zero Sugar, 24 pk",
       "qty": 1,
       "price": 13.77,
-      "soda": true,
       "url": "https://www.walmart.com/ip/seort/14664661",
-      "urlType": "product"
+      "urlType": "product",
+      "soda": true,
+      "aisle": "A20"
      },
      {
       "name": "Sunkist Orange Zero, 12 pk",
       "qty": 1,
       "price": 5.48,
-      "soda": true,
-      "url": "https://www.walmart.com/search?q=Sunkist+Orange+Zero%2C+12+pk",
-      "urlType": "search"
-     }
-    ]
-   },
-   {
-    "name": "Breads & Grains",
-    "items": []
-   },
-   {
-    "name": "Other",
-    "items": [
-     {
-      "name": "Angel Soft 2-Ply Toilet Paper, 24 Mega Rolls",
-      "qty": 1,
-      "price": 14.72,
-      "url": "https://www.walmart.com/ip/Angel-Soft-2-Ply-Toilet-Paper-24-Mega-Rolls/596343371",
-      "urlType": "product",
-      "addedBy": "user"
+      "url": "https://www.walmart.com/ip/Diet-Sunkist-Orange-Soda-12-fl-oz-12-pack/16777403",
+      "urlType": "search",
+      "soda": true
      }
     ]
    }
   ],
   "recipes": [
    {
-    "title": "Wed: Slow-Cooker Pork Carnitas with Cauliflower Rice",
-    "meta": "Serves: 2 + leftovers (about 8 servings pork) \u00b7 Active: 20 min \u00b7 Total: 8\u201310 hr (low) + 10 min \u00b7 Net carbs/serving: ~6 g (estimate)",
+    "id": "crock-pot-beanless-keto-chili",
+    "day": "Mon",
+    "title": "Mon: Crock-Pot Beanless Keto Chili (N's request)",
+    "meta": "Serves: 2 + leftovers (about 9 servings) \u00b7 Active: 20 min \u00b7 Total: 6\u20138 hr (low) \u00b7 Net carbs/serving: ~7 g (estimate) \u00b7 Protein/serving: ~32 g",
     "ingredients": [
-     "4 lb pork picnic roast, skin and big fat pieces trimmed, cut in 3\u20134 chunks (freeze the rest of the roast raw)",
-     "1 tbsp salt, 1 tsp pepper",
-     "2 tsp cumin, 2 tsp oregano, 2 tsp garlic powder, 1 tsp chili powder (mild)",
-     "Juice of 1 lime + \u00bd cup water",
-     "1 bag (12 oz) frozen riced cauliflower",
-     "1 tbsp EVOO + 1 tbsp butter",
-     "To serve: 1 avocado, sliced; sour cream; salsa; \u00bd cup taco blend cheese"
+     "1.5 lb leftover 80/20 ground beef (from last week) + 2 lb new (2 \u00d7 1 lb rolls) = 3.5 lb",
+     "\u00bd bag (10 oz) frozen pepper & onion blend",
+     "2 celery ribs, diced",
+     "1 can (14.5 oz) diced tomatoes, with juice",
+     "1 can (15 oz) tomato sauce",
+     "2 packets (1 oz each) taco seasoning",
+     "1 tbsp chili powder (mild), 2 tsp cumin, 1 tsp garlic powder, 1 tsp oregano, 1 tsp paprika (pantry)",
+     "1 tsp salt (taste at end), \u00bd cup water",
+     "To serve: taco blend cheese, sour cream, sliced avocado"
     ],
     "steps": [
-     "Morning: rub pork with salt, pepper, cumin, oregano, garlic powder and chili powder. Put in slow cooker with lime juice and water. Cook on LOW 8\u201310 hr until it shreds easily.",
-     "Shred pork with two forks; discard bone and soft fat. Toss with \u00bd cup of the juices.",
-     "Crisp: spread 1/3 of the pork on a sheet pan, drizzle 1 tbsp EVOO, broil 4\u20136 min until edges are browned and crispy. (Or oven Air Fry mode 400\u00b0F, 5 min.)",
-     "Meanwhile, cook cauliflower rice in a dry skillet over medium-high 6\u20138 min, stirring, until steam is gone and it's tender-crisp, not mushy. Stir in butter, salt.",
-     "Serve pork over cauliflower rice with avocado, sour cream, salsa and cheese. Refrigerate leftover pork with juices (up to 4 days); freeze extra."
-    ],
-    "id": "slow-cooker-pork-carnitas-with-cauliflow",
-    "day": "Wed"
-   },
-   {
-    "title": "Thu: Sheet-Pan Kielbasa with Peppers, Onions & Broccoli",
-    "meta": "Serves: 2 (light leftovers) \u00b7 Active: 10 min \u00b7 Total: 30 min \u00b7 Net carbs/serving: ~10 g (estimate)",
-    "ingredients": [
-     "1 pkg (14 oz) GV Polska kielbasa, sliced into \u00bd-inch coins",
-     "1 bag (20 oz) frozen pepper-onion blend",
-     "3 cups frozen broccoli florets (about \u00bd of 32 oz bag)",
-     "3 tbsp EVOO",
-     "\u00bd tsp garlic powder, \u00bd tsp paprika, \u00bd tsp salt, \u00bc tsp pepper"
-    ],
-    "steps": [
-     "Heat oven to 425\u00b0F with the empty sheet pan inside (a hot pan prevents soggy veggies).",
-     "Toss frozen peppers/onions and broccoli with EVOO and spices. Do not thaw first.",
-     "Spread on the hot pan in one layer (use two pans if crowded). Roast 12 min.",
-     "Add kielbasa, stir, roast 10\u201312 min more until sausage browns and broccoli edges char.",
-     "Serve as is, or with a spoon of sour cream."
-    ],
-    "id": "sheet-pan-kielbasa-with-peppers-onions-b",
-    "day": "Thu"
-   },
-   {
-    "title": "Fri: Air-Fry-Mode Burgers in Lettuce Wraps",
-    "meta": "Serves: 2 (4 patties; 2 extra for Sat/Mon lunch bowls) \u00b7 Active: 15 min \u00b7 Total: 25 min \u00b7 Net carbs/serving: ~4 g (estimate)",
-    "ingredients": [
-     "1\u00bd lb 80/20 ground beef, shaped into 6 patties \u00be-inch thick",
-     "1 tsp salt, \u00bd tsp pepper, \u00bd tsp garlic powder",
-     "4 cheddar slices",
-     "Iceberg lettuce, large leaves (about \u00bd head)",
-     "Dill pickle chips; 1 avocado, sliced",
-     "Optional sauce: 2 tbsp sour cream + 1 tbsp ranch"
-    ],
-    "steps": [
-     "Press a thumb dent in the center of each patty; season both sides.",
-     "Use the Samsung oven's Air Fry mode at 375\u00b0F on the air fry tray (middle rack), 8\u201310 min total, flipping at 5 min, to 160\u00b0F inside. Work in batches; don't stack.",
-     "Top 4 patties with cheddar for the last 1 min. Chill the 2 plain patties for lunches.",
-     "Wrap each burger in 2\u20133 iceberg leaves with pickles, avocado and sauce."
-    ],
-    "id": "air-fry-mode-burgers-in-lettuce-wraps",
-    "day": "Fri"
-   },
-   {
-    "title": "Sat: Shrimp Fajita Bowls on Cauliflower Rice",
-    "meta": "Serves: 2 \u00b7 Active: 20 min \u00b7 Total: 25 min \u00b7 Net carbs/serving: ~9 g (estimate)",
-    "ingredients": [
-     "1 lb frozen shrimp, thawed in cold water 10 min, patted very dry",
-     "\u00bd bag (10 oz) frozen pepper-onion blend",
-     "1 bag (12 oz) frozen riced cauliflower",
-     "1\u00bd tbsp fajita seasoning (check label, mild)",
-     "2 tbsp EVOO + 1 tbsp butter; salt",
-     "1 lime, in wedges",
-     "To serve: 1 avocado, sour cream, \u00bd cup taco blend cheese, salsa"
-    ],
-    "steps": [
-     "Toss shrimp with 1 tbsp fajita seasoning and 1 tbsp EVOO.",
-     "Skillet, medium-high: 1 tbsp EVOO, peppers/onions + remaining seasoning; cook 6\u20138 min until browned at edges. Move to a plate.",
-     "Same pan: shrimp in one layer, 2 min per side until pink and opaque. Don't overcook (turns rubbery).",
-     "Separate pan: cook cauliflower rice dry 6\u20138 min until steam is gone, add butter and salt.",
-     "Build bowls: cauliflower rice, veggies, shrimp, avocado, cheese, sour cream, salsa, lime squeeze."
-    ],
-    "id": "shrimp-fajita-bowls-on-cauliflower-rice",
-    "day": "Sat"
-   },
-   {
-    "title": "Sun (prep): Oven Air-Fry Chicken Thighs (Big Batch)",
-    "meta": "Serves: 2 dinner + 6\u20138 lunch portions \u00b7 Active: 20 min \u00b7 Total: ~60 min (batches) \u00b7 Net carbs/serving: ~3 g (with broccoli) (estimate)",
-    "ingredients": [
-     "~5 lb chicken thighs (bone-in skin-on or boneless)",
-     "3 tbsp EVOO",
-     "2 tsp salt, 1 tsp pepper, 2 tsp garlic powder, 2 tsp paprika, 1 tsp oregano",
-     "Dinner side: 3 cups frozen broccoli, 1 tbsp EVOO, salt; butter to finish"
-    ],
-    "steps": [
-     "Pat thighs very dry. Toss with EVOO and spices.",
-     "Use the oven's Air Fry mode on the air fry tray in one layer (middle rack), skin side down first: boneless 380\u00b0F 18\u201320 min; bone-in 380\u00b0F 22\u201325 min, flipping halfway. Cook to 175\u00b0F inside so skin is crisp.",
-     "Repeat batches. Last batch: Air Fry mode broccoli (frozen) with EVOO and salt at 400\u00b0F 10\u201312 min, shaking once, until edges crisp. Add a pat of butter.",
-     "Eat 2\u20134 thighs for dinner. Cool the rest uncovered 20 min, then pull meat off bones and refrigerate in containers for lunches (good 4 days)."
-    ],
-    "id": "oven-air-fry-chicken-thighs-big-batch",
-    "day": "Sun"
-   },
-   {
-    "title": "Mon: Taco Salad with Ground Beef",
-    "meta": "Serves: 2 (+ 1 lunch portion of meat) \u00b7 Active: 20 min \u00b7 Total: 20 min \u00b7 Net carbs/serving: ~7 g (estimate)",
-    "ingredients": [
-     "1\u00bd lb 80/20 ground beef (remaining)",
-     "1 packet taco seasoning (mild) + water as packet directs",
-     "1 romaine heart + \u00bc head iceberg, chopped",
-     "\u00bd cup celery, thinly sliced (adds crunch)",
-     "1 cup taco blend cheese",
-     "1 avocado, diced; sour cream; salsa; ranch",
-     "Crushed pork rinds for crunch (instead of chips)"
-    ],
-    "steps": [
-     "Brown beef in a skillet, 8\u201310 min, breaking it up. Pour off some fat if very greasy.",
-     "Stir in taco seasoning and water; simmer 3\u20135 min until thick.",
-     "Pile lettuce and celery in bowls. Top with warm beef, cheese, avocado, salsa, sour cream and a drizzle of ranch.",
-     "Sprinkle crushed pork rinds right before eating. Save 1 cup beef for Tuesday's lunch."
-    ],
-    "id": "taco-salad-with-ground-beef",
-    "day": "Mon"
-   },
-   {
-    "title": "Tue: Garlic-Butter Shrimp with Spinach",
-    "meta": "Serves: 2 \u00b7 Active: 15 min \u00b7 Total: 20 min \u00b7 Net carbs/serving: ~4 g (estimate)",
-    "ingredients": [
-     "1 lb frozen shrimp, thawed, patted dry",
-     "1 box (10 oz) frozen chopped spinach, thawed and squeezed very dry",
-     "3 tbsp butter + 1 tbsp EVOO",
-     "1\u00bd tsp garlic powder, \u00bd tsp paprika, salt, pepper",
-     "2 tbsp half & half",
-     "\u00bd lime; \u00bc cup taco blend cheese (optional)",
-     "Side: 1 bag riced cauliflower or oven air-fried broccoli (optional)"
-    ],
-    "steps": [
-     "Squeeze spinach in a towel until no more water comes out (key to avoid a soggy texture).",
-     "Skillet, medium-high: EVOO + 1 tbsp butter. Shrimp in one layer, season with salt, pepper, paprika, \u00bd tsp garlic powder; 2 min per side. Remove.",
-     "Lower to medium. 2 tbsp butter, remaining garlic powder, spinach; saut\u00e9 3 min until any moisture cooks off. Stir in half & half and cheese, 1 min.",
-     "Return shrimp, toss 30 sec, finish with lime juice. Serve right away."
-    ],
-    "id": "garlic-butter-shrimp-with-spinach",
-    "day": "Tue"
-   },
-   {
-    "title": "Homemade Yum Yum Sauce",
-    "meta": "Makes about 1\u00bc cups (10 servings of 2 tbsp) \u00b7 5 min + 30 min chill \u00b7 ~0.5 g net carbs per 2 tbsp (estimate)",
-    "ingredients": [
-     "1 cup avocado-oil mayonnaise",
-     "1 tbsp tomato paste",
-     "1 tbsp melted butter",
-     "1 tbsp unseasoned rice vinegar (seasoned has sugar)",
-     "1\u20132 tsp monk fruit or allulose sweetener, to taste",
-     "1 tsp paprika",
-     "\u00bd tsp garlic powder",
-     "2\u20133 tbsp water, to thin",
-     "Pinch of salt"
-    ],
-    "steps": [
-     "Whisk the mayo, tomato paste, melted butter, and rice vinegar until smooth.",
-     "Whisk in the sweetener, paprika, garlic powder, and salt.",
-     "Add water a tablespoon at a time until it's pourable.",
-     "Taste and adjust the sweetener or salt.",
-     "Chill at least 30 minutes so the flavors blend."
+     "Morning: brown the beef in a large skillet over medium-high, 8\u201310 min, breaking it up. Drain most of the fat (keep ~2 tbsp).",
+     "Put beef, frozen peppers/onions (no need to thaw), celery, tomatoes, tomato sauce, taco seasoning, spices and water in the crock pot. Stir.",
+     "Cook on LOW 6\u20138 hr (or HIGH 3\u20134 hr). Stir, taste, adjust salt.",
+     "Serve topped with cheese, sour cream and avocado.",
+     "Refrigerate in 4\u20135 containers within 2 hr: about 2 servings for Wed chili bowls, 3\u20134 for lunches. Freeze any you won't eat by Thu."
     ],
     "notes": [
-     "Storage: keeps about 1 week, covered, in the fridge.",
-     "Carbs: roughly 0.5 g net per 2 tbsp (estimate).",
-     "Great with: hibachi chicken and shrimp, steak, burger bowls, and roasted broccoli or cauliflower.",
-     "Check the sweetener label. Many monk fruit blends are mostly erythritol, and pure allulose is the cleaner pick."
+     "Cook early because the leftover ground beef has been in the fridge since last week (ground meat is the most perishable item). Check its date; if it smells off or is past the use-by, toss it and use only the 2 lb new (still plenty).",
+     "Beanless, so it stays keto. N's requested recipe."
+    ]
+   },
+   {
+    "id": "sheet-pan-chicken-thighs-broccoli",
+    "day": "Mon",
+    "title": "Mon (prep): Sheet-Pan Chicken Thighs & Broccoli (Big Batch)",
+    "meta": "Makes about 10 servings \u00b7 Active: 15 min \u00b7 Total: 45 min \u00b7 Net carbs/serving: ~2 g (estimate) \u00b7 Protein/serving: ~30 g",
+    "ingredients": [
+     "The whole family pack of chicken thighs left from last week (~5 lb)",
+     "2 tbsp EVOO, 2 tsp salt, 1 tsp pepper, 2 tsp garlic powder, 2 tsp paprika",
+     "\u00bd bag (16 oz) frozen broccoli florets",
+     "1 tbsp butter",
+     "Dip: G Hughes yum yum sauce (your pick) or ranch"
     ],
-    "id": "homemade-yum-yum-sauce"
+    "steps": [
+     "Heat oven to 425\u00b0F, or use oven Air Fry mode at 400\u00b0F with the thighs on the tray (no basket).",
+     "Pat thighs dry; toss with EVOO and spices. Lay on 2 sheet pans, skin side up, not touching.",
+     "Bake 30\u201335 min (Air Fry mode 22\u201328 min) until 175\u00b0F inside and skin is crisp.",
+     "Last 15 min: add frozen broccoli to the open space on the pans; toss in the pan drippings.",
+     "Eat a few thighs with broccoli and butter tonight if you like; cool the rest, pull meat for Tue Cobb salad and lunches (4\u20135 containers). Freeze anything you won't eat by Thu."
+    ],
+    "notes": [
+     "Cook early because the raw thighs have been in the fridge since last week. Cook them Monday (or freeze them tonight if they're near the use-by date)."
+    ]
+   },
+   {
+    "id": "chicken-thigh-cobb-salad",
+    "day": "Tue",
+    "title": "Tue: Chicken Thigh Cobb Salad",
+    "meta": "Serves: 2 \u00b7 Active: 20 min \u00b7 Net carbs/serving: ~6 g (estimate) \u00b7 Protein/serving: ~45 g",
+    "ingredients": [
+     "1 lb pulled chicken thighs (from Monday)",
+     "6 slices bacon (half the pack)",
+     "4 hard-boiled eggs (from the eggs you have)",
+     "2 romaine hearts, chopped",
+     "1 avocado, diced",
+     "\u00bd cup taco blend cheese",
+     "Ranch dressing (2 tbsp each)"
+    ],
+    "steps": [
+     "Bake bacon on a sheet pan at 400\u00b0F 15\u201318 min (or oven Air Fry mode 375\u00b0F 10\u201312 min) until crisp; crumble.",
+     "Warm the chicken in a skillet 3\u20134 min or eat it cold.",
+     "Arrange romaine, chicken, egg, avocado, bacon and cheese in rows; drizzle with ranch."
+    ],
+    "notes": [
+     "Cook early because romaine and avocado are the most perishable produce; this uses them while fresh."
+    ]
+   },
+   {
+    "id": "chili-cheese-bowls-cauliflower-rice",
+    "day": "Wed",
+    "title": "Wed: Chili Cheese Bowls over Cauliflower Rice",
+    "meta": "Serves: 2 \u00b7 Active: 15 min \u00b7 Net carbs/serving: ~9 g (estimate) \u00b7 Protein/serving: ~35 g",
+    "ingredients": [
+     "2\u20133 servings leftover chili",
+     "1 bag (12 oz) frozen riced cauliflower",
+     "1 tbsp butter, salt",
+     "Toppings: taco blend cheese, sour cream, salsa, \u00bd avocado"
+    ],
+    "steps": [
+     "Cook cauliflower rice in a dry skillet over medium-high 6\u20138 min, stirring, until steam is gone. Stir in butter and salt.",
+     "Reheat chili in a pot until bubbling (165\u00b0F).",
+     "Spoon chili over the rice; top with cheese, sour cream, salsa and avocado."
+    ],
+    "notes": [
+     "Uses the chili while it's within 4 days of cooking."
+    ]
+   },
+   {
+    "id": "sheet-pan-shrimp-fajitas",
+    "day": "Thu",
+    "title": "Thu: Sheet-Pan Shrimp Fajitas",
+    "meta": "Serves: 2 + 1 lunch \u00b7 Active: 15 min \u00b7 Total: 30 min \u00b7 Net carbs/serving: ~8 g (estimate) \u00b7 Protein/serving: ~35 g",
+    "ingredients": [
+     "1 lb frozen raw peeled shrimp (half the bag you have), thawed",
+     "1 bag (20 oz) frozen pepper & onion blend (your addition)",
+     "2 tbsp EVOO + 1 packet fajita seasoning",
+     "1 lime",
+     "Serve on: romaine leaves or Organic riced cauliflower (10 oz, your addition) cooked in a dry skillet",
+     "Toppings: sour cream, salsa, taco blend cheese, avocado"
+    ],
+    "steps": [
+     "Wed night: move 1 lb shrimp to the fridge to thaw (or thaw in cold water 10 min). Pat very dry.",
+     "Heat oven to 425\u00b0F. Toss frozen peppers/onions with 1 tbsp EVOO and half the seasoning; roast on a sheet pan 15 min.",
+     "Toss shrimp with 1 tbsp EVOO and the rest of the seasoning; add to the pan. Roast 6\u20138 min until pink and opaque. (Or oven Air Fry mode 400\u00b0F, 5\u20136 min for the shrimp.)",
+     "Squeeze lime over. Serve in romaine leaves or over cauliflower rice with toppings."
+    ],
+    "notes": [
+     "Frozen shrimp and peppers keep, so this sits later in the week."
+    ]
+   },
+   {
+    "id": "garlic-butter-shrimp-spinach-w2",
+    "day": "Fri",
+    "title": "Fri: Garlic-Butter Shrimp with Spinach",
+    "meta": "Serves: 2 \u00b7 Active: 20 min \u00b7 Net carbs/serving: ~5 g (estimate) \u00b7 Protein/serving: ~40 g",
+    "ingredients": [
+     "1 lb frozen raw peeled shrimp (the rest of the bag), thawed, patted very dry",
+     "1 box (10 oz) frozen chopped spinach, thawed and squeezed very dry",
+     "2 tbsp butter + 1 tbsp EVOO",
+     "1\u00bd tsp garlic powder, \u00bd tsp paprika, salt, pepper",
+     "\u00bd cup half & half, \u00bc cup taco blend cheese",
+     "1 tbsp coconut aminos (your addition, optional), juice of \u00bd lime"
+    ],
+    "steps": [
+     "Skillet, medium-high: EVOO + 1 tbsp butter. Add shrimp in one layer, season with salt, pepper, paprika and \u00bd tsp garlic powder; 2 min per side. Remove.",
+     "Same pan: 1 tbsp butter, spinach and the rest of the garlic powder, 2 min. Add half & half and cheese; simmer 2\u20133 min until creamy.",
+     "Return shrimp; add coconut aminos and lime. Toss 1 min."
+    ],
+    "notes": [
+     "Frozen shrimp and spinach: fine late in the week."
+    ]
+   },
+   {
+    "id": "buffalo-chicken-bake",
+    "day": "Sat",
+    "title": "Sat: Buffalo Chicken Bake",
+    "meta": "Serves: 2 + 2 lunches \u00b7 Active: 15 min \u00b7 Total: 40 min \u00b7 Net carbs/serving: ~5 g (estimate) \u00b7 Protein/serving: ~40 g",
+    "ingredients": [
+     "3 cans (12.5 oz) chunk chicken breast, drained (your addition; keep 1 can for a lunch)",
+     "1 brick (8 oz) cream cheese, softened",
+     "\u2153 cup Frank's RedHot, \u00bc cup ranch",
+     "1 cup taco blend cheese",
+     "Rest of the bag (16 oz) frozen broccoli florets, thawed and patted dry",
+     "2 celery ribs, sliced thin"
+    ],
+    "steps": [
+     "Heat oven to 375\u00b0F. In a 9\u00d713 dish, stir cream cheese, hot sauce and ranch until smooth.",
+     "Fold in chicken, broccoli and celery. Top with cheese.",
+     "Bake 20\u201325 min until bubbly and lightly browned (165\u00b0F). Rest 5 min.",
+     "Serve with celery sticks. Refrigerate leftovers for lunches (good cold or warm)."
+    ],
+    "notes": [
+     "Canned chicken and frozen broccoli keep, so this is late in the week."
+    ]
+   },
+   {
+    "id": "bacon-spinach-crustless-quiche",
+    "day": "Sun",
+    "title": "Sun: Bacon, Spinach & Cheese Crustless Quiche",
+    "meta": "Serves: 2 + 2 breakfasts \u00b7 Active: 15 min \u00b7 Total: 50 min \u00b7 Net carbs/serving: ~3 g (estimate) \u00b7 Protein/serving: ~28 g",
+    "ingredients": [
+     "10 eggs (from the eggs you have)",
+     "1 cup half & half",
+     "6 slices bacon (rest of the pack)",
+     "1 box (10 oz) frozen chopped spinach, thawed and squeezed very dry",
+     "1 cup taco blend cheese",
+     "\u00bd tsp salt, \u00bc tsp pepper, \u00bd tsp garlic powder, butter for the dish"
+    ],
+    "steps": [
+     "Heat oven to 350\u00b0F. Butter a 9-inch pie dish or 8\u00d78 pan.",
+     "Cook bacon (sheet pan 400\u00b0F 15 min); crumble.",
+     "Whisk eggs, half & half, salt, pepper and garlic powder. Stir in spinach, bacon and cheese. Pour into the dish.",
+     "Bake 35\u201340 min until the center is just set (160\u00b0F). Rest 10 min. Serve with Oikos or a side salad."
+    ],
+    "notes": [
+     "Eggs, frozen spinach and cured bacon keep well, so this is last. Leftovers make Mon/Tue breakfasts."
+    ]
+   },
+   {
+    "id": "cheesecake-fluff",
+    "title": "Treat: Cheesecake Fluff",
+    "meta": "Makes 4 servings \u00b7 10 min \u00b7 Net carbs/serving: ~4 g (estimate)",
+    "ingredients": [
+     "1 brick (8 oz) cream cheese, softened",
+     "2 cups Oikos Triple Zero Vanilla (from what you have)",
+     "2\u20133 tbsp Swerve confectioners (erythritol), to taste",
+     "Pinch of cinnamon"
+    ],
+    "steps": [
+     "Beat cream cheese until smooth.",
+     "Beat in yogurt and Swerve until fluffy. Dust with cinnamon.",
+     "Chill 30 min. Keeps 4 days covered."
+    ],
+    "notes": [
+     "One of this week's 2 sweet treats. Keep it modest: \u00bd cup a serving."
+    ]
+   },
+   {
+    "id": "cinnamon-churro-pork-rinds",
+    "title": "Treat: Cinnamon \"Churro\" Pork Rinds",
+    "meta": "Serves 2 \u00b7 8 min \u00b7 Net carbs: ~0\u20131 g (estimate)",
+    "ingredients": [
+     "2 oz pork rinds (Original)",
+     "1 tbsp butter, melted",
+     "1 tbsp Swerve confectioners + \u00bd tsp cinnamon"
+    ],
+    "steps": [
+     "Toss pork rinds with melted butter on a sheet pan.",
+     "Shake the Swerve-cinnamon mix over and toss.",
+     "Oven Air Fry mode 350\u00b0F 2\u20133 min on the tray (no basket) to set the coating. Eat warm."
+    ],
+    "notes": [
+     "Second sweet treat for the week."
+    ]
    }
   ],
   "prep": [
-   "Oven air-fry ~5 lb chicken thighs (recipe p.4); pull and portion lunch meat into 4\u20135 containers.",
-   "Hard-boil 12 eggs: boil, then 12 min covered off heat, ice bath; peel 6, make deviled eggs from 6 (see lunches).",
-   "Wash, dry and chop romaine and iceberg; store with a paper towel in a bag. Keep some iceberg leaves whole for wraps.",
+   "Mon morning: brown beef and start the crock-pot chili (recipe p.1).",
+   "Mon evening: sheet-pan the whole pack of chicken thighs (p.2); pull and portion meat for Tue Cobb salad and 4\u20135 lunches.",
+   "Hard-boil 12 eggs (you have eggs): boil, then 12 min covered off heat, ice bath. 4 for Tue Cobb, rest for lunches and snacks.",
+   "Wash, dry and chop romaine; store with a paper towel in a bag. Keep a few leaves whole for fajita wraps.",
    "Cut celery into sticks; store in a jar of water.",
    "Portion almonds (\u00bc cup) and string cheese into grab bags; pack small ranch cups.",
-   "Check carnitas and burger-patty leftovers; freeze anything you won't eat in 4 days.",
-   "Move 1 lb shrimp from freezer to fridge Monday night for Tuesday.",
+   "Leftover cooked carnitas pork: eat as a lunch Mon (it's at its 4\u20135 day limit); toss or freeze anything left.",
+   "Wed night: move 1 lb shrimp to the fridge for Thu; Thu night move the other 1 lb for Fri.",
    "Pack cooler: 2 ice packs, containers, napkins. Keep cooler cold (below 40\u00b0F); eat lunch within 4\u20135 hr of packing."
   ],
   "snacks": [
    {
+    "name": "Leftover Pork (Mon lunch)",
+    "desc": "The little bit of cooked carnitas left: eat it cold or warmed Monday over romaine with salsa. Nothing to buy.",
+    "carbs": "~2 g net"
+   },
+   {
+    "name": "Chili Cup",
+    "desc": "Leftover chili in a thermos (heat at home to 165\u00b0F first) with cheese on top.",
+    "carbs": "~7 g net"
+   },
+   {
     "name": "Chicken Thigh Lettuce Wraps",
-    "desc": "Cold pulled chicken thighs, cheddar slice, pickle chips and a little ranch in romaine or iceberg leaves. Pack leaves separate; wrap at lunch.",
+    "desc": "Cold pulled thighs, cheese and ranch or yum yum in romaine leaves. Pack leaves separate.",
     "carbs": "~3 g net"
    },
    {
-    "name": "Burger-Bowl Salad",
-    "desc": "Cold extra burger patty, chopped iceberg, cheddar, pickles, celery; ranch or sour cream on the side.",
-    "carbs": "~4 g net"
-   },
-   {
-    "name": "Carnitas or Taco Beef Salad",
-    "desc": "Cold leftover carnitas or taco beef over romaine with taco cheese and salsa in a separate cup; pork rinds for crunch.",
+    "name": "Buffalo Chicken Bake (cold)",
+    "desc": "Saturday leftovers with celery sticks.",
     "carbs": "~5 g net"
    },
    {
-    "name": "Deviled Eggs",
-    "desc": "6 eggs: mash yolks with 2 tbsp sour cream (or Oikos Triple Zero), 1 tsp ranch, salt, pinch paprika; refill whites. Keep cold.",
-    "carbs": "~1 g / 2 halves net"
+    "name": "Ranch Chicken Salad Cups",
+    "desc": "The spare can of chunk chicken (drained) mixed with 2 tbsp sour cream, 1 tbsp ranch and chopped celery; scoop into romaine leaves. Pack leaves separate, keep cold. Nothing extra to buy.",
+    "carbs": "~2 g net"
    },
    {
     "name": "Hard-Boiled Eggs",
@@ -636,73 +776,18 @@
    },
    {
     "name": "Pork Rinds + Ranch",
-    "desc": "1 oz pork rinds with 2 tbsp ranch to dip; add celery sticks.",
+    "desc": "1 oz pork rinds with 2 tbsp ranch; add celery sticks.",
     "carbs": "~2 g net"
    },
    {
     "name": "Oikos Triple Zero",
-    "desc": "Eat cold from the cooler as a protein snack (check label carbs; count it as part of the day).",
+    "desc": "You're stocked; 1 a day is an easy 15 g protein.",
     "carbs": "~7 g (estimate) net"
    }
   ],
   "nextWeek": {
-   "dates": "Oct 28 \u2013 Nov 3, 2026",
-   "categories": [
-    {
-     "name": "Meat & Seafood",
-     "items": [
-      {
-       "name": "Great Value Chunk Chicken Breast in Water, 12.5 oz cans, 4 pack",
-       "qty": 1,
-       "price": 9.97,
-       "url": "https://www.walmart.com/ip/Great-Value-Chunk-Chicken-Breast-12-5-Ounce-Can-4-Pack/49914752",
-       "urlType": "product",
-       "addedBy": "user"
-      }
-     ]
-    },
-    {
-     "name": "Frozen Foods",
-     "items": [
-      {
-       "name": "GV pepper & onion blend, 20 oz (frozen)",
-       "qty": 1,
-       "price": 2.84,
-       "url": "https://www.walmart.com/ip/Great-Value-Frozen-20-oz-Pepper-Onion-Blend-20-oz/539250805",
-       "urlType": "product",
-       "addedBy": "user"
-      },
-      {
-       "name": "Great Value Organic Steamable Riced Cauliflower, 10 oz (Frozen)",
-       "qty": 1,
-       "url": "https://www.walmart.com/ip/197864195",
-       "urlType": "product",
-       "addedBy": "user"
-      }
-     ]
-    },
-    {
-     "name": "Sauces & Spices",
-     "items": [
-      {
-       "name": "Bragg Organic Coconut Liquid Aminos, 10 fl oz",
-       "qty": 1,
-       "price": 6.54,
-       "url": "https://www.walmart.com/ip/Bragg-Organic-Coconut-Liquid-Aminos-Soy-Free-Seasoning-10-fl-oz/784580921",
-       "urlType": "product",
-       "addedBy": "user"
-      },
-      {
-       "name": "G Hughes Zero Sugar Yum Yum Dipping Sauce, 16 oz",
-       "qty": 1,
-       "price": 5.12,
-       "url": "https://www.walmart.com/ip/G-Hughes-Sugar-Free-Yum-Yum-Dipping-Sauce-16-oz-Bottle/808075641",
-       "urlType": "product",
-       "addedBy": "user"
-      }
-     ]
-    }
-   ]
+   "dates": "Nov 2\u20138, 2026",
+   "categories": []
   },
   "pending": [],
   "budget": 200,
@@ -902,6 +987,17 @@
    }
   ],
   "replies": [
+   {
+    "id": "r-1792972065349",
+    "ts": 1792972065349,
+    "text": "Removed Deviled Eggs from snacks and swapped in Ranch Chicken Salad Cups (spare can of chicken, sour cream, ranch, celery in romaine). Nothing new to buy.",
+    "ref": "chat:11b2f798-4784-4a4d-acb4-285fe0cc46fe"
+   },
+   {
+    "id": "week2-2026-10-26",
+    "ts": 1792970594539,
+    "text": "New week is up (Oct 26 \u2013 Nov 1): N's crock-pot beanless chili Monday, and the week uses your leftover beef, shrimp and the whole pack of chicken thighs. Your next-week additions (canned chicken, pepper & onion blend, riced cauliflower, coconut aminos, yum yum sauce) are on this week's list under Your additions."
+   },
    {
     "id": "welcome-v26",
     "ts": 1792936071564,
