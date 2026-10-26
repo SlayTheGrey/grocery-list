@@ -601,7 +601,7 @@ window.WEEK = {
     "Heat oven to 350°F. Butter a 9-inch pie dish or 8×8 pan.",
     "Cook bacon (sheet pan 400°F 15 min); crumble.",
     "Whisk eggs, half & half, salt, pepper and garlic powder. Stir in spinach, bacon and cheese. Pour into the dish.",
-    "Bake 35–40 min until the center is just set (160°F). Rest 10 min. Serve with Oikos or a side salad."
+    "Bake 35–40 min until the center is just set (160°F). Rest 10 min. Serve with an Oikos Pro cup (20 g protein) or a side salad."
    ],
    "notes": [
     "Eggs, frozen spinach and cured bacon keep well, so this is last. Leftovers make Mon/Tue breakfasts."
@@ -698,9 +698,9 @@ window.WEEK = {
    "carbs": "~2 g net"
   },
   {
-   "name": "Oikos Triple Zero",
-   "desc": "You're stocked; 1 a day is an easy 15 g protein.",
-   "carbs": "~7 g (estimate) net"
+   "name": "Oikos Pro Mixed Berry",
+   "desc": "You're stocked; 1 cup a day is 130 cal and an easy 20 g protein.",
+   "carbs": "~6 g net"
   }
  ],
  "nextWeek": {
@@ -731,10 +731,10 @@ window.WEEK = {
    "price": 4.97
   },
   {
-   "name": "Oikos Triple Zero Strawberry & Mixed Berry, 6 ct",
-   "url": "https://www.walmart.com/ip/seort/49342252",
+   "name": "Oikos Pro Mixed Berry, 5.3 oz, 4 ct",
+   "url": "https://www.walmart.com/ip/Oikos-Pro-20g-Protein-Nonfat-Mixed-Berry-Yogurt-Cultured-Dairy-Product-5-3-oz-4-Count/1759663820",
    "cat": "Dairy",
-   "price": 7.32
+   "price": 6.48
   },
   {
    "name": "GV salted butter, 16 oz",

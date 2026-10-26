@@ -134,15 +134,6 @@
    "confidence": "high",
    "source": "walmart product page (store selected)"
   },
-  "ip:49342252": {
-   "url": "https://www.walmart.com/ip/seort/49342252",
-   "name": "Oikos Triple Zero Strawberry & Mixed Berry, 6 ct",
-   "cat": "Dairy",
-   "aisle": "A33",
-   "observed": "2026-10-25",
-   "confidence": "high",
-   "source": "walmart product page (store selected)"
-  },
   "ip:49028504": {
    "url": "https://www.walmart.com/ip/seort/49028504",
    "name": "Oikos Triple Zero Vanilla, 4 ct",
@@ -370,6 +361,15 @@
    "url": "https://www.walmart.com/ip/Diet-Sunkist-Orange-Soda-12-fl-oz-12-pack/16777403",
    "name": "Sunkist Orange Zero, 12 pk",
    "cat": "Snacks & Beverages"
+  },
+  "ip:1759663820": {
+   "url": "https://www.walmart.com/ip/Oikos-Pro-20g-Protein-Nonfat-Mixed-Berry-Yogurt-Cultured-Dairy-Product-5-3-oz-4-Count/1759663820",
+   "name": "Oikos Pro Mixed Berry, 5.3 oz, 4 ct",
+   "cat": "Dairy",
+   "aisle": "A33",
+   "observed": "2026-10-25",
+   "confidence": "high",
+   "source": "Caleb confirmed (all Oikos together in A33)"
   }
  },
  "categories": {
