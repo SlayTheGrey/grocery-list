@@ -5,6 +5,7 @@ Static, no-build web app. Files: `index.html` (app), `data.js` (this week's data
 ## Updating the week
 1. Edit `data.js` (or regenerate it): set a NEW `weekId` (e.g. `"2026-10-28"`). A new weekId starts with fresh checks, added and removed items.
 2. Update `dates`, `priceNote`, tax rates, `discount`, `categories`, `recipes`, `prep`, `snacks`, `shoppingDayLunches` (intro + 4–5 zero-prep keto options from list items: name, desc, carbs, protein, keep). Keep it every week.
+   - Weekly planned staple every week: 2 × Minute Maid Zero Sugar Orange Pineapple, 52 fl oz (refrigerated), Snacks & Beverages, soda tax (sweetened drink, <50% juice), link in walmart-links.json.
 3. Categories must be one of: Fruits & Veggies, Meat & Seafood, Dairy, Frozen Foods, Sauces & Spices, Snacks & Beverages, Breads & Grains, Other. Item fields: `name`, `qty`, `price` (each), optional `soda: true` (soda tax), optional `aisle` (sorts within category).
 4. Commit and push to `main`; GitHub Pages redeploys in about a minute. The service worker is network-first, so the new data shows on next online load.
 
