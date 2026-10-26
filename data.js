@@ -724,7 +724,33 @@ window.WEEK = {
   "dates": "Nov 2–8, 2026",
   "categories": []
  },
- "pending": [],
+ "pending": [
+  {
+   "id": "p1793021008232",
+   "query": "Cat food (from your photo)",
+   "list": "this",
+   "options": [
+    {
+     "name": "Purina Cat Chow Complete with Real Chicken, 15 lb bag",
+     "size": "15 lb (the bag in your photo)",
+     "price": 18.58,
+     "url": "https://www.walmart.com/ip/Purina-Cat-Chow-Complete-Dry-Cat-Food-Chicken-15-lb-Bag/287183350"
+    },
+    {
+     "name": "Purina Cat Chow Complete with Real Chicken, 20 lb bag",
+     "size": "20 lb (same price per lb)",
+     "price": 24.76,
+     "url": "https://www.walmart.com/ip/Purina-Cat-Chow-Complete-Dry-Cat-Food-Chicken-20-lb-Bag/328931073"
+    },
+    {
+     "name": "Purina Cat Chow Complete with Real Chicken, 6.3 lb bag",
+     "size": "6.3 lb (smaller bag)",
+     "price": 10.68,
+     "url": "https://www.walmart.com/ip/Purina-Cat-Chow-Complete-Dry-Cat-Food-Chicken-6-3-lb-Bag/21119897"
+    }
+   ]
+  }
+ ],
  "budget": 200,
  "pendingRecipes": [],
  "staples": [
@@ -923,6 +949,12 @@ window.WEEK = {
   }
  ],
  "replies": [
+  {
+   "id": "r-1793021008232",
+   "ts": 1793021008232,
+   "text": "Found your cat food: Purina Cat Chow Complete with Real Chicken, 15 lb bag ($18.58). Pick it (or a 20 lb or 6.3 lb bag) under Pick one on this week's list.",
+   "ref": "add:ebb03bc6-7970-4037-bd72-134766381d9d"
+  },
   {
    "id": "r-1792972065349",
    "ts": 1792972065349,
