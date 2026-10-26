@@ -369,7 +369,8 @@
    "aisle": "A33",
    "observed": "2026-10-25",
    "confidence": "high",
-   "source": "Caleb confirmed (all Oikos together in A33)"
+   "source": "Walmart app screenshot (store selected), Aisle A33 Section 5",
+   "section": "5"
   }
  },
  "categories": {
