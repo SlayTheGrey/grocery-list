@@ -976,5 +976,44 @@ window.WEEK = {
    "ts": 1792936071564,
    "text": "Hi! New in the app: search box, + and − for quantities, notes on items, Done shopping (moves unchecked items to next week), Staples quick-add, recipes by day with a Tonight view, Cooked / Ate leftovers buttons, dark mode (Chat > Settings), and my replies show up here."
   }
- ]
+ ],
+ "shoppingDayLunches": {
+  "intro": "For the day you're out shopping: zero cooking, just open and eat. Most perishable first. Mon Oct 26 lunch is already covered (salad kits).",
+  "options": [
+   {
+    "name": "Avocado pork-rind dip",
+    "desc": "Mash 1 avocado with a splash of the bottled lime juice, salt and a spoon of salsa; scoop with Baken-Ets pork rinds (1 oz) and a string cheese on the side.",
+    "carbs": "~4 g net",
+    "protein": "~24 g protein",
+    "keep": "eat avocados first, they ripen fast"
+   },
+   {
+    "name": "Chicken ranch lettuce cups",
+    "desc": "Half a can of the canned chicken breast, drained, mixed with 2 tbsp ranch; spoon into romaine leaves. Add a few celery sticks.",
+    "carbs": "~3 g net",
+    "protein": "~25 g protein",
+    "keep": "romaine and celery: early in the week"
+   },
+   {
+    "name": "Cheese & celery snack plate",
+    "desc": "2 mozzarella string cheese, celery sticks with 2 tbsp cream cheese, and a handful of pork rinds.",
+    "carbs": "~4 g net",
+    "protein": "~20 g protein"
+   },
+   {
+    "name": "Buffalo chicken bowl, no cook",
+    "desc": "Half a can of chicken, drained, with a dash of Frank's RedHot and 1 tbsp ranch; eat with celery sticks or pork rinds.",
+    "carbs": "~2 g net",
+    "protein": "~25 g protein",
+    "keep": "all shelf-stable except celery"
+   },
+   {
+    "name": "Oikos + string cheese",
+    "desc": "The spare Oikos Triple Zero Vanilla cup (the fluff uses 3 of the 4) with 2 string cheese and a few pork rinds.",
+    "carbs": "~8 g net",
+    "protein": "~30 g protein",
+    "keep": "only 1 spare cup; check the date"
+   }
+  ]
+ }
 };

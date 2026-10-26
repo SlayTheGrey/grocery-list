@@ -75,7 +75,7 @@ details>div{padding:0 14px 14px}details li{margin:6px 0}.meta{font-size:16px;col
 <details id="stp"><summary>⭐ Staples quick-add</summary><div id="stl"></div></details>
 </div></div>
 <div id="modal" role="dialog" aria-modal="true"><div id="mbody"></div></div><div id="toast"><span id="tm"></span><button id="undo">Undo</button></div>
-<script>document.documentElement.dataset.theme=localStorage.getItem("grocery-theme")||"auto"</script><script>window.APP_VER="v44";document.write('<script src="data.js?t='+Date.now()+'"><\/script>')</script><script>
+<script>document.documentElement.dataset.theme=localStorage.getItem("grocery-theme")||"auto"</script><script>window.APP_VER="v45";document.write('<script src="data.js?t='+Date.now()+'"><\/script>')</script><script>
 let W=window.WEEK;const CATS=["Fruits & Veggies","Meat & Seafood","Dairy","Frozen Foods","Sauces & Spices","Snacks & Beverages","Breads & Grains","Other"],
 ROUTE=["Other","Fruits & Veggies","Breads & Grains","Meat & Seafood","Dairy","Sauces & Spices","Snacks & Beverages","Frozen Foods"],
 $=id=>document.getElementById(id),esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
@@ -192,6 +192,7 @@ function recipes(){if(typeof S.recipe==="undefined")S.recipe={};const li=a=>(a||
  ${isT?`<button class="btn on" data-tn="${ix}" style="width:100%">🍽 Open Tonight view</button>`:""}
  ${rm?`<p class="rpend">Removal pending${rm.by&&rm.by!==DEV?" (other phone)":""}: ${rm.mode==="own"?"cooking our own":"asked for a suggestion"}${rm.text?": "+esc(rm.text):""}</p>${only.length?`<p class="rpend">These items would drop off: ${only.map(i=>esc(i.name)).join(", ")}</p>`:""}`:""}
  <p class="meta">${esc(r.meta||"")}</p>${its.length?`<p class="meta"><b>Items on the list for this recipe:</b> ${its.map(i=>esc(i.name)).join(", ")}</p>`:""}<h3>Ingredients</h3><ul>${li(r.ingredients)}</ul><h3>Steps</h3><ol>${li(r.steps)}</ol>${r.notes?`<h3>Notes</h3><ul>${li(r.notes)}</ul>`:""}</div></details>`});
+ if(!nx()&&W.shoppingDayLunches&&(W.shoppingDayLunches.options||[]).length){const L=W.shoppingDayLunches;h+=`<details data-t="_shoplunch"${open.has("_shoplunch")?" open":""}><summary>Shopping day: quick no-prep lunches</summary><div>${L.intro?`<p class="meta">${esc(L.intro)}</p>`:""}<ul>${L.options.map(s=>`<li><b>${esc(s.name)}</b>: ${esc(s.desc)} <i>${esc([s.carbs,s.protein].filter(Boolean).join(" · "))}</i>${s.keep?` <small>(${esc(s.keep)})</small>`:""}</li>`).join("")}</ul></div></details>`}
  if(!nx()&&W.snacks&&W.snacks.length)h+=`<details data-t="_snacks"${open.has("_snacks")?" open":""}><summary>Lunches &amp; Snacks</summary><div><ul>${W.snacks.map(s=>`<li><b>${esc(s.name)}</b>: ${esc(s.desc)} <i>${esc(s.carbs)}</i></li>`).join("")}</ul></div></details>`;
  if(!nx()&&W.prep&&W.prep.length)h+=`<details data-t="_prep"${open.has("_prep")?" open":""}><summary>Prep Checklist</summary><div><ul>${li(W.prep)}</ul></div></details>`;
  if(!h)h='<p class="empty">No recipes for this list yet</p>';
