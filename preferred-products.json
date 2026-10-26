@@ -114,6 +114,12 @@
    "url": "https://www.walmart.com/ip/197864195",
    "price": null,
    "date": "2026-10-24"
+  },
+  "Cat food": {
+   "product": "Purina Cat Chow Complete with Real Chicken, 15 lb bag",
+   "url": "https://www.walmart.com/ip/Purina-Cat-Chow-Complete-Dry-Cat-Food-Chicken-15-lb-Bag/287183350",
+   "price": 18.58,
+   "date": "2026-10-26"
   }
  }
 }

@@ -436,6 +436,19 @@ window.WEEK = {
      "aisle": "A20"
     }
    ]
+  },
+  {
+   "name": "Other",
+   "items": [
+    {
+     "name": "Purina Cat Chow Complete with Real Chicken, 15 lb bag",
+     "qty": 1,
+     "price": 18.58,
+     "url": "https://www.walmart.com/ip/Purina-Cat-Chow-Complete-Dry-Cat-Food-Chicken-15-lb-Bag/287183350",
+     "urlType": "product",
+     "addedBy": "user"
+    }
+   ]
   }
  ],
  "recipes": [
@@ -724,33 +737,7 @@ window.WEEK = {
   "dates": "Nov 2–8, 2026",
   "categories": []
  },
- "pending": [
-  {
-   "id": "p1793021008232",
-   "query": "Cat food (from your photo)",
-   "list": "this",
-   "options": [
-    {
-     "name": "Purina Cat Chow Complete with Real Chicken, 15 lb bag",
-     "size": "15 lb (the bag in your photo)",
-     "price": 18.58,
-     "url": "https://www.walmart.com/ip/Purina-Cat-Chow-Complete-Dry-Cat-Food-Chicken-15-lb-Bag/287183350"
-    },
-    {
-     "name": "Purina Cat Chow Complete with Real Chicken, 20 lb bag",
-     "size": "20 lb (same price per lb)",
-     "price": 24.76,
-     "url": "https://www.walmart.com/ip/Purina-Cat-Chow-Complete-Dry-Cat-Food-Chicken-20-lb-Bag/328931073"
-    },
-    {
-     "name": "Purina Cat Chow Complete with Real Chicken, 6.3 lb bag",
-     "size": "6.3 lb (smaller bag)",
-     "price": 10.68,
-     "url": "https://www.walmart.com/ip/Purina-Cat-Chow-Complete-Dry-Cat-Food-Chicken-6-3-lb-Bag/21119897"
-    }
-   ]
-  }
- ],
+ "pending": [],
  "budget": 200,
  "pendingRecipes": [],
  "staples": [
@@ -946,9 +933,21 @@ window.WEEK = {
    "url": "https://www.walmart.com/ip/197864195",
    "cat": "Frozen Foods",
    "price": 2.23
+  },
+  {
+   "name": "Cat food",
+   "url": "https://www.walmart.com/ip/Purina-Cat-Chow-Complete-Dry-Cat-Food-Chicken-15-lb-Bag/287183350",
+   "cat": "Other",
+   "price": 18.58
   }
  ],
  "replies": [
+  {
+   "id": "r-1793021100762",
+   "ts": 1793021100762,
+   "text": "Added Purina Cat Chow Complete, 15 lb bag ($18.58) to this week under Your additions. It is saved as your cat food pick and in Staples.",
+   "ref": "choose:p1793021008232"
+  },
   {
    "id": "r-1793021008232",
    "ts": 1793021008232,
