@@ -1,4 +1,4 @@
-const C="grocery-v38-1",F=["./","index.html","data.js","manifest.webmanifest","icon.svg","aisle-map.json"];
+const C="grocery-v39-1",F=["./","index.html","data.js","manifest.webmanifest","icon.svg","aisle-map.json"];
 self.addEventListener("install",e=>{self.skipWaiting();e.waitUntil(caches.open(C).then(c=>c.addAll(F.map(u=>new Request(u,{cache:"reload"})))))});
 self.addEventListener("activate",e=>e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==C).map(x=>caches.delete(x)))).then(()=>self.clients.claim())));
 // network first, bypassing the browser HTTP cache (Pages sends max-age=600); cache only as offline fallback

@@ -136,7 +136,7 @@
   },
   "ip:49342252": {
    "url": "https://www.walmart.com/ip/seort/49342252",
-   "name": "Oikos Triple Zero, 6 ct",
+   "name": "Oikos Triple Zero Strawberry & Mixed Berry, 6 ct",
    "cat": "Dairy",
    "aisle": "A33",
    "observed": "2026-10-25",
@@ -146,7 +146,11 @@
   "ip:49028504": {
    "url": "https://www.walmart.com/ip/seort/49028504",
    "name": "Oikos Triple Zero Vanilla, 4 ct",
-   "cat": "Dairy"
+   "cat": "Dairy",
+   "aisle": "A33",
+   "observed": "2026-10-26",
+   "confidence": "medium",
+   "source": "walmart product page (store selected)"
   },
   "ip:14336391": {
    "url": "https://www.walmart.com/ip/seort/14336391",
@@ -403,11 +407,11 @@
     "items": 5
    },
    {
-    "aisle": "A35",
-    "items": 2
+    "aisle": "A33",
+    "items": 3
    },
    {
-    "aisle": "A33",
+    "aisle": "A35",
     "items": 2
    }
   ],
@@ -583,10 +587,10 @@
   "AP6",
   "AP10"
  ],
- "updated": "2026-10-25",
+ "updated": "2026-10-26",
  "coverage": {
   "items": 43,
-  "withAisle": 35
+  "withAisle": 36
  },
  "walkOrder": [
   {
@@ -704,6 +708,11 @@
   "Breads & Grains": "A1"
  },
  "itemAnchors": [
+  {
+   "match": "oikos",
+   "aisle": "A33",
+   "note": "all Oikos yogurts are together in A33 (Caleb, 2026-10-25)"
+  },
   {
    "cat": "Dairy",
    "match": "cheese|cheddar|mozzarella|string|shredded|sliced|slices",

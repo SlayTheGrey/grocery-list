@@ -731,7 +731,7 @@ window.WEEK = {
    "price": 4.97
   },
   {
-   "name": "Oikos Triple Zero, 6 ct",
+   "name": "Oikos Triple Zero Strawberry & Mixed Berry, 6 ct",
    "url": "https://www.walmart.com/ip/seort/49342252",
    "cat": "Dairy",
    "price": 7.32
