@@ -767,7 +767,29 @@ window.WEEK = {
   "dates": "Nov 2–8, 2026",
   "categories": []
  },
- "pending": [],
+ "pending": [
+  {
+   "id": "p1793050612156",
+   "query": "Ranch dressing, 2 bottles (from your photo)",
+   "list": "next",
+   "qty": 2,
+   "rid": "17aa96de-7268-4628-86de-bac49c96eacb",
+   "options": [
+    {
+     "name": "Great Value Classic Ranch Dressing & Dip, 36 fl oz",
+     "size": "36 fl oz (the bottle in your photo), x2",
+     "price": 3.97,
+     "url": "https://www.walmart.com/ip/Great-Value-Classic-Ranch-Dressing-36-fl-oz/22282307"
+    },
+    {
+     "name": "Great Value Classic Ranch Dressing & Dip, 16 fl oz",
+     "size": "16 fl oz (smaller bottle), x2",
+     "price": 2.37,
+     "url": "https://www.walmart.com/ip/Great-Value-Classic-Ranch-Salad-Dressing-Dip-16-fl-oz/16618888"
+    }
+   ]
+  }
+ ],
  "budget": 200,
  "pendingRecipes": [],
  "staples": [
@@ -1026,6 +1048,12 @@ window.WEEK = {
    "id": "welcome-v26",
    "ts": 1792936071564,
    "text": "Hi! New in the app: search box, + and − for quantities, notes on items, Done shopping (moves unchecked items to next week), Staples quick-add, recipes by day with a Tonight view, Cooked / Ate leftovers buttons, dark mode (Chat > Settings), and my replies show up here."
+  },
+  {
+   "id": "r1793050612156",
+   "ts": 1793050612156,
+   "text": "Found your Great Value Classic Ranch (36 fl oz). Tap it under Pick one to add 2 bottles to next week, or pick the 16 oz size.",
+   "ref": "17aa96de-7268-4628-86de-bac49c96eacb"
   }
  ],
  "shoppingDayLunches": {
