@@ -58,6 +58,26 @@ window.WEEK = {
       "sheet-pan-shrimp-fajitas"
      ],
      "aisle": "AP10"
+    },
+    {
+     "name": "Taylor Farms Everything Bagel Chopped Salad Bowl with Chicken, 7 oz (fresh, refrigerated)",
+     "qty": 1,
+     "price": 2.97,
+     "url": "https://www.walmart.com/ip/14725063086",
+     "urlType": "product",
+     "addedBy": "user",
+     "recipes": [],
+     "note": "Bought Mon Oct 26 for lunch"
+    },
+    {
+     "name": "Marketside Bacon Caesar Chopped Salad Kit, 10.2 oz bag (fresh, refrigerated)",
+     "qty": 1,
+     "price": 3.58,
+     "url": "https://www.walmart.com/ip/398853136",
+     "urlType": "product",
+     "addedBy": "user",
+     "recipes": [],
+     "note": "Bought Mon Oct 26 for lunch"
     }
    ]
   },
@@ -962,6 +982,12 @@ window.WEEK = {
  ],
  "replies": [
   {
+   "id": "r-1793023614059",
+   "ts": 1793023614059,
+   "text": "Added today's two lunch salads (Taylor Farms Everything Bagel chicken bowl, $2.97, and Marketside Bacon Caesar kit, $3.58) under Your additions, and noted them as Monday's lunch. Enjoy!",
+   "ref": "lunch:2026-10-26"
+  },
+  {
    "id": "r-1793023236288",
    "ts": 1793023236288,
    "text": "Added 2 Minute Maid Zero Sugar Orange Pineapple (52 fl oz, refrigerated, $2.84 each) to this week's plan under Snacks & Beverages. It's now a weekly staple, so it'll be on every week's list.",
@@ -1003,7 +1029,7 @@ window.WEEK = {
   }
  ],
  "shoppingDayLunches": {
-  "intro": "For the day you're out shopping: zero cooking, just open and eat. Most perishable first. Mon Oct 26 lunch is already covered (salad kits).",
+  "intro": "For the day you're out shopping: zero cooking, just open and eat. Most perishable first. Mon Oct 26 lunch is covered: the Taylor Farms Everything Bagel chicken salad bowl and the Marketside Bacon Caesar chopped kit you already bought.",
   "options": [
    {
     "name": "Avocado pork-rind dip",
