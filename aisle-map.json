@@ -387,6 +387,20 @@
    "confidence": "high",
    "source": "Walmart app screenshot (store selected), Aisle A33 Section 5",
    "section": "5"
+  },
+  "ip:107091934": {
+   "url": "https://www.walmart.com/ip/107091934",
+   "aisle": "A9",
+   "observed": "2026-10-26",
+   "confidence": "high",
+   "source": "walmart product page (store selected)"
+  },
+  "ip:15136791": {
+   "url": "https://www.walmart.com/ip/80-Lean-20-Fat-Ground-Beef-Chuck-1-lb-Roll-Fresh-All-Natural/15136791",
+   "aisle": "A36",
+   "observed": "2026-10-26",
+   "confidence": "high",
+   "source": "walmart product page (store selected)"
   }
  },
  "categories": {
@@ -471,6 +485,14 @@
   "Other": [
    {
     "aisle": "A24",
+    "items": 1
+   },
+   {
+    "aisle": "A9",
+    "items": 1
+   },
+   {
+    "aisle": "A36",
     "items": 1
    }
   ],
@@ -606,8 +628,8 @@
  ],
  "updated": "2026-10-26",
  "coverage": {
-  "items": 43,
-  "withAisle": 40
+  "items": 45,
+  "withAisle": 42
  },
  "walkOrder": [
   {

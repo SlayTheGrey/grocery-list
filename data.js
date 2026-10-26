@@ -36,16 +36,15 @@ window.WEEK = {
      "aisle": "A1"
     },
     {
-     "name": "Limes",
-     "qty": 2,
-     "price": 0.23,
-     "url": "https://www.walmart.com/ip/seort/44391008",
-     "urlType": "product",
      "recipes": [
       "sheet-pan-shrimp-fajitas",
       "garlic-butter-shrimp-spinach-w2"
      ],
-     "aisle": "AP6"
+     "name": "Great Value Lime 100% Juice, 15 fl oz (bottled, shelf-stable)",
+     "qty": 1,
+     "price": 1.24,
+     "url": "https://www.walmart.com/ip/Great-Value-Lime-100-Juice-15-fl-oz/942620427",
+     "urlType": "product"
     },
     {
      "name": "Small Hass avocados, 5-6 ct bag",
@@ -69,18 +68,19 @@ window.WEEK = {
      "name": "80/20 ground beef, 1 lb roll (fresh)",
      "qty": 2,
      "price": 5.93,
-     "url": "https://www.walmart.com/search?q=80/20+ground+beef+1+lb+roll",
-     "urlType": "search",
+     "url": "https://www.walmart.com/ip/80-Lean-20-Fat-Ground-Beef-Chuck-1-lb-Roll-Fresh-All-Natural/15136791",
+     "urlType": "product",
      "recipes": [
       "crock-pot-beanless-keto-chili"
-     ]
+     ],
+     "aisle": "A36"
     },
     {
-     "name": "GV hickory smoked bacon, 12 oz",
+     "name": "Hormel Black Label Thick Cut Bacon, 16 oz (fresh)",
      "qty": 1,
-     "price": 4.28,
-     "url": "https://www.walmart.com/search?q=Great+Value+hickory+smoked+bacon+12+oz",
-     "urlType": "search",
+     "price": 5.97,
+     "url": "https://www.walmart.com/ip/HORMEL-BLACK-LABEL-Bacon-Thick-Cut-Gluten-Free-Refrigerated-16-oz-Plastic-Package/15754220",
+     "urlType": "product",
      "recipes": [
       "chicken-thigh-cobb-salad",
       "bacon-spinach-crustless-quiche"
@@ -351,13 +351,13 @@ window.WEEK = {
      "name": "Swerve confectioners sweetener (erythritol), 12 oz",
      "qty": 1,
      "price": 7.12,
-     "note": "Choose Single (12 oz) on the page, not the 6-pack",
-     "url": "https://www.walmart.com/ip/Pack-of-6-Swerve-Sugar-replacment-Confectioners-12-oz/964679560",
-     "urlType": "search",
+     "url": "https://www.walmart.com/ip/107091934",
+     "urlType": "product",
      "recipes": [
       "cheesecake-fluff",
       "cinnamon-churro-pork-rinds"
-     ]
+     ],
+     "aisle": "A9"
     },
     {
      "name": "GV ground cinnamon, 2.5 oz",
@@ -510,7 +510,7 @@ window.WEEK = {
    "meta": "Serves: 2 · Active: 20 min · Net carbs/serving: ~6 g (estimate) · Protein/serving: ~45 g",
    "ingredients": [
     "1 lb pulled chicken thighs (from Monday)",
-    "6 slices bacon (half the pack)",
+    "6 slices thick-cut bacon (about half the 16 oz pack)",
     "4 hard-boiled eggs (from the eggs you have)",
     "2 romaine hearts, chopped",
     "1 avocado, diced",
@@ -555,7 +555,7 @@ window.WEEK = {
     "1 lb frozen raw peeled shrimp (half the bag you have), thawed",
     "1 bag (20 oz) frozen pepper & onion blend (your addition)",
     "2 tbsp EVOO + 1 packet fajita seasoning",
-    "1 lime",
+    "2 tbsp bottled lime juice",
     "Serve on: romaine leaves or Organic riced cauliflower (10 oz, your addition) cooked in a dry skillet",
     "Toppings: sour cream, salsa, taco blend cheese, avocado"
    ],
@@ -563,7 +563,7 @@ window.WEEK = {
     "Wed night: move 1 lb shrimp to the fridge to thaw (or thaw in cold water 10 min). Pat very dry.",
     "Heat oven to 425°F. Toss frozen peppers/onions with 1 tbsp EVOO and half the seasoning; roast on a sheet pan 15 min.",
     "Toss shrimp with 1 tbsp EVOO and the rest of the seasoning; add to the pan. Roast 6–8 min until pink and opaque. (Or oven Air Fry mode 400°F, 5–6 min for the shrimp.)",
-    "Squeeze lime over. Serve in romaine leaves or over cauliflower rice with toppings."
+    "Drizzle the lime juice over. Serve in romaine leaves or over cauliflower rice with toppings."
    ],
    "notes": [
     "Frozen shrimp and peppers keep, so this sits later in the week."
@@ -580,12 +580,12 @@ window.WEEK = {
     "2 tbsp butter + 1 tbsp EVOO",
     "1½ tsp garlic powder, ½ tsp paprika, salt, pepper",
     "½ cup half & half, ¼ cup taco blend cheese",
-    "1 tbsp coconut aminos (your addition, optional), juice of ½ lime"
+    "1 tbsp coconut aminos (your addition, optional), 1 tbsp bottled lime juice"
    ],
    "steps": [
     "Skillet, medium-high: EVOO + 1 tbsp butter. Add shrimp in one layer, season with salt, pepper, paprika and ½ tsp garlic powder; 2 min per side. Remove.",
     "Same pan: 1 tbsp butter, spinach and the rest of the garlic powder, 2 min. Add half & half and cheese; simmer 2–3 min until creamy.",
-    "Return shrimp; add coconut aminos and lime. Toss 1 min."
+    "Return shrimp; add coconut aminos and lime juice. Toss 1 min."
    ],
    "notes": [
     "Frozen shrimp and spinach: fine late in the week."
@@ -622,7 +622,7 @@ window.WEEK = {
    "ingredients": [
     "10 eggs (from the eggs you have)",
     "1 cup half & half",
-    "6 slices bacon (rest of the pack)",
+    "6 slices thick-cut bacon (rest of the pack)",
     "1 box (10 oz) frozen chopped spinach, thawed and squeezed very dry",
     "1 cup taco blend cheese",
     "½ tsp salt, ¼ tsp pepper, ½ tsp garlic powder, butter for the dish"
@@ -942,6 +942,12 @@ window.WEEK = {
   }
  ],
  "replies": [
+  {
+   "id": "r-1793022713458",
+   "ts": 1793022713458,
+   "text": "Thanks for the notes! Updated bacon to a name-brand thick cut (Hormel Black Label, 16 oz), switched Swerve to the single 12 oz bag (aisle A9), set ground beef to aisle A36, and swapped the limes for a bottle of lime juice since the recipes only use the juice.",
+   "ref": "notes:2026-10-26"
+  },
   {
    "id": "r-1793021100762",
    "ts": 1793021100762,
