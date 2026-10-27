@@ -769,34 +769,35 @@ window.WEEK = {
    {
     "name": "Snacks & Beverages",
     "items": [
-     {"name": "PLANTERS Salted Mixed Nuts, 56 oz canister (shelf-stable)", "qty": 1, "price": 19.96, "url": "https://www.walmart.com/ip/150315049", "urlType": "product", "addedBy": "user", "recipes": []}
+     {
+      "name": "PLANTERS Salted Mixed Nuts, 56 oz canister (shelf-stable)",
+      "qty": 1,
+      "price": 19.96,
+      "url": "https://www.walmart.com/ip/150315049",
+      "urlType": "product",
+      "addedBy": "user",
+      "recipes": []
+     }
+    ]
+   },
+   {
+    "name": "Sauces & Spices",
+    "items": [
+     {
+      "name": "Great Value Classic Ranch Dressing & Dip, 36 fl oz",
+      "qty": 2,
+      "price": 3.97,
+      "url": "https://www.walmart.com/ip/Great-Value-Classic-Ranch-Dressing-36-fl-oz/22282307",
+      "urlType": "product",
+      "addedBy": "user",
+      "recipes": [],
+      "aisle": "A3"
+     }
     ]
    }
   ]
  },
- "pending": [
-  {
-   "id": "p1793050612156",
-   "query": "Ranch dressing, 2 bottles (from your photo)",
-   "list": "next",
-   "qty": 2,
-   "rid": "17aa96de-7268-4628-86de-bac49c96eacb",
-   "options": [
-    {
-     "name": "Great Value Classic Ranch Dressing & Dip, 36 fl oz",
-     "size": "36 fl oz (the bottle in your photo), x2",
-     "price": 3.97,
-     "url": "https://www.walmart.com/ip/Great-Value-Classic-Ranch-Dressing-36-fl-oz/22282307"
-    },
-    {
-     "name": "Great Value Classic Ranch Dressing & Dip, 16 fl oz",
-     "size": "16 fl oz (smaller bottle), x2",
-     "price": 2.37,
-     "url": "https://www.walmart.com/ip/Great-Value-Classic-Ranch-Salad-Dressing-Dip-16-fl-oz/16618888"
-    }
-   ]
-  }
- ],
+ "pending": [],
  "budget": 200,
  "pendingRecipes": [],
  "staples": [
@@ -1010,8 +1011,30 @@ window.WEEK = {
   }
  ],
  "replies": [
-  {"id": "r1793070316581", "ts": 1793070316581, "text": "Added the big 56 oz Planters mixed nuts tin ($19.96) to next week.", "ref": "974d606f-b45d-4946-9e3a-90ad51d20f57"},
-  {"id": "r1793050700001", "ts": 1793050643211, "text": "Found Planters mixed nuts for next week: the big 56 oz tin ($19.96) or the 27 oz tin ($12.64). Pick one. About 3 g net carbs per ounce.", "ref": "bc28ea42-f0ba-470a-b78d-125bde1365db"},
+  {
+   "id": "r-choose-p1793050612156",
+   "ts": 1793070336237,
+   "text": "Added 2 bottles of Great Value Classic Ranch (36 fl oz) to next week under Your additions.",
+   "ref": "b03ad2db-5833-4df7-9d94-b36b1a101d9d"
+  },
+  {
+   "id": "r1793070316581",
+   "ts": 1793070316581,
+   "text": "Added the big 56 oz Planters mixed nuts tin ($19.96) to next week.",
+   "ref": "974d606f-b45d-4946-9e3a-90ad51d20f57"
+  },
+  {
+   "id": "r1793050700001",
+   "ts": 1793050643211,
+   "text": "Found Planters mixed nuts for next week: the big 56 oz tin ($19.96) or the 27 oz tin ($12.64). Pick one. About 3 g net carbs per ounce.",
+   "ref": "bc28ea42-f0ba-470a-b78d-125bde1365db"
+  },
+  {
+   "id": "r1793050612156",
+   "ts": 1793050612156,
+   "text": "Found your Great Value Classic Ranch (36 fl oz). Tap it under Pick one to add 2 bottles to next week, or pick the 16 oz size.",
+   "ref": "17aa96de-7268-4628-86de-bac49c96eacb"
+  },
   {
    "id": "r-1793023614059",
    "ts": 1793023614059,
@@ -1057,12 +1080,6 @@ window.WEEK = {
    "id": "welcome-v26",
    "ts": 1792936071564,
    "text": "Hi! New in the app: search box, + and − for quantities, notes on items, Done shopping (moves unchecked items to next week), Staples quick-add, recipes by day with a Tonight view, Cooked / Ate leftovers buttons, dark mode (Chat > Settings), and my replies show up here."
-  },
-  {
-   "id": "r1793050612156",
-   "ts": 1793050612156,
-   "text": "Found your Great Value Classic Ranch (36 fl oz). Tap it under Pick one to add 2 bottles to next week, or pick the 16 oz size.",
-   "ref": "17aa96de-7268-4628-86de-bac49c96eacb"
   }
  ],
  "shoppingDayLunches": {
