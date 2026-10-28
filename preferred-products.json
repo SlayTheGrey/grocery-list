@@ -148,6 +148,14 @@
    "url": "https://www.walmart.com/ip/Great-Value-Classic-Ranch-Dressing-36-fl-oz/22282307",
    "price": 3.97,
    "date": "2026-10-26"
+  },
+  "Salad lettuce (precut bagged blend, for salads)": {
+   "url": "https://www.walmart.com/ip/Marketside-Premium-Romaine-Salad-Blend-9-oz-Bag-Fresh/44391112",
+   "name": "Marketside Premium Romaine Salad Blend, 9 oz bag",
+   "price": 2.97,
+   "alt": "https://www.walmart.com/ip/Marketside-Chopped-Romaine-Lettuce-Mix-9-oz-Bag-Fresh/511353764",
+   "rule": "Use precut bagged blends for salads; romaine hearts/heads only when whole leaves are needed (wraps, cups)",
+   "date": "2026-10-27"
   }
  }
 }

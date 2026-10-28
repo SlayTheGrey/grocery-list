@@ -889,6 +889,18 @@ window.WEEK = {
    "price": 2.57
   },
   {
+   "name": "Marketside Premium Romaine Salad Blend, 9 oz bag (fresh, precut)",
+   "url": "https://www.walmart.com/ip/Marketside-Premium-Romaine-Salad-Blend-9-oz-Bag-Fresh/44391112",
+   "cat": "Fruits & Veggies",
+   "price": 2.97
+  },
+  {
+   "name": "Marketside Chopped Romaine Lettuce Mix, 9 oz bag (fresh, precut)",
+   "url": "https://www.walmart.com/ip/Marketside-Chopped-Romaine-Lettuce-Mix-9-oz-Bag-Fresh/511353764",
+   "cat": "Fruits & Veggies",
+   "price": 2.97
+  },
+  {
    "name": "Romaine hearts, 3 ct",
    "url": "https://www.walmart.com/ip/seort/10532755",
    "cat": "Fruits & Veggies",
@@ -1013,6 +1025,7 @@ window.WEEK = {
   }
  ],
  "replies": [
+  {"id": "r-d570f5d3", "ts": 1793147833929, "ref": "d570f5d3-fe70-4ca7-b7b0-0d4310b3d825", "text": "Got it! From now on, salads will use precut bagged lettuce blends (like Marketside Premium Romaine Salad Blend, $2.97) instead of romaine hearts or heads. Whole romaine only where leaves are needed for wraps. I also added two bagged blends to Staples."},
   {"id": "r1793147700001", "ts": 1793147722617, "text": "Found Parmesan for next week: the GV grated 8 oz shaker ($3.00) or GV finely shredded 6 oz bag ($2.08, refrigerated). Pick one. Both are 0 g net carbs.", "ref": "1f88f4dc-8cd1-440e-920e-664bd65aa833"},
   {
    "id": "r-choose-p1793050612156",
