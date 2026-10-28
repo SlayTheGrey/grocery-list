@@ -797,9 +797,7 @@ window.WEEK = {
    }
   ]
  },
- "pending": [
-  {"id": "p1793147683551", "query": "Parmesan cheese", "list": "next", "rid": "1f88f4dc-8cd1-440e-920e-664bd65aa833", "options": [{"name": "Great Value Grated Parmesan Cheese, 8 oz shaker", "size": "8 oz shaker (shelf-stable grated)", "price": 3.00, "url": "https://www.walmart.com/ip/Great-Value-Grated-Parmesan-Cheese-8-oz-Bottle/10315402"}, {"name": "Great Value Finely Shredded Parmesan Cheese, 6 oz bag (refrigerated)", "size": "6 oz bag (refrigerated shredded)", "price": 2.08, "url": "https://www.walmart.com/ip/Great-Value-Finely-Shredded-Parmesan-Cheese-6-oz/10452414"}]}
- ],
+ "pending": [],
  "budget": 200,
  "pendingRecipes": [],
  "staples": [
@@ -1025,8 +1023,18 @@ window.WEEK = {
   }
  ],
  "replies": [
-  {"id": "r-d570f5d3", "ts": 1793147833929, "ref": "d570f5d3-fe70-4ca7-b7b0-0d4310b3d825", "text": "Got it! From now on, salads will use precut bagged lettuce blends (like Marketside Premium Romaine Salad Blend, $2.97) instead of romaine hearts or heads. Whole romaine only where leaves are needed for wraps. I also added two bagged blends to Staples."},
-  {"id": "r1793147700001", "ts": 1793147722617, "text": "Found Parmesan for next week: the GV grated 8 oz shaker ($3.00) or GV finely shredded 6 oz bag ($2.08, refrigerated). Pick one. Both are 0 g net carbs.", "ref": "1f88f4dc-8cd1-440e-920e-664bd65aa833"},
+  {
+   "id": "r-d570f5d3",
+   "ts": 1793147833929,
+   "ref": "d570f5d3-fe70-4ca7-b7b0-0d4310b3d825",
+   "text": "Got it! From now on, salads will use precut bagged lettuce blends (like Marketside Premium Romaine Salad Blend, $2.97) instead of romaine hearts or heads. Whole romaine only where leaves are needed for wraps. I also added two bagged blends to Staples."
+  },
+  {
+   "id": "r1793147700001",
+   "ts": 1793147722617,
+   "text": "Found Parmesan for next week: the GV grated 8 oz shaker ($3.00) or GV finely shredded 6 oz bag ($2.08, refrigerated). Pick one. Both are 0 g net carbs.",
+   "ref": "1f88f4dc-8cd1-440e-920e-664bd65aa833"
+  },
   {
    "id": "r-choose-p1793050612156",
    "ts": 1793070336237,
@@ -1096,6 +1104,12 @@ window.WEEK = {
    "id": "welcome-v26",
    "ts": 1792936071564,
    "text": "Hi! New in the app: search box, + and − for quantities, notes on items, Done shopping (moves unchecked items to next week), Staples quick-add, recipes by day with a Tonight view, Cooked / Ate leftovers buttons, dark mode (Chat > Settings), and my replies show up here."
+  },
+  {
+   "id": "r1793208327599",
+   "ts": 1793208327599,
+   "text": "Cancelled the Parmesan cheese pick for next week; nothing added.",
+   "ref": "p1793147683551"
   }
  ],
  "shoppingDayLunches": {
