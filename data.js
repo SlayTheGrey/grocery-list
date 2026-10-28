@@ -797,7 +797,9 @@ window.WEEK = {
    }
   ]
  },
- "pending": [],
+ "pending": [
+  {"id": "p1793209411747", "query": "Box of Splenda packets", "list": "next", "rid": "49a6036f-6a1a-4fce-abe1-556df9fe7e98", "options": [{"name": "Splenda Zero Calorie Sweetener Packets, 100 ct box", "size": "100 packets", "price": 5.22, "url": "https://www.walmart.com/ip/Splenda-Zero-Calorie-Sweetener-Sugar-Substitute-Packets-100CT/10309707"}, {"name": "Splenda Zero Calorie Sweetener Packets, 200 ct box", "size": "200 packets", "price": 7.74, "url": "https://www.walmart.com/ip/Splenda-Zero-Calorie-Sweetener-Sugar-Substitute-Packets-200CT/604471504"}]}
+ ],
  "budget": 200,
  "pendingRecipes": [],
  "staples": [
@@ -1023,6 +1025,7 @@ window.WEEK = {
   }
  ],
  "replies": [
+  {"id": "r1793209411748", "ts": 1793209411747, "ref": "49a6036f-6a1a-4fce-abe1-556df9fe7e98", "text": "Found Splenda packets for next week: 100 ct box ($5.22) or 200 ct box ($7.74, better per packet). Pick one."},
   {
    "id": "r-d570f5d3",
    "ts": 1793147833929,
