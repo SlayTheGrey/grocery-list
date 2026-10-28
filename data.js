@@ -797,7 +797,9 @@ window.WEEK = {
    }
   ]
  },
- "pending": [],
+ "pending": [
+  {"id": "p1793147683551", "query": "Parmesan cheese", "list": "next", "rid": "1f88f4dc-8cd1-440e-920e-664bd65aa833", "options": [{"name": "Great Value Grated Parmesan Cheese, 8 oz shaker", "size": "8 oz shaker (shelf-stable grated)", "price": 3.00, "url": "https://www.walmart.com/ip/Great-Value-Grated-Parmesan-Cheese-8-oz-Bottle/10315402"}, {"name": "Great Value Finely Shredded Parmesan Cheese, 6 oz bag (refrigerated)", "size": "6 oz bag (refrigerated shredded)", "price": 2.08, "url": "https://www.walmart.com/ip/Great-Value-Finely-Shredded-Parmesan-Cheese-6-oz/10452414"}]}
+ ],
  "budget": 200,
  "pendingRecipes": [],
  "staples": [
@@ -1011,6 +1013,7 @@ window.WEEK = {
   }
  ],
  "replies": [
+  {"id": "r1793147700001", "ts": 1793147722617, "text": "Found Parmesan for next week: the GV grated 8 oz shaker ($3.00) or GV finely shredded 6 oz bag ($2.08, refrigerated). Pick one. Both are 0 g net carbs.", "ref": "1f88f4dc-8cd1-440e-920e-664bd65aa833"},
   {
    "id": "r-choose-p1793050612156",
    "ts": 1793070336237,
