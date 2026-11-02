@@ -401,6 +401,13 @@
    "observed": "2026-10-26",
    "confidence": "high",
    "source": "walmart product page (store selected)"
+  },
+  "ip:22282307": {
+   "url": "https://www.walmart.com/ip/Great-Value-Classic-Ranch-Dressing-36-fl-oz/22282307",
+   "aisle": "A3",
+   "observed": "2026-11-02",
+   "confidence": "high",
+   "source": "walmart product page (store selected)"
   }
  },
  "categories": {
@@ -493,6 +500,10 @@
    },
    {
     "aisle": "A36",
+    "items": 1
+   },
+   {
+    "aisle": "A3",
     "items": 1
    }
   ],
@@ -626,10 +637,10 @@
   "AP6",
   "AP10"
  ],
- "updated": "2026-10-26",
+ "updated": "2026-11-02",
  "coverage": {
-  "items": 45,
-  "withAisle": 42
+  "items": 46,
+  "withAisle": 43
  },
  "walkOrder": [
   {
