@@ -63,7 +63,7 @@ details>div{padding:0 14px 14px}details li{margin:6px 0}.meta{font-size:16px;col
 <section id="chat" hidden><div class="card"><b>Message the assistant</b><textarea id="ct" placeholder="Add, remove or change items or recipes"></textarea>
 <div class="ls"><select id="cl"><option value="this">This week</option><option value="next">Next week</option></select><button class="btn" id="cs">Send</button></div></div>
 <div id="replies"></div><h3>Your messages</h3><div id="msgs"></div>
-<details id="settings"><summary>Settings</summary><div><p id="pinok" class="meta" style="font-weight:700"></p><button class="btn" id="pinchg">Change/Forget PIN</button><div id="pinbox"><p class="meta">Family PIN (stored only on this phone).</p><input id="key" type="password" autocomplete="off" placeholder="Family PIN" inputmode="numeric"><div class="tools"><button class="btn" id="ksave">Save PIN</button><button class="btn" id="kclr">Forget PIN</button></div><div id="kst" class="meta"></div></div><p class="meta">Appearance (this phone)</p><div class="ls" id="thm"><button class="btn" data-th="auto">Auto</button><button class="btn" data-th="light">Light</button><button class="btn" data-th="dark">Dark</button></div><p class="meta" id="ver"></p><button class="btn" id="vchk">Check for update</button></div></details></section></main>
+<details id="settings"><summary>Settings</summary><div><p id="pinok" class="meta" style="font-weight:700"></p><button class="btn" id="pinchg">Change/Forget PIN</button><div id="pinbox"><p class="meta">Family PIN (stored only on this phone).</p><input id="key" type="password" autocomplete="off" placeholder="Family PIN" inputmode="numeric"><div class="tools"><button class="btn" id="ksave">Save PIN</button><button class="btn" id="kclr">Forget PIN</button></div><div id="kst" class="meta"></div></div><p class="meta">Appearance (this phone)</p><div class="ls" id="thm"><button class="btn" data-th="auto">Auto</button><button class="btn" data-th="light">Light</button><button class="btn" data-th="dark">Dark</button></div><div id="wdrow"><b>Work days</b> <span class="meta">(no cooking these days; prep moves to days off)</span><div id="wd" style="display:flex;gap:4px;flex-wrap:wrap;margin:6px 0"></div></div><p class="meta" id="ver"></p><button class="btn" id="vchk">Check for update</button></div></details></section></main>
 <div id="sheet" role="dialog" aria-modal="true" aria-labelledby="shh" hidden><div>
 <div class="ls"><b id="shh" style="font-size:20px;align-self:center">Add an item</b><button class="btn" id="shx" aria-label="Close">✕ Close</button></div>
 <input id="xt" placeholder="Item, e.g. 2 bags shredded cheese" autocomplete="off">
@@ -75,7 +75,7 @@ details>div{padding:0 14px 14px}details li{margin:6px 0}.meta{font-size:16px;col
 <details id="stp"><summary>⭐ Staples quick-add</summary><div id="stl"></div></details>
 </div></div>
 <div id="modal" role="dialog" aria-modal="true"><div id="mbody"></div></div><div id="toast"><span id="tm"></span><button id="undo">Undo</button></div>
-<script>document.documentElement.dataset.theme=localStorage.getItem("grocery-theme")||"auto"</script><script>window.APP_VER="v57";document.write('<script src="data.js?t='+Date.now()+'"><\/script>')</script><script>
+<script>document.documentElement.dataset.theme=localStorage.getItem("grocery-theme")||"auto"</script><script src="schedule.js"></script><script>window.APP_VER="v58";document.write('<script src="data.js?t='+Date.now()+'"><\/script>')</script><script>
 let W=window.WEEK;const CATS=["Fruits & Veggies","Meat & Seafood","Dairy","Frozen Foods","Sauces & Spices","Snacks & Beverages","Breads & Grains","Other"],
 ROUTE=["Other","Fruits & Veggies","Breads & Grains","Meat & Seafood","Dairy","Sauces & Spices","Snacks & Beverages","Frozen Foods"],
 $=id=>document.getElementById(id),esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
@@ -125,7 +125,7 @@ if(SY){SH=SY.sh;Q=SY.q}else{SH={};Q=[];var mt=1000;
  Q.forEach(applyOp);}
 function applyOp(p){var m=SH[p.k]||(SH[p.k]={}),c=m[p.id],v=p.v===undefined?null:p.v;if(!c||p.ts>c.ts||(p.ts===c.ts&&JSON.stringify(v)>JSON.stringify(c.v))){m[p.id]={v:v,ts:p.ts};return true}return false}
 function rebuild(){var f=k=>{var o={},m=SH[k]||{};for(var id in m)if(m[id].v)o[id]=m[id].v;return o};
- S.recipe=f("recipe");S.qty=f("qty");S.note=f("note");S.cooked=f("cooked");S.done=f("done");S.checked=f("checked");S.removed=f("removed");S.chosen=f("chosen");S.cancelled=f("cancelled");
+ S.recipe=f("recipe");S.qty=f("qty");S.note=f("note");S.cooked=f("cooked");S.done=f("done");S.checked=f("checked");S.removed=f("removed");S.chosen=f("chosen");S.cancelled=f("cancelled");var sc=SH.schedule&&SH.schedule.work;if(sc&&Array.isArray(sc.v))localStorage.setItem("grocery-workdays",JSON.stringify(sc.v));
  var a=SH.added||{};S.added=Object.keys(a).filter(id=>a[id].v).sort((x,y)=>a[x].ts-a[y].ts).map(id=>Object.assign({},a[id].v,{id:id}));}
 var lastTs=0;function now(){var t=Date.now();lastTs=t>lastTs?t:lastTs+1;return lastTs}
 function persist(){localStorage.setItem(SK,JSON.stringify({sh:SH,q:Q}));save()}
@@ -171,7 +171,12 @@ function routeZones(all){const zone=new Map(),zs=[];all.slice().sort((a,b)=>aRan
 function curRecipes(){return nx()?((W.nextWeek&&W.nextWeek.recipes)||[]):(W.recipes||[])}
 const rkey=r=>"rm:"+(r.id||r.title);
 const DN=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],DFULL={Sun:"Sunday",Mon:"Monday",Tue:"Tuesday",Wed:"Wednesday",Thu:"Thursday",Fri:"Friday",Sat:"Saturday"};
-const rid_=r=>r.id||r.title,rDay=r=>r.day||((r.title.match(/^(Mon|Tue|Wed|Thu|Fri|Sat|Sun)/)||[])[1]||"");
+const rid_=r=>r.id||r.title,rDay0=r=>r.day||((r.title.match(/^(Mon|Tue|Wed|Thu|Fri|Sat|Sun)/)||[])[1]||""),rDay=r=>{const a=SCHED();return(!nx()&&a.active&&a.map[rid_(r)])||rDay0(r)};
+const rTitle=r=>{const d=rDay(r),t=r.title||"",m=t.match(/^(Mon|Tue|Wed|Thu|Fri|Sat|Sun)\b/);return m&&d&&m[1]!==d?d+t.slice(3)+" (moved from "+m[1]+")":t};
+function workDays(){try{return JSON.parse(localStorage.getItem("grocery-workdays")||"[]")}catch(e){return[]}}
+function SCHED(){return window.Schedule?Schedule.assign(workDays(),W.recipes||[]):{active:false,map:{},noCook:{}}}
+function renderWD(){const w=workDays(),el=document.getElementById("wd");if(!el)return;el.innerHTML=Schedule.DAYS.map(d=>`<button class="btn${w.includes(d)?" on":""}" data-wd="${d}" aria-pressed="${w.includes(d)}">${d}</button>`).join("")}
+function setWD(d){let w=workDays();w=w.includes(d)?w.filter(x=>x!==d):Schedule.DAYS.filter(x=>w.includes(x)||x===d);localStorage.setItem("grocery-workdays",JSON.stringify(w));op("schedule","work",w);renderWD();render()}
 function weekStart(next){const w=(next&&W.nextWeek&&W.nextWeek.weekId)||W.weekId,d=new Date(String(w).slice(0,10)+"T12:00:00");if(next&&!(W.nextWeek&&W.nextWeek.weekId))d.setDate(d.getDate()+7);return d}
 function dayDate(day,next){const d=weekStart(next);for(let k=0;k<7;k++){const x=new Date(d);x.setDate(d.getDate()+k);if(DN[x.getDay()]===day)return x}return null}
 const sameDay=(a,b)=>a&&b&&a.toDateString()===b.toDateString();
@@ -186,7 +191,7 @@ function recipes(){if(typeof S.recipe==="undefined")S.recipe={};const li=a=>(a||
   const g=d?`${DFULL[d]}${dd?" "+dd.toLocaleDateString([], {month:"short",day:"numeric"}):""}`:"Extras";
   if(g!==lastDay){h+=`<h2 class="dayh${isT?" todayh":""}">${esc(g)}${isT?" · Today":""}</h2>`;lastDay=g}
   const its=rItems(r,all),only=rm?its.filter(i=>(i.recipes||[]).every(x=>{const o=curRecipes().find(z=>z.id===x||z.title===x);return !o||o===r||rmState(o)})):[];
-  h+=`<details data-t="${esc(r.title)}"${open.has(r.title)||isT?" open":""} class="${rm?"gone ":""}${isT?"today":""}"><summary>${esc(r.title)}${ck?` <span class="cookd">· ${ck.v==="leftovers"?"Ate leftovers":"Cooked"} ✓</span>`:""}${rm?' <span class="rpend">· Removal pending</span>':""}</summary><div>
+  h+=`<details data-t="${esc(r.title)}"${open.has(r.title)||isT?" open":""} class="${rm?"gone ":""}${isT?"today":""}"><summary>${esc(rTitle(r))}${ck?` <span class="cookd">· ${ck.v==="leftovers"?"Ate leftovers":"Cooked"} ✓</span>`:""}${rm?' <span class="rpend">· Removal pending</span>':""}</summary><div>
  <div class="rbar"><button class="btn" data-re="${ix}">✎ Edit</button>${rm?`<button class="btn" data-ru="${ix}">Undo removal</button>`:`<button class="btn" data-rr="${ix}">✕ Remove</button>`}</div>
  <div class="rbar"><button class="btn${ck&&ck.v==="cooked"?" on":""}" data-ck="${ix}" data-v="cooked">🍳 Cooked</button><button class="btn${ck&&ck.v==="leftovers"?" on":""}" data-ck="${ix}" data-v="leftovers">♻ Ate leftovers</button></div>
  ${isT?`<button class="btn on" data-tn="${ix}" style="width:100%">🍽 Open Tonight view</button>`:""}
@@ -194,10 +199,10 @@ function recipes(){if(typeof S.recipe==="undefined")S.recipe={};const li=a=>(a||
  <p class="meta">${esc(r.meta||"")}</p>${its.length?`<p class="meta"><b>Items on the list for this recipe:</b> ${its.map(i=>esc(i.name)).join(", ")}</p>`:""}<h3>Ingredients</h3><ul>${li(r.ingredients)}</ul><h3>Steps</h3><ol>${li(r.steps)}</ol>${r.notes?`<h3>Notes</h3><ul>${li(r.notes)}</ul>`:""}</div></details>`});
  if(!nx()&&W.shoppingDayLunches&&(W.shoppingDayLunches.options||[]).length){const L=W.shoppingDayLunches;h+=`<details data-t="_shoplunch"${open.has("_shoplunch")?" open":""}><summary>Shopping day: quick no-prep lunches</summary><div>${L.intro?`<p class="meta">${esc(L.intro)}</p>`:""}<ul>${L.options.map(s=>`<li><b>${esc(s.name)}</b>: ${esc(s.desc)} <i>${esc([s.carbs,s.protein].filter(Boolean).join(" · "))}</i>${s.keep?` <small>(${esc(s.keep)})</small>`:""}</li>`).join("")}</ul></div></details>`}
  if(!nx()&&W.snacks&&W.snacks.length)h+=`<details data-t="_snacks"${open.has("_snacks")?" open":""}><summary>Lunches &amp; Snacks</summary><div><ul>${W.snacks.map(s=>`<li><b>${esc(s.name)}</b>: ${esc(s.desc)} <i>${esc(s.carbs)}</i></li>`).join("")}</ul></div></details>`;
- if(!nx()&&W.prep&&W.prep.length)h+=`<details data-t="_prep"${open.has("_prep")?" open":""}><summary>Prep Checklist</summary><div><ul>${li(W.prep)}</ul></div></details>`;
+ if(!nx()&&W.prep&&W.prep.length)h+=`<details data-t="_prep"${open.has("_prep")?" open":""}><summary>Prep Checklist</summary><div><ul>${li(window.Schedule?Schedule.prep(W.prep,SCHED()):W.prep)}</ul></div></details>`;
  if(!h)h='<p class="empty">No recipes for this list yet</p>';
  $("rlist").innerHTML=h;renderRPicks();
- const tr=todayRecipe();$("tonight").innerHTML=`<div class="card${tr?" today":""}"><b>Tonight (${DFULL[DN[today.getDay()]]}):</b> ${tr?esc(tr.title):"No dinner planned for today on this week's list."}${tr?`<br><button class="btn on" data-tn="t" style="width:100%;margin-top:8px">🍽 Open Tonight view</button>`:""}</div>`;}
+ const tr=todayRecipe(),sa=SCHED(),wk=sa.active&&sa.noCook[DN[today.getDay()]];$("tonight").innerHTML=`<div class="card${tr?" today":""}"><b>Tonight (${DFULL[DN[today.getDay()]]}):</b> ${wk&&!tr?esc(Schedule.NO_COOK)+" (work day)":tr?esc(rTitle(tr)):"No dinner planned for today on this week's list."}${tr?`<br><button class="btn on" data-tn="t" style="width:100%;margin-top:8px">🍽 Open Tonight view</button>`:""}</div>`;}
 const tab=t=>{["list","recipes","chat"].forEach((x,i)=>{$(x).hidden=x!==t;$(["tL","tR","tC"][i]).classList.toggle("on",x===t)});scrollTo(0,0)};
 $("tL").onclick=()=>tab("list");$("tR").onclick=()=>tab("recipes");$("tC").onclick=()=>{tab("chat");renderMsgs();markSeen()};
 render();recipes();
@@ -263,7 +268,7 @@ async function checkData(){window.lastWkChk=Date.now();try{var t=await (await fe
  if(o.WEEK&&JSON.stringify(o.WEEK)!==lastData){if(o.WEEK.weekId!==W.weekId){if(o.WEEK.weekId>W.weekId){window.STALE=1;location.reload();return "stale"}return}W=o.WEEK;lastData=JSON.stringify(W);
   (W.pending||[]).forEach(()=>0);var live=id=>(W.pending||[]).concat(W.pendingRecipes||[]).some(p=>p.id===id);for(var id in S.chosen)if(!live(id))delete S.chosen[id];for(var id in S.cancelled)if(!live(id))delete S.cancelled[id];save();render();recipes();toast("List updated");}}catch(e){}}
 function upd(){checkData();window.SWR&&SWR.update().catch(()=>{})}setInterval(()=>{if(!document.hidden)upd()},60000);document.addEventListener("visibilitychange",()=>{if(!document.hidden)upd()});window.addEventListener("pageshow",e=>{if(e.persisted)upd()});checkData();
-$("ver").textContent="App "+APP_VER+" · week "+W.weekId;$("vchk").onclick=async()=>{$("ver").textContent="Checking…";try{window.SWR&&await SWR.update()}catch(e){}if(await checkData()!=="stale")location.reload()};
+renderWD();document.getElementById("wd").onclick=e=>{const b=e.target.closest("[data-wd]");if(b)setWD(b.dataset.wd)};$("ver").textContent="App "+APP_VER+" · week "+W.weekId;$("vchk").onclick=async()=>{$("ver").textContent="Checking…";try{window.SWR&&await SWR.update()}catch(e){}if(await checkData()!=="stale")location.reload()};
 
 var QS="";$("q").oninput=()=>{QS=$("q").value.trim().toLowerCase();render()};
 function waiting(){const live=(arr)=>(arr||[]).filter(p=>!S.cancelled[p.id]&&!S.chosen[p.id]);const wk=l=>l==="next"?"next week":"this week";
@@ -298,7 +303,7 @@ $("donesh").onclick=()=>{if(nx())return;const all=items(),un=all.filter(i=>!S.ch
 let wl=null;async function wake(on){try{if(on&&"wakeLock"in navigator){wl=await navigator.wakeLock.request("screen");return true}if(!on&&wl){await wl.release();wl=null}}catch(e){}return false}
 document.addEventListener("visibilitychange",()=>{if(!document.hidden&&$("tnv")&&wl===null&&$("tnv").dataset.lock==="1")wake(true)});
 async function tonightView(r){if(!r)return toast("No dinner planned for today");const li=a=>(a||[]).map(x=>`<li>${esc(x)}</li>`).join("");
- modal(`<div class="tn" id="tnv"><h2>${esc(r.title)}</h2><p id="wls" class="meta"></p><h3>Ingredients</h3><ul>${li(r.ingredients)}</ul><h3>Steps</h3><ol>${li(r.steps)}</ol>${r.notes?`<h3>Notes</h3><ul>${li(r.notes)}</ul>`:""}<button class="btn" data-mx style="width:100%">Close</button></div>`);
+ modal(`<div class="tn" id="tnv"><h2>${esc(rTitle(r))}</h2><p id="wls" class="meta"></p><h3>Ingredients</h3><ul>${li(r.ingredients)}</ul><h3>Steps</h3><ol>${li(r.steps)}</ol>${r.notes?`<h3>Notes</h3><ul>${li(r.notes)}</ul>`:""}<button class="btn" data-mx style="width:100%">Close</button></div>`);
  $("modal").firstElementChild.style.maxHeight="100vh";$("modal").firstElementChild.style.borderRadius="0";
  const ok=await wake(true);$("tnv").dataset.lock=ok?"1":"0";$("wls").textContent=ok?"Screen will stay on while this is open.":"Keep-screen-on isn't supported here; your screen may dim.";}
 const _closeM=closeM;closeM=function(){wake(false);const f=$("modal").firstElementChild;f.style.maxHeight="";f.style.borderRadius="";_closeM()};
