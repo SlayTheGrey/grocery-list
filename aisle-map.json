@@ -746,7 +746,7 @@
    "note": "produce aisle AP, bottom-left near bread/deli, right after A1"
   }
  ],
- "walkOrderNote": "Real path (Caleb, 2026-10-25): in at the front, past checkout to the right side, up and around the top/back of the store to the back-left corner, down the left wall, center aisles back to front, finish at produce (bottom-left), then checkout. Edit order numbers to tweak; gaps of 10 leave room. Unlisted aisles/items slot right after their anchor (itemAnchors first, then categoryAnchor).",
+ "walkOrderNote": "Real path (owner, 2026-10-25): in at the front, past checkout to the right side, up and around the top/back of the store to the back-left corner, down the left wall, center aisles back to front, finish at produce (bottom-left), then checkout. Edit order numbers to tweak; gaps of 10 leave room. Unlisted aisles/items slot right after their anchor (itemAnchors first, then categoryAnchor).",
  "categoryAnchor": {
   "Other": "A24",
   "Frozen Foods": "A30",
@@ -761,7 +761,7 @@
   {
    "match": "oikos",
    "aisle": "A33",
-   "note": "all Oikos yogurts are together in A33 (Caleb, 2026-10-25)"
+   "note": "all Oikos yogurts are together in A33 (owner, 2026-10-25)"
   },
   {
    "cat": "Dairy",
